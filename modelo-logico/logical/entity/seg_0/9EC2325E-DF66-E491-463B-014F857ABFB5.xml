@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9EC2325E-DF66-E491-463B-014F857ABFB5" name="Bairro">
+<createdBy>patricianaomi</createdBy>
+<createdTime>2024-08-08 23:34:55 UTC</createdTime>
+<ownerDesignName>modelo-logico</ownerDesignName>
+<engineerTo>
+<item key="6254E9CA-0D46-241F-38B7-41EF07E82517" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_bairro" id="781E2C81-99B6-BDBE-336B-747BB8205253">
+<createdBy>patricianaomi</createdBy>
+<createdTime>2024-08-08 23:35:14 UTC</createdTime>
+<ownerDesignName>modelo-logico</ownerDesignName>
+<engineerTo>
+<item key="6254E9CA-0D46-241F-38B7-41EF07E82517" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome_bairro" id="0F1CFD31-19E6-30B0-2A4E-3D3851ECEF9A">
+<createdBy>patricianaomi</createdBy>
+<createdTime>2024-08-08 23:35:21 UTC</createdTime>
+<ownerDesignName>modelo-logico</ownerDesignName>
+<engineerTo>
+<item key="6254E9CA-0D46-241F-38B7-41EF07E82517" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_estado_fk" id="5A993FCD-CA2B-D5EF-AAED-3CF6B8E952EC">
+<createdBy>patricianaomi</createdBy>
+<createdTime>2024-08-08 23:35:39 UTC</createdTime>
+<ownerDesignName>modelo-logico</ownerDesignName>
+<engineerTo>
+<item key="6254E9CA-0D46-241F-38B7-41EF07E82517" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
