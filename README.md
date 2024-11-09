@@ -46,31 +46,31 @@ Desenvolver um sistema inteligente de monitoramento e controle de consumo de ene
 
 Criar um mapa interativo de um apartamento de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.
 
-## Monitoramento em Tempo Real
+## Monitoramento em tempo real
 
 Implementar sensores de energia em diferentes pontos do apartamento para coletar dados de consumo em tempo real e enviar essas informações para o servidor.
 
-## Análise de Dados e Previsão de Consumo
+## Análise de dados e previsão de consumo
 
 Utilizar técnicas de machine learning para analisar os dados coletados, prever o consumo de energia e identificar padrões de uso que possam indicar desperdícios ou necessidade de manutenção.
 
-## Visualização e Feedback ao Usuário
+## Visualização e feedback ao usuário
 
 Desenvolver um dashboard interativo que permita aos moradores visualizar o consumo de energia em tempo real, com gráficos e alertas sobre áreas de alto consumo e sugestões de economia.
 
-## Estimativa de Custos
+## Estimativa de custos
 
 Calcular e exibir a estimativa do valor da conta de luz com base no consumo atual, ajudando os moradores a entenderem o impacto financeiro do uso de energia.
 
-## Recomendações de Manutenção
+## Recomendações de manutenção
 
 Fornecer recomendações específicas sobre onde realizar manutenção ou ajustes para reduzir o consumo de energia, baseadas na análise dos dados coletados.
 
-## Integração de Tecnologias
+## Integração de tecnologias
 
 Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Python para a coleta e análise de dados, garantindo uma comunicação eficiente entre os componentes do sistema.
 
-# Estrutura do Projeto
+# Estrutura do projeto
 
 # Mapeamento do Apartamento
 
@@ -82,7 +82,7 @@ Usar uma biblioteca de visualização como o Blazor no .NET para criar a interfa
 
 Utilizar ASP.NET Core para gerenciar a lógica do servidor e a comunicação com o banco de dados.
 
-# Monitoramento de Energia:
+# Monitoramento de Energia
 
 ## Sensores
 
