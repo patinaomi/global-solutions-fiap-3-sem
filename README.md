@@ -24,7 +24,7 @@ Em construção
 
 ## ⁉️ Desafios e Problemas
 
-Criar uma solução que traga benefícios voltado ao meuo ambiente, com foco em energia limpa.
+Criar uma solução que traga benefícios voltado ao meio ambiente, com foco em energia limpa.
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
