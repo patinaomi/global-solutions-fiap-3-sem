@@ -120,13 +120,13 @@ Baseado nos dados analisados, enviar alertas para os moradores sobre áreas que 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## 🗂️ Disciplinas
-* [DevOps Tools & Cloud Computing](https://github.com/patinaomi/delfos-machine/tree/main/DevOps%20Tools%20%26%20Cloud%20Computing)
-* [Compliance, Quality Assurance & Tests](https://github.com/patinaomi/delfos-machine/tree/main/Compliance%2C%20Quality%20Assurance%20%26%20Tests)
-* [Mastering Relational and Non-Relational Database](https://github.com/patinaomi/delfos-machine/tree/main/Mastering%20Relational%20And%20Non%20Relational%20Database)
-* [Advanced Business Development with .Net](https://github.com/patinaomi/delfos-machine/tree/main/Advanced%20Business%20With%20.NET)
-* [Disruptive Architectures: IOT, IOB & Generative IA](https://github.com/patinaomi/delfos-machine/tree/main/Disruptive%20Architectures%3A%20IOT%20%26%20IOB)
-* [Java Advanced](https://github.com/patinaomi/delfos-machine/tree/main/JAVA%20ADVANCED)
-* [Mobile Application Development](https://github.com/patinaomi/delfos-machine/tree/main/Mobile%20Application%20Development)
+* [DevOps Tools & Cloud Computing](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/DevOps_Tools_And_Cloud_Computing)
+* [Compliance, Quality Assurance & Tests](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Compliance_Quality_Assurance_And_Tests)
+* [Mastering Relational and Non-Relational Database](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Mastering_Relational_And_Non_Relational_Database)
+* [Advanced Business Development with .Net](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Advanced_Business_With_Dot_Net)
+* [Disruptive Architectures: IOT, IOB & Generative IA](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Disruptive_Architectures_IOT_And_IOB)
+* [Java Advanced](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Java_Advanced)
+* [Mobile Application Development](https://github.com/patinaomi/global-solutions-fiap-3-sem/tree/main/Mobile_Application_Development)
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
