@@ -70,7 +70,8 @@ Monitoramento de Energia:
 ## Sensores: 
 Instale sensores de consumo de energia em diferentes pontos do apartamento. Esses sensores podem enviar dados em tempo real para o servidor.
 
-## Coleta de Dados: Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados.
+## Coleta de Dados: 
+Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados.
 
 ## Análise de Dados e IA:
 Machine Learning: Utilize ML.NET para criar modelos de machine learning que possam prever o consumo de energia e identificar padrões. Você pode treinar modelos para detectar anomalias e sugerir manutenção.
