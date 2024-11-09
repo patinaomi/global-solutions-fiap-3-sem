@@ -24,7 +24,7 @@ Em construção
 
 ## ⁉️ Desafios e Problemas
 
-O desafio proposto é voltado para a Redução de Sinistros por meio da Análise Preditiva de Atendimentos para a empresa Odontoprev. Os participantes serão instigados a desenvolver soluções inovadoras focadas na diminuição de sinistros no setor odontológico.
+Criar uma solução que traga benefícios voltado ao meuo ambiente, com foco em energia limpa.
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
