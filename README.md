@@ -36,49 +36,49 @@ Desenvolver um sistema inteligente de monitoramento e controle de consumo de ene
 
 # Objetivos Específicos
 
-## Mapeamento do Consumo de Energia:
+## Mapeamento do Consumo de Energia
 Criar um mapa interativo de um apartamento de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.
 
-## Monitoramento em Tempo Real:
+## Monitoramento em Tempo Real
 Implementar sensores de energia em diferentes pontos do apartamento para coletar dados de consumo em tempo real e enviar essas informações para o servidor.
 
-## Análise de Dados e Previsão de Consumo:
+## Análise de Dados e Previsão de Consumo
 Utilizar técnicas de machine learning para analisar os dados coletados, prever o consumo de energia e identificar padrões de uso que possam indicar desperdícios ou necessidade de manutenção.
 
-## Visualização e Feedback ao Usuário:
+## Visualização e Feedback ao Usuário
 Desenvolver um dashboard interativo que permita aos moradores visualizar o consumo de energia em tempo real, com gráficos e alertas sobre áreas de alto consumo e sugestões de economia.
 
-## Estimativa de Custos:
+## Estimativa de Custos
 Calcular e exibir a estimativa do valor da conta de luz com base no consumo atual, ajudando os moradores a entenderem o impacto financeiro do uso de energia.
 
-## Recomendações de Manutenção:
+## Recomendações de Manutenção
 Fornecer recomendações específicas sobre onde realizar manutenção ou ajustes para reduzir o consumo de energia, baseadas na análise dos dados coletados.
 
-## Integração de Tecnologias:
+## Integração de Tecnologias
 Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Python para a coleta e análise de dados, garantindo uma comunicação eficiente entre os componentes do sistema.
 
 # Estrutura do Projeto
 
-## Mapeamento do Apartamento:
-## Frontend: 
+## Mapeamento do Apartamento
+## Frontend
 Use uma biblioteca de visualização como o Blazor no .NET para criar a interface do usuário. Você pode desenhar o mapa do apartamento e usar cores para indicar o consumo de energia.
 
-## Backend: 
+## Backend
 Utilize ASP.NET Core para gerenciar a lógica do servidor e a comunicação com o banco de dados.
 Monitoramento de Energia:
 
-## Sensores: 
+## Sensores
 Instale sensores de consumo de energia em diferentes pontos do apartamento. Esses sensores podem enviar dados em tempo real para o servidor.
 
-## Coleta de Dados: 
+## Coleta de Dados
 Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados.
 
-## Análise de Dados e IA:
+## Análise de Dados e IA
 Machine Learning: Utilize ML.NET para criar modelos de machine learning que possam prever o consumo de energia e identificar padrões. Você pode treinar modelos para detectar anomalias e sugerir manutenção.
 
 Integração com Python: Para tarefas mais complexas de IA, como redes neurais, você pode usar bibliotecas Python como TensorFlow ou PyTorch e integrar os resultados no seu aplicativo .NET.
 
-## Visualização e Conscientização:
+## Visualização e Conscientização
 Dashboard: Crie um dashboard interativo no Blazor que mostre o consumo de energia em tempo real. Use gráficos e cores para indicar áreas de alto consumo.
 Alertas e Recomendações: Baseado nos dados analisados, envie alertas para os moradores sobre áreas que precisam de manutenção ou onde podem economizar energia.
 
