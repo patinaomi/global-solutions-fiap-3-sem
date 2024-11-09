@@ -26,6 +26,12 @@ Em construção
 
 Criar uma solução que traga benefícios voltado ao meio ambiente, com foco em energia limpa.
 
+## Nossa essência
+**Foco**
+Servir, cuidar e economizar. 
+
+Automatizamos sua residência para garantir eficiência, segurança e economia. Com nosso sistema, você identifica os pontos críticos de manutenção e consumo, economiza energia e cuida do meio ambiente. Tudo isso enquanto cuidamos da sua casa e da sua tranquilidade financeira, avisando você sobre qualquer necessidade de reparo ou mudança nos custos. Assim, você sabe exatamente onde está economizando e mantém o controle da sua conta de luz e dos reparos futuros, sem preocupações.
+
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## 🚩 Solução Apresentada
