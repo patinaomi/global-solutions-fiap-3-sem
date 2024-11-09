@@ -60,13 +60,15 @@ Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Pyt
 # Estrutura do Projeto
 
 ## Mapeamento do Apartamento:
+## Frontend: 
+Use uma biblioteca de visualização como o Blazor no .NET para criar a interface do usuário. Você pode desenhar o mapa do apartamento e usar cores para indicar o consumo de energia.
 
-## Frontend: Use uma biblioteca de visualização como o Blazor no .NET para criar a interface do usuário. Você pode desenhar o mapa do apartamento e usar cores para indicar o consumo de energia.
-
-## Backend: Utilize ASP.NET Core para gerenciar a lógica do servidor e a comunicação com o banco de dados.
+## Backend: 
+Utilize ASP.NET Core para gerenciar a lógica do servidor e a comunicação com o banco de dados.
 Monitoramento de Energia:
 
-## ensores: Instale sensores de consumo de energia em diferentes pontos do apartamento. Esses sensores podem enviar dados em tempo real para o servidor.
+## Sensores: 
+Instale sensores de consumo de energia em diferentes pontos do apartamento. Esses sensores podem enviar dados em tempo real para o servidor.
 
 ## Coleta de Dados: Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados.
 
