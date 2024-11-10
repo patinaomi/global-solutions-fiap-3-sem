@@ -802,3 +802,139 @@ END;
 
 select * from T_Orcamento;
 
+-- Tabela Formulário Mobile
+
+CREATE OR REPLACE PROCEDURE INSERIR_FORMULARIO(
+    p_nome IN VARCHAR2,
+    p_sobrenome IN VARCHAR2,
+    p_telefone IN VARCHAR2,
+    p_email IN VARCHAR2,
+    p_mensagem IN VARCHAR2
+)
+IS
+BEGIN
+    INSERT INTO T_Formulario (nome, sobrenome, telefone, email, mensagem)
+    VALUES (p_nome, p_sobrenome, p_telefone, p_email, p_mensagem);
+
+    COMMIT;
+END;
+
+-- Inserir dados Formulário Mobile
+
+BEGIN
+
+    INSERIR_FORMULARIO('João', 'Silva', '11999999999', 'joao.silva@gmail.com', 'Gostaria de saber mais sobre os serviços.');
+    INSERIR_FORMULARIO('Maria', 'Santos', '11888888888', 'maria.santos@gmail.com', 'Como posso agendar uma visita?');
+    INSERIR_FORMULARIO('Carlos', 'Oliveira', '11777777777', 'carlos.oliveira@gmail.com', 'Por favor, envie um orçamento.');
+    INSERIR_FORMULARIO('Ana', 'Souza', '11666666666', 'ana.souza@gmail.com', 'Quais são as formas de pagamento?');
+    INSERIR_FORMULARIO('Paulo', 'Lima', '11555555555', 'paulo.lima@gmail.com', 'Vocês trabalham com manutenção?');
+    INSERIR_FORMULARIO('Fernanda', 'Almeida', '11444444444', 'fernanda.almeida@gmail.com', 'Gostaria de falar com um consultor.');
+    INSERIR_FORMULARIO('Rafael', 'Pereira', '11333333333', 'rafael.pereira@gmail.com', 'Qual o prazo para entrega?');
+    INSERIR_FORMULARIO('Bruna', 'Costa', '11222222222', 'bruna.costa@gmail.com', 'Por favor, envie um catálogo.');
+    INSERIR_FORMULARIO('Marcos', 'Nascimento', '11111111111', 'marcos.nascimento@gmail.com', 'Gostaria de tirar algumas dúvidas.');
+    INSERIR_FORMULARIO('Juliana', 'Vieira', '11000000000', 'juliana.vieira@gmail.com', 'Qual o valor mínimo para orçamento?');
+END;
+
+select * from T_Formulario;
+
+-- Tabela Consumo
+CREATE OR REPLACE PROCEDURE INSERIR_CONSUMO(
+    p_id_item_casa IN T_Consumo.id_item_casa%TYPE,
+    p_consumo IN T_Consumo.consumo%TYPE,
+    p_data_consumo IN T_Consumo.data_consumo%TYPE,
+    p_valor IN T_Consumo.valor%TYPE
+) 
+IS
+BEGIN
+    INSERT INTO T_Consumo (id_item_casa, consumo, data_consumo, valor)
+    VALUES (p_id_item_casa, p_consumo, p_data_consumo, p_valor);
+
+    COMMIT;
+END;
+
+-- Inserir dados Tabela Consumo
+
+BEGIN
+    INSERIR_CONSUMO(1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'), 50);
+    INSERIR_CONSUMO(2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'), 30);
+    INSERIR_CONSUMO(3, 4, TO_DATE('2024-11-03', 'YYYY-MM-DD'), 40);
+    INSERIR_CONSUMO(4, 2, TO_DATE('2024-11-04', 'YYYY-MM-DD'), 25);
+    INSERIR_CONSUMO(5, 7, TO_DATE('2024-11-05', 'YYYY-MM-DD'), 70);
+    INSERIR_CONSUMO(6, 1, TO_DATE('2024-11-06', 'YYYY-MM-DD'), 20);
+    INSERIR_CONSUMO(7, 3, TO_DATE('2024-11-07', 'YYYY-MM-DD'), 35);
+    INSERIR_CONSUMO(8, 6, TO_DATE('2024-11-08', 'YYYY-MM-DD'), 65);
+    INSERIR_CONSUMO(9, 2, TO_DATE('2024-11-09', 'YYYY-MM-DD'), 23);
+    INSERIR_CONSUMO(10, 4, TO_DATE('2024-11-10', 'YYYY-MM-DD'), 46);
+END;
+
+select * from T_Consumo;
+
+-- Tabela Recomendação
+
+CREATE OR REPLACE PROCEDURE INSERIR_RECOMENDACAO(
+    p_id_usuario IN T_Recomendacao.id_usuario%TYPE,
+    p_id_comodo IN T_Recomendacao.id_comodo%TYPE,
+    p_id_item_casa IN T_Recomendacao.id_item_casa%TYPE,
+    p_id_consumo IN T_Recomendacao.id_consumo%TYPE,
+    p_consumo IN T_Recomendacao.consumo%TYPE,
+    p_valor_previsto IN T_Recomendacao.valor_previsto%TYPE,
+    p_variacao_consumo IN T_Recomendacao.variacao_consumo%TYPE,
+    p_sugestao_melhoria IN T_Recomendacao.sugestao_melhoria%TYPE,
+    p_data_recomendacao IN T_Recomendacao.data_recomendacao%TYPE
+)
+IS
+BEGIN
+    INSERT INTO T_Recomendacao (
+        id_usuario, id_comodo, id_item_casa, id_consumo, consumo, valor_previsto, 
+        variacao_consumo, sugestao_melhoria, data_recomendacao
+    ) 
+    VALUES (
+        p_id_usuario, p_id_comodo, p_id_item_casa, p_id_consumo, p_consumo, 
+        p_valor_previsto, p_variacao_consumo, p_sugestao_melhoria, p_data_recomendacao
+    );
+
+    COMMIT;
+END;
+
+-- Inserir dados na tabela Recomendações
+
+BEGIN
+    INSERIR_RECOMENDACAO(1, 1, 1, 1, 5, 150, 2, 'Substituir por um modelo mais eficiente', TO_DATE('2024-11-01', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(2, 2, 2, 2, 4, 120, 1, 'Revisar o uso do item para economia', TO_DATE('2024-11-02', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(3, 3, 3, 3, 6, 200, 1, 'Melhorar a ventilação do ambiente', TO_DATE('2024-11-03', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(4, 4, 4, 4, 3, 80, 50, 'Desligar quando não estiver em uso', TO_DATE('2024-11-04', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(5, 5, 5, 5, 7, 300, 2, 'Trocar por LED', TO_DATE('2024-11-05', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(6, 6, 6, 6, 4, 110, 3, 'Isolar térmicamente o ambiente', TO_DATE('2024-11-06', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(7, 7, 7, 7, 5, 180, 9, 'Diminuir o uso no horário de pico', TO_DATE('2024-11-07', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(8, 8, 8, 8, 6, 220, 20, 'Substituir por item mais novo', TO_DATE('2024-11-08', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(9, 9, 9, 9, 4, 100, 40, 'Ajustar potência conforme necessário', TO_DATE('2024-11-09', 'YYYY-MM-DD'));
+    INSERIR_RECOMENDACAO(10, 10, 10, 10, 5, 140, 1, 'Realizar manutenção preventiva', TO_DATE('2024-11-10', 'YYYY-MM-DD'));
+END;
+
+select * from T_Recomendacao;
+
+-- Tabela Tipo de Notificação
+
+CREATE OR REPLACE PROCEDURE INSERIR_TIPO_NOTIFICACAO(
+    p_desc_tipo_notif IN T_Tipo_Notificacao.desc_tipo_notif%TYPE
+)
+IS
+BEGIN
+    INSERT INTO T_Tipo_Notificacao (desc_tipo_notif)
+    VALUES (p_desc_tipo_notif);
+
+    COMMIT;
+END;
+
+-- Inserir dados em Tipo de notificação
+
+BEGIN
+    INSERIR_TIPO_NOTIFICACAO('Email');
+    INSERIR_TIPO_NOTIFICACAO('SMS');
+    INSERIR_TIPO_NOTIFICACAO('App');
+    INSERIR_TIPO_NOTIFICACAO('WhatsApp');
+    INSERIR_TIPO_NOTIFICACAO('Ligação Telefônica');
+END;
+
+select * from T_Tipo_Notificacao;
+
