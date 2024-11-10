@@ -1,4 +1,5 @@
 SET SERVEROUTPUT ON;
+
 -- Nome dos Integrantes: 
 -- Claudio Silva Bispo RM553472
 -- Patricia Naomi Yamagishi RM552981
@@ -12,6 +13,7 @@ DROP TABLE T_Comodo CASCADE CONSTRAINTS;
 DROP TABLE T_Item_Casa CASCADE CONSTRAINTS;
 DROP TABLE T_Tipo_Dispositivo CASCADE CONSTRAINTS;
 DROP TABLE T_Tipo_Notificacao CASCADE CONSTRAINTS;
+DROP TABLE T_Notificacao CASCADE CONSTRAINTS;
 DROP TABLE T_Orcamento CASCADE CONSTRAINTS;
 DROP TABLE T_Consumo CASCADE CONSTRAINTS;
 DROP TABLE T_Recomendacao CASCADE CONSTRAINTS;
@@ -153,7 +155,7 @@ CREATE TABLE T_Notificacao (
     mensagem VARCHAR2(250),
     data_envio DATE,
 
-    CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
+    CONSTRAINT fk_id_usuario_notificacao FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
     CONSTRAINT fk_id_tipo_notificacao FOREIGN KEY (id_tipo_notificacao) REFERENCES T_Tipo_Notificacao(id_tipo_notificacao)
 );
 
@@ -215,4 +217,6 @@ CREATE TABLE T_Feedback (
     CONSTRAINT fk_id_usuario_feedback FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
     CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES T_Recomendacao(id_recomendacao)
 );
+
+
 
