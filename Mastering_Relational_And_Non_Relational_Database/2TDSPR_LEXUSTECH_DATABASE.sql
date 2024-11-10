@@ -938,3 +938,32 @@ END;
 
 select * from T_Tipo_Notificacao;
 
+-- Tabela Notificação
+
+CREATE OR REPLACE PROCEDURE INSERIR_NOTIFICACAO(
+    p_id_usuario IN T_Notificacao.id_usuario%TYPE,
+    p_id_tipo_notificacao IN T_Notificacao.id_tipo_notificacao%TYPE,
+    p_mensagem IN T_Notificacao.mensagem%TYPE,
+    p_data_envio IN T_Notificacao.data_envio%TYPE
+)
+IS
+BEGIN
+    INSERT INTO T_Notificacao (id_usuario, id_tipo_notificacao, mensagem, data_envio)
+    VALUES (p_id_usuario, p_id_tipo_notificacao, p_mensagem, p_data_envio);
+
+    COMMIT;
+END;
+
+-- Inserir dados na tabela Notificação
+
+BEGIN
+    INSERIR_NOTIFICACAO(1, 1, 'Sua conta foi atualizada.', SYSDATE);
+    INSERIR_NOTIFICACAO(2, 2, 'Seu consumo de energia está elevado.', SYSDATE);
+    INSERIR_NOTIFICACAO(3, 3, 'Você tem uma nova mensagem.', SYSDATE);
+    INSERIR_NOTIFICACAO(6, 4, 'Parabéns, você melhorou está semana, seu consumo diminuiu.', SYSDATE);
+    INSERIR_NOTIFICACAO(7, 5, 'Nova atualização disponível.', SYSDATE);
+    INSERIR_NOTIFICACAO(8, 2, 'Seus dados precisam ser atualizados.', SYSDATE);
+    INSERIR_NOTIFICACAO(9, 4, 'Novo evento na sua área.', SYSDATE);
+    INSERIR_NOTIFICACAO(10, 3, 'Atividade suspeita detectada, hora de realizar manutenção.', SYSDATE);
+END;
+
