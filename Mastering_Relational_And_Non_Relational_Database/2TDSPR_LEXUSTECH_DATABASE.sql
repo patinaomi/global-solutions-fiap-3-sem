@@ -186,7 +186,6 @@ CREATE TABLE T_Historico_Alerta (
 );
 
 -- Tabela Tipo Evento
-
 CREATE TABLE T_Tipo_Evento (
     id_tipo_evento INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     descricao VARCHAR2(255)
@@ -207,7 +206,6 @@ CREATE TABLE T_Evento_Manutencao (
 );
 
 -- Tabela de Feedback das recomendações
-
 -- Tabela Feedback
 CREATE TABLE T_Feedback (
     id_feedback INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
@@ -586,7 +584,7 @@ SELECT * FROM T_Estado;
 
 -- 1. Função para validar e-mail
 
-CREATE OR REPLACE FUNCTION validar_email(p_email VARCHAR2) RETURN VARCHAR2 IS
+CREATE OR REPLACE FUNCTION VALIDAR_EMAIL(p_email VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
     IF p_email NOT LIKE '%@%' THEN
         RETURN 'Inválido';
@@ -599,7 +597,7 @@ END validar_email;
 
 
 -- 2. Função para validar telefone
-CREATE OR REPLACE FUNCTION validar_telefone(p_telefone VARCHAR2) RETURN VARCHAR2 IS
+CREATE OR REPLACE FUNCTION VALIDAR_TELEFONE(p_telefone VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
     IF LENGTH(p_telefone) < 10 THEN
         RETURN 'Inválido';
@@ -611,7 +609,7 @@ END validar_telefone;
 
 -- 3. Função para validar nome
 
-CREATE OR REPLACE FUNCTION validar_nome(p_nome VARCHAR2) RETURN VARCHAR2 IS
+CREATE OR REPLACE FUNCTION VALIDAR_NOME(p_nome VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
     IF REGEXP_LIKE(p_nome, '[0-9]') THEN
         RETURN 'Inválido';
@@ -653,4 +651,154 @@ BEGIN
     END LOOP;
 END;
 
+
+// Login
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE PROCEDURE INSERIR_LOGIN(p_id_usuario INTEGER) AS
+BEGIN
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, p_id_usuario);
+    COMMIT;
+END;
+
+BEGIN
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 1); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 2); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 3); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 4); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 5); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 6); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 7); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 8); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 9); 
+    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 10); 
+    COMMIT;
+END;
+
+
+select * from T_Login;
+
+--  Comodo
+CREATE OR REPLACE PROCEDURE INSERIR_COMODO(
+    p_id_usuario  IN INTEGER,
+    p_descricao   IN VARCHAR2
+)
+IS
+BEGIN
+    INSERT INTO T_Comodo (id_usuario, descricao)
+    VALUES (p_id_usuario, p_descricao);
+
+    COMMIT;
+END;
+
+-- Inserir dados
+
+BEGIN
+    INSERIR_COMODO(1, 'Sala');
+    INSERIR_COMODO(2, 'Quarto');
+    INSERIR_COMODO(3, 'Cozinha');
+    INSERIR_COMODO(4, 'Banheiro');
+    INSERIR_COMODO(5, 'Escritório');
+    INSERIR_COMODO(6, 'Garagem');
+    INSERIR_COMODO(7, 'Sala de Estar');
+    INSERIR_COMODO(8, 'Varanda');
+    INSERIR_COMODO(9, 'Lavanderia');
+    INSERIR_COMODO(10, 'Closet');
+END;
+
+select * from T_Comodo;
+
+
+-- Tipo de dispositivo
+CREATE OR REPLACE PROCEDURE INSERIR_TIPO_DISPOSITIVO(
+    p_descricao IN VARCHAR2
+)
+IS
+BEGIN
+    INSERT INTO T_Tipo_Dispositivo (descricao)
+    VALUES (p_descricao);
+
+    COMMIT;
+END;
+
+-- Inserindo tipos de dispositivo
+BEGIN
+    INSERIR_TIPO_DISPOSITIVO('Iluminacao');
+    INSERIR_TIPO_DISPOSITIVO('Seguranca');
+    INSERIR_TIPO_DISPOSITIVO('Eletrodomestico');
+    INSERIR_TIPO_DISPOSITIVO('Desktop');
+    INSERIR_TIPO_DISPOSITIVO('Smartwatch');
+    INSERIR_TIPO_DISPOSITIVO('Smart TV');
+    INSERIR_TIPO_DISPOSITIVO('Console de Jogos');
+    INSERIR_TIPO_DISPOSITIVO('Câmera de Segurança');
+    INSERIR_TIPO_DISPOSITIVO('Roteador');
+    INSERIR_TIPO_DISPOSITIVO('Assistente Virtual');
+END;
+
+select * from T_Tipo_Dispositivo;
+
+-- Itens de cada Comodo
+
+CREATE OR REPLACE PROCEDURE INSERIR_ITEM_CASA(
+    p_id_comodo IN INTEGER,
+    p_id_tipo_dispositivo IN INTEGER,
+    p_descricao IN VARCHAR2
+)
+IS
+BEGIN
+    INSERT INTO T_Item_Casa (id_comodo, id_tipo_dispositivo, descricao)
+    VALUES (p_id_comodo, p_id_tipo_dispositivo, p_descricao);
+
+    COMMIT;
+END;
+
+-- Inserir daddos de itens de cada comodo
+
+BEGIN
+    -- Inserindo itens na casa
+    INSERIR_ITEM_CASA(1, 1, 'Smartphone no quarto');
+    INSERIR_ITEM_CASA(2, 2, 'Tablet na sala');
+    INSERIR_ITEM_CASA(3, 3, 'Laptop no escritório');
+    INSERIR_ITEM_CASA(1, 4, 'Desktop no quarto');
+    INSERIR_ITEM_CASA(4, 5, 'Smartwatch no corredor');
+    INSERIR_ITEM_CASA(5, 6, 'Smart TV na sala');
+    INSERIR_ITEM_CASA(2, 7, 'Console de jogos na sala');
+    INSERIR_ITEM_CASA(3, 8, 'Câmera de segurança na garagem');
+    INSERIR_ITEM_CASA(4, 9, 'Roteador no escritório');
+    INSERIR_ITEM_CASA(5, 10, 'Assistente virtual na cozinha');
+END;
+
+select * from T_Item_Casa;
+
+-- Tabela Orçamento
+
+CREATE OR REPLACE PROCEDURE INSERIR_ORCAMENTO(
+    p_id_usuario IN INTEGER,
+    p_data_hora_visita IN TIMESTAMP,
+    p_valor_orcamento IN DECIMAL
+)
+IS
+BEGIN
+    INSERT INTO T_Orcamento (id_usuario, data_hora_visita, valor_orcamento)
+    VALUES (p_id_usuario, p_data_hora_visita, p_valor_orcamento);
+
+    COMMIT;
+END;
+
+-- Inserir dados Orçamento
+
+BEGIN
+    INSERIR_ORCAMENTO(1, TO_TIMESTAMP('2023-11-10 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1500);
+    INSERIR_ORCAMENTO(2, TO_TIMESTAMP('2023-11-12 11:30:00', 'YYYY-MM-DD HH24:MI:SS'), 2500);
+    INSERIR_ORCAMENTO(3, TO_TIMESTAMP('2023-11-13 09:45:00', 'YYYY-MM-DD HH24:MI:SS'), 3200);
+    INSERIR_ORCAMENTO(4, TO_TIMESTAMP('2023-11-14 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 450);
+    INSERIR_ORCAMENTO(5, TO_TIMESTAMP('2023-11-15 16:15:00', 'YYYY-MM-DD HH24:MI:SS'), 785);
+    INSERIR_ORCAMENTO(1, TO_TIMESTAMP('2023-11-16 13:45:00', 'YYYY-MM-DD HH24:MI:SS'), 970);
+    INSERIR_ORCAMENTO(2, TO_TIMESTAMP('2023-11-17 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), 150);
+    INSERIR_ORCAMENTO(3, TO_TIMESTAMP('2023-11-18 17:30:00', 'YYYY-MM-DD HH24:MI:SS'), 120);
+    INSERIR_ORCAMENTO(4, TO_TIMESTAMP('2023-11-19 10:30:00', 'YYYY-MM-DD HH24:MI:SS'), 300);
+    INSERIR_ORCAMENTO(5, TO_TIMESTAMP('2023-11-20 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), 480);
+END;
+
+select * from T_Orcamento;
 
