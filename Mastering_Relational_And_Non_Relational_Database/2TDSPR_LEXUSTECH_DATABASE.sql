@@ -19,6 +19,7 @@ DROP TABLE T_Configuracao_Usuario CASCADE CONSTRAINT;
 DROP TABLE T_Historico_Alerta CASCADE CONSTRAINT;
 DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINT;
 DROP TABLE T_Formulario CASCADE CONSTRAINT;
+DROP TABLE T_Feedback CASCADE CONSTRAINTS; -- nova tabela
 
 -- Tabela Estado
 CREATE TABLE T_Estado (
@@ -111,9 +112,9 @@ CREATE TABLE T_Consumo (
     CONSTRAINT fk_item_casa_consumo FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
 );
 
--- Tabela Modelo Treinado
-CREATE TABLE T_Modelo_Treinado (
-    id_modelo INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+-- Tabela Modelo Treinado -- Na verdade vai ser a recomendação aqui.
+CREATE TABLE T_Recomendacao (
+    id_recomendacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     id_item_casa INTEGER,
     amperagem DECIMAL(10, 2), -- amperagem do modelo treinado
     valor_previsto DECIMAL(10, 2),
@@ -162,4 +163,18 @@ CREATE TABLE T_Evento_Manutencao (
     id_tipo_evento INTEGER, -- Chave estrangeira para Tipo de Evento, se necessário
     CONSTRAINT fk_usuario_manutencao FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
     CONSTRAINT fk_item_casa_manutencao FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
+);
+
+-- Tabela de Feedback das recomendações
+
+-- Tabela Feedback
+CREATE TABLE T_Feedback (
+    id_feedback INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+    id_cliente INTEGER NOT NULL,
+    id_recomendacao INTEGER NOT NULL, -- sobre os alertas enviados para cada cliente sobre o aumento do consumo. 
+    avaliacao DECIMAL(2, 1) NOT NULL,
+    comentario VARCHAR2(250), -- quero saber se a sugestão ou alerta foi útil. Também avaliar se estamos conseguindo saber o valor da conta de luz.
+    
+    CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES Recomendacao(id_recomendacao),
 );
