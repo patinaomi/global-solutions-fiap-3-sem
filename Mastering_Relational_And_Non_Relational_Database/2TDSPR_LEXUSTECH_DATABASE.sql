@@ -4,21 +4,22 @@ SET SERVEROUTPUT ON;
 -- Patricia Naomi Yamagishi RM552981
 
 -- Deletar tabelas caso já existam
-DROP TABLE T_Estado CASCADE CONSTRAINT;
-DROP TABLE T_Endereco CASCADE CONSTRAINT;
-DROP TABLE T_Usuario CASCADE CONSTRAINT;
-DROP TABLE T_Login CASCADE CONSTRAINT;
-DROP TABLE T_Comodo CASCADE CONSTRAINT;
-DROP TABLE T_Item_Casa CASCADE CONSTRAINT;
-DROP TABLE T_Tipo_Dispositivo CASCADE CONSTRAINT;
-DROP TABLE T_Tipo_Notificacao CASCADE CONSTRAINT;
-DROP TABLE T_Orcamento CASCADE CONSTRAINT;
-DROP TABLE T_Consumo CASCADE CONSTRAINT;
-DROP TABLE T_Modelo_Treinado CASCADE CONSTRAINT;
-DROP TABLE T_Configuracao_Usuario CASCADE CONSTRAINT;
-DROP TABLE T_Historico_Alerta CASCADE CONSTRAINT;
-DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINT;
-DROP TABLE T_Formulario CASCADE CONSTRAINT;
+DROP TABLE T_Estado CASCADE CONSTRAINTS;
+DROP TABLE T_Endereco CASCADE CONSTRAINTS;
+DROP TABLE T_Usuario CASCADE CONSTRAINTS;
+DROP TABLE T_Login CASCADE CONSTRAINTS;
+DROP TABLE T_Comodo CASCADE CONSTRAINTS;
+DROP TABLE T_Item_Casa CASCADE CONSTRAINTS;
+DROP TABLE T_Tipo_Dispositivo CASCADE CONSTRAINTS;
+DROP TABLE T_Tipo_Notificacao CASCADE CONSTRAINTS;
+DROP TABLE T_Orcamento CASCADE CONSTRAINTS;
+DROP TABLE T_Consumo CASCADE CONSTRAINTS;
+DROP TABLE T_Recomendacao CASCADE CONSTRAINTS;
+DROP TABLE T_Configuracao_Usuario CASCADE CONSTRAINTS;
+DROP TABLE T_Historico_Alerta CASCADE CONSTRAINTS;
+DROP TABLE T_Tipo_Evento CASCADE CONSTRAINTS;
+DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINTS;
+DROP TABLE T_Formulario CASCADE CONSTRAINTS;
 DROP TABLE T_Feedback CASCADE CONSTRAINTS; -- nova tabela
 
 -- Tabela Estado
@@ -37,6 +38,7 @@ CREATE TABLE T_Endereco (
     cidade VARCHAR2(50) NOT NULL,
     cep VARCHAR2(10) NOT NULL,
     id_estado INTEGER NOT NULL,
+    
     CONSTRAINT fk_estado FOREIGN KEY (id_estado) REFERENCES T_Estado(id_estado)
 );
 
@@ -49,7 +51,8 @@ CREATE TABLE T_Usuario (
     email VARCHAR2(100) NOT NULL,
     senha VARCHAR2(100) NOT NULL,
     id_endereco INTEGER NOT NULL,
-    CONSTRAINT fk_endereco FOREIGN KEY (id_endereco) REFERENCES T_Endereco(id_endereco)
+    
+    CONSTRAINT fk_endereco_global FOREIGN KEY (id_endereco) REFERENCES T_Endereco(id_endereco)
 );
 
 -- Tabela Login
@@ -65,6 +68,7 @@ CREATE TABLE T_Comodo (
     id_comodo INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     id_usuario INTEGER,
     descricao VARCHAR2(50) NOT NULL,
+    
     CONSTRAINT fk_usuario_comodo FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario)
 );
 
@@ -80,6 +84,7 @@ CREATE TABLE T_Item_Casa (
     id_comodo INTEGER NOT NULL,
     id_tipo_dispositivo INTEGER NOT NULL,
     descricao VARCHAR2(50) NOT NULL,
+    
     CONSTRAINT fk_comodo_item FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
     CONSTRAINT fk_tipo_dispositivo FOREIGN KEY (id_tipo_dispositivo) REFERENCES T_Tipo_Dispositivo(id_tipo_dispositivo)
 );
@@ -90,6 +95,7 @@ CREATE TABLE T_Orcamento (
     id_usuario INTEGER NOT NULL,
     data_hora_visita TIMESTAMP NOT NULL,
     valor_orcamento DECIMAL(10, 2) NOT NULL,
+    
     CONSTRAINT fk_usuario_orcamento FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario)
 );
 
@@ -107,26 +113,48 @@ CREATE TABLE T_Formulario (
 CREATE TABLE T_Consumo (
     id_consumo INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     id_item_casa INTEGER,
-    amperagem DECIMAL(10, 2), -- consumo diário do item
-    data DATE,
-    CONSTRAINT fk_item_casa_consumo FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
+    consumo DECIMAL(10, 2), -- consumo diário do item
+    data_consumo DATE,
+    valor INTEGER,
+    
+    CONSTRAINT fk_item_casa FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
 );
 
--- Tabela Modelo Treinado -- Na verdade vai ser a recomendação aqui.
+-- Tabela Recomendacão
 CREATE TABLE T_Recomendacao (
     id_recomendacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+    id_usuario INTEGER NOT NULL,
+    id_comodo INTEGER NOT NULL,
     id_item_casa INTEGER,
-    amperagem DECIMAL(10, 2), -- amperagem do modelo treinado
+    id_consumo INTEGER,
+    consumo DECIMAL(10, 2), -- amperagem do modelo treinado
     valor_previsto DECIMAL(10, 2),
     variacao_consumo DECIMAL(10, 2),
     sugestao_melhoria VARCHAR2(255),
-    CONSTRAINT fk_item_casa_modelo FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
+    data_recomendacao DATE,
+    
+    CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
+    CONSTRAINT fk_id_comodo FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
+    CONSTRAINT id_item_casa FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa),
+    CONSTRAINT fk_id_consumo FOREIGN KEY (id_consumo) REFERENCES T_Consumo(id_consumo)
 );
 
 -- Tabela Tipo Notificação
 CREATE TABLE T_Tipo_Notificacao (
     id_tipo_notificacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     desc_tipo_notif VARCHAR2(50) -- Preferências de notificação (ex.: email, app, sms)
+);
+
+-- Tabela Notificações
+CREATE TABLE T_Notificacao (
+    id_notificacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+    id_usuario INTEGER NOT NULL,
+    id_tipo_notificacao INTEGER NOT NULL,
+    mensagem VARCHAR2(250),
+    data_envio DATE,
+
+    CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
+    CONSTRAINT fk_id_tipo_notificacao FOREIGN KEY (id_tipo_notificacao) REFERENCES T_Tipo_Notificacao(id_tipo_notificacao)
 );
 
 -- Tabela Configuração Usuario
@@ -153,6 +181,13 @@ CREATE TABLE T_Historico_Alerta (
     CONSTRAINT fk_item_casa_alerta FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
 );
 
+-- Tabela Tipo Evento
+
+CREATE TABLE T_Tipo_Evento (
+    id_tipo_evento INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+    descricao VARCHAR2(255)
+);
+
 -- Tabela Evento Manutenção
 CREATE TABLE T_Evento_Manutencao (
     id_evento_manutencao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
@@ -160,9 +195,11 @@ CREATE TABLE T_Evento_Manutencao (
     id_item_casa INTEGER,
     data_hora_evento TIMESTAMP,
     descricao VARCHAR2(255),
-    id_tipo_evento INTEGER, -- Chave estrangeira para Tipo de Evento, se necessário
+    id_tipo_evento INTEGER, -- Manutenção periodica, eventual, emergencial
+    
     CONSTRAINT fk_usuario_manutencao FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_item_casa_manutencao FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
+    CONSTRAINT fk_item_casa_manutencao FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa),
+    CONSTRAINT fk_id_tipo_evento FOREIGN KEY (id_tipo_evento) REFERENCES T_Tipo_Evento(id_tipo_evento)
 );
 
 -- Tabela de Feedback das recomendações
@@ -175,6 +212,7 @@ CREATE TABLE T_Feedback (
     avaliacao DECIMAL(2, 1) NOT NULL,
     comentario VARCHAR2(250), -- quero saber se a sugestão ou alerta foi útil. Também avaliar se estamos conseguindo saber o valor da conta de luz.
     
-    CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
-    CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES Recomendacao(id_recomendacao),
+    CONSTRAINT fk_id_usuario_feedback FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
+    CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES T_Recomendacao(id_recomendacao)
 );
+
