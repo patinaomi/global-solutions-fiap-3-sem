@@ -170,7 +170,7 @@ CREATE TABLE T_Evento_Manutencao (
 -- Tabela Feedback
 CREATE TABLE T_Feedback (
     id_feedback INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_cliente INTEGER NOT NULL,
+    id_usuario INTEGER NOT NULL,
     id_recomendacao INTEGER NOT NULL, -- sobre os alertas enviados para cada cliente sobre o aumento do consumo. 
     avaliacao DECIMAL(2, 1) NOT NULL,
     comentario VARCHAR2(250), -- quero saber se a sugestão ou alerta foi útil. Também avaliar se estamos conseguindo saber o valor da conta de luz.
