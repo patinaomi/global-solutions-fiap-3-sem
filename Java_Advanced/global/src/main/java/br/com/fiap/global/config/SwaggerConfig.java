@@ -1,2 +1,4 @@
-package br.com.fiap.global.config;public class SwaggerConfig {
+package br.com.fiap.global.config;
+
+public class SwaggerConfig {
 }
