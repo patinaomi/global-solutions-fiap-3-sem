@@ -26,6 +26,8 @@ DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINTS;
 DROP TABLE T_Formulario CASCADE CONSTRAINTS;
 DROP TABLE T_Feedback CASCADE CONSTRAINTS; -- nova tabela
 
+// CRIAÇÃO DAS TABELAS
+
 -- Tabela Estado
 CREATE TABLE T_Estado (
     id_estado INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
@@ -218,7 +220,9 @@ CREATE TABLE T_Feedback (
     CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES T_Recomendacao(id_recomendacao)
 );
 
--- 2. Procedures e Funções
+// 2. PROCEDURES E FUNÇÕES
+
+
 SET SERVEROUTPUT ON;
 
 -- Criar procedures para realizar os inserts no banco de dados.
@@ -967,3 +971,197 @@ BEGIN
     INSERIR_NOTIFICACAO(10, 3, 'Atividade suspeita detectada, hora de realizar manutenção.', SYSDATE);
 END;
 
+select * from T_Notificacao;
+
+-- Tabela configuraçao do usuário
+
+CREATE OR REPLACE PROCEDURE INSERIR_CONFIGURACAO_USUARIO(
+    p_id_usuario IN T_Configuracao_Usuario.id_usuario%TYPE,
+    p_id_tipo_notificacao IN T_Configuracao_Usuario.id_tipo_notificacao%TYPE,
+    p_limite_consumo IN T_Configuracao_Usuario.limite_consumo%TYPE
+)
+IS
+BEGIN
+    INSERT INTO T_Configuracao_Usuario (id_usuario, id_tipo_notificacao, limite_consumo)
+    VALUES (p_id_usuario, p_id_tipo_notificacao, p_limite_consumo);
+
+    COMMIT;
+END;
+
+-- Inserir dados na tabela de configuração do usuário
+
+BEGIN
+    INSERIR_CONFIGURACAO_USUARIO(1, 1, 100);
+    INSERIR_CONFIGURACAO_USUARIO(2, 2, 150);
+    INSERIR_CONFIGURACAO_USUARIO(3, 3, 200);
+    INSERIR_CONFIGURACAO_USUARIO(4, 4, 120);
+    INSERIR_CONFIGURACAO_USUARIO(5, 5, 80);
+    INSERIR_CONFIGURACAO_USUARIO(6, 1, 250);
+    INSERIR_CONFIGURACAO_USUARIO(7, 1, 300);
+    INSERIR_CONFIGURACAO_USUARIO(8, 2, 50);
+    INSERIR_CONFIGURACAO_USUARIO(9, 3, 200);
+    INSERIR_CONFIGURACAO_USUARIO(10, 4, 120);
+END;
+
+select * from T_Configuracao_Usuario;
+
+-- Tabela Alertas
+
+CREATE OR REPLACE PROCEDURE inserir_historico_alerta (
+    p_id_usuario IN INTEGER,
+    p_id_comodo IN INTEGER,
+    p_id_item_casa IN INTEGER,
+    p_data_hora IN TIMESTAMP,
+    p_descricao IN VARCHAR2,
+    p_tipo IN VARCHAR2
+) AS
+BEGIN
+    INSERT INTO T_Historico_Alerta (
+        id_usuario, 
+        id_comodo, 
+        id_item_casa, 
+        data_hora, 
+        descricao, 
+        tipo
+    ) 
+    VALUES (
+        p_id_usuario, 
+        p_id_comodo, 
+        p_id_item_casa, 
+        p_data_hora, 
+        p_descricao, 
+        p_tipo
+    );
+    
+    COMMIT;
+END;
+
+-- Inserir dados para alerta
+
+BEGIN
+    inserir_historico_alerta(1, 1, 1, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
+    inserir_historico_alerta(2, 1, 2, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
+    inserir_historico_alerta(3, 2, 3, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
+    inserir_historico_alerta(4, 3, 4, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
+    inserir_historico_alerta(5, 4, 5, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
+    inserir_historico_alerta(6, 5, 6, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
+    inserir_historico_alerta(7, 6, 7, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
+    inserir_historico_alerta(8, 7, 8, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
+    inserir_historico_alerta(9, 8, 9, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
+    inserir_historico_alerta(10, 9, 10, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
+END;
+
+select * from T_Historico_Alerta;
+
+-- Tabela Tipo Evento
+
+CREATE OR REPLACE PROCEDURE inserir_tipo_evento (
+    p_descricao IN VARCHAR2
+) AS
+BEGIN
+    INSERT INTO T_Tipo_Evento (descricao) 
+    VALUES (p_descricao);
+    
+    COMMIT;
+END;
+
+-- Inserir dados
+
+BEGIN
+    inserir_tipo_evento('Evento de Consumo Alto');
+    inserir_tipo_evento('Evento de Consumo Moderado');
+    inserir_tipo_evento('Evento de Consumo Baixo');
+    inserir_tipo_evento('Evento de Manutenção');
+    inserir_tipo_evento('Evento de Emergência');
+    inserir_tipo_evento('Evento de Atualização de Sistema');
+    inserir_tipo_evento('Evento de Desempenho');
+    inserir_tipo_evento('Evento de Alerta de Temperatura');
+    inserir_tipo_evento('Evento de Configuração');
+    inserir_tipo_evento('Evento de Falha no Equipamento');
+END;
+
+select * from T_Tipo_Evento;
+
+-- Tabela Manutenção
+
+CREATE OR REPLACE PROCEDURE INSERIR_EVENTO_MANUTENCAO (
+    p_id_usuario          IN INTEGER,
+    p_id_item_casa        IN INTEGER,
+    p_data_hora_evento    IN TIMESTAMP,
+    p_descricao           IN VARCHAR2,
+    p_id_tipo_evento      IN INTEGER
+) IS
+BEGIN
+    -- Inserir o evento de manutenção
+    INSERT INTO T_Evento_Manutencao (id_usuario, id_item_casa, data_hora_evento, descricao, id_tipo_evento)
+    VALUES (p_id_usuario, p_id_item_casa, p_data_hora_evento, p_descricao, p_id_tipo_evento);
+    
+    -- Commit para garantir que a inserção seja realizada
+    COMMIT;
+    
+    -- Mensagem de sucesso
+    DBMS_OUTPUT.PUT_LINE('Evento de manutenção inserido com sucesso!');
+EXCEPTION
+    -- Caso ocorra algum erro, a transação será revertida
+    WHEN OTHERS THEN
+        ROLLBACK;
+        DBMS_OUTPUT.PUT_LINE('Erro ao inserir evento de manutenção: ' || SQLERRM);
+END INSERIR_EVENTO_MANUTENCAO;
+
+-- Inserir dados
+
+BEGIN
+    INSERIR_EVENTO_MANUTENCAO(1, 2, TO_TIMESTAMP('2024-11-10 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Manutenção preventiva no item A', 1);
+    INSERIR_EVENTO_MANUTENCAO(2, 3, TO_TIMESTAMP('2024-11-11 09:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Troca de filtro do item B', 2);
+    INSERIR_EVENTO_MANUTENCAO(3, 4, TO_TIMESTAMP('2024-11-12 10:45:00', 'YYYY-MM-DD HH24:MI:SS'), 'Verificação de sistema do item C', 3);
+    INSERIR_EVENTO_MANUTENCAO(4, 5, TO_TIMESTAMP('2024-11-13 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Reparo urgente no item D', 1);
+    INSERIR_EVENTO_MANUTENCAO(5, 6, TO_TIMESTAMP('2024-11-14 15:15:00', 'YYYY-MM-DD HH24:MI:SS'), 'Manutenção preventiva no item E', 2);
+    INSERIR_EVENTO_MANUTENCAO(6, 7, TO_TIMESTAMP('2024-11-15 16:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Troca de peças no item F', 3);
+    INSERIR_EVENTO_MANUTENCAO(7, 8, TO_TIMESTAMP('2024-11-16 17:45:00', 'YYYY-MM-DD HH24:MI:SS'), 'Limpeza do item G', 1);
+    INSERIR_EVENTO_MANUTENCAO(8, 9, TO_TIMESTAMP('2024-11-17 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Ajuste no sistema do item H', 2);
+    INSERIR_EVENTO_MANUTENCAO(9, 10, TO_TIMESTAMP('2024-11-18 19:15:00', 'YYYY-MM-DD HH24:MI:SS'), 'Reparo no motor do item I', 3);
+    INSERIR_EVENTO_MANUTENCAO(10, 11, TO_TIMESTAMP('2024-11-19 20:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Verificação final no item J', 1);
+END;
+
+select * from T_Evento_Manutencao;
+
+-- Tabela Feedback
+
+CREATE OR REPLACE PROCEDURE INSERIR_FEEDBACK(
+    p_id_usuario IN T_Feedback.id_usuario%TYPE,
+    p_id_recomendacao IN T_Feedback.id_recomendacao%TYPE,
+    p_avaliacao IN T_Feedback.avaliacao%TYPE,
+    p_comentario IN T_Feedback.comentario%TYPE
+) AS
+BEGIN
+    INSERT INTO T_Feedback (
+        id_usuario,
+        id_recomendacao,
+        avaliacao,
+        comentario
+    )
+    VALUES (
+        p_id_usuario,
+        p_id_recomendacao,
+        p_avaliacao,
+        p_comentario
+    );
+END INSERIR_FEEDBACK;
+
+-- Inserir dados
+
+BEGIN
+    -- Inserindo 10 registros na tabela T_Feedback
+    INSERIR_FEEDBACK(1, 1, 4, 'A recomendação foi muito útil, consegui reduzir meu consumo de energia.');
+    INSERIR_FEEDBACK(2, 2, 3, 'A sugestão foi razoável, mas não tive muito impacto na conta de luz.');
+    INSERIR_FEEDBACK(3, 3, 5, 'A recomendação foi excelente, consegui controlar o consumo e diminuir a conta.');
+    INSERIR_FEEDBACK(4, 4, 2, 'O alerta foi um pouco confuso, não consegui entender exatamente como reduzir o consumo.');
+    INSERIR_FEEDBACK(5, 5, 4, 'Boa sugestão, mas acredito que poderia ser mais detalhada.');
+    INSERIR_FEEDBACK(6, 6, 4, 'O alerta me ajudou bastante a ajustar minha rotina e reduzir o consumo.');
+    INSERIR_FEEDBACK(7, 7, 3, 'A recomendação teve algum efeito, mas a conta ainda está alta.');
+    INSERIR_FEEDBACK(8, 8, 4, 'A sugestão foi útil, mas ainda preciso entender melhor os detalhes.');
+    INSERIR_FEEDBACK(9, 9, 4, 'Excelente recomendação, a conta de energia caiu significativamente.');
+    INSERIR_FEEDBACK(10, 10, 3, 'A sugestão foi boa, mas acho que poderia ser mais personalizada.');
+END;
+
+select * from T_Feedback;
