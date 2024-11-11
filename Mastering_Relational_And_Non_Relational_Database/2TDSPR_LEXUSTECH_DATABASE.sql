@@ -24,7 +24,8 @@ DROP TABLE T_Historico_Alerta CASCADE CONSTRAINTS;
 DROP TABLE T_Tipo_Evento CASCADE CONSTRAINTS;
 DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINTS;
 DROP TABLE T_Formulario CASCADE CONSTRAINTS;
-DROP TABLE T_Feedback CASCADE CONSTRAINTS; -- nova tabela
+DROP TABLE T_Feedback CASCADE CONSTRAINTS;
+DROP TABLE T_Dados_Completos_Usuario CASCADE CONSTRAINTS;
 
 // CRIAÇÃO DAS TABELAS
 
@@ -1165,3 +1166,208 @@ BEGIN
 END;
 
 select * from T_Feedback;
+
+// Procedure para exportar dados como JSON
+
+-- 1. Criar uma tabela temporária com os dados completos do usuário
+
+CREATE TABLE T_Dados_Completos_Usuario AS
+SELECT 
+    u.id_usuario,
+    u.nome,
+    u.sobrenome,
+    u.telefone,
+    u.email,
+    e.logradouro,
+    e.numero,
+    e.complemento,
+    e.bairro,
+    e.cidade,
+    e.cep,
+    es.sigla AS estado,
+    o.id_orcamento,
+    o.data_hora_visita,
+    o.valor_orcamento,
+    c.id_comodo,
+    c.descricao AS comodo_descricao,
+    i.id_item_casa,
+    i.descricao AS item_casa_descricao,
+    td.descricao AS tipo_dispositivo_descricao,
+    co.consumo,
+    co.data_consumo,
+    co.valor,
+    -- Dados de Notificações
+    n.id_notificacao,
+    tn.desc_tipo_notif AS tipo_notificacao_desc,
+    n.mensagem AS notificacao_mensagem,
+    n.data_envio AS notificacao_data_envio,
+    -- Dados de Configurações do Usuário
+    cu.limite_consumo,
+    -- Dados de Histórico de Alertas
+    ha.id_alerta,
+    ha.descricao AS alerta_descricao,
+    ha.data_hora AS alerta_data,
+    ha.tipo AS alerta_tipo,
+    -- Dados de Feedbacks
+    f.id_feedback,
+    f.avaliacao AS feedback_avaliacao,
+    f.comentario AS feedback_comentario,
+    -- Dados de Eventos de Manutenção
+    em.id_evento_manutencao,
+    em.data_hora_evento AS manutencao_data_hora,
+    em.descricao AS manutencao_descricao,
+    te.descricao AS tipo_evento_descricao
+FROM T_Usuario u
+JOIN T_Endereco e ON u.id_endereco = e.id_endereco
+JOIN T_Estado es ON e.id_estado = es.id_estado
+LEFT JOIN T_Orcamento o ON u.id_usuario = o.id_usuario
+LEFT JOIN T_Comodo c ON u.id_usuario = c.id_usuario
+LEFT JOIN T_Item_Casa i ON c.id_comodo = i.id_comodo
+LEFT JOIN T_Tipo_Dispositivo td ON i.id_tipo_dispositivo = td.id_tipo_dispositivo
+LEFT JOIN T_Consumo co ON co.id_consumo = i.id_item_casa
+LEFT JOIN T_Notificacao n ON u.id_usuario = n.id_usuario
+LEFT JOIN T_Tipo_Notificacao tn ON n.id_tipo_notificacao = tn.id_tipo_notificacao
+LEFT JOIN T_Configuracao_Usuario cu ON u.id_usuario = cu.id_usuario
+LEFT JOIN T_Historico_Alerta ha ON u.id_usuario = ha.id_usuario
+LEFT JOIN T_Feedback f ON u.id_usuario = f.id_usuario
+LEFT JOIN T_Evento_Manutencao em ON u.id_usuario = em.id_usuario
+LEFT JOIN T_Tipo_Evento te ON em.id_tipo_evento = te.id_tipo_evento;
+
+
+select * from T_Dados_Completos_Usuario;
+
+-- 2. Exportar os dados para um formato JSON
+
+SELECT status FROM v$instance;
+SELECT USER FROM DUAL;
+SELECT * FROM dba_role_privs WHERE grantee = 'RM553472';
+
+CREATE OR REPLACE DIRECTORY dir_dados AS '/Users/claudiobispo/Downloads';
+GRANT READ, WRITE ON DIRECTORY dir_dados TO RM553472;
+
+CREATE OR REPLACE PROCEDURE exportar_dados_para_csv AS
+  v_file UTL_FILE.FILE_TYPE;
+  v_dir  VARCHAR2(255) := 'DIR_DADOS';
+  v_filename VARCHAR2(255) := 'dados_usuario.csv';
+  v_line VARCHAR2(4000);
+BEGIN
+  v_file := UTL_FILE.FOPEN(v_dir, v_filename, 'W', 32767);
+  UTL_FILE.PUT_LINE(v_file, 'id_usuario,nome,sobrenome,telefone,email,logradouro,numero,complemento,bairro,cidade,cep,estado,id_orcamento,data_hora_visita,valor_orcamento,id_comodo,comodo_descricao,id_item_casa,item_casa_descricao,tipo_dispositivo_descricao,consumo,data_consumo,valor,id_notificacao,tipo_notificacao_desc,notificacao_mensagem,notificacao_data_envio,limite_consumo,id_alerta,alerta_descricao,alerta_data,alerta_tipo,id_feedback,feedback_avaliacao,feedback_comentario,id_evento_manutencao,manutencao_data_hora,manutencao_descricao,tipo_evento_descricao');
+
+  FOR rec IN (
+    SELECT 
+      u.id_usuario,
+      u.nome,
+      u.sobrenome,
+      u.telefone,
+      u.email,
+      e.logradouro,
+      e.numero,
+      e.complemento,
+      e.bairro,
+      e.cidade,
+      e.cep,
+      es.sigla AS estado,
+      o.id_orcamento,
+      o.data_hora_visita,
+      o.valor_orcamento,
+      c.id_comodo,
+      c.descricao AS comodo_descricao,
+      i.id_item_casa,
+      i.descricao AS item_casa_descricao,
+      td.descricao AS tipo_dispositivo_descricao,
+      co.consumo,
+      co.data_consumo,
+      co.valor,
+      n.id_notificacao,
+      tn.desc_tipo_notif AS tipo_notificacao_desc,
+      n.mensagem AS notificacao_mensagem,
+      n.data_envio AS notificacao_data_envio,
+      cu.limite_consumo,
+      ha.id_alerta,
+      ha.descricao AS alerta_descricao,
+      ha.data_hora AS alerta_data,
+      ha.tipo AS alerta_tipo,
+      f.id_feedback,
+      f.avaliacao AS feedback_avaliacao,
+      f.comentario AS feedback_comentario,
+      em.id_evento_manutencao,
+      em.data_hora_evento AS manutencao_data_hora,
+      em.descricao AS manutencao_descricao,
+      te.descricao AS tipo_evento_descricao
+    FROM T_Usuario u
+    JOIN T_Endereco e ON u.id_endereco = e.id_endereco
+    JOIN T_Estado es ON e.id_estado = es.id_estado
+    LEFT JOIN T_Orcamento o ON u.id_usuario = o.id_usuario
+    LEFT JOIN T_Comodo c ON u.id_usuario = c.id_usuario
+    LEFT JOIN T_Item_Casa i ON c.id_comodo = i.id_comodo
+    LEFT JOIN T_Tipo_Dispositivo td ON i.id_tipo_dispositivo = td.id_tipo_dispositivo
+    LEFT JOIN T_Consumo co ON co.id_consumo = i.id_item_casa
+    LEFT JOIN T_Notificacao n ON u.id_usuario = n.id_usuario
+    LEFT JOIN T_Tipo_Notificacao tn ON n.id_tipo_notificacao = tn.id_tipo_notificacao
+    LEFT JOIN T_Configuracao_Usuario cu ON u.id_usuario = cu.id_usuario
+    LEFT JOIN T_Historico_Alerta ha ON u.id_usuario = ha.id_usuario
+    LEFT JOIN T_Feedback f ON u.id_usuario = f.id_usuario
+    LEFT JOIN T_Evento_Manutencao em ON u.id_usuario = em.id_usuario
+    LEFT JOIN T_Tipo_Evento te ON em.id_tipo_evento = te.id_tipo_evento
+  ) LOOP
+   
+    v_line := rec.id_usuario || ',' ||
+              rec.nome || ',' ||
+              rec.sobrenome || ',' ||
+              rec.telefone || ',' ||
+              rec.email || ',' ||
+              rec.logradouro || ',' ||
+              rec.numero || ',' ||
+              rec.complemento || ',' ||
+              rec.bairro || ',' ||
+              rec.cidade || ',' ||
+              rec.cep || ',' ||
+              rec.estado || ',' ||
+              rec.id_orcamento || ',' ||
+              rec.data_hora_visita || ',' ||
+              rec.valor_orcamento || ',' ||
+              rec.id_comodo || ',' ||
+              rec.comodo_descricao || ',' ||
+              rec.id_item_casa || ',' ||
+              rec.item_casa_descricao || ',' ||
+              rec.tipo_dispositivo_descricao || ',' ||
+              rec.consumo || ',' ||
+              rec.data_consumo || ',' ||
+              rec.valor || ',' ||
+              rec.id_notificacao || ',' ||
+              rec.tipo_notificacao_desc || ',' ||
+              rec.notificacao_mensagem || ',' ||
+              rec.notificacao_data_envio || ',' ||
+              rec.limite_consumo || ',' ||
+              rec.id_alerta || ',' ||
+              rec.alerta_descricao || ',' ||
+              rec.alerta_data || ',' ||
+              rec.alerta_tipo || ',' ||
+              rec.id_feedback || ',' ||
+              rec.feedback_avaliacao || ',' ||
+              rec.feedback_comentario || ',' ||
+              rec.id_evento_manutencao || ',' ||
+              rec.manutencao_data_hora || ',' ||
+              rec.manutencao_descricao || ',' ||
+              rec.tipo_evento_descricao;
+
+    -- Escreve a linha no arquivo CSV
+    UTL_FILE.PUT_LINE(v_file, v_line);
+  END LOOP;
+
+  UTL_FILE.FCLOSE(v_file);
+  
+  DBMS_OUTPUT.PUT_LINE('Arquivo CSV gerado com sucesso!');
+EXCEPTION
+  WHEN OTHERS THEN
+    -- Em caso de erro, fecha o arquivo se estiver aberto
+    IF UTL_FILE.IS_OPEN(v_file) THEN
+      UTL_FILE.FCLOSE(v_file);
+    END IF;
+    DBMS_OUTPUT.PUT_LINE('Erro ao gerar o arquivo: ' || SQLERRM);
+END exportar_dados_para_csv;
+
+EXEC exportar_dados_para_csv;
+
+
