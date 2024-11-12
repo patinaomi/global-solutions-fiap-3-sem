@@ -9,12 +9,56 @@
       "PackagePath": "staticwebassets/assets/Home/imagem1.jpg"
     },
     {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem1.png",
+      "PackagePath": "staticwebassets/assets/Home/imagem1.png"
+    },
+    {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem2.jpg",
       "PackagePath": "staticwebassets/assets/Home/imagem2.jpg"
     },
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem3.jpg",
       "PackagePath": "staticwebassets/assets/Home/imagem3.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem4.png",
+      "PackagePath": "staticwebassets/assets/Home/imagem4.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem5.png",
+      "PackagePath": "staticwebassets/assets/Home/imagem5.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem6.png",
+      "PackagePath": "staticwebassets/assets/Home/imagem6.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Home/imagem7.png",
+      "PackagePath": "staticwebassets/assets/Home/imagem7.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem1.jpg",
+      "PackagePath": "staticwebassets/assets/Mockup/imagem1.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem2.jpg",
+      "PackagePath": "staticwebassets/assets/Mockup/imagem2.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem3",
+      "PackagePath": "staticwebassets/assets/Mockup"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem4.avif",
+      "PackagePath": "staticwebassets/assets/Mockup/imagem4.avif"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem4.png",
+      "PackagePath": "staticwebassets/assets/Mockup/imagem4.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem5.png",
+      "PackagePath": "staticwebassets/assets/Mockup/imagem5.png"
     },
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/css/site.css",

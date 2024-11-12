@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  meuapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/arm64 
+    ports:
+      - "8080:5121"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__Oracle=Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521))) (CONNECT_DATA=(SERVER=DEDICATED)(SID=ORCL)));User Id=RM553472;Password=100593;
+    depends_on:
+      - oracle
+    networks:
+      - oracle-net
+
+  oracle:
+    image: oracleinanutshell/oracle-xe-11g
+    environment:
+      - ORACLE_PWD=oracle
+    ports:
+      - "1521:1521"
+    shm_size: '1g'
+    networks:
+      - oracle-net
+
+networks:
+  oracle-net:
+    driver: bridge

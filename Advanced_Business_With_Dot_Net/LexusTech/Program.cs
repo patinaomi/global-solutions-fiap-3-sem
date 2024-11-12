@@ -20,6 +20,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 var app = builder.Build();
 
+app.Urls.Add("http://0.0.0.0:5121");
+
 // Aplica as migrações pendentes e cria o banco se necessário. Melhor do que eu esperar ter a tabela.
 using (var scope = app.Services.CreateScope())
 {
