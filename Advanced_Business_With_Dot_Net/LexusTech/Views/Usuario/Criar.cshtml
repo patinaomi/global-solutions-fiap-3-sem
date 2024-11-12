@@ -4,9 +4,9 @@
     ViewData["Title"] = "Cadastro de usuário";
 }
 
-<section class="d-flex justify-content-center align-items-center mt-5" style="height: 60vh">
+<section class="d-flex p-3" style="height: 80vh">
     <!-- Container do Formulário ocupando 20% da largura e 100% da altura -->
-    <div class="w-20 d-flex align-items-center justify-content-center pt-5" style="height: 100vh; padding-right: 10px;">
+    <div class="w-20 d-flex justify-content-center" style="height: 80vh; padding-right: 10px;">
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
             <h2>cadastrar usuário</h2>
             <form asp-action="Criar" method="post">
@@ -36,16 +36,17 @@
                     <span asp-validation-for="Senha" class="text-danger"></span>
                 </div>
                 <div class="form-group pt-3">
-                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <input type="submit" class="btn" style="background-color: #4CAF50; color: #ffff ;" />
                     <a asp-action="Consultar" class="btn btn-secondary">Consultar</a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Voltar</a>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Container da Imagem ocupando 80% da largura e 100% da altura -->
-    <div class="w-80 mt-5" style="height: 80vh">
-        <img src="~/assets/CadastroCliente/imagem1.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="w-100" style="height: 80vh">
+        <img src="~/assets/Mockup/imagem1.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 </section>
 

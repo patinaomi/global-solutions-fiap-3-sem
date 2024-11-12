@@ -19,11 +19,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Hero()
-    {
-        return View();
-    }
-
     public IActionResult Solucao()
     {
         return View();
