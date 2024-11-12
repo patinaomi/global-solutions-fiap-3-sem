@@ -10,4 +10,5 @@
         }
 
         public DbSet<Usuario> T_Usuario { get; set; }
+        public DbSet<Endereco> T_Endereco { get; set; }
     }
