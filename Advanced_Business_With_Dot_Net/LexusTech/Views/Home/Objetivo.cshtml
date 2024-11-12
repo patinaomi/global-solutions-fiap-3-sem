@@ -1,23 +1,56 @@
 @{
-    ViewData["Title"] = "Objetivo";
+    ViewData["Title"] = "Objetivos";
 }
-<h1>@ViewData["Title"]</h1>
 
+<section class="objectives-section" style="min-height: 100vh;">
+    <div class="content-left">
+        <h1>@ViewData["Title"]</h1>
 
-<p>Nosso objetivo é reduzir os altos custos de sinistros, sem evitar consultas, mas sim prevenindo consultas de valores elevados e fora do comum. Ao incentivar consultas preventivas, economizaremos recursos e diminuiremos a necessidade de atendimentos emergenciais.</p>
+        <h2>Objetivo Geral</h2>
+        <p>Desenvolver um sistema inteligente de monitoramento e controle de consumo de energia elétrica em residências, utilizando .NET e inteligência artificial com Python, para promover a conscientização sobre o uso eficiente de energia e a redução de custos.</p>
 
-<p>Nosso modelo vai sugerir consultas ao cliente com base em suas preferências de atendimento, como local, data, horário, com especialistas que possuem qualidade acima de nota 4 e com custos baixos. Iremos treinar a IA para procurar o cliente primeiro, ao invés de esperar que ele nos procure com problemas maiores.</p>
+        <h2>Objetivos Específicos</h2>
 
-<p>Por exemplo, se uma pessoa realiza limpezas e radiografias ósseas a cada 5 ou 6 meses, pode evitar extrações devido a cuidados bucais inadequados, que podem custar cerca de dois mil reais. Em nosso cenário, esse valor é extremamente alto. É mais vantajoso cobrir uma consulta de 200 reais, que representa apenas 10% do custo de um procedimento emergencial.</p>
+        <div class="objective">
+            <h3>Mapeamento do Consumo de Energia</h3>
+            <p>Criar um mapa interativo de um apartamento de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.</p>
+        </div>
 
-<p>Além disso, vamos atender as clínicas e parceiros, levando mais clientes e aumentando sua carteira.</p>
+        <div class="objective">
+            <h3>Monitoramento em tempo real</h3>
+            <p>Implementar sensores de energia em diferentes pontos do apartamento para coletar dados de consumo em tempo real e enviar essas informações para o servidor.</p>
+        </div>
 
-<h2>Objetivos específicos</h2>
+        <div class="objective">
+            <h3>Análise de dados e previsão de consumo</h3>
+            <p>Utilizar técnicas de machine learning para analisar os dados coletados, prever o consumo de energia e identificar padrões de uso que possam indicar desperdícios ou necessidade de manutenção.</p>
+        </div>
 
-<p>Reduz custos de sinistros: A solução ajuda a identificar clientes que podem precisar de cuidados preventivos e sugere consultas personalizadas, evitando o surgimento de problemas maiores e mais caros.</p>
+        <div class="objective">
+            <h3>Visualização e feedback ao usuário</h3>
+            <p>Desenvolver um dashboard interativo que permita aos moradores visualizar o consumo de energia em tempo real, com gráficos e alertas sobre áreas de alto consumo e sugestões de economia.</p>
+        </div>
 
-<p>Automatiza a prevenção: Ao usar IA para sugerir consultas preventivas com base nas preferências dos clientes, o sistema evita a espera passiva por problemas emergenciais e passa a atuar de forma proativa, ajudando Mariana a controlar melhor os gastos.</p>
+        <div class="objective">
+            <h3>Estimativa de custos</h3>
+            <p>Calcular e exibir a estimativa do valor da conta de luz com base no consumo atual, ajudando os moradores a entenderem o impacto financeiro do uso de energia.</p>
+        </div>
 
-<p>Garante atendimento de qualidade: A solução só sugere especialistas com notas acima de 4 e custos mais baixos, mantendo a satisfação dos clientes e garantindo cuidados de qualidade.</p>
+        <div class="objective">
+            <h3>Recomendações de manutenção</h3>
+            <p>Fornecer recomendações específicas sobre onde realizar manutenção ou ajustes para reduzir o consumo de energia, baseadas na análise dos dados coletados.</p>
+        </div>
 
-<p>Fortalece a rede de parceiros: Além de beneficiar os clientes, a solução leva mais pacientes para as clínicas parceiras, o que ajuda a aumentar a receita dessas instituições, mantendo-as engajadas com a operadora.</p>
+        <div class="objective">
+            <h3>Integração de tecnologias</h3>
+            <p>Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Python para a coleta e análise de dados, garantindo uma comunicação eficiente entre os componentes do sistema.</p>
+        </div>
+    </div>
+
+    <div class="content-right">
+        <div class="energy-map">
+            <!-- Aqui você pode adicionar o mapa do ambiente residencial -->
+            <img src="/assets/Home/imagem7.png" alt="Mapa Residencial" class="map-image" />
+        </div>
+    </div>
+</section>

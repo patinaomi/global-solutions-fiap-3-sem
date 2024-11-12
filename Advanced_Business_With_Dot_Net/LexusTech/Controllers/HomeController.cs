@@ -39,16 +39,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Persona()
-    {
-        return View();
-    }
-
-    public IActionResult Etapas()
-    {
-        return View();
-    }
-
     public IActionResult VideoProjeto()
     {
         return View();

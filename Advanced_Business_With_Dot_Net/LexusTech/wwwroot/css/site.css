@@ -1,24 +1,20 @@
-html {
-  font-size: 14px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body, html {
+  height: 100%;
+  width: 100%;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Botão */
@@ -60,15 +56,12 @@ body {
 @keyframes progress-animation {
   0% {
     width: 0;
-    /* No começo, a cor do texto será a original */
   }
   50% {
     width: 100%;
-    /* No meio, a cor do texto vai para branca */
   }
   100% {
     width: 0;
-    /* No final, a cor do texto volta à original */
   }
 }
 
@@ -84,121 +77,129 @@ body {
 
 /* Nossa solução */
 
-/* Estilo para a seção */
 .energy-section {
-  background-image: url('assets/Mockup/imagem2.jpg'); 
+  background-image: url(/assets/Home/imagem2.jpg);
   background-size: cover;
-  background-position: center;
-  color: #ffffff;
+  min-width: 100vh;
+  min-height: 100vh;
+  background-position: left center; 
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;   
+  padding-left: 20px;        
+  padding-right: 100px;     
+  color: white;              
+}
+
+h1.title, h2.sub-title, h3.highlight-text, p {
+  margin: 0; 
+  padding: 5px 0; 
+}
+
+h1.title {
+  font-size: 3em;
+  margin-bottom: 10px; 
+}
+
+h2.sub-title {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+h3.highlight-text {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Projeto */
+
+.project-section {
+  background-image: url(/assets/Home/imagem3.jpg);
+  background-size: cover;
+  min-width: 100vh;
+  min-height: 100vh;
+  background-position: left center; 
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;   
+  padding-left: 20px;        
+  padding-right: 100px;     
+  color: white;              
+}
+
+/* Objetivo */
+
+/* Container principal */
+.objectives-section {
+  display: flex;
+  justify-content: space-between;
   padding: 50px;
-  text-align: center;
+  background-color: #ffff;
+  min-height: 100vh;
+}
+
+/* Estilo do lado esquerdo */
+.content-left {
+  flex: 0 0 60%;
+}
+
+.content-left h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.content-left h2 {
+  font-size: 2em;
+  margin-top: 30px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.content-left .objective {
+  margin-top: 20px;
+  padding-left: 10px;
   position: relative;
-  overflow: hidden;
+  animation: slideInLeft 1s ease-out;
 }
 
-/* Estilo para o título principal */
-.title {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-out;
+.content-left .objective h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #009688;
 }
 
-/* Estilo para o subtítulo */
-.sub-title {
-  font-size: 6rem;
-  color: #00e676;
-  animation: fadeIn 3s ease-out;
-  margin-bottom: 20px;
+.content-left .objective p {
+  font-size: 1.1em;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Texto de destaque */
-.highlight-text {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #00e676; /* Verde energia */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  animation: highlightAnimation 4s infinite alternate;
-  margin-bottom: 30px;
-}
-
-/* Animação de destaque no texto */
-@keyframes highlightAnimation {
-  0% {
-      color: #00e676;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-      color: #ffeb3b; /* Cor de destaque */
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-  }
-}
-
-/* Estilo para a tagline */
-.tagline {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ff5722; /* Laranja */
-  margin-top: 40px;
-  margin-bottom: 30px;
-  animation: fadeIn 3s ease-out;
-  letter-spacing: 3px; /* Adiciona espaçamento entre as palavras */
-}
-
-/* Estilo para as palavras animadas na tagline */
-.animated-tag {
-  display: inline-block;
-  font-size: 2rem;
-  color: #ffeb3b; /* Amarelo energia */
-  animation: scaleUp 1.5s ease-in-out infinite alternate;
-  margin: 0 8px; /* Adiciona espaçamento entre as palavras */
-}
-
-/* Animação para aumento das palavras */
-@keyframes scaleUp {
-  0% {
-      transform: scale(1);
-  }
-  100% {
-      transform: scale(1.2);
-  }
-}
-
-/* Barra de progresso (energia) */
-.energy-bar-container {
-  width: 80%;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.2); /* Fundo da barra */
-  border-radius: 10px;
-  margin: 40px auto;
-  overflow: hidden;
+/* Estilo do lado direito */
+.content-right {
+  flex: 0 0 35%;
   position: relative;
 }
 
-.energy-bar {
-  width: 0;
+.energy-map {
+  position: relative;
+  width: 100%;
   height: 100%;
-  background-color: #00e676; /* Verde energia */
-  animation: fillEnergy 5s linear infinite;
+  animation: slideInRight 1.5s ease-out;
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Animação para preenchimento da barra */
-@keyframes fillEnergy {
-  0% {
-      width: 0;
-      background-color: #ffeb3b;
-  }
-  50% {
-      width: 100%;
-      background-color: #00e676;
-  }
-  100% {
-      width: 0;
-      background-color: #ff5722;
-  }
-}
-
-/* Animação de fade-in para os textos */
+/* Animações */
 @keyframes fadeIn {
   0% {
       opacity: 0;
@@ -206,4 +207,33 @@ body {
   100% {
       opacity: 1;
   }
+}
+
+@keyframes slideInLeft {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Estilo do Footer */
+footer {
+  color: black;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  margin-top: auto; 
 }

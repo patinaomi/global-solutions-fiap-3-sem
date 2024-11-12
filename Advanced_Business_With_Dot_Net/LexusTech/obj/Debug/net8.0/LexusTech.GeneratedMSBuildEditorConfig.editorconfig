@@ -18,10 +18,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Etapas.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9FdGFwYXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Hero.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9IZXJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
