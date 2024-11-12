@@ -34,13 +34,13 @@ public class ItemCasa {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "id_comodo", nullable = false)
+    @JoinColumn(name = "id_comodo")
     private Comodo comodo;
 
     @ManyToOne // afinal muiits itens de casa podem ter um tipo de dispositivo!
     @JoinColumn(name = "id_tipo_dispositivo")
     private TipoDispositivo tipoDispositivo;
 
-    @OneToMany(mappedBy = "t_item_casa")
+    @OneToMany(mappedBy = "itemCasa")
     private List<Consumo> consumos;
 }

@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -28,15 +29,15 @@ public class Comodo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_comodo", nullable = false)
-    private String id;
+    private Integer id;
 
     @Column(length = 50, nullable = false)
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "t_comodo")
+    @OneToMany(mappedBy = "comodo")
     private List<ItemCasa> itensCasa;
 }

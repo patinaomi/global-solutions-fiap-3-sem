@@ -48,12 +48,12 @@ public class Usuario {
         @JoinColumn(name = "id_endereco")
         private Endereco endereco;
 
-        @OneToOne(mappedBy = "t_usuario")
+        @OneToOne(mappedBy = "usuario")
         private Login login;
 
-        @OneToMany(mappedBy = "t_usuario")
+        @OneToMany(mappedBy = "usuario")
         private List<Comodo> comodos;
 
-        @OneToMany(mappedBy = "t_orcamento")
+        @OneToMany(mappedBy = "usuario")
         private List<Orcamento> orcamentos;
 }

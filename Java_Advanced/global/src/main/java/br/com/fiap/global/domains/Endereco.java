@@ -51,7 +51,7 @@ public class Endereco {
     @JoinColumn(name = "id_estado", nullable = false)
     private Estado estado;
 
-    @OneToOne(mappedBy = "t_endereco")
+    @OneToOne(mappedBy = "endereco")
     private Usuario usuario;
 
 }
