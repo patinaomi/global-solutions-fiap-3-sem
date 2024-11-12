@@ -1,0 +1,114 @@
+using LexusTech.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
+using System.Threading.Tasks;
+
+[Route("Usuario")] 
+public class UsuarioController : Controller
+{
+    private readonly ApplicationDbContext _context;
+
+    public UsuarioController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    // usar essaa tag para permitir que todos possam fazer cadastrado, mas quem não estiver logado, não vai conseguir acessar nada.
+    [AllowAnonymous]
+    [HttpGet("Criar")]
+    public IActionResult Criar()
+    {
+        return View();
+    }
+
+    [AllowAnonymous]
+    [HttpPost("Criar")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Criar([Bind("Id,Nome,Sobrenome,Telefone,Email,Senha")] Usuario usuario)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Add(usuario);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Usuário cadastrado com sucesso!";
+            return RedirectToAction("Mensagem");
+        }
+        return View(usuario);
+    }
+
+    [HttpGet("Mensagem")]
+    public IActionResult Mensagem()
+    {
+        return View();
+    }
+
+    [HttpGet("Consultar")]
+    public async Task<IActionResult> Consultar()
+    {
+        var usuarios = await _context.T_Usuario.ToListAsync(); 
+        return View(usuarios); 
+    }
+
+    [HttpGet("Atualizar")]
+    public async Task<IActionResult> Atualizar()
+    {
+        var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out var userId))
+        {
+            return RedirectToAction("Error");
+        }
+
+        var usuario = await _context.T_Usuario.FindAsync(userId);
+        if (usuario == null)
+        {
+            return NotFound();
+        }
+
+        return View(usuario);
+    }
+
+    [HttpPost("Atualizar")]
+    public async Task<IActionResult> Atualizar(Usuario usuario)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(usuario);
+        }
+
+        var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+        if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out var userId))
+        {
+            return RedirectToAction("Error");
+        }
+
+        var usuarioExistente = await _context.T_Usuario.FindAsync(userId);
+        if (usuarioExistente == null)
+        {
+            return NotFound();
+        }
+
+        usuarioExistente.Nome = usuario.Nome;
+        usuarioExistente.Sobrenome = usuario.Sobrenome;
+        usuarioExistente.Telefone = usuario.Telefone;
+        usuarioExistente.Email = usuario.Email;
+        usuarioExistente.Senha = usuario.Senha;
+
+        await _context.SaveChangesAsync();
+
+        TempData["SuccessMessage"] = "Usuário atualizado com sucesso!";
+        return RedirectToAction("MensagemAtualizacao");
+    }
+
+    [HttpGet("MensagemAtualizacao")]
+    public IActionResult MensagemAtualizacao()
+    {
+        return View();
+    }
+
+
+}

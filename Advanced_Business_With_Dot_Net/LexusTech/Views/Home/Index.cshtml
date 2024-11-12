@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="text-center min-vh-80 justify-content-center" style="color: #D2E9C4; align-items: center; justify-content: center; justify-items: center;>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="display-4 progress-text" style="color: #3C4748; margin-top: 10rem;">Servir, cuidar e economizar.</h5>
+                
+                <!-- Saudação personalizada para meus clientes -->
+                <h6 class="mb-4">
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        @* Exibe o nome do usuário se ele estiver logado *@
+                        <span>Bem-vindo, @User.Identity.Name!</span>
+                    }
+                    else
+                    {
+                        @* Exibe "Visitante" se o usuário não estiver logado *@
+                        <span style="color: #3C4748;">Bem-vindo, Visitante! Faça seu login para acessar suas informações personalizadas.</span>
+                    }
+                </h6>
+
+                <div class="d-flex justify-content-center gap-5" style="justify-content: center; align-items: center; align-content: center; justify-items: center;">
+
+                    <div class="d-flex justify-content-center mt-4">
+                            <div class="card shadow-lg rounded-lg overflow-hidden" style="max-width: 22rem;">
+                                <img
+                                    alt="Card"
+                                    src="/assets/Home/imagem5.png"
+                                    class="img-fluid"
+                                    style="height: 200px; object-fit: cover;"
+                                />
+                                <div class="card-body">
+                                    <h3 class="card-title w-100" style="color: #4CAF50;">USUÁRIO</h3>
+                                    <p style="color: #3C4748; text-align: start;">
+                                        Cadastre-se para criar seu perfil e personalize os ambientes e itens da sua casa. Com isso, você poderá controlar e otimizar o consumo de energia em cada ambiente de forma eficiente e personalizada.
+                                    </p>
+                                    <a href="@Url.Action("Index", "PaginaCliente")" class="btn btn-custom w-100">
+                                        clique aqui <i class="pi pi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                            <div class="card shadow-lg rounded-lg overflow-hidden" style="max-width: 22rem;">
+                                <img
+                                    alt="Card"
+                                    src="/assets/Home/imagem2.jpg"
+                                    class="img-fluid"
+                                    style="height: 200px; object-fit: cover;"
+                                />
+                                <div class="card-body">
+                                    <h3 class="card-title" style="color: #4CAF50;">MAPA DE CONSUMO</h3>
+                                    <p style="color: #3C4748; text-align: start;">
+                                        Acompanhe o consumo de energia de cada ambiente em tempo real através do mapa interativo. Visualize os dados de forma clara e tome decisões para reduzir seu consumo de maneira inteligente. No final, acesse o dashboard.
+                                    </p>
+                                    <a href="@Url.Action("Index", "PaginaClinica")" class="btn btn-custom w-100">
+                                        clique aqui <i class="pi pi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mt-4">
+                            <div class="card shadow-lg rounded-lg overflow-hidden" style="max-width: 22rem;">
+                                <img
+                                    alt="Card"
+                                    src="/assets/Home/imagem3.jpg"
+                                    class="img-fluid"
+                                    style="height: 200px; object-fit: cover;"
+                                />
+                                <div class="card-body">
+                                    <h3 class="card-title" style="color: #4CAF50;">DASHBOARD</h3>
+                                    <p style="text-align: start; color: #3C4748;">
+                                        Confira as análises detalhadas do seu consumo de energia no dashboard. Obtenha relatórios completos sobre o desempenho de cada ambiente e item da sua casa, ajudando a identificar oportunidades de economia.
+                                    </p>
+                                    <a href="@Url.Action("Index", "PaginaMedicos")" class="btn btn-custom w-100">
+                                        clique aqui <i class="pi pi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

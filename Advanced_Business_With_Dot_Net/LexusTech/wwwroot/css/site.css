@@ -1,0 +1,209 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Botão */
+
+.btn-custom {
+  background-color: #4CAF50; 
+  color: white; 
+  border: none;
+  border-radius: 5px; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 10px;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+.progress-text {
+  position: relative;
+  display: inline-block;
+  color: #3C4748; /* Cor do texto inicialmente */
+  transition: color 0.5s; /* Transição suave para mudar a cor da fonte */
+}
+
+.progress-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #4CAF50; /* Cor da barra */
+  z-index: -1;
+  animation: progress-animation 5s infinite;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 0;
+    /* No começo, a cor do texto será a original */
+  }
+  50% {
+    width: 100%;
+    /* No meio, a cor do texto vai para branca */
+  }
+  100% {
+    width: 0;
+    /* No final, a cor do texto volta à original */
+  }
+}
+
+.progress-text::before {
+  animation: progress-animation 5s infinite;
+}
+
+/* Durante a animação, vamos alterar a cor do texto */
+.progress-text.animate-text {
+  color: white; /* Cor do texto quando a barra estiver enchendo */
+}
+
+
+/* Nossa solução */
+
+/* Estilo para a seção */
+.energy-section {
+  background-image: url('assets/Mockup/imagem2.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo para o título principal */
+.title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Estilo para o subtítulo */
+.sub-title {
+  font-size: 6rem;
+  color: #00e676;
+  animation: fadeIn 3s ease-out;
+  margin-bottom: 20px;
+}
+
+/* Texto de destaque */
+.highlight-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00e676; /* Verde energia */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: highlightAnimation 4s infinite alternate;
+  margin-bottom: 30px;
+}
+
+/* Animação de destaque no texto */
+@keyframes highlightAnimation {
+  0% {
+      color: #00e676;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+      color: #ffeb3b; /* Cor de destaque */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* Estilo para a tagline */
+.tagline {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5722; /* Laranja */
+  margin-top: 40px;
+  margin-bottom: 30px;
+  animation: fadeIn 3s ease-out;
+  letter-spacing: 3px; /* Adiciona espaçamento entre as palavras */
+}
+
+/* Estilo para as palavras animadas na tagline */
+.animated-tag {
+  display: inline-block;
+  font-size: 2rem;
+  color: #ffeb3b; /* Amarelo energia */
+  animation: scaleUp 1.5s ease-in-out infinite alternate;
+  margin: 0 8px; /* Adiciona espaçamento entre as palavras */
+}
+
+/* Animação para aumento das palavras */
+@keyframes scaleUp {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.2);
+  }
+}
+
+/* Barra de progresso (energia) */
+.energy-bar-container {
+  width: 80%;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo da barra */
+  border-radius: 10px;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.energy-bar {
+  width: 0;
+  height: 100%;
+  background-color: #00e676; /* Verde energia */
+  animation: fillEnergy 5s linear infinite;
+  border-radius: 10px;
+}
+
+/* Animação para preenchimento da barra */
+@keyframes fillEnergy {
+  0% {
+      width: 0;
+      background-color: #ffeb3b;
+  }
+  50% {
+      width: 100%;
+      background-color: #00e676;
+  }
+  100% {
+      width: 0;
+      background-color: #ff5722;
+  }
+}
+
+/* Animação de fade-in para os textos */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
