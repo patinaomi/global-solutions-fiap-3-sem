@@ -6,44 +6,37 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "t_comodo")
-public class Comodo {
+@Table(name = "t_feedback")
+public class Feedback {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_comodo", nullable = false)
+    @Column(name = "id_feedback", nullable = false)
     private Integer id;
-
-    @Column(name = "descricao", length = 50, nullable = false)
-    private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "comodo")
-    private List<ItemCasa> itensCasa;
+    @ManyToOne
+    @JoinColumn(name = "id_recomendacao")
+    private Recomendacao recomendacao;
 
-    @OneToMany(mappedBy = "comodo")
-    private List<HistoricoAlerta> historicoAlertas;
+    private Float avaliacao;
 
-    @OneToMany(mappedBy = "comodo")
-    private List<Recomendacao> recomendacoes;
+    @Column(length = 250)
+    private String comentario;
+
 }

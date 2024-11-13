@@ -56,4 +56,23 @@ public class Usuario {
 
         @OneToMany(mappedBy = "usuario")
         private List<Orcamento> orcamentos;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<Notificacao> notificacoes;
+
+        @OneToMany(mappedBy = "usuario")
+        private  List<ConfiguracaoUsuario> configuracoesUsuario;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<HistoricoAlerta> historicoAlertas;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<EventoManutencao> eventosManutencao;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<Feedback> feedbacks;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<Recomendacao> recomendacoes;
+
 }

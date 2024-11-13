@@ -15,6 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,4 +40,7 @@ public class Consumo {
     @ManyToOne
     @JoinColumn(name = "id_item_casa")
     private ItemCasa itemCasa;
+
+    @OneToMany(mappedBy = "consumo")
+    private List<Recomendacao> recomendacoes;
 }

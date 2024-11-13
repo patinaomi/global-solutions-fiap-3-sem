@@ -19,20 +19,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "t_tipo_notificacao")
-public class TipoNotificacao {
+@Table(name = "t_tipo_evento")
+public class TipoEvento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo_notif")
+    @Column(name = "id_tipo_evento")
     private Integer id;
 
-    @Column(name = "desc_tipo_notif", length = 50)
+    @Column(length = 250)
     private String descricao;
 
-    @OneToMany(mappedBy = "tipoNotificacao")
-    private List<Notificacao> notificacoes;
-
-    @OneToMany(mappedBy = "tipoNotificacao")
-        private List<ConfiguracaoUsuario> configuracoesUsuario;
+    @OneToMany(mappedBy = "tipoEvento")
+    private List<EventoManutencao> eventoManutencoes;
 }
