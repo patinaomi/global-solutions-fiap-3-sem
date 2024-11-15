@@ -1,8 +1,8 @@
 @using System.Security.Claims
-@model LexusTech.Models.Endereco
+@model LexusTech.Models.Comodo
 
 @{
-    ViewData["Title"] = "Cadastrar o endereço";
+    ViewData["Title"] = "Cadastrar os ambientes que serão mapeados";
     var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
@@ -30,50 +30,36 @@
                 </h6>
             <p>Preenchendo o combo de informações, além de economizar mensalmente, consiga sugestões que farão seus móveis durarem mais e ajudar o meio ambiente.</p>
 
-            <h2 class="fs-4">Endereço</h2>
+            <h2 class="fs-4 pt-3">Ambientes</h2>
 
             <form asp-action="Criar" method="post">
 
                 <!-- Campo oculto para armazenar o ID do Cliente -->
                 <input type="hidden" asp-for="IdUsuario" value="@userId" />
 
+                <!-- Seletor de ambientes com múltiplas seleções -->
                 <div class="form-group">
-                    <label asp-for="CEP" class="control-label fs-6"></label>
-                    <input asp-for="CEP" class="form-control" />
-                    <span asp-validation-for="CEP" class="text-danger"></span>
+                    <label asp-for="Descricao" class="control-label">Ambientes</label>
+                    <select id="ambientes" class="form-control" name="Descricao" multiple>
+                        <option value="sala">Sala</option>
+                        <option value="cozinha">Cozinha</option>
+                        <option value="lavanderia">Lavanderia</option>
+                        <option value="quarto1">Quarto 1</option>
+                        <option value="quarto2">Quarto 2</option>
+                        <option value="banheiro">Banheiro</option>
+                    </select>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Estado" class="control-label fs-6"></label>
-                    <input asp-for="Estado" class="form-control" />
-                    <span asp-validation-for="Estado" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Cidade" class="control-label fs-6"></label>
-                    <input asp-for="Cidade" class="form-control" />
-                    <span asp-validation-for="Cidade" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Bairro" class="control-label fs-6"></label>
-                    <input asp-for="Bairro" class="form-control" />
-                    <span asp-validation-for="Bairro" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Rua" class="control-label fs-6"></label>
-                    <input asp-for="Rua" class="form-control" />
-                    <span asp-validation-for="Rua" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Complemento" class="control-label"></label>
-                    <input asp-for="Complemento" class="form-control" />
-                    <span asp-validation-for="Complemento" class="text-danger"></span>
-                </div>
+                
                 <div class="form-group pt-3">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
                     <!-- Botão que redireciona para a página CriarDiaSemanaPreferencia -->
-                    <a asp-controller="Comodo" asp-action="Criar" class="btn btn-secondary">Continuar</a>
+                    <a asp-controller="Itens" asp-action="Criar" class="btn btn-secondary">Continuar</a>
 
                     <!-- Botão que redireciona para a ação Consultar do controller EnderecoPreferencia -->
-                    <a asp-controller="Endereco" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
+                    <a asp-controller="Comodo" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
+
+                    <a asp-controller="Endereco" asp-action="Criar" class="btn btn-warning">Voltar</a>
 
                 </div>
 
@@ -90,7 +76,7 @@
     </div>
 
     <div class="w-80" style="height: 80vh">
-        <img src="~/assets/Endereco/imagem1.png" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="~/assets/Ambientes/imagem.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 </section>
 

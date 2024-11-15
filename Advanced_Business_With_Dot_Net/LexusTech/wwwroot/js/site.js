@@ -16,3 +16,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+$("form").submit(function (e) {
+    e.preventDefault();
+
+    var selectedValues = [];
+    $("select").each(function () {
+        var value = $(this).val();
+        if (value) {
+            selectedValues.push(value);
+        }
+    });
+
+    // Concatena os valores selecionados em uma string separada por vírgula
+    var ambientesSelecionados = selectedValues.join(", ");
+
+    // Atribui a string concatenada ao campo 'Descricao' (é o campo do formulário)
+    $("input[name='Descricao']").val(ambientesSelecionados);
+
+    // Agora submete o formulário
+    this.submit();
+});
