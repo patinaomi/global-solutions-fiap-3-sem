@@ -10,8 +10,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace LexusTech.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241115141550_Comodo")]
-    partial class Comodo
+    [Migration("20241115151040_ItensCasa")]
+    partial class ItensCasa
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,6 +81,26 @@ namespace LexusTech.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("T_Endereco");
+                });
+
+            modelBuilder.Entity("LexusTech.Models.Item", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DescricaoItem")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Item_Casa");
                 });
 
             modelBuilder.Entity("LexusTech.Models.Usuario", b =>

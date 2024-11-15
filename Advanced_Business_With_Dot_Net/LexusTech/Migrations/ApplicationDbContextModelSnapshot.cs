@@ -80,6 +80,26 @@ namespace LexusTech.Migrations
                     b.ToTable("T_Endereco");
                 });
 
+            modelBuilder.Entity("LexusTech.Models.Item", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DescricaoItem")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Item_Casa");
+                });
+
             modelBuilder.Entity("LexusTech.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")

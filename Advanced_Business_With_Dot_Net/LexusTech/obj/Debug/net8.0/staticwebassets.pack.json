@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets/assets/Home/imagem9.png"
     },
     {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Item/imagem.jpg",
+      "PackagePath": "staticwebassets/assets/Item/imagem.jpg"
+    },
+    {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Login/imagem.jpg",
       "PackagePath": "staticwebassets/assets/Login/imagem.jpg"
     },

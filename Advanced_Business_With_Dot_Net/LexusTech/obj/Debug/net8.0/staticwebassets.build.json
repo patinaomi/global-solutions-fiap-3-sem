@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ScJDxrDVtud4cRHx5ENS3Hp0DHOwzY3ZCt520uvSJQA=",
+  "Hash": "MkgLKCjfKH7L0lUOUvQbm7Logf6J054vIezzgTKrRrk=",
   "Source": "LexusTech",
   "BasePath": "_content/LexusTech",
   "Mode": "Default",
@@ -300,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/Home/imagem9.png"
+    },
+    {
+      "Identity": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Item/imagem.jpg",
+      "SourceId": "LexusTech",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/",
+      "BasePath": "_content/LexusTech",
+      "RelativePath": "assets/Item/imagem.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/Item/imagem.jpg"
     },
     {
       "Identity": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Login/imagem.jpg",

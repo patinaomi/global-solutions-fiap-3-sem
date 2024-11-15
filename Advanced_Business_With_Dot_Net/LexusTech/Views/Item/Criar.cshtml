@@ -1,8 +1,8 @@
 @using System.Security.Claims
-@model LexusTech.Models.Comodo
+@model LexusTech.Models.Item
 
 @{
-    ViewData["Title"] = "Cadastrar os ambientes que serão mapeados";
+    ViewData["Title"] = "Cadastrar os itens que serão mapeados";
     var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
@@ -30,7 +30,7 @@
                 </h6>
             <p>Preenchendo o combo de informações, além de economizar mensalmente, consiga sugestões que farão seus móveis durarem mais e ajudar o meio ambiente.</p>
 
-            <h2 class="fs-4 pt-3">Ambientes</h2>
+            <h2 class="fs-4 pt-3">Itens</h2>
 
             <form asp-action="Criar" method="post">
 
@@ -39,16 +39,19 @@
 
                 <!-- Seletor de ambientes com múltiplas seleções -->
                 <div class="form-group">
-                    <label asp-for="Descricao" class="control-label">Ambientes</label>
-                    <select id="ambientes" class="form-control" name="Descricao" multiple>
-                        <option value="sala">Sala</option>
-                        <option value="cozinha">Cozinha</option>
-                        <option value="lavanderia">Lavanderia</option>
-                        <option value="quarto1">Quarto 1</option>
-                        <option value="quarto2">Quarto 2</option>
-                        <option value="banheiro">Banheiro</option>
+                    <label asp-for="DescricaoItem" class="control-label">Itens</label>
+                    <select id="itens" class="form-control" name="DescricaoItem" multiple>
+                        <option value="tv">TV</option>
+                        <option value="microondas">Microondas</option>
+                        <option value="geladeira">Geladeira</option>
+                        <option value="maquinalavar">Máquina de Lavar</option>
+                        <option value="maquinasecar">Máquina de Secar</option>
+                        <option value="computador">Computador</option>
+                        <option value="secador">Secador</option>
+                        <option value="chuveiro">Chuveiro</option>
+                        <option value="arcondicionado">Ar Condicionado</option>
                     </select>
-                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                    <span asp-validation-for="DescricaoItem" class="text-danger"></span>
                 </div>
                 
                 <div class="form-group pt-3">
@@ -57,9 +60,9 @@
                     <a asp-controller="Item" asp-action="Criar" class="btn btn-secondary">Continuar</a>
 
                     <!-- Botão que redireciona para a ação Consultar do controller EnderecoPreferencia -->
-                    <a asp-controller="Comodo" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
+                    <a asp-controller="Item" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
 
-                    <a asp-controller="Endereco" asp-action="Criar" class="btn btn-warning">Voltar</a>
+                    <a asp-controller="Comodo" asp-action="Criar" class="btn btn-warning">Voltar</a>
 
                 </div>
 
