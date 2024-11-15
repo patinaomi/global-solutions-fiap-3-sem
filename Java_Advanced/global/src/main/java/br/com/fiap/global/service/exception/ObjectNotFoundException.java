@@ -1,0 +1,8 @@
+package br.com.fiap.global.service.exception;
+
+public class ObjectNotFoundException extends RuntimeException {
+
+    public ObjectNotFoundException(String message) {
+        super(message);
+    }
+}
