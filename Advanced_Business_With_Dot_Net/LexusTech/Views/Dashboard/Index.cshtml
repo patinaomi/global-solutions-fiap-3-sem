@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div>
+    <!-- Menu Lateral -->
+    <aside id="sidebar" style="width: 250px; position: fixed; height: 100%; background-color: #f8f9fa; border-right: 1px solid #ddd; display: flex; flex-direction: column; transition: all 0.3s;">
+        <h3 style="text-align: center; padding: 20px 0; border-bottom: 1px solid #ddd; font-size: Medium;">Menu</h3>
+        <nav style="flex: 1; padding: 10px;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a asp-controller="DadosCadastrais" asp-action="Consultar" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">👤</span>
+                        <span>Dados cadastrais</span>
+                    </a>
+                </li>
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a asp-controller="Endereco" asp-action="Criar" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">⚙️</span>
+                        <span>Configurações</span>
+                    </a>
+                </li>
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a href="/MapaConsumo" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">📊</span>
+                        <span>Mapa de Consumo</span>
+                    </a>
+                </li>
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a href="/Dashboard" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">📈</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a href="/Logout" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">🚪</span>
+                        <span>Deslogar</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <button id="toggleSidebar" onclick="toggleMenu()" style="margin: 10px; padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">Ocultar</button>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main style="margin-left: 260px; padding: 20px;">
+        <h1>Bem-vindo ao Dashboard</h1>
+        <p>Este é o conteúdo principal.</p>
+    </main>
+</div>
+
+<script>
+    // Simples lógica de ocultar/exibir o menu lateral
+    let isSidebarVisible = true;
+
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('toggleSidebar');
+
+        if (isSidebarVisible) {
+            sidebar.style.width = '60px';
+            sidebar.querySelectorAll('span:not(.icon)').forEach(el => el.style.display = 'none');
+            toggleButton.textContent = 'Expandir';
+            isSidebarVisible = false;
+        } else {
+            sidebar.style.width = '250px';
+            sidebar.querySelectorAll('span:not(.icon)').forEach(el => el.style.display = '');
+            toggleButton.textContent = 'Ocultar';
+            isSidebarVisible = true;
+        }
+    }
+
+    // Oculta o menu quando clicado fora dele
+    document.addEventListener('click', function (event) {
+        const sidebar = document.getElementById('sidebar');
+        if (!sidebar.contains(event.target) && isSidebarVisible) {
+            toggleMenu();
+        }
+    });
+</script>

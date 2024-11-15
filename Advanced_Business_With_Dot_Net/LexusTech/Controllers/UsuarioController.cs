@@ -1,4 +1,5 @@
 using LexusTech.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -109,6 +110,44 @@ public class UsuarioController : Controller
     {
         return View();
     }
+
+    [HttpGet("ConfirmarExcluir/{id}")]
+    public async Task<IActionResult> ConfirmarExcluir(int id)
+    {
+        var usuario = await _context.T_Usuario.FindAsync(id);
+        if (usuario == null)
+        {
+            return NotFound();
+        }
+
+        return View(usuario);
+    }
+
+
+    [HttpPost("Excluir")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Excluir(int id)
+    {
+        var usuario = await _context.T_Usuario.FindAsync(id);
+        if (usuario != null)
+        {
+            // Exclui o usuário do banco de dados
+            _context.T_Usuario.Remove(usuario);
+            await _context.SaveChangesAsync();
+
+            // Desloga o usuário
+            await _context.SaveChangesAsync();
+            await HttpContext.SignOutAsync(); // Remove a sessão do usuário logado
+            
+            // Redireciona para a página de login ou para onde você preferir
+            TempData["SuccessMessage"] = "Usuário excluído com sucesso.";
+            return RedirectToAction("Login", "Account"); // Ajuste para sua ação de login
+        }
+
+        TempData["ErrorMessage"] = "Usuário não encontrado.";
+        return RedirectToAction(nameof(Index)); // Ou para outra página desejada
+    }
+
 
 
 }

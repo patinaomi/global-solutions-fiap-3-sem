@@ -318,3 +318,17 @@ footer {
   background-position: center;
 }
 
+/* Mensagem */
+.energy-section-message {
+  background-image: url(/assets/Mensagem/purple-speech-balloon-design-element_53876-119935.jpg);
+  background-size: fill;
+  min-width: 100vh;
+  min-height: 100vh;
+  background-position: center; 
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;   
+  padding-left: 20px;        
+  padding-right: 100px;     
+  color: white;              
+}

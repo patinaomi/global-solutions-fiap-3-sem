@@ -69,6 +69,42 @@
       "PackagePath": "staticwebassets/assets/Login/imagem1.jpg"
     },
     {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/banheiro.jpg",
+      "PackagePath": "staticwebassets/assets/Mapa/banheiro.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/cozinha.jpg",
+      "PackagePath": "staticwebassets/assets/Mapa/cozinha.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/lavanderia.jpg",
+      "PackagePath": "staticwebassets/assets/Mapa/lavanderia.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/quarto.jpg",
+      "PackagePath": "staticwebassets/assets/Mapa/quarto.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/quarto2.png",
+      "PackagePath": "staticwebassets/assets/Mapa/quarto2.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mapa/sala.jpg",
+      "PackagePath": "staticwebassets/assets/Mapa/sala.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mensagem/imagem.png",
+      "PackagePath": "staticwebassets/assets/Mensagem/imagem.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mensagem/imagem1.png",
+      "PackagePath": "staticwebassets/assets/Mensagem/imagem1.png"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mensagem/purple-speech-balloon-design-element_53876-119935.jpg",
+      "PackagePath": "staticwebassets/assets/Mensagem/purple-speech-balloon-design-element_53876-119935.jpg"
+    },
+    {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem1.jpg",
       "PackagePath": "staticwebassets/assets/Mockup/imagem1.jpg"
     },
@@ -79,10 +115,6 @@
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem3",
       "PackagePath": "staticwebassets/assets/Mockup"
-    },
-    {
-      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem4.avif",
-      "PackagePath": "staticwebassets/assets/Mockup/imagem4.avif"
     },
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Mockup/imagem4.png",
@@ -99,6 +131,10 @@
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Time/patricia.jpeg",
       "PackagePath": "staticwebassets/assets/Time/patricia.jpeg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Usuario/imagem.png",
+      "PackagePath": "staticwebassets/assets/Usuario/imagem.png"
     },
     {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Video/imagem.jpg",
