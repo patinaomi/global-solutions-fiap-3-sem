@@ -1,0 +1,99 @@
+@{
+    ViewData["Title"] = "Mapa de Consumo de Energia";
+}
+
+<section>
+    <div class="container-fluid" style="min-height: 80vh; justify-content: center; align-items: center;">
+        <h1 class="text-center pt-3">Mapa de Consumo de Energia</h1>
+
+        <!-- Mapa do apartamento -->
+        <div class="apartment-map" style="position: relative; width: 98vw; height: 70vh; background-color: white; border: 2px solid #ccc; display: flex; justify-content: space-between; flex-wrap: wrap;">
+            
+            <!-- Quarto 1 -->
+            <div class="room quarto" id="bedroom1" data-room="quarto1" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative;">
+                <h3 class="text-center p-3">Quarto 1</h3>
+                <div class="item" data-consumption="0.5" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center; border: 2px solid black;">Luz</div>
+                <div class="item" data-consumption="1.5" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 50%; left: 10%; text-align: center; border: 2px solid black;">AC</div>
+                <div class="item" data-consumption="0.8" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 50%; left: 40%; text-align: center; border: 2px solid black;">Computador</div>
+            </div>
+
+            <!-- Quarto 2 -->
+            <div class="room quartoDois" id="bedroom2" data-room="quarto2" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative; background-color: #e3ffce;">
+                <h3 class="text-center p-3">Quarto 2</h3>
+                <div class="item" data-consumption="0.4" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Luz</div>
+                <div class="item" data-consumption="1.0" style="width: 100px; height: 50px; background-color: #32cd32; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">PC</div>
+            </div>
+
+            <!-- Sala -->
+            <div class="room sala" id="living-room" data-room="sala" style="flex: 1 1 40%; margin: 10px; border: 2px solid #ccc; position: relative;">
+                <h3 class="text-center p-3">Sala</h3>
+                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #87ceeb; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">AC</div>
+                <div class="item" data-consumption="0.7" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">TV</div>
+            </div>
+
+            <!-- Banheiro -->
+            <div class="room banheiro" id="bathroom" data-room="banheiro" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative;">
+                <h3 class="text-center p-3">Banheiro</h3>
+                <div class="item" data-consumption="0.3" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Luz</div>
+                <div class="item" data-consumption="1.8" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">Secador</div>
+            </div>
+
+            <!-- Cozinha -->
+            <div class="room cozinha" id="kitchen" data-room="cozinha" style="flex: 1 1 40%; margin: 10px; border: 2px solid #ccc; background-color: #ff6347; position: relative;">
+                <h3 class="text-center p-3">Cozinha</h3>
+                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Geladeira</div>
+                <div class="item" data-consumption="2.5" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 20%; left: 30%; text-align: center;border: 2px solid black;">Forno</div>
+                <div class="item" data-consumption="1.5" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 50%; text-align: center;border: 2px solid black;">Fogão</div>
+                <div class="item" data-consumption="1.2" style="width: 100px; height: 50px; background-color: #ffff00; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">Micro-ondas</div>
+            </div>
+
+            <!-- Lavanderia -->
+            <div class="room lavanderia" id="laundry" data-room="lavanderia" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; background-color: #fffdc9; position: relative;">
+                <h3 class="text-center p-3">Lavanderia</h3>
+                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Máquina</div>
+            </div>
+
+        </div>
+
+        <!-- Popup para itens -->
+        <div id="item-popup" class="popup" style="display:none; position: absolute; border: 1px solid #ccc; background-color: #fff; padding: 10px; z-index: 1000;">
+            <p><strong>Item:</strong> <span id="item-name"></span></p>
+            <p><strong>Consumo:</strong> <span id="item-consumption"></span> kWh</p>
+        </div>
+
+        <div id="popup" class="popup">
+            <h4 id="room-title">Detalhes do Cômodo</h4>
+            <p><strong>Consumo:</strong> <span id="energy-consumption"></span> kWh</p>
+            <p><strong>Itens:</strong></p>
+            <ul id="items-list"></ul>
+            <button onclick="closePopup()" class="btn btn-secondary">Fechar</button>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.item').forEach(function(item) {
+        item.addEventListener('mouseover', function(e) {
+            const consumption = e.target.getAttribute('data-consumption');
+            const itemName = e.target.textContent;
+
+            const popup = document.getElementById('item-popup');
+            document.getElementById('item-name').textContent = itemName;
+            document.getElementById('item-consumption').textContent = consumption;
+
+            popup.style.display = 'block';
+            popup.style.left = e.pageX + 10 + 'px';
+            popup.style.top = e.pageY + 10 + 'px';
+        });
+
+        item.addEventListener('mouseout', function() {
+            document.getElementById('item-popup').style.display = 'none';
+        });
+    });
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+</script>
+

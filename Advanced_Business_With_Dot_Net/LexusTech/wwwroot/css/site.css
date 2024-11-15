@@ -252,3 +252,69 @@ footer {
   padding-right: 100px;     
   color: white;              
 }
+
+/* Video */
+.background-image-video {
+  background-image: url('../assets/Video/imagem.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mapa */
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  width: 300px;
+  max-width: 80%;
+}
+.popup.active {
+  display: block;
+}
+
+/* Mapa - ambientes */
+
+.quarto {
+  background-image: url(../assets/Mapa/quarto.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.quartoDois {
+  background-image: url(../assets/Mapa/quarto2.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.sala {
+  background-image: url(../assets/Mapa/sala.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.cozinha {
+  background-image: url(../assets/Mapa/cozinha.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.lavanderia {
+  background-image: url(../assets/Mapa/lavanderia.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.banheiro {
+  background-image: url(../assets/Mapa/banheiro.jpg);
+  background-size: cover;
+  background-position: center;
+}
+

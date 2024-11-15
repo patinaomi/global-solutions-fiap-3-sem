@@ -101,6 +101,22 @@
       "PackagePath": "staticwebassets/assets/Time/patricia.jpeg"
     },
     {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Video/imagem.jpg",
+      "PackagePath": "staticwebassets/assets/Video/imagem.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Video/imagem2 copy.jpg",
+      "PackagePath": "staticwebassets/assets/Video/imagem2 copy.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Video/imagem2.jpg",
+      "PackagePath": "staticwebassets/assets/Video/imagem2.jpg"
+    },
+    {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Video/imagem3.jpg",
+      "PackagePath": "staticwebassets/assets/Video/imagem3.jpg"
+    },
+    {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
