@@ -1,0 +1,58 @@
+@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Direcionamento dos próximos passos";
+    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+}
+
+<section class="d-flex justify-content-center align-items-center mb-5" style="height: 80vh;">
+    
+    <div class="w-20 d-flex align-items-center justify-content-center" style="height: 70vh; padding-right: 10px;">
+        
+        <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
+
+            <!-- Saudação personalizada -->
+                <h6 class="mb-4">
+                    @if (User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+                        @* Exibe o nome do usuário se ele estiver logado *@
+                        <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem!</span>
+
+                        /*<p>Id do banco: @userId</p>*/
+
+                    }
+                    else
+                    {
+                        @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
+                        <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
+                    }
+                </h6>
+            <p>Você concluiu com sucesso as etapas principais para otimizar o seu ambiente, promovendo uma economia significativa. Além disso, você agora tem acesso a informações valiosas que serão fundamentais tanto para a manutenção eficiente quanto para a adoção de melhores práticas voltadas à sustentabilidade e preservação do meio ambiente. Essas práticas não só ajudarão a reduzir custos operacionais, mas também contribuirão para um futuro mais verde e responsável, alinhando sua operação com as demandas de um mercado cada vez mais consciente das questões ambientais.</p>
+
+            <h2 class="fs-4 pt-3">Próximos passos</h2>
+
+            <p>Clique no botão abaixo e seja direcionado para o Mapa de consumo da sua residência, depois disso, veja o Dashboard com as informações em detalhes e com projeção do valor da sua conta de energia.</p>
+
+            <div class="form-group pt-3">
+                    
+                <a asp-controller="Informacao" asp-action="Index" class="btn" style="background-color: #73977F; color: white;">Mapa</a>
+
+                <a asp-controller="Item" asp-action="Consultar" class="btn btn-secondary">Dashboard</a>
+
+                <a asp-controller="Item" asp-action="Criar" class="btn btn-warning">Voltar</a>
+
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    <div class="w-80" style="height: 80vh">
+        <img src="~/assets/Ambientes/imagem.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
