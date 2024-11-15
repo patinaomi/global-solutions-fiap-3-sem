@@ -221,7 +221,7 @@ CREATE TABLE T_Feedback (
     CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES T_Recomendacao(id_recomendacao)
 );
 
-// 2. PROCEDURES E FUNÇÕES
+// PROCEDURES E FUNÇÕES
 
 
 SET SERVEROUTPUT ON;
@@ -393,28 +393,6 @@ EXCEPTION
         RAISE;
 END;
 
--- Testar
-BEGIN
-    cadastrar_usuario(
-        p_nome          => 'João',
-        p_sobrenome     => 'Silva',
-        p_telefone      => '11987654321',
-        p_email         => 'joao.silva@email.com',
-        p_senha         => 'senha123',
-        p_logradouro    => 'Rua das Flores',
-        p_numero        => '123',
-        p_complemento   => 'Apto 101',
-        p_bairro        => 'Centro',
-        p_cidade        => 'São Paulo',
-        p_cep           => '01000000',
-        p_sigla_estado  => 'SP'
-    );
-END;
-
-select * from T_Usuario;
-select * from T_Endereco;
-select * from T_Estado;
-
 -- Inserir 10 linhas
 
 BEGIN
@@ -580,7 +558,6 @@ BEGIN
 END;
 
 -- Consultar
-
 SELECT * FROM T_Usuario;
 SELECT * FROM T_Endereco;
 SELECT * FROM T_Estado;
@@ -588,7 +565,6 @@ SELECT * FROM T_Estado;
 -- Três funções para validar os dados, será e-mail, telefone e nome que não deve conter números
 
 -- 1. Função para validar e-mail
-
 CREATE OR REPLACE FUNCTION VALIDAR_EMAIL(p_email VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
     IF p_email NOT LIKE '%@%' THEN
@@ -600,7 +576,6 @@ BEGIN
     END IF;
 END validar_email;
 
-
 -- 2. Função para validar telefone
 CREATE OR REPLACE FUNCTION VALIDAR_TELEFONE(p_telefone VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
@@ -610,7 +585,6 @@ BEGIN
         RETURN 'Válido';
     END IF;
 END validar_telefone;
-
 
 -- 3. Função para validar nome
 
@@ -758,7 +732,6 @@ BEGIN
 END;
 
 -- Inserir daddos de itens de cada comodo
-
 BEGIN
     -- Inserindo itens na casa
     INSERIR_ITEM_CASA(1, 1, 'Smartphone no quarto');
@@ -776,7 +749,6 @@ END;
 select * from T_Item_Casa;
 
 -- Tabela Orçamento
-
 CREATE OR REPLACE PROCEDURE INSERIR_ORCAMENTO(
     p_id_usuario IN INTEGER,
     p_data_hora_visita IN TIMESTAMP,
@@ -791,7 +763,6 @@ BEGIN
 END;
 
 -- Inserir dados Orçamento
-
 BEGIN
     INSERIR_ORCAMENTO(1, TO_TIMESTAMP('2023-11-10 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1500);
     INSERIR_ORCAMENTO(2, TO_TIMESTAMP('2023-11-12 11:30:00', 'YYYY-MM-DD HH24:MI:SS'), 2500);
@@ -808,7 +779,6 @@ END;
 select * from T_Orcamento;
 
 -- Tabela Formulário Mobile
-
 CREATE OR REPLACE PROCEDURE INSERIR_FORMULARIO(
     p_nome IN VARCHAR2,
     p_sobrenome IN VARCHAR2,
@@ -825,7 +795,6 @@ BEGIN
 END;
 
 -- Inserir dados Formulário Mobile
-
 BEGIN
 
     INSERIR_FORMULARIO('João', 'Silva', '11999999999', 'joao.silva@gmail.com', 'Gostaria de saber mais sobre os serviços.');
@@ -858,7 +827,6 @@ BEGIN
 END;
 
 -- Inserir dados Tabela Consumo
-
 BEGIN
     INSERIR_CONSUMO(1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'), 50);
     INSERIR_CONSUMO(2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'), 30);
@@ -875,7 +843,6 @@ END;
 select * from T_Consumo;
 
 -- Tabela Recomendação
-
 CREATE OR REPLACE PROCEDURE INSERIR_RECOMENDACAO(
     p_id_usuario IN T_Recomendacao.id_usuario%TYPE,
     p_id_comodo IN T_Recomendacao.id_comodo%TYPE,
@@ -902,7 +869,6 @@ BEGIN
 END;
 
 -- Inserir dados na tabela Recomendações
-
 BEGIN
     INSERIR_RECOMENDACAO(1, 1, 1, 1, 5, 150, 2, 'Substituir por um modelo mais eficiente', TO_DATE('2024-11-01', 'YYYY-MM-DD'));
     INSERIR_RECOMENDACAO(2, 2, 2, 2, 4, 120, 1, 'Revisar o uso do item para economia', TO_DATE('2024-11-02', 'YYYY-MM-DD'));
@@ -919,7 +885,6 @@ END;
 select * from T_Recomendacao;
 
 -- Tabela Tipo de Notificação
-
 CREATE OR REPLACE PROCEDURE INSERIR_TIPO_NOTIFICACAO(
     p_desc_tipo_notif IN T_Tipo_Notificacao.desc_tipo_notif%TYPE
 )
@@ -944,7 +909,6 @@ END;
 select * from T_Tipo_Notificacao;
 
 -- Tabela Notificação
-
 CREATE OR REPLACE PROCEDURE INSERIR_NOTIFICACAO(
     p_id_usuario IN T_Notificacao.id_usuario%TYPE,
     p_id_tipo_notificacao IN T_Notificacao.id_tipo_notificacao%TYPE,
@@ -975,7 +939,6 @@ END;
 select * from T_Notificacao;
 
 -- Tabela configuraçao do usuário
-
 CREATE OR REPLACE PROCEDURE INSERIR_CONFIGURACAO_USUARIO(
     p_id_usuario IN T_Configuracao_Usuario.id_usuario%TYPE,
     p_id_tipo_notificacao IN T_Configuracao_Usuario.id_tipo_notificacao%TYPE,
@@ -990,7 +953,6 @@ BEGIN
 END;
 
 -- Inserir dados na tabela de configuração do usuário
-
 BEGIN
     INSERIR_CONFIGURACAO_USUARIO(1, 1, 100);
     INSERIR_CONFIGURACAO_USUARIO(2, 2, 150);
@@ -1007,7 +969,6 @@ END;
 select * from T_Configuracao_Usuario;
 
 -- Tabela Alertas
-
 CREATE OR REPLACE PROCEDURE inserir_historico_alerta (
     p_id_usuario IN INTEGER,
     p_id_comodo IN INTEGER,
@@ -1038,7 +999,6 @@ BEGIN
 END;
 
 -- Inserir dados para alerta
-
 BEGIN
     inserir_historico_alerta(1, 1, 1, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
     inserir_historico_alerta(2, 1, 2, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
@@ -1055,7 +1015,6 @@ END;
 select * from T_Historico_Alerta;
 
 -- Tabela Tipo Evento
-
 CREATE OR REPLACE PROCEDURE inserir_tipo_evento (
     p_descricao IN VARCHAR2
 ) AS
@@ -1067,7 +1026,6 @@ BEGIN
 END;
 
 -- Inserir dados
-
 BEGIN
     inserir_tipo_evento('Evento de Consumo Alto');
     inserir_tipo_evento('Evento de Consumo Moderado');
@@ -1084,7 +1042,6 @@ END;
 select * from T_Tipo_Evento;
 
 -- Tabela Manutenção
-
 CREATE OR REPLACE PROCEDURE INSERIR_EVENTO_MANUTENCAO (
     p_id_usuario          IN INTEGER,
     p_id_item_casa        IN INTEGER,
@@ -1110,7 +1067,6 @@ EXCEPTION
 END INSERIR_EVENTO_MANUTENCAO;
 
 -- Inserir dados
-
 BEGIN
     INSERIR_EVENTO_MANUTENCAO(1, 2, TO_TIMESTAMP('2024-11-10 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Manutenção preventiva no item A', 1);
     INSERIR_EVENTO_MANUTENCAO(2, 3, TO_TIMESTAMP('2024-11-11 09:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Troca de filtro do item B', 2);
@@ -1127,7 +1083,6 @@ END;
 select * from T_Evento_Manutencao;
 
 -- Tabela Feedback
-
 CREATE OR REPLACE PROCEDURE INSERIR_FEEDBACK(
     p_id_usuario IN T_Feedback.id_usuario%TYPE,
     p_id_recomendacao IN T_Feedback.id_recomendacao%TYPE,
@@ -1150,7 +1105,6 @@ BEGIN
 END INSERIR_FEEDBACK;
 
 -- Inserir dados
-
 BEGIN
     -- Inserindo 10 registros na tabela T_Feedback
     INSERIR_FEEDBACK(1, 1, 4, 'A recomendação foi muito útil, consegui reduzir meu consumo de energia.');
@@ -1170,7 +1124,6 @@ select * from T_Feedback;
 // Procedure para exportar dados como JSON
 
 -- 1. Criar uma tabela temporária com os dados completos do usuário
-
 CREATE TABLE T_Dados_Completos_Usuario AS
 SELECT 
     u.id_usuario,
