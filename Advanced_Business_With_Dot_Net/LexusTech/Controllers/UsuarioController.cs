@@ -137,11 +137,11 @@ public class UsuarioController : Controller
 
             // Desloga o usuário
             await _context.SaveChangesAsync();
-            await HttpContext.SignOutAsync(); // Remove a sessão do usuário logado
+            await HttpContext.SignOutAsync();
             
             // Redireciona para a página de login ou para onde você preferir
             TempData["SuccessMessage"] = "Usuário excluído com sucesso.";
-            return RedirectToAction("Login", "Account"); // Ajuste para sua ação de login
+            return RedirectToAction("Home", "Index"); 
         }
 
         TempData["ErrorMessage"] = "Usuário não encontrado.";
