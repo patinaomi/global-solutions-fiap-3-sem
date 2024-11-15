@@ -26,7 +26,7 @@ public class Estado {
     @Column(length = 2, nullable = false)
     private String sigla;
 
-    @OneToMany(mappedBy = "t_estado")
+    @OneToMany(mappedBy = "estado")
     private List<Endereco> enderecos = new ArrayList<>();
 
 }

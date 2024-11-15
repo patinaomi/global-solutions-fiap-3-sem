@@ -6,44 +6,40 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
+@Builder
 @Entity
-@Table(name = "t_comodo")
-public class Comodo {
+@Table(name = "t_notificacao")
+public class Notificacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_comodo", nullable = false)
+    @Column(name = "id_notificacao", nullable = false)
     private Integer id;
 
-    @Column(name = "descricao", length = 50, nullable = false)
-    private String descricao;
+    @Column(length = 250)
+    private String mensagem;
+
+    @Column(name = "data_envio", nullable = false)
+    private LocalDate dataEnvio;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "comodo")
-    private List<ItemCasa> itensCasa;
-
-    @OneToMany(mappedBy = "comodo")
-    private List<HistoricoAlerta> historicoAlertas;
-
-    @OneToMany(mappedBy = "comodo")
-    private List<Recomendacao> recomendacoes;
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_notif")
+    private TipoNotificacao tipoNotificacao;
 }

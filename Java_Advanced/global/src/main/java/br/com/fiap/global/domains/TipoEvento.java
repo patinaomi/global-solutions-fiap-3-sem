@@ -6,29 +6,30 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "t_tipo_dispositivo")
-public class TipoDispositivo {
+@Table(name = "t_tipo_evento")
+public class TipoEvento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo_dispositivo", nullable = false)
+    @Column(name = "id_tipo_evento")
     private Integer id;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 250)
     private String descricao;
 
-    @OneToMany(mappedBy = "tipoDispositivo")
-    private List<ItemCasa> itensCasa;
+    @OneToMany(mappedBy = "tipoEvento")
+    private List<EventoManutencao> eventoManutencoes;
 }

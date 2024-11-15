@@ -237,3 +237,18 @@ footer {
   bottom: 0;
   margin-top: auto; 
 }
+
+/* Login */
+.energy-section-login {
+  background-image: url(/assets/Login/imagem1.jpg);
+  background-size: cover;
+  min-width: 100vh;
+  min-height: 80vh;
+  background-position: left center; 
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;   
+  padding-left: 20px;        
+  padding-right: 100px;     
+  color: white;              
+}

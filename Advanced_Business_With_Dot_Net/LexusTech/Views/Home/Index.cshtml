@@ -13,12 +13,12 @@
                     @if (User.Identity != null && User.Identity.IsAuthenticated)
                     {
                         @* Exibe o nome do usuário se ele estiver logado *@
-                        <span>Bem-vindo, @User.Identity.Name!</span>
+                        <span style="color: #4CAF50;">Bem-vindo, @User.Identity.Name!</span>
                     }
                     else
                     {
                         @* Exibe "Visitante" se o usuário não estiver logado *@
-                        <span style="color: #3C4748;">Bem-vindo, Visitante! Faça seu login para acessar suas informações personalizadas.</span>
+                        <span style="color: #4CAF50;">Bem-vindo, Visitante! Faça seu login para acessar suas informações personalizadas.</span>
                     }
                 </h6>
 
