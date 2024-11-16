@@ -1,5 +1,9 @@
+@using System.Security.Claims
+@model List<LexusTech.Models.Consumo>
+
 @{
     ViewData["Title"] = "Dashboard";
+    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
 <div>
@@ -22,21 +26,21 @@
                     </a>
                 </li>
                 <li style="padding: 10px; border-bottom: 1px solid #ddd;">
-                    <a href="/MapaConsumo" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                    <a asp-controller="Mapa" asp-action="Index"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
                         <span class="icon" style="margin-right: 10px;">📊</span>
                         <span>Mapa de Consumo</span>
                     </a>
                 </li>
                 <li style="padding: 10px; border-bottom: 1px solid #ddd;">
-                    <a href="/Dashboard" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                    <a asp-controller="Consumo" asp-action="Consultar"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
                         <span class="icon" style="margin-right: 10px;">📈</span>
-                        <span>Dashboard</span>
+                        <span>Consumo</span>
                     </a>
                 </li>
                 <li style="padding: 10px; border-bottom: 1px solid #ddd;">
-                    <a href="/Logout" style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                    <a asp-controller="Usuario" asp-action="Cadastrar"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
                         <span class="icon" style="margin-right: 10px;">🚪</span>
-                        <span>Deslogar</span>
+                        <span>Cadastro</span>
                     </a>
                 </li>
             </ul>
@@ -45,10 +49,52 @@
     </aside>
 
     <!-- Conteúdo Principal -->
-    <main style="margin-left: 260px; padding: 20px;">
-        <h1>Bem-vindo ao Dashboard</h1>
+    <!-- Conteúdo Principal -->
+    <main class="text-center" style="margin-left: 260px; padding: 20px;">
+        <h1>Bem-vindo ao Dashboard</h1> 
+        <!-- Saudação personalizada -->
+        <h6 class="mb-4">
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                @* Exibe o nome do usuário se ele estiver logado *@
+                <span>Olá @User.Identity.Name @userId, esperamos que esteja bem!</span>
+
+            }
+            else
+            {
+                @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
+                <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
+            }
+        </h6>
         <p>Este é o conteúdo principal.</p>
+
+        <!-- Chamar os gráficos aqui -->
+        <!-- Verificar se há dados -->
+        @if (Model != null && Model.Count > 0)
+        {
+            <table class="table" style="margin: 0 auto; width: 80%; border: 1px solid #ddd; text-align: left;">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var consumo in Model)
+                    {
+                        <tr>
+                            <td>@consumo.IdUsuario</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Nenhum dado de consumo encontrado.</p>
+        }
     </main>
+
+
 </div>
 
 <script>

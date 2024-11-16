@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace LexusTech.Migrations
 {
     /// <inheritdoc />
-    public partial class ItensCasa : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,6 +23,24 @@ namespace LexusTech.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_T_Comodo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "T_Consumo",
+                columns: table => new
+                {
+                    IdConsumo = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    IdUsuario = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    IdComodo = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    IdItemCasa = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    ConsumoDiario = table.Column<decimal>(type: "DECIMAL(18, 2)", nullable: false),
+                    DataConsumo = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: false),
+                    Valor = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_T_Consumo", x => x.IdConsumo);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,6 +99,9 @@ namespace LexusTech.Migrations
         {
             migrationBuilder.DropTable(
                 name: "T_Comodo");
+
+            migrationBuilder.DropTable(
+                name: "T_Consumo");
 
             migrationBuilder.DropTable(
                 name: "T_Endereco");

@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace LexusTech.Controllers
 {
-    public class EnderecoController : Controller
+    public class ConsumoController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public EnderecoController(ApplicationDbContext context)
+        public ConsumoController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -23,27 +23,27 @@ namespace LexusTech.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Criar(Endereco endereco)
+        public async Task<IActionResult> Criar(Consumo consumo)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(endereco);
+                _context.Add(consumo);
                 await _context.SaveChangesAsync();
 
-                TempData["SuccessMessage"] = "Preferência cadastrada com sucesso, clique em continuar!";
-                // return RedirectToAction("Mensagem");
+                TempData["SuccessMessage"] = "Consumo cadastrado com sucesso, clique em consultar ou Dashboard!";
+            
             }
-            return View(endereco);
+            return View(consumo);
         }
 
-        [HttpGet("Endereco/Consultar", Name = "ConsultarEndereco")]
+        [HttpGet("Consumo/Consultar", Name = "ConsultarConsumo")]
         public async Task<IActionResult> Consultar()
         {
-            var dados = await _context.T_Endereco.ToListAsync(); 
+            var dados = await _context.T_Consumo.ToListAsync(); 
             return View(dados); 
         }
 
-        [HttpGet("Endereco/Atualizar")]
+        [HttpGet("Consumo/Atualizar")]
         public async Task<IActionResult> Atualizar()
         {
             var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -53,21 +53,21 @@ namespace LexusTech.Controllers
                 return RedirectToAction("Error");
             }
 
-            var usuario = await _context.T_Endereco.FindAsync(userId);
-            if (usuario == null)
+            var consumo = await _context.T_Consumo.FindAsync(userId);
+            if (consumo == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(consumo);
         }
 
-        [HttpPost("Endereco/Atualizar", Name = "EnderecoAtualizar")]
-        public async Task<IActionResult> Atualizar(Endereco endereco)
+        [HttpPost("Consumo/Atualizar", Name = "ConsumoAtualizar")]
+        public async Task<IActionResult> Atualizar(Consumo consumo)
         {
             if (!ModelState.IsValid)
             {
-                return View(endereco);
+                return View(consumo);
             }
 
             var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -77,22 +77,22 @@ namespace LexusTech.Controllers
                 return RedirectToAction("Error");
             }
 
-            var enderecoExistente = await _context.T_Endereco.FindAsync(userId);
-            if (enderecoExistente == null)
+            var consumoExistente = await _context.T_Consumo.FindAsync(userId);
+            if (consumoExistente == null)
             {
                 return NotFound();
             }
 
-            enderecoExistente.CEP = endereco.CEP;
-            enderecoExistente.Estado = endereco.Estado;
-            enderecoExistente.Cidade = endereco.Cidade;
-            enderecoExistente.Bairro = endereco.Bairro;
-            enderecoExistente.Rua = endereco.Rua;
-            enderecoExistente.Complemento = endereco.Complemento;
+            consumoExistente.IdUsuario = consumo.IdUsuario;
+            consumoExistente.IdComodo = consumo.IdComodo;
+            consumoExistente.IdItemCasa = consumo.IdItemCasa;
+            consumoExistente.DataConsumo = consumo.DataConsumo;
+            consumoExistente.ConsumoDiario = consumo.ConsumoDiario;
+            consumoExistente.Valor = consumo.Valor;
 
             await _context.SaveChangesAsync();
 
-            TempData["SuccessMessage"] = "Usuário atualizado com sucesso!";
+            TempData["SuccessMessage"] = "Consumo atualizado com sucesso!";
             return RedirectToAction("MensagemAtualizacao");
         }
 

@@ -1,0 +1,42 @@
+@model IEnumerable<LexusTech.Models.Consumo>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<section class="p-5">
+    <h2>Lista do consumo</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var consumo in Model)
+            {
+                <tr>
+                    <td>@consumo.IdConsumo</td>
+                    <td>@consumo.IdUsuario</td>
+                    <td>@consumo.IdComodo</td>
+                    <td>@consumo.IdItemCasa</td>
+                    <td>@consumo.DataConsumo</td>
+                    <td>@consumo.Valor</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group pt-3">
+        <a asp-controller="Consumo" asp-action="Criar" class="btn btn-warning">Cadastrar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+
+</section>

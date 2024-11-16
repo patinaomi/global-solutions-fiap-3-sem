@@ -6,13 +6,13 @@
     var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
-<section class="d-flex justify-content-center align-items-center mb-5" style="height: 80vh;">
+<section class="d-flex justify-content-center align-items-center mb-5 pt-5" style="height: 80vh;">
     
     <div class="w-20 d-flex align-items-center justify-content-center" style="height: 70vh; padding-right: 10px;">
         
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
 
-            <!-- Saudação personalizada -->
+                <!-- Saudação personalizada -->
                 <h6 class="mb-4">
                     @if (User.Identity != null && User.Identity.IsAuthenticated)
                     {

@@ -78,3 +78,14 @@
 ```bash
     http://localhost:8080/
 ```
+
+## Processo Json
+
+```bash
+    dotnet add package Newtonsoft.Json
+``` 
+
+**Chamar este processo nos componentes que eu preciso usar**
+```bash
+    @using Newtonsoft.Json
+``` 

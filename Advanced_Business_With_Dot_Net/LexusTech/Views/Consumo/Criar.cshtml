@@ -1,8 +1,8 @@
 @using System.Security.Claims
-@model LexusTech.Models.Comodo
+@model LexusTech.Models.Consumo
 
 @{
-    ViewData["Title"] = "Cadastrar os ambientes que serão mapeados";
+    ViewData["Title"] = "Cadastrar o consumo";
     var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
@@ -12,7 +12,7 @@
         
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
 
-            <!-- Saudação personalizada -->
+                <!-- Saudação personalizada -->
                 <h6 class="mb-4">
                     @if (User.Identity != null && User.Identity.IsAuthenticated)
                     {
@@ -30,36 +30,46 @@
                 </h6>
             <p>Preenchendo o combo de informações, além de economizar mensalmente, consiga sugestões que farão seus móveis durarem mais e ajudar o meio ambiente.</p>
 
-            <h2 class="fs-4 pt-3">Ambientes</h2>
+            <h2 class="fs-4">Consumo</h2>
 
             <form asp-action="Criar" method="post">
 
                 <!-- Campo oculto para armazenar o ID do Cliente -->
                 <input type="hidden" asp-for="IdUsuario" value="@userId" />
 
-                <!-- Seletor de ambientes com múltiplas seleções -->
                 <div class="form-group">
-                    <label asp-for="Descricao" class="control-label">Ambientes</label>
-                    <select id="ambientes" class="form-control" name="Descricao" multiple>
-                        <option value="sala">Sala</option>
-                        <option value="cozinha">Cozinha</option>
-                        <option value="lavanderia">Lavanderia</option>
-                        <option value="quarto1">Quarto 1</option>
-                        <option value="quarto2">Quarto 2</option>
-                        <option value="banheiro">Banheiro</option>
-                    </select>
-                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                    <label asp-for="IdComodo" class="control-label fs-6"></label>
+                    <input asp-for="IdComodo" class="form-control" />
+                    <span asp-validation-for="IdComodo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdItemCasa" class="control-label fs-6"></label>
+                    <input asp-for="IdItemCasa" class="form-control" />
+                    <span asp-validation-for="IdItemCasa" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConsumoDiario" class="control-label fs-6"></label>
+                    <input asp-for="ConsumoDiario" class="form-control" />
+                    <span asp-validation-for="ConsumoDiario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataConsumo" class="control-label fs-6"></label>
+                    <input asp-for="DataConsumo" class="form-control" type="date" />
+                    <span asp-validation-for="DataConsumo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Valor" class="control-label fs-6"></label>
+                    <input asp-for="Valor" class="form-control" />
+                    <span asp-validation-for="Valor" class="text-danger"></span>
                 </div>
                 
                 <div class="form-group pt-3">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <!-- Botão que redireciona para a página CriarDiaSemanaPreferencia -->
-                    <a asp-controller="Item" asp-action="Criar" class="btn btn-secondary">Continuar</a>
+                    
+                    <a asp-controller="Consumo" asp-action="Consultar" class="btn btn-secondary">Consultar lista</a>
 
                     <!-- Botão que redireciona para a ação Consultar do controller EnderecoPreferencia -->
-                    <a asp-controller="Comodo" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
-
-                    <a asp-controller="Endereco" asp-action="Criar" class="btn btn-warning">Voltar</a>
+                    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-secondary">Dashboard</a>
 
                 </div>
 
@@ -76,7 +86,7 @@
     </div>
 
     <div class="w-80" style="height: 80vh">
-        <img src="~/assets/Ambientes/imagem.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="~/assets/Consumo/imagem.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 </section>
 

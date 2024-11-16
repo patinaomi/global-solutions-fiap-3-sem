@@ -1,12 +1,3 @@
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.csproj.AssemblyReference.cache
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.GeneratedMSBuildEditorConfig.editorconfig
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.AssemblyInfoInputs.cache
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.AssemblyInfo.cs
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.csproj.CoreCompileInputs.cache
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.MvcApplicationPartsAssemblyInfo.cache
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.RazorAssemblyInfo.cache
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.RazorAssemblyInfo.cs
-/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.sourcelink.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/appsettings.Development.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/appsettings.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/LexusTech.staticwebassets.runtime.json
@@ -33,6 +24,7 @@
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Mono.TextTemplating.dll
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Oracle.EntityFrameworkCore.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/Oracle.ManagedDataAccess.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/System.CodeDom.dll
@@ -102,6 +94,15 @@
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/runtimes/linux/lib/net8.0/System.DirectoryServices.Protocols.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/runtimes/osx/lib/net8.0/System.DirectoryServices.Protocols.dll
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.DirectoryServices.Protocols.dll
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.csproj.AssemblyReference.cache
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.GeneratedMSBuildEditorConfig.editorconfig
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.AssemblyInfoInputs.cache
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.AssemblyInfo.cs
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.csproj.CoreCompileInputs.cache
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.MvcApplicationPartsAssemblyInfo.cache
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.RazorAssemblyInfo.cache
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.RazorAssemblyInfo.cs
+/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/LexusTech.sourcelink.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/staticwebassets.build.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/staticwebassets.development.json
 /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/Debug/net8.0/staticwebassets/msbuild.LexusTech.Microsoft.AspNetCore.StaticWebAssets.props

@@ -141,11 +141,17 @@ public class UsuarioController : Controller
             
             // Redireciona para a página de login ou para onde você preferir
             TempData["SuccessMessage"] = "Usuário excluído com sucesso.";
-            return RedirectToAction("Home", "Index"); 
+            return RedirectToAction("MensagemExclusao", "Usuario"); 
         }
 
         TempData["ErrorMessage"] = "Usuário não encontrado.";
         return RedirectToAction(nameof(Index)); // Ou para outra página desejada
+    }
+
+    [HttpGet("MensagemExclusao")]
+    public IActionResult MensagemExclusao()
+    {
+        return View();
     }
 
 

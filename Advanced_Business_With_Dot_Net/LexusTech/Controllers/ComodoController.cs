@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using LexusTech.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LexusTech.Controllers
 {
@@ -14,6 +15,7 @@ namespace LexusTech.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Criar()
         {
             return View();
