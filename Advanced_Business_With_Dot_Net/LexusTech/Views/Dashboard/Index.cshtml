@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li style="padding: 10px; border-bottom: 1px solid #ddd;">
-                    <a asp-controller="Usuario" asp-action="Cadastrar"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                    <a asp-controller="Usuario" asp-action="Criar"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
                         <span class="icon" style="margin-right: 10px;">🚪</span>
                         <span>Cadastro</span>
                     </a>
@@ -50,7 +50,7 @@
 
     <!-- Conteúdo Principal -->
     <!-- Conteúdo Principal -->
-    <main class="text-center" style="margin-left: 260px; padding: 20px;">
+    <main class="text-center" style="margin-left: 260px; padding: 20px; justify-content: center; align-items: center; text-align: center; justify-items: center;">
         <h1>Bem-vindo ao Dashboard</h1> 
         <!-- Saudação personalizada -->
         <h6 class="mb-4">
@@ -66,7 +66,8 @@
                 <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
             }
         </h6>
-        <p>Este é o conteúdo principal.</p>
+
+        <p>Dados sobre o consumo diário</p>
 
         <!-- Chamar os gráficos aqui -->
         <!-- Verificar se há dados -->
@@ -76,6 +77,11 @@
                 <thead>
                     <tr>
                         <th>Usuario</th>
+                        <th>Ambiente</th>
+                        <th>Item</th>
+                        <th>Consumo</th>
+                        <th>Data</th>
+                        <th>Valor</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,6 +89,11 @@
                     {
                         <tr>
                             <td>@consumo.IdUsuario</td>
+                            <td>@consumo.IdComodo</td>
+                            <td>@consumo.IdItemCasa</td>
+                            <td>@consumo.ConsumoDiario</td>
+                            <td>@consumo.DataConsumo</td>
+                            <td>@consumo.Valor</td>
                         </tr>
                     }
                 </tbody>
@@ -92,8 +103,25 @@
         {
             <p>Nenhum dado de consumo encontrado.</p>
         }
-    </main>
 
+        <!-- Gráfico de barra -->
+        <p class="pt-5 mb-5">Gráfico com os ambientes que mais estão consumindo diariamente</p>
+        <div class="mb-5" style="min-width: 100vh;">
+            <div id="consumoData" data-consumo='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model))' style="display:none;"></div>
+            <canvas id="consumoChart"></canvas>
+        </div>
+        
+        <!-- Gráfico de pizza -->
+        <p class="pt-5 mb-5">Gráfico com os ambientes que mais estão consumindo</p>
+        <div style="min-width: 60vh; justify-content: center; align-items: center;"><canvas id="consumoPizzaChart"></canvas></div>
+
+        <!-- Gráfico de mensal com valor -->
+        <p class="pt-5">Gráfico com consumo mensal - Valores cheios</p>
+        <div class="pt-5" style="min-width: 100vh; justify-content: center; align-items: center;">
+            <canvas id="consumoMensalChart"></canvas>
+        </div>
+        
+    </main>
 
 </div>
 
@@ -125,4 +153,6 @@
             toggleMenu();
         }
     });
+
+
 </script>

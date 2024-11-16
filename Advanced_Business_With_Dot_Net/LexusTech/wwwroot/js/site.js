@@ -148,3 +148,217 @@ function showPopup(roomName, itemName = null) {
 function closePopup() {
     document.getElementById('popup').classList.remove('active');
 }
+
+// Gráfico diário
+
+document.addEventListener('DOMContentLoaded', function () {
+    const consumoData = JSON.parse(document.getElementById('consumoData').getAttribute('data-consumo'));
+
+    //const labels = consumoData.map(c => c.DataConsumo);
+    const groupedData = consumoData.reduce((acc, current) => {
+        const date = new Date(current.DataConsumo);
+        const day = date.getDate();  // Obtém o dia do mês
+        
+        if (!acc[day]) {
+            acc[day] = { consumo: 0 };  // Se não existir, inicializa
+        }
+
+        // Somar os consumos do mesmo dia
+        acc[day].consumo += current.ConsumoDiario;
+        
+        return acc;
+    }, {});
+
+    // Ordenar os dias em ordem crescente
+    const sortedDays = Object.keys(groupedData).sort((a, b) => a - b);
+
+    // Preparar os dados para o gráfico
+    const labels = sortedDays;
+
+    const consumoValores = consumoData.map(c => c.ConsumoDiario); 
+
+    // Configuração do gráfico
+    const ctx = document.getElementById('consumoChart').getContext('2d');
+    const consumoChart = new Chart(ctx, {
+        type: 'bar',  
+        data: {
+            labels: labels,  
+            datasets: [{
+                label: 'Consumo Diário',
+                data: consumoValores,  
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Cor das barras
+                borderColor: 'rgba(75, 192, 192, 1)',  // Cor da borda das barras
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+});
+
+// Gráfico de pizza
+document.addEventListener('DOMContentLoaded', function () {
+    const roomData = {
+        "sala": {
+            consumo: 120,
+            itens: [
+                { nome: "Ar-condicionado", consumo: 80 },
+                { nome: "TV", consumo: 40 }
+            ]
+        },
+        "cozinha": {
+            consumo: 150,
+            itens: [
+                { nome: "Geladeira", consumo: 100 },
+                { nome: "Micro-ondas", consumo: 50 }
+            ]
+        },
+        "quarto1": {
+            consumo: 90,
+            itens: [
+                { nome: "Luz", consumo: 10 },
+                { nome: "Ar-condicionado", consumo: 80 }
+            ]
+        },
+        "quarto2": {
+            consumo: 80,
+            itens: [
+                { nome: "Luz", consumo: 10 },
+                { nome: "Computador", consumo: 70 }
+            ]
+        },
+        "banheiro": {
+            consumo: 50,
+            itens: [
+                { nome: "Luz", consumo: 20 },
+                { nome: "Aquecedor", consumo: 30 }
+            ]
+        },
+        "lavanderia": {
+            consumo: 40,
+            itens: [
+                { nome: "Máquina de lavar", consumo: 40 }
+            ]
+        }
+    };
+
+    // Preparar dados para o gráfico de pizza
+    const roomLabels = Object.keys(roomData);
+    const roomConsumos = roomLabels.map(room => roomData[room].consumo);
+
+    // Configuração do gráfico de pizza
+    const ctx = document.getElementById('consumoPizzaChart').getContext('2d');
+    const consumoPizzaChart = new Chart(ctx, {
+        type: 'pie',  // Tipo do gráfico: Pizza
+        data: {
+            labels: roomLabels,  // Nomes dos ambientes
+            datasets: [{
+                label: 'Consumo por Ambiente',
+                data: roomConsumos,  // Dados de consumo para cada ambiente
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.5)', // Sala
+                    'rgba(255, 99, 132, 0.5)', // Cozinha
+                    'rgba(54, 162, 235, 0.5)', // Quarto 1
+                    'rgba(255, 159, 64, 0.5)', // Quarto 2
+                    'rgba(153, 102, 255, 0.5)', // Banheiro
+                    'rgba(255, 206, 86, 0.5)'  // Lavanderia
+                ],  // Cores para cada segmento
+                borderColor: [
+                    'rgba(75, 192, 192, 1)', // Sala
+                    'rgba(255, 99, 132, 1)', // Cozinha
+                    'rgba(54, 162, 235, 1)', // Quarto 1
+                    'rgba(255, 159, 64, 1)', // Quarto 2
+                    'rgba(153, 102, 255, 1)', // Banheiro
+                    'rgba(255, 206, 86, 1)'  // Lavanderia
+                ],  // Cores da borda dos segmentos
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            const roomName = tooltipItem.label;
+                            const roomConsumption = tooltipItem.raw;
+                            return `${roomName}: ${roomConsumption} kWh`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Exemplo de dados fictícios mensais de consumo em kWh (simulando consumo por mês)
+    const consumoMensalData = [
+        { mes: "Janeiro", consumo: 320 },
+        { mes: "Fevereiro", consumo: 280 },
+        { mes: "Março", consumo: 350 },
+        { mes: "Abril", consumo: 400 },
+        { mes: "Maio", consumo: 300 },
+        { mes: "Junho", consumo: 330 },
+        { mes: "Julho", consumo: 310 },
+        { mes: "Agosto", consumo: 340 },
+        { mes: "Setembro", consumo: 330 },
+        { mes: "Outubro", consumo: 360 },
+        { mes: "Novembro", consumo: 380 },
+        { mes: "Dezembro", consumo: 370 }
+    ];
+
+    // Vamos calcular o valor da conta de luz mensal (supondo que cada kWh custa R$ 0,60)
+    const valorPorKWh = 0.60; // Preço por kWh
+    const valoresContaLuz = consumoMensalData.map(item => item.consumo * valorPorKWh);
+
+    // Extrair os meses e valores para o gráfico
+    const meses = consumoMensalData.map(item => item.mes);
+    const valores = valoresContaLuz;
+
+    // Configuração do gráfico de barras
+    const ctx = document.getElementById('consumoMensalChart').getContext('2d');
+    const consumoMensalChart = new Chart(ctx, {
+        type: 'bar',  // Tipo do gráfico: barras
+        data: {
+            labels: meses,  // Rótulos dos meses
+            datasets: [{
+                label: 'Valor da Conta de Luz (R$)',
+                data: valores,  // Valores das contas de luz mensais
+                backgroundColor: 'rgba(100, 192, 100, 0.2)',  // Cor das barras
+                borderColor: 'rgba(100, 192, 100, 1)',  // Cor da borda das barras
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function (value) { return 'R$ ' + value.toFixed(2); } // Exibe o valor em R$
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function (tooltipItem) {
+                            return 'R$ ' + tooltipItem.raw.toFixed(2); // Exibe o valor formatado nos tooltips
+                        }
+                    }
+                }
+            }
+        }
+    });
+});

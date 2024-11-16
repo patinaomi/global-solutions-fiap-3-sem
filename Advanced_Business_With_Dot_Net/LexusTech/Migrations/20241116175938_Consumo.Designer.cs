@@ -11,8 +11,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace LexusTech.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241116162447_Inicial")]
-    partial class Inicial
+    [Migration("20241116175938_Consumo")]
+    partial class Consumo
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets/assets/Ambientes/imagem.jpg"
     },
     {
+      "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Consumo/imagem.jpg",
+      "PackagePath": "staticwebassets/assets/Consumo/imagem.jpg"
+    },
+    {
       "Id": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/wwwroot/assets/Endereco/imagem1.png",
       "PackagePath": "staticwebassets/assets/Endereco/imagem1.png"
     },
