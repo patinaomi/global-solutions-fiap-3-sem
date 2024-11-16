@@ -120,12 +120,16 @@ CREATE TABLE T_Formulario (
 -- Tabela Consumo
 CREATE TABLE T_Consumo (
     id_consumo INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
+    id_usuario INTEGER,
+    id_comodo INTEGER,
     id_item_casa INTEGER,
-    consumo DECIMAL(10, 2), -- consumo diário do item
+    consumo DECIMAL(10, 2),
     data_consumo DATE,
     valor INTEGER,
     
-    CONSTRAINT fk_item_casa FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
+    CONSTRAINT fk_id_usuario_consumo FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
+    CONSTRAINT fk_id_comodo_consumo FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
+    CONSTRAINT fk_item_casa_consumo FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
 );
 
 -- Tabela Recomendacão
@@ -791,31 +795,33 @@ select * from T_Formulario;
 
 -- Tabela Consumo
 CREATE OR REPLACE PROCEDURE INSERIR_CONSUMO(
-    p_id_item_casa IN T_Consumo.id_item_casa%TYPE,
     p_consumo IN T_Consumo.consumo%TYPE,
+    p_usuario IN T_Usuario.id_usuario%TYPE,
+    p_comodo IN T_Comodo.id_comodo%TYPE,
+    p_id_item_casa IN T_Consumo.id_item_casa%TYPE,
     p_data_consumo IN T_Consumo.data_consumo%TYPE,
     p_valor IN T_Consumo.valor%TYPE
 ) 
 IS
 BEGIN
-    INSERT INTO T_Consumo (id_item_casa, consumo, data_consumo, valor)
-    VALUES (p_id_item_casa, p_consumo, p_data_consumo, p_valor);
+    INSERT INTO T_Consumo (id_usuario, id_comodo, id_item_casa, consumo, data_consumo, valor)
+    VALUES (p_usuario, p_comodo, p_id_item_casa, p_consumo, p_data_consumo, p_valor);
 
     COMMIT;
 END;
 
 -- Inserir dados Tabela Consumo
 BEGIN
-    INSERIR_CONSUMO(1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'), 50);
-    INSERIR_CONSUMO(2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'), 30);
-    INSERIR_CONSUMO(3, 4, TO_DATE('2024-11-03', 'YYYY-MM-DD'), 40);
-    INSERIR_CONSUMO(4, 2, TO_DATE('2024-11-04', 'YYYY-MM-DD'), 25);
-    INSERIR_CONSUMO(5, 7, TO_DATE('2024-11-05', 'YYYY-MM-DD'), 70);
-    INSERIR_CONSUMO(6, 1, TO_DATE('2024-11-06', 'YYYY-MM-DD'), 20);
-    INSERIR_CONSUMO(7, 3, TO_DATE('2024-11-07', 'YYYY-MM-DD'), 35);
-    INSERIR_CONSUMO(8, 6, TO_DATE('2024-11-08', 'YYYY-MM-DD'), 65);
-    INSERIR_CONSUMO(9, 2, TO_DATE('2024-11-09', 'YYYY-MM-DD'), 23);
-    INSERIR_CONSUMO(10, 4, TO_DATE('2024-11-10', 'YYYY-MM-DD'), 46);
+    INSERIR_CONSUMO(1, 1, 1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'), 50);
+    INSERIR_CONSUMO(2, 2, 2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'), 30);
+    INSERIR_CONSUMO(3, 3, 3, 4, TO_DATE('2024-11-03', 'YYYY-MM-DD'), 40);
+    INSERIR_CONSUMO(4, 4, 4, 2, TO_DATE('2024-11-04', 'YYYY-MM-DD'), 25);
+    INSERIR_CONSUMO(5, 5, 5, 7, TO_DATE('2024-11-05', 'YYYY-MM-DD'), 70);
+    INSERIR_CONSUMO(6, 6, 6, 1, TO_DATE('2024-11-06', 'YYYY-MM-DD'), 20);
+    INSERIR_CONSUMO(7, 7, 7, 3, TO_DATE('2024-11-07', 'YYYY-MM-DD'), 35);
+    INSERIR_CONSUMO(8, 8, 8, 6, TO_DATE('2024-11-08', 'YYYY-MM-DD'), 65);
+    INSERIR_CONSUMO(9, 9, 9, 2, TO_DATE('2024-11-09', 'YYYY-MM-DD'), 23);
+    INSERIR_CONSUMO(10, 10, 10, 4, TO_DATE('2024-11-10', 'YYYY-MM-DD'), 46);
 END;
 
 select * from T_Consumo;
