@@ -6,9 +6,7 @@ DROP TABLE "RM553472"."T_Item_Casa" CASCADE CONSTRAINTS;
 DROP TABLE "RM553472"."T_Consumo" CASCADE CONSTRAINTS;
 
 -- Consultar as tabelas
-SELECT * 
-FROM "RM553472"."T_Usuario";
-
+SELECT * FROM "RM553472"."T_Usuario";
 
 SELECT * FROM "RM553472"."T_Endereco";
 
@@ -38,13 +36,12 @@ FROM ALL_TAB_COLUMNS
 WHERE TABLE_NAME = 'T_Consumo' AND OWNER = 'RM553472';
 
 -- Inserir dados
-INSERT INTO "RM553472"."T_Consumo" 
-("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor")
-VALUES 
-(1, 1, 1, 1, 15.5, TO_TIMESTAMP('2024-11-16 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 50);
 
 INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor") 
-VALUES (2, 1, 1, 2, 20, TO_TIMESTAMP('2024-11-17 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 60);
+VALUES (1, 1, 1, 1, 10, TO_TIMESTAMP('2024-11-18 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 90);
+
+INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor") 
+VALUES (2, 1, 1, 1, 20, TO_TIMESTAMP('2024-11-18 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 100);
 
 INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor") 
 VALUES (3, 1, 1, 1, 40, TO_TIMESTAMP('2024-11-18 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 70);
@@ -70,12 +67,22 @@ VALUES (9, 1, 3, 3, 55.5, TO_TIMESTAMP('2024-11-24 12:00:00', 'YYYY-MM-DD HH24:M
 INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor")
 VALUES (10, 1, 4, 4, 65.5, TO_TIMESTAMP('2024-11-25 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 95);
 
-INSERT INTO "RM553472"."T_Consumo" 
-("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor")
-VALUES 
-(11, 11, 1, 1, 15.5, TO_TIMESTAMP('2024-11-16 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 50);
+INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor")
+VALUES (11, 1, 1, 1, 15.5, TO_TIMESTAMP('2024-11-16 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 50);
+
+INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor")
+VALUES (12, 1, 1, 1, 15, TO_TIMESTAMP('2024-11-16 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 50);
+
+INSERT INTO "RM553472"."T_Consumo" ("IdConsumo", "IdUsuario", "IdComodo", "IdItemCasa", "ConsumoDiario", "DataConsumo", "Valor") 
+VALUES (13, 1, 1, 2, 20, TO_TIMESTAMP('2024-11-17 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 60);
+
+commit;
+
+SELECT * FROM "RM553472"."T_Consumo";
 
 
-SELECT * 
-FROM "RM553472"."T_Consumo";
+SELECT "IdConsumo", "ConsumoDiario", "DataConsumo", "IdComodo", "IdItemCasa", "IdUsuario", "Valor"
+FROM "T_Consumo"
+WHERE "IdUsuario" = 1; 
+
 

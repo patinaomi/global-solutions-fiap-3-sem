@@ -13,18 +13,9 @@ DROP TABLE T_Usuario CASCADE CONSTRAINTS;
 DROP TABLE T_Login CASCADE CONSTRAINTS;
 DROP TABLE T_Comodo CASCADE CONSTRAINTS;
 DROP TABLE T_Item_Casa CASCADE CONSTRAINTS;
-DROP TABLE T_Tipo_Dispositivo CASCADE CONSTRAINTS;
-DROP TABLE T_Tipo_Notificacao CASCADE CONSTRAINTS;
-DROP TABLE T_Notificacao CASCADE CONSTRAINTS;
-DROP TABLE T_Orcamento CASCADE CONSTRAINTS;
 DROP TABLE T_Consumo CASCADE CONSTRAINTS;
 DROP TABLE T_Recomendacao CASCADE CONSTRAINTS;
 DROP TABLE T_Configuracao_Usuario CASCADE CONSTRAINTS;
-DROP TABLE T_Historico_Alerta CASCADE CONSTRAINTS;
-DROP TABLE T_Tipo_Evento CASCADE CONSTRAINTS;
-DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINTS;
-DROP TABLE T_Formulario CASCADE CONSTRAINTS;
-DROP TABLE T_Feedback CASCADE CONSTRAINTS;
 DROP TABLE T_Dados_Completos_Usuario CASCADE CONSTRAINTS;
 DROP TABLE T_Json CASCADE CONSTRAINTS;
 
@@ -80,11 +71,6 @@ CREATE TABLE T_Comodo (
     CONSTRAINT fk_usuario_comodo FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario)
 );
 
--- Tabela Tipo Dispositivo
-CREATE TABLE T_Tipo_Dispositivo (
-    id_tipo_dispositivo INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    descricao VARCHAR2(50) NOT NULL
-);
 
 -- Tabela Item Casa
 CREATE TABLE T_Item_Casa (
@@ -93,28 +79,7 @@ CREATE TABLE T_Item_Casa (
     id_tipo_dispositivo INTEGER NOT NULL,
     descricao VARCHAR2(50) NOT NULL,
     
-    CONSTRAINT fk_comodo_item FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
-    CONSTRAINT fk_tipo_dispositivo FOREIGN KEY (id_tipo_dispositivo) REFERENCES T_Tipo_Dispositivo(id_tipo_dispositivo)
-);
-
--- Tabela Orçamento
-CREATE TABLE T_Orcamento (
-    id_orcamento INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_usuario INTEGER NOT NULL,
-    data_hora_visita TIMESTAMP NOT NULL,
-    valor_orcamento DECIMAL(10, 2) NOT NULL,
-    
-    CONSTRAINT fk_usuario_orcamento FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario)
-);
-
--- Tabela Formulario (esse formulario vai ser armazenado no Firebase)
-CREATE TABLE T_Formulario (
-    id_formulario INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    nome VARCHAR2(50) NOT NULL,
-    sobrenome VARCHAR2(50),
-    telefone VARCHAR2(15),
-    email VARCHAR2(100) NOT NULL,
-    mensagem VARCHAR2(500)
+    CONSTRAINT fk_comodo_item FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo)
 );
 
 -- Tabela Consumo
@@ -125,7 +90,6 @@ CREATE TABLE T_Consumo (
     id_item_casa INTEGER,
     consumo DECIMAL(10, 2),
     data_consumo DATE,
-    valor INTEGER,
     
     CONSTRAINT fk_id_usuario_consumo FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
     CONSTRAINT fk_id_comodo_consumo FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
@@ -151,78 +115,13 @@ CREATE TABLE T_Recomendacao (
     CONSTRAINT fk_id_consumo FOREIGN KEY (id_consumo) REFERENCES T_Consumo(id_consumo)
 );
 
--- Tabela Tipo Notificação
-CREATE TABLE T_Tipo_Notificacao (
-    id_tipo_notificacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    desc_tipo_notif VARCHAR2(50) -- Preferências de notificação (ex.: email, app, sms)
-);
-
--- Tabela Notificações
-CREATE TABLE T_Notificacao (
-    id_notificacao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_usuario INTEGER NOT NULL,
-    id_tipo_notificacao INTEGER NOT NULL,
-    mensagem VARCHAR2(250),
-    data_envio DATE,
-
-    CONSTRAINT fk_id_usuario_notificacao FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_id_tipo_notificacao FOREIGN KEY (id_tipo_notificacao) REFERENCES T_Tipo_Notificacao(id_tipo_notificacao)
-);
-
 -- Tabela Configuração Usuario
 CREATE TABLE T_Configuracao_Usuario (
     id_config INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
     id_usuario INTEGER,
     id_tipo_notificacao INTEGER,
     limite_consumo DECIMAL(10, 2), -- Limite de consumo para alertas
-    CONSTRAINT fk_usuario_config FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_tipo_notificacao FOREIGN KEY (id_tipo_notificacao) REFERENCES T_Tipo_Notificacao(id_tipo_notificacao)
-);
-
--- Tabela Histórico Alerta
-CREATE TABLE T_Historico_Alerta (
-    id_alerta INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_usuario INTEGER,
-    id_comodo INTEGER,
-    id_item_casa INTEGER,
-    data_hora TIMESTAMP,
-    descricao VARCHAR2(255),
-    tipo VARCHAR2(50), -- tipo de alerta (ex.: consumo alto)
-    CONSTRAINT fk_usuario_alerta FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_comodo_alerta FOREIGN KEY (id_comodo) REFERENCES T_Comodo(id_comodo),
-    CONSTRAINT fk_item_casa_alerta FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa)
-);
-
--- Tabela Tipo Evento
-CREATE TABLE T_Tipo_Evento (
-    id_tipo_evento INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    descricao VARCHAR2(255)
-);
-
--- Tabela Evento Manutenção
-CREATE TABLE T_Evento_Manutencao (
-    id_evento_manutencao INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_usuario INTEGER,
-    id_item_casa INTEGER,
-    data_hora_evento TIMESTAMP,
-    descricao VARCHAR2(255),
-    id_tipo_evento INTEGER, -- Manutenção periodica, eventual, emergencial
-    
-    CONSTRAINT fk_usuario_manutencao FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_item_casa_manutencao FOREIGN KEY (id_item_casa) REFERENCES T_Item_Casa(id_item_casa),
-    CONSTRAINT fk_id_tipo_evento FOREIGN KEY (id_tipo_evento) REFERENCES T_Tipo_Evento(id_tipo_evento)
-);
-
--- Tabela Feedback
-CREATE TABLE T_Feedback (
-    id_feedback INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
-    id_usuario INTEGER NOT NULL,
-    id_recomendacao INTEGER NOT NULL, -- sobre os alertas enviados para cada cliente sobre o aumento do consumo. 
-    avaliacao DECIMAL(2, 1) NOT NULL,
-    comentario VARCHAR2(250), -- quero saber se a sugestão ou alerta foi útil. Também avaliar se estamos conseguindo saber o valor da conta de luz.
-    
-    CONSTRAINT fk_id_usuario_feedback FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario),
-    CONSTRAINT fk_id_recomendacao FOREIGN KEY (id_recomendacao) REFERENCES T_Recomendacao(id_recomendacao)
+    CONSTRAINT fk_usuario_config FOREIGN KEY (id_usuario) REFERENCES T_Usuario(id_usuario)
 );
 
 // PROCEDURES E FUNÇÕES
@@ -617,30 +516,6 @@ BEGIN
     END LOOP;
 END;
 
--- Tabela Login
-CREATE OR REPLACE PROCEDURE INSERIR_LOGIN(p_id_usuario INTEGER) AS
-BEGIN
-    INSERT INTO T_Login (data_hora, id_usuario)
-    VALUES (CURRENT_TIMESTAMP, p_id_usuario);
-    COMMIT;
-END;
-
-BEGIN
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 1); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 2); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 3); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 4); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 5); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 6); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 7); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 8); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 9); 
-    INSERT INTO T_Login (data_hora, id_usuario) VALUES (CURRENT_TIMESTAMP, 10); 
-    COMMIT;
-END;
-
-select * from T_Login;
-
 --  Tabela Comodo
 CREATE OR REPLACE PROCEDURE INSERIR_COMODO(
     p_id_usuario  IN INTEGER,
@@ -669,35 +544,6 @@ BEGIN
 END;
 
 select * from T_Comodo;
-
-
--- Tipo de dispositivo
-CREATE OR REPLACE PROCEDURE INSERIR_TIPO_DISPOSITIVO(
-    p_descricao IN VARCHAR2
-)
-IS
-BEGIN
-    INSERT INTO T_Tipo_Dispositivo (descricao)
-    VALUES (p_descricao);
-
-    COMMIT;
-END;
-
--- Inserindo tipos de dispositivo
-BEGIN
-    INSERIR_TIPO_DISPOSITIVO('Iluminacao');
-    INSERIR_TIPO_DISPOSITIVO('Seguranca');
-    INSERIR_TIPO_DISPOSITIVO('Eletrodomestico');
-    INSERIR_TIPO_DISPOSITIVO('Desktop');
-    INSERIR_TIPO_DISPOSITIVO('Smartwatch');
-    INSERIR_TIPO_DISPOSITIVO('Smart TV');
-    INSERIR_TIPO_DISPOSITIVO('Console de Jogos');
-    INSERIR_TIPO_DISPOSITIVO('Câmera de Segurança');
-    INSERIR_TIPO_DISPOSITIVO('Roteador');
-    INSERIR_TIPO_DISPOSITIVO('Assistente Virtual');
-END;
-
-select * from T_Tipo_Dispositivo;
 
 -- Itens de cada Comodo
 CREATE OR REPLACE PROCEDURE INSERIR_ITEM_CASA(
@@ -730,98 +576,35 @@ END;
 
 select * from T_Item_Casa;
 
--- Tabela Orçamento
-CREATE OR REPLACE PROCEDURE INSERIR_ORCAMENTO(
-    p_id_usuario IN INTEGER,
-    p_data_hora_visita IN TIMESTAMP,
-    p_valor_orcamento IN DECIMAL
-)
-IS
-BEGIN
-    INSERT INTO T_Orcamento (id_usuario, data_hora_visita, valor_orcamento)
-    VALUES (p_id_usuario, p_data_hora_visita, p_valor_orcamento);
-
-    COMMIT;
-END;
-
--- Inserir dados Orçamento
-BEGIN
-    INSERIR_ORCAMENTO(1, TO_TIMESTAMP('2023-11-10 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1500);
-    INSERIR_ORCAMENTO(2, TO_TIMESTAMP('2023-11-12 11:30:00', 'YYYY-MM-DD HH24:MI:SS'), 2500);
-    INSERIR_ORCAMENTO(3, TO_TIMESTAMP('2023-11-13 09:45:00', 'YYYY-MM-DD HH24:MI:SS'), 3200);
-    INSERIR_ORCAMENTO(4, TO_TIMESTAMP('2023-11-14 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 450);
-    INSERIR_ORCAMENTO(5, TO_TIMESTAMP('2023-11-15 16:15:00', 'YYYY-MM-DD HH24:MI:SS'), 785);
-    INSERIR_ORCAMENTO(1, TO_TIMESTAMP('2023-11-16 13:45:00', 'YYYY-MM-DD HH24:MI:SS'), 970);
-    INSERIR_ORCAMENTO(2, TO_TIMESTAMP('2023-11-17 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), 150);
-    INSERIR_ORCAMENTO(3, TO_TIMESTAMP('2023-11-18 17:30:00', 'YYYY-MM-DD HH24:MI:SS'), 120);
-    INSERIR_ORCAMENTO(4, TO_TIMESTAMP('2023-11-19 10:30:00', 'YYYY-MM-DD HH24:MI:SS'), 300);
-    INSERIR_ORCAMENTO(5, TO_TIMESTAMP('2023-11-20 15:45:00', 'YYYY-MM-DD HH24:MI:SS'), 480);
-END;
-
-select * from T_Orcamento;
-
--- Tabela Formulário Mobile
-CREATE OR REPLACE PROCEDURE INSERIR_FORMULARIO(
-    p_nome IN VARCHAR2,
-    p_sobrenome IN VARCHAR2,
-    p_telefone IN VARCHAR2,
-    p_email IN VARCHAR2,
-    p_mensagem IN VARCHAR2
-)
-IS
-BEGIN
-    INSERT INTO T_Formulario (nome, sobrenome, telefone, email, mensagem)
-    VALUES (p_nome, p_sobrenome, p_telefone, p_email, p_mensagem);
-
-    COMMIT;
-END;
-
--- Inserir dados Formulário Mobile
-BEGIN
-
-    INSERIR_FORMULARIO('João', 'Silva', '11999999999', 'joao.silva@gmail.com', 'Gostaria de saber mais sobre os serviços.');
-    INSERIR_FORMULARIO('Maria', 'Santos', '11888888888', 'maria.santos@gmail.com', 'Como posso agendar uma visita?');
-    INSERIR_FORMULARIO('Carlos', 'Oliveira', '11777777777', 'carlos.oliveira@gmail.com', 'Por favor, envie um orçamento.');
-    INSERIR_FORMULARIO('Ana', 'Souza', '11666666666', 'ana.souza@gmail.com', 'Quais são as formas de pagamento?');
-    INSERIR_FORMULARIO('Paulo', 'Lima', '11555555555', 'paulo.lima@gmail.com', 'Vocês trabalham com manutenção?');
-    INSERIR_FORMULARIO('Fernanda', 'Almeida', '11444444444', 'fernanda.almeida@gmail.com', 'Gostaria de falar com um consultor.');
-    INSERIR_FORMULARIO('Rafael', 'Pereira', '11333333333', 'rafael.pereira@gmail.com', 'Qual o prazo para entrega?');
-    INSERIR_FORMULARIO('Bruna', 'Costa', '11222222222', 'bruna.costa@gmail.com', 'Por favor, envie um catálogo.');
-    INSERIR_FORMULARIO('Marcos', 'Nascimento', '11111111111', 'marcos.nascimento@gmail.com', 'Gostaria de tirar algumas dúvidas.');
-    INSERIR_FORMULARIO('Juliana', 'Vieira', '11000000000', 'juliana.vieira@gmail.com', 'Qual o valor mínimo para orçamento?');
-END;
-
-select * from T_Formulario;
-
 -- Tabela Consumo
 CREATE OR REPLACE PROCEDURE INSERIR_CONSUMO(
     p_consumo IN T_Consumo.consumo%TYPE,
     p_usuario IN T_Usuario.id_usuario%TYPE,
     p_comodo IN T_Comodo.id_comodo%TYPE,
     p_id_item_casa IN T_Consumo.id_item_casa%TYPE,
-    p_data_consumo IN T_Consumo.data_consumo%TYPE,
-    p_valor IN T_Consumo.valor%TYPE
+    p_data_consumo IN T_Consumo.data_consumo%TYPE
+    --p_valor IN T_Consumo.valor%TYPE
 ) 
 IS
 BEGIN
-    INSERT INTO T_Consumo (id_usuario, id_comodo, id_item_casa, consumo, data_consumo, valor)
-    VALUES (p_usuario, p_comodo, p_id_item_casa, p_consumo, p_data_consumo, p_valor);
+    INSERT INTO T_Consumo (id_usuario, id_comodo, id_item_casa, consumo, data_consumo)
+    VALUES (p_usuario, p_comodo, p_id_item_casa, p_consumo, p_data_consumo);
 
     COMMIT;
 END;
 
 -- Inserir dados Tabela Consumo
 BEGIN
-    INSERIR_CONSUMO(1, 1, 1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'), 50);
-    INSERIR_CONSUMO(2, 2, 2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'), 30);
-    INSERIR_CONSUMO(3, 3, 3, 4, TO_DATE('2024-11-03', 'YYYY-MM-DD'), 40);
-    INSERIR_CONSUMO(4, 4, 4, 2, TO_DATE('2024-11-04', 'YYYY-MM-DD'), 25);
-    INSERIR_CONSUMO(5, 5, 5, 7, TO_DATE('2024-11-05', 'YYYY-MM-DD'), 70);
-    INSERIR_CONSUMO(6, 6, 6, 1, TO_DATE('2024-11-06', 'YYYY-MM-DD'), 20);
-    INSERIR_CONSUMO(7, 7, 7, 3, TO_DATE('2024-11-07', 'YYYY-MM-DD'), 35);
-    INSERIR_CONSUMO(8, 8, 8, 6, TO_DATE('2024-11-08', 'YYYY-MM-DD'), 65);
-    INSERIR_CONSUMO(9, 9, 9, 2, TO_DATE('2024-11-09', 'YYYY-MM-DD'), 23);
-    INSERIR_CONSUMO(10, 10, 10, 4, TO_DATE('2024-11-10', 'YYYY-MM-DD'), 46);
+    INSERIR_CONSUMO(1, 1, 1, 5, TO_DATE('2024-11-01', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(2, 2, 2, 3, TO_DATE('2024-11-02', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(3, 3, 3, 4, TO_DATE('2024-11-03', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(4, 4, 4, 2, TO_DATE('2024-11-04', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(5, 5, 5, 7, TO_DATE('2024-11-05', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(6, 6, 6, 1, TO_DATE('2024-11-06', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(7, 7, 7, 3, TO_DATE('2024-11-07', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(8, 8, 8, 6, TO_DATE('2024-11-08', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(9, 9, 9, 2, TO_DATE('2024-11-09', 'YYYY-MM-DD'));
+    INSERIR_CONSUMO(10, 10, 10, 4, TO_DATE('2024-11-10', 'YYYY-MM-DD'));
 END;
 
 select * from T_Consumo;
@@ -868,58 +651,6 @@ END;
 
 select * from T_Recomendacao;
 
--- Tabela Tipo de Notificação
-CREATE OR REPLACE PROCEDURE INSERIR_TIPO_NOTIFICACAO(
-    p_desc_tipo_notif IN T_Tipo_Notificacao.desc_tipo_notif%TYPE
-)
-IS
-BEGIN
-    INSERT INTO T_Tipo_Notificacao (desc_tipo_notif)
-    VALUES (p_desc_tipo_notif);
-
-    COMMIT;
-END;
-
--- Inserir dados em Tipo de notificação
-BEGIN
-    INSERIR_TIPO_NOTIFICACAO('Email');
-    INSERIR_TIPO_NOTIFICACAO('SMS');
-    INSERIR_TIPO_NOTIFICACAO('App');
-    INSERIR_TIPO_NOTIFICACAO('WhatsApp');
-    INSERIR_TIPO_NOTIFICACAO('Ligação Telefônica');
-END;
-
-select * from T_Tipo_Notificacao;
-
--- Tabela Notificação
-CREATE OR REPLACE PROCEDURE INSERIR_NOTIFICACAO(
-    p_id_usuario IN T_Notificacao.id_usuario%TYPE,
-    p_id_tipo_notificacao IN T_Notificacao.id_tipo_notificacao%TYPE,
-    p_mensagem IN T_Notificacao.mensagem%TYPE,
-    p_data_envio IN T_Notificacao.data_envio%TYPE
-)
-IS
-BEGIN
-    INSERT INTO T_Notificacao (id_usuario, id_tipo_notificacao, mensagem, data_envio)
-    VALUES (p_id_usuario, p_id_tipo_notificacao, p_mensagem, p_data_envio);
-
-    COMMIT;
-END;
-
--- Inserir dados na tabela Notificação
-BEGIN
-    INSERIR_NOTIFICACAO(1, 1, 'Sua conta foi atualizada.', SYSDATE);
-    INSERIR_NOTIFICACAO(2, 2, 'Seu consumo de energia está elevado.', SYSDATE);
-    INSERIR_NOTIFICACAO(3, 3, 'Você tem uma nova mensagem.', SYSDATE);
-    INSERIR_NOTIFICACAO(6, 4, 'Parabéns, você melhorou está semana, seu consumo diminuiu.', SYSDATE);
-    INSERIR_NOTIFICACAO(7, 5, 'Nova atualização disponível.', SYSDATE);
-    INSERIR_NOTIFICACAO(8, 2, 'Seus dados precisam ser atualizados.', SYSDATE);
-    INSERIR_NOTIFICACAO(9, 4, 'Novo evento na sua área.', SYSDATE);
-    INSERIR_NOTIFICACAO(10, 3, 'Atividade suspeita detectada, hora de realizar manutenção.', SYSDATE);
-END;
-
-select * from T_Notificacao;
-
 -- Tabela configuraçao do usuário
 CREATE OR REPLACE PROCEDURE INSERIR_CONFIGURACAO_USUARIO(
     p_id_usuario IN T_Configuracao_Usuario.id_usuario%TYPE,
@@ -950,159 +681,6 @@ END;
 
 select * from T_Configuracao_Usuario;
 
--- Tabela Alertas
-CREATE OR REPLACE PROCEDURE inserir_historico_alerta (
-    p_id_usuario IN INTEGER,
-    p_id_comodo IN INTEGER,
-    p_id_item_casa IN INTEGER,
-    p_data_hora IN TIMESTAMP,
-    p_descricao IN VARCHAR2,
-    p_tipo IN VARCHAR2
-) AS
-BEGIN
-    INSERT INTO T_Historico_Alerta (
-        id_usuario, 
-        id_comodo, 
-        id_item_casa, 
-        data_hora, 
-        descricao, 
-        tipo
-    ) 
-    VALUES (
-        p_id_usuario, 
-        p_id_comodo, 
-        p_id_item_casa, 
-        p_data_hora, 
-        p_descricao, 
-        p_tipo
-    );
-    
-    COMMIT;
-END;
-
--- Inserir dados para alerta
-BEGIN
-    inserir_historico_alerta(1, 1, 1, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
-    inserir_historico_alerta(2, 1, 2, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
-    inserir_historico_alerta(3, 2, 3, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
-    inserir_historico_alerta(4, 3, 4, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
-    inserir_historico_alerta(5, 4, 5, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
-    inserir_historico_alerta(6, 5, 6, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
-    inserir_historico_alerta(7, 6, 7, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
-    inserir_historico_alerta(8, 7, 8, SYSTIMESTAMP, 'Alerta de consumo moderado', 'Consumo Moderado');
-    inserir_historico_alerta(9, 8, 9, SYSTIMESTAMP, 'Alerta de consumo baixo', 'Consumo Baixo');
-    inserir_historico_alerta(10, 9, 10, SYSTIMESTAMP, 'Alerta de consumo alto', 'Consumo Alto');
-END;
-
-select * from T_Historico_Alerta;
-
--- Tabela Tipo Evento
-CREATE OR REPLACE PROCEDURE inserir_tipo_evento (
-    p_descricao IN VARCHAR2
-) AS
-BEGIN
-    INSERT INTO T_Tipo_Evento (descricao) 
-    VALUES (p_descricao);
-    
-    COMMIT;
-END;
-
--- Inserir dados
-BEGIN
-    inserir_tipo_evento('Evento de Consumo Alto');
-    inserir_tipo_evento('Evento de Consumo Moderado');
-    inserir_tipo_evento('Evento de Consumo Baixo');
-    inserir_tipo_evento('Evento de Manutenção');
-    inserir_tipo_evento('Evento de Emergência');
-    inserir_tipo_evento('Evento de Atualização de Sistema');
-    inserir_tipo_evento('Evento de Desempenho');
-    inserir_tipo_evento('Evento de Alerta de Temperatura');
-    inserir_tipo_evento('Evento de Configuração');
-    inserir_tipo_evento('Evento de Falha no Equipamento');
-END;
-
-select * from T_Tipo_Evento;
-
--- Tabela Manutenção
-CREATE OR REPLACE PROCEDURE INSERIR_EVENTO_MANUTENCAO (
-    p_id_usuario          IN INTEGER,
-    p_id_item_casa        IN INTEGER,
-    p_data_hora_evento    IN TIMESTAMP,
-    p_descricao           IN VARCHAR2,
-    p_id_tipo_evento      IN INTEGER
-) IS
-BEGIN
-    -- Inserir o evento de manutenção
-    INSERT INTO T_Evento_Manutencao (id_usuario, id_item_casa, data_hora_evento, descricao, id_tipo_evento)
-    VALUES (p_id_usuario, p_id_item_casa, p_data_hora_evento, p_descricao, p_id_tipo_evento);
-    
-    -- Commit para garantir que a inserção seja realizada
-    COMMIT;
-    
-    -- Mensagem de sucesso
-    DBMS_OUTPUT.PUT_LINE('Evento de manutenção inserido com sucesso!');
-EXCEPTION
-    -- Caso ocorra algum erro, a transação será revertida
-    WHEN OTHERS THEN
-        ROLLBACK;
-        DBMS_OUTPUT.PUT_LINE('Erro ao inserir evento de manutenção: ' || SQLERRM);
-END INSERIR_EVENTO_MANUTENCAO;
-
--- Inserir dados
-BEGIN
-    INSERIR_EVENTO_MANUTENCAO(1, 2, TO_TIMESTAMP('2024-11-10 08:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Manutenção preventiva no item A', 1);
-    INSERIR_EVENTO_MANUTENCAO(2, 3, TO_TIMESTAMP('2024-11-11 09:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Troca de filtro do item B', 2);
-    INSERIR_EVENTO_MANUTENCAO(3, 4, TO_TIMESTAMP('2024-11-12 10:45:00', 'YYYY-MM-DD HH24:MI:SS'), 'Verificação de sistema do item C', 3);
-    INSERIR_EVENTO_MANUTENCAO(4, 5, TO_TIMESTAMP('2024-11-13 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Reparo urgente no item D', 1);
-    INSERIR_EVENTO_MANUTENCAO(5, 6, TO_TIMESTAMP('2024-11-14 15:15:00', 'YYYY-MM-DD HH24:MI:SS'), 'Manutenção preventiva no item E', 2);
-    INSERIR_EVENTO_MANUTENCAO(6, 7, TO_TIMESTAMP('2024-11-15 16:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Troca de peças no item F', 3);
-    INSERIR_EVENTO_MANUTENCAO(7, 8, TO_TIMESTAMP('2024-11-16 17:45:00', 'YYYY-MM-DD HH24:MI:SS'), 'Limpeza do item G', 1);
-    INSERIR_EVENTO_MANUTENCAO(8, 9, TO_TIMESTAMP('2024-11-17 18:00:00', 'YYYY-MM-DD HH24:MI:SS'), 'Ajuste no sistema do item H', 2);
-    INSERIR_EVENTO_MANUTENCAO(9, 10, TO_TIMESTAMP('2024-11-18 19:15:00', 'YYYY-MM-DD HH24:MI:SS'), 'Reparo no motor do item I', 3);
-    INSERIR_EVENTO_MANUTENCAO(10, 11, TO_TIMESTAMP('2024-11-19 20:30:00', 'YYYY-MM-DD HH24:MI:SS'), 'Verificação final no item J', 1);
-END;
-
-select * from T_Evento_Manutencao;
-
--- Tabela Feedback
-CREATE OR REPLACE PROCEDURE INSERIR_FEEDBACK(
-    p_id_usuario IN T_Feedback.id_usuario%TYPE,
-    p_id_recomendacao IN T_Feedback.id_recomendacao%TYPE,
-    p_avaliacao IN T_Feedback.avaliacao%TYPE,
-    p_comentario IN T_Feedback.comentario%TYPE
-) AS
-BEGIN
-    INSERT INTO T_Feedback (
-        id_usuario,
-        id_recomendacao,
-        avaliacao,
-        comentario
-    )
-    VALUES (
-        p_id_usuario,
-        p_id_recomendacao,
-        p_avaliacao,
-        p_comentario
-    );
-END INSERIR_FEEDBACK;
-
--- Inserir dados
-BEGIN
-    -- Inserindo 10 registros na tabela T_Feedback
-    INSERIR_FEEDBACK(1, 1, 4, 'A recomendação foi muito útil, consegui reduzir meu consumo de energia.');
-    INSERIR_FEEDBACK(2, 2, 3, 'A sugestão foi razoável, mas não tive muito impacto na conta de luz.');
-    INSERIR_FEEDBACK(3, 3, 5, 'A recomendação foi excelente, consegui controlar o consumo e diminuir a conta.');
-    INSERIR_FEEDBACK(4, 4, 2, 'O alerta foi um pouco confuso, não consegui entender exatamente como reduzir o consumo.');
-    INSERIR_FEEDBACK(5, 5, 4, 'Boa sugestão, mas acredito que poderia ser mais detalhada.');
-    INSERIR_FEEDBACK(6, 6, 4, 'O alerta me ajudou bastante a ajustar minha rotina e reduzir o consumo.');
-    INSERIR_FEEDBACK(7, 7, 3, 'A recomendação teve algum efeito, mas a conta ainda está alta.');
-    INSERIR_FEEDBACK(8, 8, 4, 'A sugestão foi útil, mas ainda preciso entender melhor os detalhes.');
-    INSERIR_FEEDBACK(9, 9, 4, 'Excelente recomendação, a conta de energia caiu significativamente.');
-    INSERIR_FEEDBACK(10, 10, 3, 'A sugestão foi boa, mas acho que poderia ser mais personalizada.');
-END;
-
-select * from T_Feedback;
-
 // Procedure para exportar dados como JSON
 
 -- 1. Criar uma tabela temporária com os dados completos do usuário
@@ -1120,53 +698,22 @@ SELECT
     e.cidade,
     e.cep,
     es.sigla AS estado,
-    o.id_orcamento,
-    o.data_hora_visita,
-    o.valor_orcamento,
     c.id_comodo,
     c.descricao AS comodo_descricao,
     i.id_item_casa,
     i.descricao AS item_casa_descricao,
-    td.descricao AS tipo_dispositivo_descricao,
     co.consumo,
     co.data_consumo,
-    co.valor,
-    -- Dados de Notificações
-    n.id_notificacao,
-    tn.desc_tipo_notif AS tipo_notificacao_desc,
-    n.mensagem AS notificacao_mensagem,
-    n.data_envio AS notificacao_data_envio,
     -- Dados de Configurações do Usuário
-    cu.limite_consumo,
-    -- Dados de Histórico de Alertas
-    ha.id_alerta,
-    ha.descricao AS alerta_descricao,
-    ha.data_hora AS alerta_data,
-    ha.tipo AS alerta_tipo,
-    -- Dados de Feedbacks
-    f.id_feedback,
-    f.avaliacao AS feedback_avaliacao,
-    f.comentario AS feedback_comentario,
-    -- Dados de Eventos de Manutenção
-    em.id_evento_manutencao,
-    em.data_hora_evento AS manutencao_data_hora,
-    em.descricao AS manutencao_descricao,
-    te.descricao AS tipo_evento_descricao
+    cu.limite_consumo
+    
 FROM T_Usuario u
 JOIN T_Endereco e ON u.id_endereco = e.id_endereco
 JOIN T_Estado es ON e.id_estado = es.id_estado
-LEFT JOIN T_Orcamento o ON u.id_usuario = o.id_usuario
 LEFT JOIN T_Comodo c ON u.id_usuario = c.id_usuario
 LEFT JOIN T_Item_Casa i ON c.id_comodo = i.id_comodo
-LEFT JOIN T_Tipo_Dispositivo td ON i.id_tipo_dispositivo = td.id_tipo_dispositivo
 LEFT JOIN T_Consumo co ON co.id_consumo = i.id_item_casa
-LEFT JOIN T_Notificacao n ON u.id_usuario = n.id_usuario
-LEFT JOIN T_Tipo_Notificacao tn ON n.id_tipo_notificacao = tn.id_tipo_notificacao
 LEFT JOIN T_Configuracao_Usuario cu ON u.id_usuario = cu.id_usuario
-LEFT JOIN T_Historico_Alerta ha ON u.id_usuario = ha.id_usuario
-LEFT JOIN T_Feedback f ON u.id_usuario = f.id_usuario
-LEFT JOIN T_Evento_Manutencao em ON u.id_usuario = em.id_usuario
-LEFT JOIN T_Tipo_Evento te ON em.id_tipo_evento = te.id_tipo_evento;
 
 select * from T_Dados_Completos_Usuario;
 
