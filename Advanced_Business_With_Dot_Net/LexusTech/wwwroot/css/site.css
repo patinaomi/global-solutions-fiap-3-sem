@@ -283,40 +283,61 @@ footer {
 /* Mapa - ambientes */
 
 .quarto {
-  background-image: url(../assets/Mapa/quarto.jpg);
-  background-size: cover;
+  background-image: url(../assets/Mapa/imagem1.jpeg);
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  
 }
 
 .quartoDois {
-  background-image: url(../assets/Mapa/quarto2.png);
-  background-size: cover;
+  background-image: url(../assets/Mapa/imagem2.jpeg);
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 .sala {
-  background-image: url(../assets/Mapa/sala.jpg);
-  background-size: cover;
+  background-image: url(../assets/Mapa/imagem3.jpeg);
+  background-size: contain;
   background-position: center;
-}
-
-.cozinha {
-  background-image: url(../assets/Mapa/cozinha.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.lavanderia {
-  background-image: url(../assets/Mapa/lavanderia.jpg);
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 
 .banheiro {
-  background-image: url(../assets/Mapa/banheiro.jpg);
-  background-size: cover;
+  background-image: url(../assets/Mapa/imagem4.jpeg);
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
+
+.cozinha {
+  background-image: url(../assets/Mapa/imagem5.jpeg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.lavanderia {
+  background-image: url(../assets/Mapa/imagem8.jpeg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+
 
 /* Mensagem */
 .energy-section-message {

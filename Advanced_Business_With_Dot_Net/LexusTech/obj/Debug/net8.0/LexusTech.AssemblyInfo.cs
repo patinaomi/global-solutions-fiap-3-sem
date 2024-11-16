@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LexusTech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cbfd3df6377d546fc150e70c7b6ad1a793bb8a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d4633c457879a53bc094ba4b3aabd28687223ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("LexusTech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LexusTech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,54 +3,119 @@
 }
 
 <section>
-    <div class="container-fluid" style="min-height: 80vh; justify-content: center; align-items: center;">
+    <div class="container-fluid" style="min-height: 100vh; justify-content: center; align-items: center;">
         <h1 class="text-center pt-3">Mapa de Consumo de Energia</h1>
 
         <!-- Mapa do apartamento -->
-        <div class="apartment-map" style="position: relative; width: 98vw; height: 70vh; background-color: white; border: 2px solid #ccc; display: flex; justify-content: space-between; flex-wrap: wrap;">
-            
-            <!-- Quarto 1 -->
-            <div class="room quarto" id="bedroom1" data-room="quarto1" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative;">
-                <h3 class="text-center p-3">Quarto 1</h3>
-                <div class="item" data-consumption="0.5" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center; border: 2px solid black;">Luz</div>
-                <div class="item" data-consumption="1.5" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 50%; left: 10%; text-align: center; border: 2px solid black;">AC</div>
-                <div class="item" data-consumption="0.8" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 50%; left: 40%; text-align: center; border: 2px solid black;">Computador</div>
+        <div class="apartment-map">
+
+            <!-- Ambiente 1 -->
+            <div class="p-5" style="position: relative; min-width: 100vh; height: 100vh; background-color: white; border: 2px solid #ccc; display: flex; justify-content: space-between; flex-wrap: wrap;">
+                
+                <!-- Quarto 1 -->
+                <div class="room quarto" id="bedroom1" data-room="quarto1" style="flex: 1 1 30%; margin: 10px; position: relative;">
+
+                    <h3 class="text-center p-3">Quarto 1</h3>
+
+                    <div class="item" data-consumption="0.5" style="width: 210px; height: 140px; position: absolute; top: 18%; left: 13%; text-align: center; border: 2px solid red; color: transparent;">AC</div>
+                    
+                    <div class="item" data-consumption="0.5" style="width: 250px; height: 180px; position: absolute; top: 15%; left: 37%; text-align: center; border: 2px solid green; color: transparent;">TV</div>
+                    
+                    <div class="item" data-consumption="1.5" style="width: 150px; height: 70px; position: absolute; top: 56%; left: 18%; text-align: center; border: 2px solid green; color: transparent;">Soundbar</div>
+                    
+                    <div class="item" data-consumption="0.8" style="width: 220px; height: 130px; position: absolute; top: 45%; left: 38%; text-align: center; border: 2px solid yellow; color: transparent;">Computador</div>
+
+                    <div class="item" data-consumption="0.8" style="width: 70px; height: 120px; position: absolute; top: 50%; left: 68%; text-align: center; border: 2px solid yellow; color: transparent;">Som</div>
+
+                </div>
+
+                <!-- Quarto 2 -->
+                <div class="room quartoDois" id="bedroom2" data-room="quarto2" style="flex: 1 1 30%; margin: 10px; position: relative;">
+                    
+                    <h3 class="text-center p-3">Quarto 2</h3>
+                    
+                    <div class="item" data-consumption="0.4" style="width: 290px; height: 120px; position: absolute; top: 20%; left: 30%; text-align: center;border: 2px solid yellow; color: transparent;">AC</div>
+
+                    <div class="item" data-consumption="1.0" style="width: 80px; height: 150px; position: absolute; top: 50%; left: 12%; text-align: center;border: 2px solid green; color: transparent;">Luz</div>
+
+                    <div class="item" data-consumption="1.0" style="width: 350px; height: 200px; position: absolute; top: 50%; left: 25%; text-align: center;border: 2px solid red; color: transparent;">TV</div>
+
+                    <div class="item" data-consumption="1.0" style="width: 350px; height: 30px; position: absolute; top: 75%; left: 25%; text-align: center;border: 2px solid green; color: transparent;">Soundbar</div>
+
+                    <div class="item" data-consumption="1.0" style="width: 110px; height: 150px; position: absolute; top: 65%; left: 75%; text-align: center;border: 2px solid red; color: transparent;">Computador</div>
+
+                </div>
+
             </div>
 
-            <!-- Quarto 2 -->
-            <div class="room quartoDois" id="bedroom2" data-room="quarto2" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative; background-color: #e3ffce;">
-                <h3 class="text-center p-3">Quarto 2</h3>
-                <div class="item" data-consumption="0.4" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Luz</div>
-                <div class="item" data-consumption="1.0" style="width: 100px; height: 50px; background-color: #32cd32; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">PC</div>
+            <!-- Ambiente 2 -->
+            <div class="p-5"  style="position: relative; min-width: 100vh; height: 100vh; background-color: white; border: 2px solid #ccc; display: flex; justify-content: space-between; flex-wrap: wrap;">
+
+                <!-- Sala -->
+                <div class="room sala" id="living-room" data-room="sala" style="flex: 1 1 30%; margin: 10px; position: relative;">
+                    
+                    <h3 class="text-center p-3" style="color: white;">Sala</h3>
+                    
+                    <div class="item" data-consumption="2.0" style="width: 200px; height: 120px; position: absolute; top: 1%; left: 15%; text-align: center;border: 2px solid red; color: transparent;">Ar-Condicionado</div>
+                    
+                    <div class="item" data-consumption="0.7" style="width: 180px; height: 150px; position: absolute; top: 43%; left: 20%; text-align: center;border: 2px solid yellow; color: transparent;">TV</div>
+
+                    <div class="item" data-consumption="0.7" style="width: 50px; height: 140px; position: absolute; top: 45%; left: 42%; text-align: center;border: 2px solid yellow; color: transparent;">Lampada</div>
+
+                </div>
+
+                <!-- Banheiro -->
+                <div class="room banheiro" id="bathroom" data-room="banheiro" style="flex: 1 1 30%; margin: 10px; position: relative;">
+                    
+                    <h3 class="text-center p-3">Banheiro</h3>
+
+                    <div class="item" data-consumption="0.3" style="width: 100px; height: 50px; position: absolute; top: 1%; left: 18%; text-align: center;border: 2px solid green; color: transparent;">Luz1</div>
+                    
+                    <div class="item" data-consumption="0.3" style="width: 100px; height: 200px; position: absolute; top: 20%; left: 20%; text-align: center;border: 2px solid red; color: transparent;">Chuveiro</div>
+
+                    <div class="item" data-consumption="0.3" style="width: 100px; height: 130px; position: absolute; top: 0%; left: 65%; text-align: center;border: 2px solid green; color: transparent;">Luz2</div>
+                    
+                    <div class="item" data-consumption="1.8" style="width: 100px; height: 180px; position: absolute; top: 20%; left: 75%; text-align: center;border: 2px solid yellow; color: transparent;">Secador</div>
+
+                </div>
             </div>
 
-            <!-- Sala -->
-            <div class="room sala" id="living-room" data-room="sala" style="flex: 1 1 40%; margin: 10px; border: 2px solid #ccc; position: relative;">
-                <h3 class="text-center p-3">Sala</h3>
-                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #87ceeb; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">AC</div>
-                <div class="item" data-consumption="0.7" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">TV</div>
-            </div>
+            <!-- Ambiente 3 -->
+            <div class="p-5"  style="position: relative; min-width: 100vh; height: 100vh; background-color: white; border: 2px solid #ccc; display: flex; justify-content: space-between; flex-wrap: wrap;">
 
-            <!-- Banheiro -->
-            <div class="room banheiro" id="bathroom" data-room="banheiro" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; position: relative;">
-                <h3 class="text-center p-3">Banheiro</h3>
-                <div class="item" data-consumption="0.3" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Luz</div>
-                <div class="item" data-consumption="1.8" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">Secador</div>
-            </div>
+                <!-- Cozinha -->
+                <div class="room cozinha" id="kitchen" data-room="cozinha" style="flex: 1 1 30%; margin: 10px; position: relative;">
 
-            <!-- Cozinha -->
-            <div class="room cozinha" id="kitchen" data-room="cozinha" style="flex: 1 1 40%; margin: 10px; border: 2px solid #ccc; background-color: #ff6347; position: relative;">
-                <h3 class="text-center p-3">Cozinha</h3>
-                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Geladeira</div>
-                <div class="item" data-consumption="2.5" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 20%; left: 30%; text-align: center;border: 2px solid black;">Forno</div>
-                <div class="item" data-consumption="1.5" style="width: 100px; height: 50px; background-color: #d0cfcf; position: absolute; top: 20%; left: 50%; text-align: center;border: 2px solid black;">Fogão</div>
-                <div class="item" data-consumption="1.2" style="width: 100px; height: 50px; background-color: #ffff00; position: absolute; top: 50%; left: 10%; text-align: center;border: 2px solid black;">Micro-ondas</div>
-            </div>
+                    <h3 class="text-center p-3 text-white">Cozinha</h3>
 
-            <!-- Lavanderia -->
-            <div class="room lavanderia" id="laundry" data-room="lavanderia" style="flex: 1 1 25%; margin: 10px; border: 2px solid #ccc; background-color: #fffdc9; position: relative;">
-                <h3 class="text-center p-3">Lavanderia</h3>
-                <div class="item" data-consumption="2.0" style="width: 100px; height: 50px; background-color: #ff6347; position: absolute; top: 20%; left: 10%; text-align: center;border: 2px solid black;">Máquina</div>
+                    <div class="item" data-consumption="2.0" style="width: 120px; height: 150px; position: absolute; top: 10%; left: 15%; text-align: center;border: 2px solid red; color: transparent;">Geladeira</div>
+
+                    <div class="item" data-consumption="2.0" style="width: 200px; height: 500px; position: absolute; top: 30%; left: 12%; text-align: center;border: 2px solid red; color: transparent;">Geladeira</div>
+
+                    <div class="item" data-consumption="2.5" style="width: 150px; height: 80px; position: absolute; top: 35%; left: 40%; text-align: center;border: 2px solid yellow; color: transparent;">Forno</div>
+
+                    <div class="item" data-consumption="2.5" style="width: 60px; height: 80px; position: absolute; top: 45%; left: 55%; text-align: center;border: 2px solid yellow; color: transparent;">Batedeira</div>
+
+                    <div class="item" data-consumption="1.5" style="width: 120px; height: 150px;  position: absolute; top: 50%; left: 42%; text-align: center;border: 2px solid yellow; color: transparent;">Fogão</div>
+
+                   
+                </div>
+
+                <!-- Lavanderia -->
+                <div class="room lavanderia" id="laundry" data-room="lavanderia" style="flex: 1 1 30%; margin: 10px; position: relative;">
+                    
+                    <h3 class="text-center p-3 text-white">Lavanderia</h3>
+
+                    <div class="item" data-consumption="2.0" style="width: 100px; height: 100px;  position: absolute; top: 30%; left: 50%; text-align: center;border: 2px solid red; color: transparent;">Máquina Lavar 1</div>
+                    
+                    <div class="item" data-consumption="2.0" style="width: 130px; height: 350px;  position: absolute; top: 30%; left: 63%; text-align: center;border: 2px solid red; color: transparent;">Máquina Lavar 2</div>
+
+                    <div class="item" data-consumption="2.0" style="width: 130px; height: 240px;  position: absolute; top: 1%; left: 63%; text-align: center;border: 2px solid yellow; color: transparent;">Máquina Secar 2</div>
+
+                    <div class="item" data-consumption="2.0" style="width: 100px; height: 240px;  position: absolute; top: 1%; left: 50%; text-align: center;border: 2px solid red; color: transparent;">Máquina Secar 1</div>
+
+                </div>
+
             </div>
 
         </div>
