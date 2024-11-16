@@ -74,6 +74,10 @@ Este projeto tem como objetivo utilizar técnicas de aprendizado de máquina par
 
 ## Base para cálculo de custos de energia
 
+```bash
+    https://www.enel.com.br/pt-saopaulo/Corporativo_e_Governo/tabela-de-tarifas.html
+```
+
 Para calcular os custos de energia em nosso modelo, utilizaremos os dados de consumo fornecidos pela Enel, com base na tarifa de energia elétrica vigente. Os dados de consumo serão extraídos a partir da fatura de energia da Enel, levando em consideração os valores de consumo em kWh (kilowatt-hora) e as modalidades tarifárias aplicáveis.
 
 Nossa base de cálculo será o grupo padrão de tarifas, que considera as modalidades de consumo em ponta e fora ponta, onde o custo da energia varia de acordo com o horário de uso. Para simplificar, tomaremos como referência as tarifas médias para as diferentes faixas de consumo, considerando as modalidades tarifárias predominantes para o cliente em questão.
