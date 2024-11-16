@@ -1,0 +1,2001 @@
+data,turno,ambiente,item,consumo_kwh,custo_estimado
+2023-01-01,tarde,sacada,luz,0.63,0.48
+2023-01-02,manha,cozinha,luz,2.72,2.07
+2023-01-03,manha,banheiro,luz,3.29,2.5
+2023-01-04,noite,lavanderia,máquina de lavar,2.8,2.66
+2023-01-05,manha,quarto2,computador,3.35,2.55
+2023-01-06,manha,sacada,luz,3.95,3.01
+2023-01-07,madrugada,cozinha,luz,4.67,2.96
+2023-01-08,tarde,sacada,luz,0.99,0.75
+2023-01-09,manha,quarto2,luz,1.85,1.41
+2023-01-10,manha,lavanderia,máquina de lavar,4.07,3.1
+2023-01-11,manha,lavanderia,máquina de lavar,3.06,2.33
+2023-01-12,noite,cozinha,geladeira,1.56,1.48
+2023-01-13,manha,cozinha,geladeira,4.78,3.64
+2023-01-14,tarde,sacada,luz,3.15,2.4
+2023-01-15,madrugada,sacada,luz,3.89,2.47
+2023-01-16,noite,cozinha,geladeira,1.79,1.7
+2023-01-17,manha,quarto2,luz,3.76,2.86
+2023-01-18,manha,sacada,luz,3.36,2.56
+2023-01-19,manha,sala,luz,2.77,2.11
+2023-01-20,noite,quarto2,luz,1.14,1.08
+2023-01-21,tarde,sacada,luz,2.41,1.83
+2023-01-22,tarde,sacada,luz,3.15,2.4
+2023-01-23,manha,banheiro,luz,2.61,1.99
+2023-01-24,noite,sala,ar-condicionado,2.18,2.07
+2023-01-25,manha,sacada,luz,0.61,0.46
+2023-01-26,manha,lavanderia,máquina de lavar,4.23,3.22
+2023-01-27,manha,sala,TV,3.72,2.83
+2023-01-28,tarde,cozinha,micro-ondas,2.78,2.12
+2023-01-29,tarde,banheiro,aquecedor,4.85,3.69
+2023-01-30,manha,quarto2,luz,0.5,0.38
+2023-01-31,manha,banheiro,aquecedor,3.39,2.58
+2023-02-01,manha,quarto2,computador,2.87,2.18
+2023-02-02,manha,cozinha,micro-ondas,4.12,3.14
+2023-02-03,manha,sala,ar-condicionado,1.45,1.1
+2023-02-04,madrugada,quarto1,luz,0.56,0.36
+2023-02-05,tarde,cozinha,micro-ondas,1.37,1.04
+2023-02-06,manha,quarto1,luz,1.69,1.29
+2023-02-07,manha,sala,luz,2.15,1.64
+2023-02-08,noite,lavanderia,máquina de lavar,2.89,2.75
+2023-02-09,manha,cozinha,luz,2.84,2.16
+2023-02-10,manha,banheiro,luz,4.76,3.62
+2023-02-11,madrugada,banheiro,aquecedor,4.0,2.54
+2023-02-12,madrugada,cozinha,luz,1.77,1.12
+2023-02-13,manha,sala,luz,1.23,0.94
+2023-02-14,manha,sacada,luz,2.87,2.18
+2023-02-15,manha,quarto1,ar-condicionado,1.41,1.07
+2023-02-16,noite,sacada,luz,2.29,2.18
+2023-02-17,manha,sacada,luz,4.38,3.33
+2023-02-18,tarde,quarto2,luz,2.71,2.06
+2023-02-19,tarde,lavanderia,máquina de lavar,1.17,0.89
+2023-02-20,noite,cozinha,geladeira,1.66,1.58
+2023-02-21,manha,cozinha,micro-ondas,4.21,3.2
+2023-02-22,manha,quarto2,luz,1.27,0.97
+2023-02-23,manha,lavanderia,máquina de lavar,2.94,2.24
+2023-02-24,noite,quarto1,luz,3.4,3.23
+2023-02-25,tarde,sala,TV,1.95,1.48
+2023-02-26,madrugada,quarto2,luz,1.94,1.23
+2023-02-27,manha,quarto2,luz,1.38,1.05
+2023-02-28,noite,sacada,luz,1.6,1.52
+2023-03-01,manha,sacada,luz,3.31,2.52
+2023-03-02,manha,sacada,luz,3.83,2.91
+2023-03-03,manha,lavanderia,máquina de lavar,0.5,0.38
+2023-03-04,tarde,quarto2,luz,3.72,2.83
+2023-03-05,madrugada,quarto2,computador,4.1,2.6
+2023-03-06,manha,quarto2,computador,2.08,1.58
+2023-03-07,manha,sala,luz,3.05,2.32
+2023-03-08,noite,quarto2,luz,3.84,3.65
+2023-03-09,manha,sala,luz,2.88,2.19
+2023-03-10,manha,sala,ar-condicionado,4.05,3.08
+2023-03-11,madrugada,sala,ar-condicionado,2.46,1.56
+2023-03-12,madrugada,banheiro,luz,3.56,2.26
+2023-03-13,manha,quarto1,luz,4.16,3.17
+2023-03-14,manha,quarto1,ar-condicionado,1.39,1.06
+2023-03-15,manha,quarto1,luz,4.58,3.49
+2023-03-16,noite,cozinha,micro-ondas,1.5,1.43
+2023-03-17,manha,sacada,luz,2.51,1.91
+2023-03-18,tarde,quarto2,luz,2.75,2.09
+2023-03-19,tarde,cozinha,micro-ondas,4.88,3.71
+2023-03-20,noite,cozinha,luz,1.18,1.12
+2023-03-21,manha,quarto1,luz,1.31,1.0
+2023-03-22,manha,sacada,luz,4.39,3.34
+2023-03-23,manha,sacada,luz,2.72,2.07
+2023-03-24,noite,quarto1,ar-condicionado,0.98,0.93
+2023-03-25,madrugada,quarto2,computador,4.7,2.98
+2023-03-26,madrugada,banheiro,luz,1.29,0.82
+2023-03-27,manha,cozinha,geladeira,3.28,2.5
+2023-03-28,noite,quarto2,luz,3.11,2.96
+2023-03-29,manha,quarto1,luz,3.58,2.72
+2023-03-30,manha,lavanderia,máquina de lavar,4.39,3.34
+2023-03-31,manha,lavanderia,máquina de lavar,2.39,1.82
+2023-04-01,madrugada,banheiro,aquecedor,2.98,1.89
+2023-04-02,madrugada,quarto2,computador,1.89,1.2
+2023-04-03,manha,sacada,luz,4.67,3.55
+2023-04-04,noite,lavanderia,máquina de lavar,3.3,3.14
+2023-04-05,manha,quarto1,ar-condicionado,2.92,2.22
+2023-04-06,manha,banheiro,aquecedor,3.12,2.37
+2023-04-07,manha,quarto2,computador,0.83,0.63
+2023-04-08,madrugada,lavanderia,máquina de lavar,4.92,3.12
+2023-04-09,madrugada,cozinha,luz,4.62,2.93
+2023-04-10,manha,quarto1,ar-condicionado,3.46,2.63
+2023-04-11,manha,lavanderia,máquina de lavar,3.18,2.42
+2023-04-12,noite,quarto2,luz,4.81,4.58
+2023-04-13,manha,cozinha,micro-ondas,0.8,0.61
+2023-04-14,manha,cozinha,micro-ondas,3.82,2.91
+2023-04-15,madrugada,lavanderia,máquina de lavar,2.58,1.64
+2023-04-16,madrugada,banheiro,luz,4.12,2.61
+2023-04-17,manha,quarto1,luz,1.63,1.24
+2023-04-18,manha,quarto2,luz,0.74,0.56
+2023-04-19,manha,lavanderia,máquina de lavar,4.79,3.65
+2023-04-20,noite,lavanderia,máquina de lavar,4.48,4.26
+2023-04-21,manha,cozinha,geladeira,4.81,3.66
+2023-04-22,tarde,quarto1,ar-condicionado,1.16,0.88
+2023-04-23,tarde,lavanderia,máquina de lavar,3.12,2.37
+2023-04-24,noite,lavanderia,máquina de lavar,4.28,4.07
+2023-04-25,manha,cozinha,luz,1.87,1.42
+2023-04-26,manha,sacada,luz,2.92,2.22
+2023-04-27,manha,sacada,luz,1.44,1.1
+2023-04-28,noite,cozinha,luz,4.9,4.66
+2023-04-29,tarde,sacada,luz,3.91,2.98
+2023-04-30,tarde,sala,ar-condicionado,2.31,1.76
+2023-05-01,manha,banheiro,luz,1.25,0.95
+2023-05-02,manha,sala,TV,4.74,3.61
+2023-05-03,manha,quarto2,computador,1.99,1.51
+2023-05-04,noite,sacada,luz,3.96,3.77
+2023-05-05,manha,lavanderia,máquina de lavar,4.84,3.68
+2023-05-06,madrugada,quarto1,luz,1.79,1.14
+2023-05-07,tarde,sacada,luz,2.77,2.11
+2023-05-08,noite,sala,luz,2.32,2.21
+2023-05-09,manha,sacada,luz,4.38,3.33
+2023-05-10,manha,quarto2,luz,1.71,1.3
+2023-05-11,manha,sala,TV,3.85,2.93
+2023-05-12,noite,cozinha,geladeira,4.91,4.67
+2023-05-13,madrugada,lavanderia,máquina de lavar,2.56,1.62
+2023-05-14,tarde,banheiro,aquecedor,2.9,2.21
+2023-05-15,manha,sacada,luz,1.38,1.05
+2023-05-16,noite,banheiro,luz,3.69,3.51
+2023-05-17,manha,quarto2,computador,3.47,2.64
+2023-05-18,manha,cozinha,luz,0.91,0.69
+2023-05-19,manha,banheiro,luz,3.53,2.69
+2023-05-20,tarde,banheiro,aquecedor,3.76,2.86
+2023-05-21,madrugada,lavanderia,máquina de lavar,1.85,1.17
+2023-05-22,manha,sacada,luz,0.99,0.75
+2023-05-23,manha,lavanderia,máquina de lavar,3.23,2.46
+2023-05-24,noite,cozinha,geladeira,2.13,2.03
+2023-05-25,manha,quarto2,luz,0.77,0.59
+2023-05-26,manha,lavanderia,máquina de lavar,4.1,3.12
+2023-05-27,madrugada,banheiro,luz,2.47,1.57
+2023-05-28,madrugada,quarto1,luz,4.8,3.04
+2023-05-29,manha,cozinha,geladeira,2.4,1.83
+2023-05-30,manha,cozinha,micro-ondas,4.07,3.1
+2023-05-31,manha,banheiro,aquecedor,0.84,0.64
+2023-06-01,manha,quarto1,luz,1.69,1.29
+2023-06-02,manha,sacada,luz,4.09,3.11
+2023-06-03,madrugada,lavanderia,máquina de lavar,3.01,1.91
+2023-06-04,madrugada,lavanderia,máquina de lavar,3.18,2.02
+2023-06-05,manha,quarto1,luz,1.87,1.42
+2023-06-06,manha,sacada,luz,4.96,3.77
+2023-06-07,manha,sacada,luz,4.25,3.23
+2023-06-08,noite,sacada,luz,1.21,1.15
+2023-06-09,manha,banheiro,aquecedor,3.12,2.37
+2023-06-10,madrugada,sacada,luz,2.49,1.58
+2023-06-11,madrugada,quarto1,luz,2.49,1.58
+2023-06-12,noite,cozinha,micro-ondas,0.95,0.9
+2023-06-13,manha,sacada,luz,2.23,1.7
+2023-06-14,manha,lavanderia,máquina de lavar,3.09,2.35
+2023-06-15,manha,quarto1,luz,0.58,0.44
+2023-06-16,noite,sala,ar-condicionado,2.53,2.41
+2023-06-17,madrugada,sala,ar-condicionado,4.5,2.85
+2023-06-18,tarde,quarto1,luz,4.71,3.58
+2023-06-19,manha,sacada,luz,1.96,1.49
+2023-06-20,noite,sala,ar-condicionado,4.52,4.3
+2023-06-21,manha,quarto2,luz,4.23,3.22
+2023-06-22,manha,sacada,luz,3.44,2.62
+2023-06-23,manha,sacada,luz,2.61,1.99
+2023-06-24,madrugada,lavanderia,máquina de lavar,3.46,2.19
+2023-06-25,madrugada,lavanderia,máquina de lavar,2.33,1.48
+2023-06-26,manha,banheiro,aquecedor,1.93,1.47
+2023-06-27,manha,cozinha,geladeira,4.7,3.58
+2023-06-28,noite,cozinha,micro-ondas,1.09,1.04
+2023-06-29,manha,banheiro,luz,3.28,2.5
+2023-06-30,manha,banheiro,aquecedor,4.26,3.24
+2023-07-01,tarde,sala,ar-condicionado,2.44,1.86
+2023-07-02,madrugada,banheiro,luz,0.96,0.61
+2023-07-03,manha,quarto2,luz,1.28,0.97
+2023-07-04,noite,sacada,luz,2.32,2.21
+2023-07-05,manha,lavanderia,máquina de lavar,3.86,2.94
+2023-07-06,manha,banheiro,luz,2.25,1.71
+2023-07-07,manha,quarto1,ar-condicionado,2.03,1.54
+2023-07-08,tarde,sacada,luz,4.23,3.22
+2023-07-09,madrugada,lavanderia,máquina de lavar,3.19,2.02
+2023-07-10,manha,quarto2,luz,1.66,1.26
+2023-07-11,manha,sacada,luz,4.89,3.72
+2023-07-12,noite,sacada,luz,3.68,3.5
+2023-07-13,manha,sala,ar-condicionado,2.22,1.69
+2023-07-14,manha,cozinha,geladeira,0.64,0.49
+2023-07-15,tarde,cozinha,geladeira,3.85,2.93
+2023-07-16,madrugada,quarto2,computador,3.02,1.92
+2023-07-17,manha,cozinha,micro-ondas,3.59,2.73
+2023-07-18,manha,quarto2,luz,4.98,3.79
+2023-07-19,manha,lavanderia,máquina de lavar,4.08,3.11
+2023-07-20,noite,quarto2,luz,1.29,1.23
+2023-07-21,manha,lavanderia,máquina de lavar,3.5,2.66
+2023-07-22,tarde,lavanderia,máquina de lavar,3.08,2.34
+2023-07-23,madrugada,sala,TV,2.31,1.47
+2023-07-24,noite,banheiro,aquecedor,2.65,2.52
+2023-07-25,manha,sala,luz,0.68,0.52
+2023-07-26,manha,sala,luz,2.76,2.1
+2023-07-27,manha,lavanderia,máquina de lavar,0.93,0.71
+2023-07-28,noite,sala,ar-condicionado,4.98,4.74
+2023-07-29,tarde,cozinha,micro-ondas,2.7,2.05
+2023-07-30,tarde,cozinha,luz,2.57,1.96
+2023-07-31,manha,lavanderia,máquina de lavar,1.75,1.33
+2023-08-01,manha,sala,ar-condicionado,0.57,0.43
+2023-08-02,manha,banheiro,luz,2.92,2.22
+2023-08-03,manha,cozinha,geladeira,3.18,2.42
+2023-08-04,noite,sacada,luz,4.77,4.54
+2023-08-05,tarde,cozinha,micro-ondas,4.55,3.46
+2023-08-06,tarde,cozinha,micro-ondas,4.74,3.61
+2023-08-07,manha,lavanderia,máquina de lavar,2.1,1.6
+2023-08-08,noite,quarto1,luz,1.78,1.69
+2023-08-09,manha,banheiro,luz,4.0,3.04
+2023-08-10,manha,sala,luz,4.02,3.06
+2023-08-11,manha,lavanderia,máquina de lavar,2.83,2.15
+2023-08-12,madrugada,quarto1,ar-condicionado,2.2,1.4
+2023-08-13,madrugada,lavanderia,máquina de lavar,2.7,1.71
+2023-08-14,manha,cozinha,micro-ondas,1.27,0.97
+2023-08-15,manha,quarto1,ar-condicionado,1.93,1.47
+2023-08-16,noite,sala,ar-condicionado,1.93,1.84
+2023-08-17,manha,sala,ar-condicionado,2.02,1.54
+2023-08-18,manha,lavanderia,máquina de lavar,4.39,3.34
+2023-08-19,madrugada,quarto1,luz,1.04,0.66
+2023-08-20,madrugada,sacada,luz,1.94,1.23
+2023-08-21,manha,sala,TV,4.48,3.41
+2023-08-22,manha,sacada,luz,4.18,3.18
+2023-08-23,manha,banheiro,aquecedor,1.29,0.98
+2023-08-24,noite,sala,luz,3.74,3.56
+2023-08-25,manha,quarto2,computador,2.33,1.77
+2023-08-26,madrugada,sacada,luz,4.17,2.64
+2023-08-27,madrugada,quarto2,luz,4.85,3.08
+2023-08-28,noite,sacada,luz,2.8,2.66
+2023-08-29,manha,lavanderia,máquina de lavar,4.61,3.51
+2023-08-30,manha,lavanderia,máquina de lavar,2.4,1.83
+2023-08-31,manha,sacada,luz,2.12,1.61
+2023-09-01,manha,quarto2,computador,3.27,2.49
+2023-09-02,madrugada,quarto2,computador,3.2,2.03
+2023-09-03,tarde,quarto2,computador,4.79,3.65
+2023-09-04,noite,quarto1,luz,2.63,2.5
+2023-09-05,manha,sala,TV,4.9,3.73
+2023-09-06,manha,quarto2,computador,0.91,0.69
+2023-09-07,manha,lavanderia,máquina de lavar,3.51,2.67
+2023-09-08,noite,quarto1,luz,4.62,4.4
+2023-09-09,madrugada,quarto2,luz,1.38,0.88
+2023-09-10,tarde,quarto2,luz,1.16,0.88
+2023-09-11,manha,quarto1,luz,3.75,2.85
+2023-09-12,noite,banheiro,aquecedor,4.85,4.61
+2023-09-13,manha,sacada,luz,4.94,3.76
+2023-09-14,manha,banheiro,luz,1.08,0.82
+2023-09-15,manha,lavanderia,máquina de lavar,4.77,3.63
+2023-09-16,madrugada,sala,TV,4.35,2.76
+2023-09-17,tarde,sacada,luz,3.06,2.33
+2023-09-18,manha,quarto2,luz,3.35,2.55
+2023-09-19,manha,quarto1,ar-condicionado,1.98,1.51
+2023-09-20,noite,banheiro,luz,3.82,3.63
+2023-09-21,manha,lavanderia,máquina de lavar,2.52,1.92
+2023-09-22,manha,sala,luz,1.89,1.44
+2023-09-23,madrugada,quarto2,computador,3.12,1.98
+2023-09-24,madrugada,lavanderia,máquina de lavar,0.67,0.42
+2023-09-25,manha,sala,TV,1.11,0.84
+2023-09-26,manha,sala,TV,3.79,2.88
+2023-09-27,manha,lavanderia,máquina de lavar,3.02,2.3
+2023-09-28,noite,sala,ar-condicionado,1.57,1.49
+2023-09-29,manha,quarto2,computador,2.64,2.01
+2023-09-30,tarde,quarto1,ar-condicionado,1.34,1.02
+2023-10-01,tarde,sala,luz,1.9,1.45
+2023-10-02,manha,quarto2,luz,2.69,2.05
+2023-10-03,manha,cozinha,geladeira,3.35,2.55
+2023-10-04,noite,lavanderia,máquina de lavar,2.43,2.31
+2023-10-05,manha,banheiro,luz,2.77,2.11
+2023-10-06,manha,quarto1,luz,2.17,1.65
+2023-10-07,tarde,lavanderia,máquina de lavar,2.17,1.65
+2023-10-08,madrugada,sala,luz,0.78,0.49
+2023-10-09,manha,cozinha,geladeira,4.91,3.74
+2023-10-10,manha,lavanderia,máquina de lavar,4.21,3.2
+2023-10-11,manha,sacada,luz,3.06,2.33
+2023-10-12,noite,banheiro,aquecedor,1.7,1.62
+2023-10-13,manha,banheiro,aquecedor,2.53,1.93
+2023-10-14,tarde,sala,luz,1.58,1.2
+2023-10-15,tarde,lavanderia,máquina de lavar,1.37,1.04
+2023-10-16,noite,sacada,luz,4.18,3.98
+2023-10-17,manha,sala,TV,1.95,1.48
+2023-10-18,manha,quarto1,ar-condicionado,1.9,1.45
+2023-10-19,manha,sacada,luz,3.76,2.86
+2023-10-20,noite,banheiro,aquecedor,4.47,4.25
+2023-10-21,tarde,banheiro,luz,0.66,0.5
+2023-10-22,tarde,lavanderia,máquina de lavar,4.91,3.74
+2023-10-23,manha,sala,luz,4.78,3.64
+2023-10-24,noite,banheiro,aquecedor,3.68,3.5
+2023-10-25,manha,quarto2,computador,4.97,3.78
+2023-10-26,manha,quarto2,luz,3.97,3.02
+2023-10-27,manha,quarto2,computador,4.7,3.58
+2023-10-28,tarde,banheiro,aquecedor,4.21,3.2
+2023-10-29,tarde,lavanderia,máquina de lavar,2.34,1.78
+2023-10-30,manha,cozinha,geladeira,3.09,2.35
+2023-10-31,manha,cozinha,micro-ondas,2.75,2.09
+2023-11-01,manha,quarto2,computador,2.05,1.56
+2023-11-02,manha,sala,luz,3.14,2.39
+2023-11-03,manha,banheiro,luz,3.46,2.63
+2023-11-04,madrugada,sala,luz,1.19,0.75
+2023-11-05,madrugada,sacada,luz,3.94,2.5
+2023-11-06,manha,sacada,luz,4.81,3.66
+2023-11-07,manha,cozinha,luz,2.8,2.13
+2023-11-08,noite,cozinha,luz,4.97,4.73
+2023-11-09,manha,sacada,luz,2.95,2.25
+2023-11-10,manha,quarto1,ar-condicionado,1.05,0.8
+2023-11-11,madrugada,lavanderia,máquina de lavar,3.45,2.19
+2023-11-12,tarde,sacada,luz,1.29,0.98
+2023-11-13,manha,cozinha,geladeira,2.99,2.28
+2023-11-14,manha,banheiro,luz,3.52,2.68
+2023-11-15,manha,banheiro,aquecedor,4.08,3.11
+2023-11-16,noite,sala,luz,2.77,2.64
+2023-11-17,manha,sala,ar-condicionado,1.2,0.91
+2023-11-18,tarde,sacada,luz,1.63,1.24
+2023-11-19,tarde,cozinha,geladeira,1.09,0.83
+2023-11-20,noite,lavanderia,máquina de lavar,1.85,1.76
+2023-11-21,manha,lavanderia,máquina de lavar,2.99,2.28
+2023-11-22,manha,cozinha,micro-ondas,1.59,1.21
+2023-11-23,manha,quarto2,computador,3.88,2.95
+2023-11-24,noite,sala,luz,3.66,3.48
+2023-11-25,tarde,sala,luz,4.82,3.67
+2023-11-26,tarde,sala,TV,3.62,2.75
+2023-11-27,manha,lavanderia,máquina de lavar,0.76,0.58
+2023-11-28,noite,lavanderia,máquina de lavar,3.71,3.53
+2023-11-29,manha,sala,TV,2.08,1.58
+2023-11-30,manha,quarto2,luz,3.78,2.88
+2023-12-01,manha,cozinha,micro-ondas,2.52,1.92
+2023-12-02,madrugada,sacada,luz,1.86,1.18
+2023-12-03,madrugada,sacada,luz,2.87,1.82
+2023-12-04,noite,sacada,luz,2.93,2.79
+2023-12-05,manha,cozinha,luz,1.2,0.91
+2023-12-06,manha,sacada,luz,3.73,2.84
+2023-12-07,manha,sacada,luz,1.01,0.77
+2023-12-08,noite,banheiro,luz,3.94,3.75
+2023-12-09,tarde,quarto2,luz,1.58,1.2
+2023-12-10,tarde,banheiro,luz,2.7,2.05
+2023-12-11,manha,sala,TV,2.24,1.7
+2023-12-12,noite,quarto1,ar-condicionado,2.32,2.21
+2023-12-13,manha,cozinha,luz,4.63,3.52
+2023-12-14,manha,lavanderia,máquina de lavar,0.7,0.53
+2023-12-15,manha,quarto1,luz,1.0,0.76
+2023-12-16,tarde,cozinha,luz,2.33,1.77
+2023-12-17,madrugada,lavanderia,máquina de lavar,4.56,2.89
+2023-12-18,manha,cozinha,micro-ondas,2.97,2.26
+2023-12-19,manha,quarto2,luz,4.64,3.53
+2023-12-20,noite,quarto2,computador,0.68,0.65
+2023-12-21,manha,banheiro,luz,1.34,1.02
+2023-12-22,manha,banheiro,luz,1.13,0.86
+2023-12-23,madrugada,quarto1,luz,1.64,1.04
+2023-12-24,madrugada,cozinha,micro-ondas,2.35,1.49
+2023-12-25,manha,quarto1,luz,2.31,1.76
+2023-12-26,manha,quarto1,ar-condicionado,0.55,0.42
+2023-12-27,manha,banheiro,luz,3.82,2.91
+2023-12-28,noite,quarto2,luz,0.63,0.6
+2023-12-29,manha,cozinha,geladeira,3.69,2.81
+2023-12-30,tarde,sala,luz,0.71,0.54
+2023-12-31,tarde,banheiro,aquecedor,1.42,1.08
+2024-01-01,manha,sala,ar-condicionado,2.16,1.64
+2024-01-02,manha,cozinha,micro-ondas,4.62,3.52
+2024-01-03,manha,quarto1,luz,4.27,3.25
+2024-01-04,noite,banheiro,luz,1.19,1.13
+2024-01-05,manha,quarto2,luz,2.43,1.85
+2024-01-06,madrugada,cozinha,micro-ondas,2.42,1.53
+2024-01-07,madrugada,banheiro,luz,3.3,2.09
+2024-01-08,noite,sala,TV,1.01,0.96
+2024-01-09,manha,sacada,luz,4.47,3.4
+2024-01-10,manha,lavanderia,máquina de lavar,1.69,1.29
+2024-01-11,manha,cozinha,luz,4.11,3.13
+2024-01-12,noite,sacada,luz,1.74,1.66
+2024-01-13,madrugada,quarto2,luz,1.25,0.79
+2024-01-14,madrugada,sala,ar-condicionado,4.77,3.03
+2024-01-15,manha,quarto1,ar-condicionado,1.72,1.31
+2024-01-16,noite,sacada,luz,1.26,1.2
+2024-01-17,manha,sala,luz,1.03,0.78
+2024-01-18,manha,sala,TV,3.4,2.59
+2024-01-19,manha,sala,TV,3.47,2.64
+2024-01-20,madrugada,sacada,luz,1.3,0.82
+2024-01-21,madrugada,lavanderia,máquina de lavar,1.77,1.12
+2024-01-22,manha,sacada,luz,4.82,3.67
+2024-01-23,manha,lavanderia,máquina de lavar,1.42,1.08
+2024-01-24,noite,lavanderia,máquina de lavar,1.75,1.66
+2024-01-25,manha,cozinha,micro-ondas,1.99,1.51
+2024-01-26,manha,banheiro,aquecedor,1.72,1.31
+2024-01-27,tarde,sala,ar-condicionado,1.45,1.1
+2024-01-28,tarde,cozinha,micro-ondas,1.66,1.26
+2024-01-29,manha,banheiro,aquecedor,0.77,0.59
+2024-01-30,manha,quarto1,ar-condicionado,1.72,1.31
+2024-01-31,manha,banheiro,luz,3.54,2.69
+2024-02-01,manha,lavanderia,máquina de lavar,3.12,2.37
+2024-02-02,manha,banheiro,luz,1.65,1.26
+2024-02-03,madrugada,sala,TV,3.17,2.01
+2024-02-04,madrugada,sacada,luz,1.62,1.03
+2024-02-05,manha,banheiro,aquecedor,2.19,1.67
+2024-02-06,manha,lavanderia,máquina de lavar,2.82,2.15
+2024-02-07,manha,quarto1,ar-condicionado,3.02,2.3
+2024-02-08,noite,sala,luz,3.93,3.74
+2024-02-09,manha,banheiro,luz,0.88,0.67
+2024-02-10,madrugada,banheiro,luz,3.21,2.04
+2024-02-11,madrugada,sala,TV,4.3,2.73
+2024-02-12,noite,sala,luz,1.96,1.86
+2024-02-13,manha,sacada,luz,3.8,2.89
+2024-02-14,manha,cozinha,geladeira,3.07,2.34
+2024-02-15,manha,quarto2,luz,2.03,1.54
+2024-02-16,noite,quarto2,luz,0.9,0.86
+2024-02-17,madrugada,banheiro,aquecedor,1.17,0.74
+2024-02-18,madrugada,cozinha,luz,2.15,1.36
+2024-02-19,manha,cozinha,micro-ondas,4.55,3.46
+2024-02-20,noite,sacada,luz,2.54,2.42
+2024-02-21,manha,lavanderia,máquina de lavar,1.86,1.42
+2024-02-22,manha,banheiro,aquecedor,3.14,2.39
+2024-02-23,manha,sacada,luz,0.66,0.5
+2024-02-24,tarde,sacada,luz,3.28,2.5
+2024-02-25,madrugada,lavanderia,máquina de lavar,0.94,0.6
+2024-02-26,manha,lavanderia,máquina de lavar,4.74,3.61
+2024-02-27,manha,quarto1,luz,3.65,2.78
+2024-02-28,noite,sala,TV,3.37,3.21
+2024-02-29,manha,quarto1,luz,4.47,3.4
+2024-03-01,manha,sala,luz,3.2,2.44
+2024-03-02,madrugada,cozinha,micro-ondas,4.58,2.9
+2024-03-03,madrugada,lavanderia,máquina de lavar,2.19,1.39
+2024-03-04,noite,cozinha,micro-ondas,4.19,3.99
+2024-03-05,manha,banheiro,luz,1.25,0.95
+2024-03-06,manha,quarto2,computador,1.04,0.79
+2024-03-07,manha,sacada,luz,4.54,3.46
+2024-03-08,noite,sacada,luz,2.84,2.7
+2024-03-09,tarde,quarto1,luz,3.86,2.94
+2024-03-10,tarde,cozinha,geladeira,4.7,3.58
+2024-03-11,manha,cozinha,micro-ondas,0.67,0.51
+2024-03-12,noite,sacada,luz,4.61,4.39
+2024-03-13,manha,quarto1,ar-condicionado,1.61,1.23
+2024-03-14,manha,banheiro,luz,2.67,2.03
+2024-03-15,manha,sala,ar-condicionado,2.34,1.78
+2024-03-16,madrugada,quarto1,ar-condicionado,4.02,2.55
+2024-03-17,tarde,quarto2,computador,1.71,1.3
+2024-03-18,manha,banheiro,aquecedor,4.25,3.23
+2024-03-19,manha,banheiro,aquecedor,4.24,3.23
+2024-03-20,noite,sala,luz,4.06,3.86
+2024-03-21,manha,sacada,luz,3.92,2.98
+2024-03-22,manha,quarto1,luz,1.24,0.94
+2024-03-23,tarde,lavanderia,máquina de lavar,1.07,0.81
+2024-03-24,madrugada,quarto2,luz,4.81,3.05
+2024-03-25,manha,cozinha,micro-ondas,2.34,1.78
+2024-03-26,manha,banheiro,luz,3.9,2.97
+2024-03-27,manha,cozinha,micro-ondas,4.79,3.65
+2024-03-28,noite,cozinha,micro-ondas,3.14,2.99
+2024-03-29,manha,lavanderia,máquina de lavar,4.69,3.57
+2024-03-30,madrugada,cozinha,geladeira,3.86,2.45
+2024-03-31,madrugada,cozinha,geladeira,2.26,1.43
+2024-04-01,manha,sacada,luz,3.44,2.62
+2024-04-02,manha,lavanderia,máquina de lavar,0.55,0.42
+2024-04-03,manha,sala,ar-condicionado,4.94,3.76
+2024-04-04,noite,quarto2,computador,4.53,4.31
+2024-04-05,manha,quarto2,luz,3.37,2.56
+2024-04-06,tarde,banheiro,aquecedor,2.15,1.64
+2024-04-07,tarde,sacada,luz,4.45,3.39
+2024-04-08,noite,quarto1,luz,3.75,3.57
+2024-04-09,manha,lavanderia,máquina de lavar,3.1,2.36
+2024-04-10,manha,quarto1,luz,3.43,2.61
+2024-04-11,manha,cozinha,micro-ondas,3.55,2.7
+2024-04-12,noite,lavanderia,máquina de lavar,0.99,0.94
+2024-04-13,madrugada,sala,ar-condicionado,3.95,2.51
+2024-04-14,tarde,quarto2,computador,1.04,0.79
+2024-04-15,manha,banheiro,luz,1.4,1.07
+2024-04-16,noite,lavanderia,máquina de lavar,1.86,1.77
+2024-04-17,manha,banheiro,luz,2.08,1.58
+2024-04-18,manha,sacada,luz,3.21,2.44
+2024-04-19,manha,sala,ar-condicionado,1.5,1.14
+2024-04-20,tarde,sacada,luz,3.78,2.88
+2024-04-21,tarde,sala,ar-condicionado,4.25,3.23
+2024-04-22,manha,quarto2,computador,2.27,1.73
+2024-04-23,manha,sala,ar-condicionado,1.2,0.91
+2024-04-24,noite,quarto1,luz,4.32,4.11
+2024-04-25,manha,cozinha,geladeira,4.09,3.11
+2024-04-26,manha,lavanderia,máquina de lavar,0.69,0.53
+2024-04-27,tarde,sala,ar-condicionado,3.27,2.49
+2024-04-28,tarde,sala,luz,1.25,0.95
+2024-04-29,manha,quarto2,luz,1.62,1.23
+2024-04-30,manha,cozinha,geladeira,4.93,3.75
+2024-05-01,manha,sacada,luz,1.87,1.42
+2024-05-02,manha,sacada,luz,1.99,1.51
+2024-05-03,manha,banheiro,luz,4.19,3.19
+2024-05-04,madrugada,cozinha,luz,3.49,2.21
+2024-05-05,tarde,lavanderia,máquina de lavar,3.94,3.0
+2024-05-06,manha,cozinha,luz,3.24,2.47
+2024-05-07,manha,lavanderia,máquina de lavar,0.76,0.58
+2024-05-08,noite,cozinha,luz,3.26,3.1
+2024-05-09,manha,sacada,luz,3.88,2.95
+2024-05-10,manha,quarto1,luz,1.73,1.32
+2024-05-11,tarde,sacada,luz,2.87,2.18
+2024-05-12,tarde,sacada,luz,4.1,3.12
+2024-05-13,manha,sala,TV,4.88,3.71
+2024-05-14,manha,quarto2,computador,4.36,3.32
+2024-05-15,manha,banheiro,luz,4.56,3.47
+2024-05-16,noite,quarto2,computador,3.2,3.04
+2024-05-17,manha,banheiro,aquecedor,1.24,0.94
+2024-05-18,tarde,banheiro,luz,3.74,2.85
+2024-05-19,tarde,quarto2,computador,3.67,2.79
+2024-05-20,noite,sacada,luz,2.04,1.94
+2024-05-21,manha,sacada,luz,4.92,3.74
+2024-05-22,manha,sala,TV,1.28,0.97
+2024-05-23,manha,quarto2,computador,2.25,1.71
+2024-05-24,noite,quarto1,ar-condicionado,2.5,2.38
+2024-05-25,madrugada,quarto2,computador,3.31,2.1
+2024-05-26,madrugada,quarto1,ar-condicionado,0.99,0.63
+2024-05-27,manha,lavanderia,máquina de lavar,1.2,0.91
+2024-05-28,noite,quarto1,ar-condicionado,1.05,1.0
+2024-05-29,manha,sacada,luz,3.54,2.69
+2024-05-30,manha,sacada,luz,4.29,3.26
+2024-05-31,manha,sacada,luz,3.37,2.56
+2024-06-01,tarde,quarto1,luz,0.67,0.51
+2024-06-02,tarde,lavanderia,máquina de lavar,2.21,1.68
+2024-06-03,manha,sacada,luz,2.69,2.05
+2024-06-04,noite,quarto2,computador,4.2,4.0
+2024-06-05,manha,lavanderia,máquina de lavar,4.44,3.38
+2024-06-06,manha,sala,TV,1.38,1.05
+2024-06-07,manha,sala,luz,1.64,1.25
+2024-06-08,tarde,sacada,luz,0.75,0.57
+2024-06-09,tarde,banheiro,luz,4.21,3.2
+2024-06-10,manha,quarto2,computador,4.76,3.62
+2024-06-11,manha,lavanderia,máquina de lavar,3.61,2.75
+2024-06-12,noite,sala,TV,1.5,1.43
+2024-06-13,manha,cozinha,micro-ondas,1.07,0.81
+2024-06-14,manha,quarto2,luz,4.98,3.79
+2024-06-15,tarde,quarto1,ar-condicionado,1.23,0.94
+2024-06-16,madrugada,quarto2,luz,3.57,2.26
+2024-06-17,manha,sacada,luz,1.27,0.97
+2024-06-18,manha,lavanderia,máquina de lavar,1.49,1.13
+2024-06-19,manha,quarto2,luz,2.81,2.14
+2024-06-20,noite,quarto2,computador,1.64,1.56
+2024-06-21,manha,cozinha,micro-ondas,4.87,3.71
+2024-06-22,tarde,quarto2,luz,4.58,3.49
+2024-06-23,madrugada,quarto2,luz,4.24,2.69
+2024-06-24,noite,sacada,luz,0.6,0.57
+2024-06-25,manha,quarto1,luz,1.88,1.43
+2024-06-26,manha,lavanderia,máquina de lavar,4.56,3.47
+2024-06-27,manha,lavanderia,máquina de lavar,0.74,0.56
+2024-06-28,noite,sala,ar-condicionado,4.83,4.59
+2024-06-29,madrugada,lavanderia,máquina de lavar,2.24,1.42
+2024-06-30,tarde,cozinha,geladeira,3.54,2.69
+2024-07-01,manha,sacada,luz,2.5,1.9
+2024-07-02,manha,lavanderia,máquina de lavar,3.12,2.37
+2024-07-03,manha,sacada,luz,0.63,0.48
+2024-07-04,noite,sala,TV,4.92,4.68
+2024-07-05,manha,cozinha,micro-ondas,2.49,1.89
+2024-07-06,madrugada,quarto1,ar-condicionado,4.07,2.58
+2024-07-07,tarde,cozinha,luz,4.56,3.47
+2024-07-08,noite,quarto2,computador,2.58,2.45
+2024-07-09,manha,cozinha,geladeira,4.12,3.14
+2024-07-10,manha,quarto2,luz,2.82,2.15
+2024-07-11,manha,quarto1,luz,3.23,2.46
+2024-07-12,noite,sacada,luz,3.23,3.07
+2024-07-13,madrugada,banheiro,luz,4.06,2.57
+2024-07-14,madrugada,lavanderia,máquina de lavar,4.69,2.97
+2024-07-15,manha,lavanderia,máquina de lavar,1.79,1.36
+2024-07-16,noite,cozinha,luz,0.52,0.49
+2024-07-17,manha,sala,luz,0.74,0.56
+2024-07-18,manha,cozinha,micro-ondas,3.15,2.4
+2024-07-19,manha,sala,TV,2.39,1.82
+2024-07-20,madrugada,sacada,luz,1.18,0.75
+2024-07-21,tarde,banheiro,aquecedor,2.21,1.68
+2024-07-22,manha,quarto2,luz,4.94,3.76
+2024-07-23,manha,sacada,luz,3.74,2.85
+2024-07-24,noite,quarto1,luz,4.75,4.52
+2024-07-25,manha,cozinha,geladeira,4.19,3.19
+2024-07-26,manha,quarto2,computador,4.36,3.32
+2024-07-27,tarde,banheiro,aquecedor,3.5,2.66
+2024-07-28,tarde,sacada,luz,2.43,1.85
+2024-07-29,manha,banheiro,aquecedor,4.56,3.47
+2024-07-30,manha,quarto2,computador,3.74,2.85
+2024-07-31,manha,lavanderia,máquina de lavar,4.94,3.76
+2024-08-01,manha,cozinha,geladeira,0.62,0.47
+2024-08-02,manha,quarto2,luz,4.81,3.66
+2024-08-03,tarde,lavanderia,máquina de lavar,4.68,3.56
+2024-08-04,tarde,banheiro,luz,3.25,2.47
+2024-08-05,manha,lavanderia,máquina de lavar,1.39,1.06
+2024-08-06,manha,sala,TV,4.32,3.29
+2024-08-07,manha,cozinha,micro-ondas,3.27,2.49
+2024-08-08,noite,lavanderia,máquina de lavar,4.22,4.01
+2024-08-09,manha,quarto1,ar-condicionado,0.83,0.63
+2024-08-10,tarde,lavanderia,máquina de lavar,1.6,1.22
+2024-08-11,tarde,banheiro,aquecedor,2.75,2.09
+2024-08-12,noite,sala,luz,0.76,0.72
+2024-08-13,manha,banheiro,luz,3.16,2.4
+2024-08-14,manha,quarto2,luz,4.65,3.54
+2024-08-15,manha,sacada,luz,4.19,3.19
+2024-08-16,noite,sacada,luz,4.54,4.32
+2024-08-17,madrugada,quarto2,computador,3.99,2.53
+2024-08-18,madrugada,quarto1,ar-condicionado,0.61,0.39
+2024-08-19,manha,banheiro,aquecedor,3.33,2.53
+2024-08-20,noite,cozinha,geladeira,2.29,2.18
+2024-08-21,manha,sala,luz,3.81,2.9
+2024-08-22,manha,lavanderia,máquina de lavar,3.68,2.8
+2024-08-23,manha,lavanderia,máquina de lavar,4.57,3.48
+2024-08-24,madrugada,quarto2,computador,1.04,0.66
+2024-08-25,tarde,lavanderia,máquina de lavar,2.56,1.95
+2024-08-26,manha,sala,ar-condicionado,2.44,1.86
+2024-08-27,manha,banheiro,aquecedor,2.39,1.82
+2024-08-28,noite,quarto2,luz,3.03,2.88
+2024-08-29,manha,sacada,luz,0.96,0.73
+2024-08-30,manha,sala,luz,0.85,0.65
+2024-08-31,madrugada,quarto1,luz,3.65,2.31
+2024-09-01,tarde,banheiro,aquecedor,1.84,1.4
+2024-09-02,manha,cozinha,geladeira,4.96,3.77
+2024-09-03,manha,lavanderia,máquina de lavar,4.81,3.66
+2024-09-04,noite,quarto1,luz,1.09,1.04
+2024-09-05,manha,quarto2,luz,4.52,3.44
+2024-09-06,manha,sacada,luz,3.91,2.98
+2024-09-07,madrugada,banheiro,luz,0.79,0.5
+2024-09-08,madrugada,quarto2,luz,2.46,1.56
+2024-09-09,manha,lavanderia,máquina de lavar,3.15,2.4
+2024-09-10,manha,quarto2,luz,2.47,1.88
+2024-09-11,manha,sala,ar-condicionado,2.07,1.58
+2024-09-12,noite,banheiro,luz,4.25,4.04
+2024-09-13,manha,banheiro,aquecedor,1.25,0.95
+2024-09-14,madrugada,quarto2,computador,2.9,1.84
+2024-09-15,madrugada,quarto2,luz,4.25,2.7
+2024-09-16,noite,sala,TV,2.9,2.76
+2024-09-17,manha,sala,luz,3.09,2.35
+2024-09-18,manha,lavanderia,máquina de lavar,2.29,1.74
+2024-09-19,manha,quarto1,luz,0.99,0.75
+2024-09-20,noite,lavanderia,máquina de lavar,4.11,3.91
+2024-09-21,madrugada,quarto1,ar-condicionado,2.89,1.83
+2024-09-22,tarde,lavanderia,máquina de lavar,2.04,1.55
+2024-09-23,manha,quarto1,luz,1.85,1.41
+2024-09-24,noite,sacada,luz,4.98,4.74
+2024-09-25,manha,quarto2,computador,0.64,0.49
+2024-09-26,manha,quarto2,luz,2.04,1.55
+2024-09-27,manha,quarto1,luz,3.51,2.67
+2024-09-28,madrugada,quarto1,luz,1.06,0.67
+2024-09-29,madrugada,banheiro,aquecedor,3.61,2.29
+2024-09-30,manha,cozinha,micro-ondas,4.35,3.31
+2024-10-01,manha,banheiro,aquecedor,2.13,1.62
+2024-10-02,manha,sala,ar-condicionado,2.81,2.14
+2024-10-03,manha,sala,luz,3.65,2.78
+2024-10-04,noite,banheiro,luz,2.38,2.26
+2024-10-05,tarde,sacada,luz,2.9,2.21
+2024-10-06,madrugada,quarto2,computador,3.13,1.99
+2024-10-07,manha,lavanderia,máquina de lavar,4.67,3.55
+2024-10-08,noite,quarto2,computador,1.02,0.97
+2024-10-09,manha,lavanderia,máquina de lavar,4.6,3.5
+2024-10-10,manha,quarto2,luz,1.06,0.81
+2024-10-11,manha,cozinha,micro-ondas,4.97,3.78
+2024-10-12,madrugada,lavanderia,máquina de lavar,2.52,1.6
+2024-10-13,madrugada,quarto1,ar-condicionado,0.55,0.35
+2024-10-14,manha,lavanderia,máquina de lavar,1.54,1.17
+2024-10-15,manha,banheiro,luz,4.93,3.75
+2024-10-16,noite,lavanderia,máquina de lavar,1.82,1.73
+2024-10-17,manha,sala,TV,2.89,2.2
+2024-10-18,manha,sala,ar-condicionado,3.87,2.95
+2024-10-19,madrugada,sala,luz,4.42,2.8
+2024-10-20,tarde,cozinha,luz,4.69,3.57
+2024-10-21,manha,quarto2,luz,0.68,0.52
+2024-10-22,manha,cozinha,luz,1.15,0.88
+2024-10-23,manha,cozinha,micro-ondas,3.79,2.88
+2024-10-24,noite,cozinha,luz,2.92,2.78
+2024-10-25,manha,quarto2,luz,4.95,3.77
+2024-10-26,madrugada,cozinha,micro-ondas,2.9,1.84
+2024-10-27,tarde,lavanderia,máquina de lavar,1.52,1.16
+2024-10-28,noite,sacada,luz,4.28,4.07
+2024-10-29,manha,banheiro,aquecedor,1.24,0.94
+2024-10-30,manha,banheiro,aquecedor,1.34,1.02
+2024-10-31,manha,lavanderia,máquina de lavar,4.55,3.46
+2024-11-01,manha,cozinha,micro-ondas,1.28,0.97
+2024-11-02,madrugada,lavanderia,máquina de lavar,3.33,2.11
+2024-11-03,tarde,quarto1,ar-condicionado,2.45,1.86
+2024-11-04,noite,lavanderia,máquina de lavar,4.95,4.71
+2024-11-05,manha,lavanderia,máquina de lavar,2.38,1.81
+2024-11-06,manha,cozinha,luz,4.63,3.52
+2024-11-07,manha,lavanderia,máquina de lavar,3.71,2.82
+2024-11-08,noite,cozinha,micro-ondas,0.77,0.73
+2024-11-09,madrugada,sacada,luz,4.43,2.81
+2024-11-10,tarde,quarto2,luz,1.44,1.1
+2024-11-11,manha,banheiro,luz,1.64,1.25
+2024-11-12,noite,quarto1,ar-condicionado,2.68,2.55
+2024-11-13,manha,lavanderia,máquina de lavar,4.22,3.21
+2024-11-14,manha,quarto1,ar-condicionado,4.15,3.16
+2024-11-15,manha,sala,TV,1.9,1.45
+2024-11-16,tarde,lavanderia,máquina de lavar,1.96,1.49
+2024-11-17,tarde,sala,ar-condicionado,2.54,1.93
+2024-11-18,manha,cozinha,geladeira,2.18,1.66
+2024-11-19,manha,quarto1,ar-condicionado,4.68,3.56
+2024-11-20,noite,quarto2,computador,3.39,3.22
+2024-11-21,manha,quarto2,computador,4.59,3.49
+2024-11-22,manha,sacada,luz,1.08,0.82
+2024-11-23,tarde,sala,luz,2.23,1.7
+2024-11-24,madrugada,cozinha,geladeira,1.59,1.01
+2024-11-25,manha,banheiro,luz,3.8,2.89
+2024-11-26,manha,sacada,luz,1.0,0.76
+2024-11-27,manha,sacada,luz,1.26,0.96
+2024-11-28,noite,lavanderia,máquina de lavar,4.68,4.45
+2024-11-29,manha,cozinha,luz,0.8,0.61
+2024-11-30,madrugada,banheiro,aquecedor,0.65,0.41
+2024-12-01,madrugada,quarto2,computador,1.7,1.08
+2024-12-02,manha,quarto1,ar-condicionado,4.32,3.29
+2024-12-03,manha,quarto1,ar-condicionado,4.39,3.34
+2024-12-04,noite,quarto1,ar-condicionado,3.74,3.56
+2024-12-05,manha,sala,ar-condicionado,2.46,1.87
+2024-12-06,manha,sala,luz,2.21,1.68
+2024-12-07,tarde,sacada,luz,1.2,0.91
+2024-12-08,madrugada,banheiro,luz,1.64,1.04
+2024-12-09,manha,sala,TV,2.56,1.95
+2024-12-10,manha,sacada,luz,3.68,2.8
+2024-12-11,manha,quarto1,ar-condicionado,1.22,0.93
+2024-12-12,noite,sacada,luz,0.72,0.68
+2024-12-13,manha,cozinha,micro-ondas,3.98,3.03
+2024-12-14,tarde,banheiro,luz,1.21,0.92
+2024-12-15,madrugada,quarto2,luz,4.95,3.14
+2024-12-16,noite,quarto2,computador,0.75,0.71
+2024-12-17,manha,quarto1,ar-condicionado,0.89,0.68
+2024-12-18,manha,quarto1,luz,1.04,0.79
+2024-12-19,manha,sala,TV,4.15,3.16
+2024-12-20,noite,lavanderia,máquina de lavar,3.57,3.4
+2024-12-21,madrugada,sacada,luz,3.44,2.18
+2024-12-22,tarde,lavanderia,máquina de lavar,1.06,0.81
+2024-12-23,manha,lavanderia,máquina de lavar,1.72,1.31
+2024-12-24,noite,quarto2,luz,1.11,1.06
+2024-12-25,manha,quarto2,computador,3.66,2.79
+2024-12-26,manha,quarto2,luz,1.32,1.0
+2024-12-27,manha,sacada,luz,0.88,0.67
+2024-12-28,madrugada,lavanderia,máquina de lavar,4.59,2.91
+2024-12-29,tarde,lavanderia,máquina de lavar,3.52,2.68
+2024-12-30,manha,banheiro,aquecedor,2.54,1.93
+2024-12-31,manha,sala,ar-condicionado,2.46,1.87
+2025-01-01,manha,lavanderia,máquina de lavar,1.9,1.45
+2025-01-02,manha,lavanderia,máquina de lavar,1.06,0.81
+2025-01-03,manha,lavanderia,máquina de lavar,2.98,2.27
+2025-01-04,tarde,cozinha,geladeira,4.92,3.74
+2025-01-05,madrugada,sala,TV,3.31,2.1
+2025-01-06,manha,quarto1,luz,4.65,3.54
+2025-01-07,manha,sala,luz,4.9,3.73
+2025-01-08,noite,quarto1,ar-condicionado,1.73,1.65
+2025-01-09,manha,banheiro,aquecedor,1.8,1.37
+2025-01-10,manha,sacada,luz,1.59,1.21
+2025-01-11,tarde,sacada,luz,3.01,2.29
+2025-01-12,tarde,sacada,luz,3.05,2.32
+2025-01-13,manha,banheiro,aquecedor,3.79,2.88
+2025-01-14,manha,banheiro,aquecedor,2.7,2.05
+2025-01-15,manha,cozinha,micro-ondas,3.64,2.77
+2025-01-16,noite,lavanderia,máquina de lavar,3.68,3.5
+2025-01-17,manha,sala,ar-condicionado,1.77,1.35
+2025-01-18,madrugada,quarto1,luz,2.08,1.32
+2025-01-19,madrugada,banheiro,aquecedor,2.53,1.6
+2025-01-20,noite,lavanderia,máquina de lavar,4.07,3.87
+2025-01-21,manha,banheiro,aquecedor,1.06,0.81
+2025-01-22,manha,sala,ar-condicionado,2.87,2.18
+2025-01-23,manha,quarto1,ar-condicionado,4.31,3.28
+2025-01-24,noite,banheiro,luz,3.9,3.71
+2025-01-25,tarde,quarto2,computador,3.15,2.4
+2025-01-26,tarde,quarto2,luz,2.12,1.61
+2025-01-27,manha,sacada,luz,1.64,1.25
+2025-01-28,noite,quarto2,computador,4.62,4.4
+2025-01-29,manha,sacada,luz,1.98,1.51
+2025-01-30,manha,quarto1,ar-condicionado,1.82,1.39
+2025-01-31,manha,lavanderia,máquina de lavar,4.67,3.55
+2025-02-01,tarde,sacada,luz,3.84,2.92
+2025-02-02,tarde,quarto1,luz,1.79,1.36
+2025-02-03,manha,lavanderia,máquina de lavar,1.9,1.45
+2025-02-04,noite,quarto1,ar-condicionado,0.89,0.85
+2025-02-05,manha,quarto1,ar-condicionado,2.82,2.15
+2025-02-06,manha,banheiro,luz,2.0,1.52
+2025-02-07,manha,banheiro,aquecedor,4.8,3.65
+2025-02-08,tarde,lavanderia,máquina de lavar,4.68,3.56
+2025-02-09,tarde,lavanderia,máquina de lavar,4.91,3.74
+2025-02-10,manha,banheiro,luz,2.03,1.54
+2025-02-11,manha,lavanderia,máquina de lavar,3.54,2.69
+2025-02-12,noite,banheiro,aquecedor,2.77,2.64
+2025-02-13,manha,lavanderia,máquina de lavar,3.66,2.79
+2025-02-14,manha,sacada,luz,2.6,1.98
+2025-02-15,tarde,banheiro,aquecedor,4.33,3.3
+2025-02-16,madrugada,quarto1,ar-condicionado,2.0,1.27
+2025-02-17,manha,lavanderia,máquina de lavar,4.72,3.59
+2025-02-18,manha,sacada,luz,1.41,1.07
+2025-02-19,manha,quarto1,luz,1.54,1.17
+2025-02-20,noite,sala,ar-condicionado,2.33,2.22
+2025-02-21,manha,cozinha,micro-ondas,1.68,1.28
+2025-02-22,tarde,quarto2,luz,1.44,1.1
+2025-02-23,tarde,cozinha,luz,2.67,2.03
+2025-02-24,noite,sala,TV,4.58,4.36
+2025-02-25,manha,banheiro,luz,4.45,3.39
+2025-02-26,manha,sacada,luz,1.76,1.34
+2025-02-27,manha,sacada,luz,1.6,1.22
+2025-02-28,noite,sacada,luz,4.94,4.7
+2025-03-01,tarde,banheiro,luz,4.19,3.19
+2025-03-02,madrugada,lavanderia,máquina de lavar,2.83,1.79
+2025-03-03,manha,sacada,luz,0.51,0.39
+2025-03-04,noite,quarto2,luz,2.44,2.32
+2025-03-05,manha,banheiro,aquecedor,2.24,1.7
+2025-03-06,manha,quarto2,luz,0.92,0.7
+2025-03-07,manha,lavanderia,máquina de lavar,2.19,1.67
+2025-03-08,madrugada,sacada,luz,2.08,1.32
+2025-03-09,madrugada,banheiro,aquecedor,3.64,2.31
+2025-03-10,manha,sala,ar-condicionado,3.51,2.67
+2025-03-11,manha,cozinha,luz,3.51,2.67
+2025-03-12,noite,banheiro,luz,1.46,1.39
+2025-03-13,manha,quarto1,ar-condicionado,0.69,0.53
+2025-03-14,manha,quarto2,computador,2.57,1.96
+2025-03-15,madrugada,quarto1,luz,3.91,2.48
+2025-03-16,tarde,cozinha,geladeira,2.63,2.0
+2025-03-17,manha,quarto2,computador,4.71,3.58
+2025-03-18,manha,sala,ar-condicionado,2.96,2.25
+2025-03-19,manha,banheiro,aquecedor,1.11,0.84
+2025-03-20,noite,sacada,luz,3.88,3.69
+2025-03-21,manha,quarto1,ar-condicionado,2.29,1.74
+2025-03-22,madrugada,sacada,luz,0.69,0.44
+2025-03-23,madrugada,sacada,luz,2.72,1.73
+2025-03-24,noite,quarto2,luz,0.57,0.54
+2025-03-25,manha,lavanderia,máquina de lavar,4.39,3.34
+2025-03-26,manha,quarto2,luz,4.13,3.14
+2025-03-27,manha,sacada,luz,0.9,0.68
+2025-03-28,noite,sala,luz,4.14,3.94
+2025-03-29,tarde,quarto2,computador,3.82,2.91
+2025-03-30,tarde,cozinha,luz,4.92,3.74
+2025-03-31,manha,lavanderia,máquina de lavar,3.61,2.75
+2025-04-01,manha,banheiro,luz,1.31,1.0
+2025-04-02,manha,banheiro,luz,1.69,1.29
+2025-04-03,manha,quarto1,luz,4.89,3.72
+2025-04-04,noite,cozinha,micro-ondas,3.45,3.28
+2025-04-05,madrugada,banheiro,aquecedor,3.67,2.33
+2025-04-06,madrugada,sala,TV,1.53,0.97
+2025-04-07,manha,quarto2,computador,2.82,2.15
+2025-04-08,noite,quarto1,ar-condicionado,4.55,4.33
+2025-04-09,manha,quarto1,luz,2.04,1.55
+2025-04-10,manha,sala,ar-condicionado,2.5,1.9
+2025-04-11,manha,sacada,luz,1.72,1.31
+2025-04-12,madrugada,banheiro,aquecedor,3.92,2.49
+2025-04-13,tarde,sacada,luz,4.14,3.15
+2025-04-14,manha,lavanderia,máquina de lavar,1.81,1.38
+2025-04-15,manha,lavanderia,máquina de lavar,2.94,2.24
+2025-04-16,noite,quarto2,luz,4.31,4.1
+2025-04-17,manha,quarto1,ar-condicionado,2.5,1.9
+2025-04-18,manha,cozinha,luz,3.52,2.68
+2025-04-19,madrugada,cozinha,micro-ondas,4.38,2.78
+2025-04-20,madrugada,lavanderia,máquina de lavar,3.25,2.06
+2025-04-21,manha,quarto1,luz,3.56,2.71
+2025-04-22,manha,banheiro,luz,0.52,0.4
+2025-04-23,manha,quarto2,luz,2.19,1.67
+2025-04-24,noite,sacada,luz,1.59,1.51
+2025-04-25,manha,quarto1,ar-condicionado,4.19,3.19
+2025-04-26,madrugada,quarto2,luz,0.85,0.54
+2025-04-27,madrugada,sacada,luz,4.76,3.02
+2025-04-28,noite,sala,luz,3.34,3.18
+2025-04-29,manha,quarto2,computador,0.67,0.51
+2025-04-30,manha,sacada,luz,4.56,3.47
+2025-05-01,manha,cozinha,micro-ondas,2.38,1.81
+2025-05-02,manha,sala,TV,2.69,2.05
+2025-05-03,tarde,cozinha,geladeira,1.18,0.9
+2025-05-04,madrugada,sala,luz,1.14,0.72
+2025-05-05,manha,quarto2,luz,3.81,2.9
+2025-05-06,manha,sacada,luz,3.96,3.01
+2025-05-07,manha,quarto1,luz,4.37,3.33
+2025-05-08,noite,lavanderia,máquina de lavar,0.84,0.8
+2025-05-09,manha,sacada,luz,4.49,3.42
+2025-05-10,madrugada,quarto1,ar-condicionado,4.99,3.16
+2025-05-11,madrugada,sacada,luz,4.3,2.73
+2025-05-12,noite,banheiro,aquecedor,3.18,3.03
+2025-05-13,manha,banheiro,luz,4.25,3.23
+2025-05-14,manha,sacada,luz,1.8,1.37
+2025-05-15,manha,quarto1,ar-condicionado,2.81,2.14
+2025-05-16,noite,banheiro,aquecedor,4.62,4.4
+2025-05-17,madrugada,banheiro,aquecedor,4.32,2.74
+2025-05-18,tarde,sacada,luz,1.37,1.04
+2025-05-19,manha,sala,TV,3.51,2.67
+2025-05-20,noite,sacada,luz,1.33,1.27
+2025-05-21,manha,quarto2,computador,3.89,2.96
+2025-05-22,manha,quarto2,computador,0.75,0.57
+2025-05-23,manha,quarto2,computador,0.89,0.68
+2025-05-24,madrugada,quarto2,computador,3.07,1.95
+2025-05-25,tarde,cozinha,luz,3.16,2.4
+2025-05-26,manha,cozinha,geladeira,0.78,0.59
+2025-05-27,manha,banheiro,luz,0.52,0.4
+2025-05-28,noite,cozinha,luz,2.65,2.52
+2025-05-29,manha,sacada,luz,4.92,3.74
+2025-05-30,manha,banheiro,aquecedor,1.03,0.78
+2025-05-31,tarde,quarto1,luz,1.67,1.27
+2025-06-01,madrugada,quarto1,luz,1.65,1.05
+2025-06-02,manha,lavanderia,máquina de lavar,2.01,1.53
+2025-06-03,manha,lavanderia,máquina de lavar,3.18,2.42
+2025-06-04,noite,sacada,luz,3.72,3.54
+2025-06-05,manha,lavanderia,máquina de lavar,3.33,2.53
+2025-06-06,manha,sala,ar-condicionado,4.95,3.77
+2025-06-07,madrugada,lavanderia,máquina de lavar,4.92,3.12
+2025-06-08,tarde,cozinha,geladeira,1.42,1.08
+2025-06-09,manha,sacada,luz,0.87,0.66
+2025-06-10,manha,cozinha,luz,4.8,3.65
+2025-06-11,manha,sacada,luz,1.34,1.02
+2025-06-12,noite,banheiro,aquecedor,3.41,3.24
+2025-06-13,manha,sacada,luz,1.08,0.82
+2025-06-14,madrugada,sacada,luz,4.75,3.01
+2025-06-15,madrugada,quarto1,ar-condicionado,4.11,2.61
+2025-06-16,noite,banheiro,aquecedor,4.75,4.52
+2025-06-17,manha,banheiro,aquecedor,4.67,3.55
+2025-06-18,manha,quarto1,ar-condicionado,1.6,1.22
+2025-06-19,manha,sacada,luz,4.59,3.49
+2025-06-20,noite,quarto2,computador,3.84,3.65
+2025-06-21,tarde,sacada,luz,2.84,2.16
+2025-06-22,tarde,lavanderia,máquina de lavar,1.96,1.49
+2025-06-23,manha,sacada,luz,2.87,2.18
+2025-06-24,noite,cozinha,luz,2.8,2.66
+2025-06-25,manha,lavanderia,máquina de lavar,4.84,3.68
+2025-06-26,manha,sacada,luz,1.86,1.42
+2025-06-27,manha,sacada,luz,0.67,0.51
+2025-06-28,tarde,banheiro,aquecedor,3.25,2.47
+2025-06-29,madrugada,sala,TV,2.24,1.42
+2025-06-30,manha,quarto1,ar-condicionado,0.72,0.55
+2025-07-01,manha,quarto2,luz,3.97,3.02
+2025-07-02,manha,banheiro,luz,4.7,3.58
+2025-07-03,manha,cozinha,luz,3.44,2.62
+2025-07-04,noite,quarto1,ar-condicionado,3.24,3.08
+2025-07-05,madrugada,quarto1,luz,1.91,1.21
+2025-07-06,madrugada,cozinha,geladeira,2.31,1.47
+2025-07-07,manha,lavanderia,máquina de lavar,0.69,0.53
+2025-07-08,noite,banheiro,aquecedor,3.11,2.96
+2025-07-09,manha,cozinha,micro-ondas,4.23,3.22
+2025-07-10,manha,cozinha,luz,1.41,1.07
+2025-07-11,manha,quarto1,ar-condicionado,2.11,1.61
+2025-07-12,madrugada,lavanderia,máquina de lavar,2.73,1.73
+2025-07-13,tarde,quarto2,luz,1.19,0.91
+2025-07-14,manha,lavanderia,máquina de lavar,1.51,1.15
+2025-07-15,manha,banheiro,luz,4.44,3.38
+2025-07-16,noite,cozinha,luz,2.16,2.05
+2025-07-17,manha,cozinha,luz,4.5,3.42
+2025-07-18,manha,sacada,luz,2.78,2.12
+2025-07-19,madrugada,quarto2,computador,3.79,2.4
+2025-07-20,tarde,sala,TV,4.14,3.15
+2025-07-21,manha,quarto1,ar-condicionado,2.0,1.52
+2025-07-22,manha,sacada,luz,2.65,2.02
+2025-07-23,manha,sala,ar-condicionado,2.3,1.75
+2025-07-24,noite,sala,TV,1.32,1.26
+2025-07-25,manha,cozinha,micro-ondas,4.82,3.67
+2025-07-26,madrugada,quarto1,luz,3.18,2.02
+2025-07-27,madrugada,banheiro,aquecedor,1.35,0.86
+2025-07-28,noite,lavanderia,máquina de lavar,2.01,1.91
+2025-07-29,manha,lavanderia,máquina de lavar,2.46,1.87
+2025-07-30,manha,lavanderia,máquina de lavar,4.92,3.74
+2025-07-31,manha,quarto2,computador,3.97,3.02
+2025-08-01,manha,sala,TV,3.68,2.8
+2025-08-02,madrugada,cozinha,geladeira,0.91,0.58
+2025-08-03,madrugada,quarto1,ar-condicionado,3.5,2.22
+2025-08-04,noite,cozinha,luz,1.2,1.14
+2025-08-05,manha,sala,luz,1.95,1.48
+2025-08-06,manha,cozinha,geladeira,1.59,1.21
+2025-08-07,manha,quarto1,ar-condicionado,2.29,1.74
+2025-08-08,noite,sala,ar-condicionado,2.65,2.52
+2025-08-09,madrugada,banheiro,luz,2.93,1.86
+2025-08-10,madrugada,lavanderia,máquina de lavar,3.4,2.16
+2025-08-11,manha,quarto2,luz,2.89,2.2
+2025-08-12,noite,quarto1,luz,2.35,2.24
+2025-08-13,manha,sacada,luz,0.8,0.61
+2025-08-14,manha,sacada,luz,3.88,2.95
+2025-08-15,manha,lavanderia,máquina de lavar,1.89,1.44
+2025-08-16,tarde,sala,ar-condicionado,2.07,1.58
+2025-08-17,madrugada,sala,luz,3.94,2.5
+2025-08-18,manha,sacada,luz,4.86,3.7
+2025-08-19,manha,quarto1,ar-condicionado,3.21,2.44
+2025-08-20,noite,quarto1,ar-condicionado,0.79,0.75
+2025-08-21,manha,banheiro,luz,2.37,1.8
+2025-08-22,manha,sacada,luz,4.38,3.33
+2025-08-23,madrugada,sala,TV,4.4,2.79
+2025-08-24,madrugada,quarto1,luz,1.62,1.03
+2025-08-25,manha,quarto2,luz,3.12,2.37
+2025-08-26,manha,cozinha,geladeira,4.3,3.27
+2025-08-27,manha,sacada,luz,2.64,2.01
+2025-08-28,noite,lavanderia,máquina de lavar,2.1,2.0
+2025-08-29,manha,cozinha,micro-ondas,1.33,1.01
+2025-08-30,madrugada,lavanderia,máquina de lavar,4.52,2.87
+2025-08-31,madrugada,banheiro,luz,1.99,1.26
+2025-09-01,manha,sala,TV,3.36,2.56
+2025-09-02,manha,sala,ar-condicionado,0.79,0.6
+2025-09-03,manha,sacada,luz,3.32,2.53
+2025-09-04,noite,quarto2,luz,2.34,2.23
+2025-09-05,manha,quarto1,ar-condicionado,4.76,3.62
+2025-09-06,madrugada,quarto1,luz,1.95,1.24
+2025-09-07,madrugada,cozinha,luz,2.58,1.64
+2025-09-08,noite,banheiro,aquecedor,2.11,2.01
+2025-09-09,manha,quarto1,luz,0.98,0.75
+2025-09-10,manha,lavanderia,máquina de lavar,2.67,2.03
+2025-09-11,manha,cozinha,luz,2.88,2.19
+2025-09-12,noite,sala,luz,2.75,2.62
+2025-09-13,madrugada,sacada,luz,4.17,2.64
+2025-09-14,madrugada,quarto1,ar-condicionado,1.98,1.26
+2025-09-15,manha,quarto2,computador,1.37,1.04
+2025-09-16,noite,quarto1,luz,0.78,0.74
+2025-09-17,manha,sacada,luz,0.9,0.68
+2025-09-18,manha,lavanderia,máquina de lavar,2.44,1.86
+2025-09-19,manha,quarto2,computador,4.44,3.38
+2025-09-20,tarde,cozinha,geladeira,3.54,2.69
+2025-09-21,madrugada,sacada,luz,2.58,1.64
+2025-09-22,manha,banheiro,luz,2.34,1.78
+2025-09-23,manha,cozinha,geladeira,3.53,2.69
+2025-09-24,noite,quarto1,luz,4.8,4.57
+2025-09-25,manha,banheiro,luz,2.1,1.6
+2025-09-26,manha,sala,luz,3.86,2.94
+2025-09-27,madrugada,banheiro,aquecedor,2.88,1.83
+2025-09-28,madrugada,sacada,luz,1.22,0.77
+2025-09-29,manha,quarto1,ar-condicionado,1.84,1.4
+2025-09-30,manha,banheiro,aquecedor,4.27,3.25
+2025-10-01,manha,lavanderia,máquina de lavar,0.53,0.4
+2025-10-02,manha,cozinha,micro-ondas,2.66,2.02
+2025-10-03,manha,sala,TV,3.27,2.49
+2025-10-04,madrugada,sacada,luz,2.41,1.53
+2025-10-05,madrugada,banheiro,aquecedor,2.82,1.79
+2025-10-06,manha,lavanderia,máquina de lavar,1.53,1.16
+2025-10-07,manha,sala,TV,3.71,2.82
+2025-10-08,noite,lavanderia,máquina de lavar,3.93,3.74
+2025-10-09,manha,lavanderia,máquina de lavar,4.4,3.35
+2025-10-10,manha,quarto2,computador,3.64,2.77
+2025-10-11,tarde,banheiro,aquecedor,1.13,0.86
+2025-10-12,tarde,quarto1,ar-condicionado,2.39,1.82
+2025-10-13,manha,sacada,luz,1.88,1.43
+2025-10-14,manha,sacada,luz,1.58,1.2
+2025-10-15,manha,lavanderia,máquina de lavar,1.67,1.27
+2025-10-16,noite,quarto2,computador,2.86,2.72
+2025-10-17,manha,quarto2,computador,2.52,1.92
+2025-10-18,madrugada,quarto1,ar-condicionado,1.89,1.2
+2025-10-19,madrugada,banheiro,aquecedor,3.85,2.44
+2025-10-20,noite,cozinha,micro-ondas,1.64,1.56
+2025-10-21,manha,quarto2,luz,3.4,2.59
+2025-10-22,manha,sacada,luz,2.8,2.13
+2025-10-23,manha,cozinha,luz,2.11,1.61
+2025-10-24,noite,lavanderia,máquina de lavar,4.57,4.35
+2025-10-25,madrugada,sacada,luz,3.54,2.25
+2025-10-26,madrugada,sacada,luz,2.91,1.85
+2025-10-27,manha,cozinha,luz,0.62,0.47
+2025-10-28,noite,lavanderia,máquina de lavar,4.75,4.52
+2025-10-29,manha,quarto1,ar-condicionado,3.25,2.47
+2025-10-30,manha,banheiro,aquecedor,3.44,2.62
+2025-10-31,manha,quarto2,luz,0.68,0.52
+2025-11-01,tarde,sacada,luz,3.97,3.02
+2025-11-02,tarde,quarto1,luz,1.18,0.9
+2025-11-03,manha,quarto2,computador,4.9,3.73
+2025-11-04,noite,lavanderia,máquina de lavar,3.62,3.44
+2025-11-05,manha,quarto1,ar-condicionado,3.18,2.42
+2025-11-06,manha,banheiro,luz,1.02,0.78
+2025-11-07,manha,sala,TV,4.31,3.28
+2025-11-08,tarde,banheiro,aquecedor,1.57,1.19
+2025-11-09,tarde,lavanderia,máquina de lavar,1.33,1.01
+2025-11-10,manha,sala,TV,1.22,0.93
+2025-11-11,manha,quarto1,luz,1.11,0.84
+2025-11-12,noite,sacada,luz,4.67,4.44
+2025-11-13,manha,quarto2,luz,1.95,1.48
+2025-11-14,manha,sacada,luz,0.84,0.64
+2025-11-15,madrugada,cozinha,geladeira,3.0,1.9
+2025-11-16,tarde,sacada,luz,2.0,1.52
+2025-11-17,manha,quarto2,luz,3.85,2.93
+2025-11-18,manha,banheiro,luz,3.71,2.82
+2025-11-19,manha,quarto2,luz,1.56,1.19
+2025-11-20,noite,sacada,luz,2.12,2.02
+2025-11-21,manha,cozinha,micro-ondas,3.75,2.85
+2025-11-22,tarde,sala,TV,3.2,2.44
+2025-11-23,madrugada,sala,luz,0.63,0.4
+2025-11-24,noite,sala,ar-condicionado,3.76,3.58
+2025-11-25,manha,sala,luz,4.16,3.17
+2025-11-26,manha,quarto1,ar-condicionado,2.37,1.8
+2025-11-27,manha,sacada,luz,0.63,0.48
+2025-11-28,noite,sacada,luz,1.91,1.82
+2025-11-29,tarde,quarto1,luz,3.44,2.62
+2025-11-30,madrugada,sacada,luz,2.35,1.49
+2025-12-01,manha,quarto1,ar-condicionado,3.21,2.44
+2025-12-02,manha,lavanderia,máquina de lavar,1.0,0.76
+2025-12-03,manha,banheiro,aquecedor,4.64,3.53
+2025-12-04,noite,banheiro,aquecedor,4.22,4.01
+2025-12-05,manha,sala,TV,0.58,0.44
+2025-12-06,tarde,cozinha,luz,3.06,2.33
+2025-12-07,madrugada,sacada,luz,3.44,2.18
+2025-12-08,noite,quarto2,computador,4.27,4.06
+2025-12-09,manha,banheiro,luz,2.04,1.55
+2025-12-10,manha,sacada,luz,2.8,2.13
+2025-12-11,manha,cozinha,geladeira,3.83,2.91
+2025-12-12,noite,quarto1,luz,1.47,1.4
+2025-12-13,tarde,sala,ar-condicionado,3.01,2.29
+2025-12-14,madrugada,quarto2,luz,4.18,2.65
+2025-12-15,manha,banheiro,aquecedor,4.44,3.38
+2025-12-16,noite,cozinha,luz,1.14,1.08
+2025-12-17,manha,lavanderia,máquina de lavar,2.12,1.61
+2025-12-18,manha,lavanderia,máquina de lavar,3.98,3.03
+2025-12-19,manha,sala,TV,4.4,3.35
+2025-12-20,madrugada,quarto1,ar-condicionado,3.65,2.31
+2025-12-21,madrugada,lavanderia,máquina de lavar,4.03,2.56
+2025-12-22,manha,cozinha,luz,0.97,0.74
+2025-12-23,manha,sala,luz,1.63,1.24
+2025-12-24,noite,banheiro,luz,4.44,4.22
+2025-12-25,manha,sala,TV,1.5,1.14
+2025-12-26,manha,cozinha,geladeira,1.49,1.13
+2025-12-27,madrugada,sacada,luz,4.53,2.87
+2025-12-28,tarde,cozinha,micro-ondas,4.78,3.64
+2025-12-29,manha,quarto2,luz,0.59,0.45
+2025-12-30,manha,sacada,luz,3.53,2.69
+2025-12-31,manha,quarto1,luz,3.48,2.65
+2026-01-01,manha,sala,TV,4.02,3.06
+2026-01-02,manha,sala,ar-condicionado,2.25,1.71
+2026-01-03,madrugada,quarto1,ar-condicionado,1.98,1.26
+2026-01-04,tarde,banheiro,aquecedor,2.26,1.72
+2026-01-05,manha,lavanderia,máquina de lavar,2.28,1.74
+2026-01-06,manha,cozinha,luz,1.29,0.98
+2026-01-07,manha,quarto1,luz,2.35,1.79
+2026-01-08,noite,quarto1,luz,4.88,4.64
+2026-01-09,manha,quarto2,luz,4.77,3.63
+2026-01-10,tarde,lavanderia,máquina de lavar,0.66,0.5
+2026-01-11,madrugada,banheiro,aquecedor,3.51,2.23
+2026-01-12,noite,quarto2,luz,4.22,4.01
+2026-01-13,manha,lavanderia,máquina de lavar,2.78,2.12
+2026-01-14,manha,lavanderia,máquina de lavar,4.04,3.07
+2026-01-15,manha,cozinha,luz,3.06,2.33
+2026-01-16,noite,sala,ar-condicionado,4.82,4.59
+2026-01-17,tarde,quarto1,luz,2.01,1.53
+2026-01-18,madrugada,banheiro,luz,4.96,3.15
+2026-01-19,manha,quarto1,ar-condicionado,1.14,0.87
+2026-01-20,noite,quarto2,luz,2.8,2.66
+2026-01-21,manha,lavanderia,máquina de lavar,1.02,0.78
+2026-01-22,manha,lavanderia,máquina de lavar,3.08,2.34
+2026-01-23,manha,sala,ar-condicionado,4.54,3.46
+2026-01-24,madrugada,sala,ar-condicionado,4.23,2.68
+2026-01-25,tarde,sacada,luz,0.57,0.43
+2026-01-26,manha,quarto2,luz,0.65,0.49
+2026-01-27,manha,lavanderia,máquina de lavar,4.64,3.53
+2026-01-28,noite,sala,TV,4.99,4.75
+2026-01-29,manha,sacada,luz,3.03,2.31
+2026-01-30,manha,cozinha,geladeira,4.91,3.74
+2026-01-31,madrugada,banheiro,aquecedor,2.17,1.38
+2026-02-01,tarde,sala,luz,3.21,2.44
+2026-02-02,manha,quarto2,luz,3.36,2.56
+2026-02-03,manha,cozinha,luz,0.82,0.62
+2026-02-04,noite,sala,ar-condicionado,4.75,4.52
+2026-02-05,manha,cozinha,micro-ondas,3.13,2.38
+2026-02-06,manha,sala,luz,2.66,2.02
+2026-02-07,tarde,sacada,luz,2.82,2.15
+2026-02-08,tarde,quarto1,luz,3.75,2.85
+2026-02-09,manha,sacada,luz,2.47,1.88
+2026-02-10,manha,sala,TV,4.78,3.64
+2026-02-11,manha,sacada,luz,2.41,1.83
+2026-02-12,noite,quarto2,computador,1.34,1.27
+2026-02-13,manha,sala,TV,2.01,1.53
+2026-02-14,madrugada,lavanderia,máquina de lavar,0.56,0.36
+2026-02-15,tarde,banheiro,luz,3.88,2.95
+2026-02-16,noite,lavanderia,máquina de lavar,1.13,1.07
+2026-02-17,manha,banheiro,aquecedor,4.98,3.79
+2026-02-18,manha,banheiro,aquecedor,3.75,2.85
+2026-02-19,manha,cozinha,geladeira,4.25,3.23
+2026-02-20,noite,lavanderia,máquina de lavar,3.99,3.8
+2026-02-21,madrugada,quarto1,ar-condicionado,4.69,2.97
+2026-02-22,madrugada,lavanderia,máquina de lavar,3.52,2.23
+2026-02-23,manha,lavanderia,máquina de lavar,1.9,1.45
+2026-02-24,noite,sacada,luz,4.98,4.74
+2026-02-25,manha,sala,luz,1.39,1.06
+2026-02-26,manha,banheiro,luz,1.26,0.96
+2026-02-27,manha,sala,ar-condicionado,0.85,0.65
+2026-02-28,tarde,quarto1,ar-condicionado,1.73,1.32
+2026-03-01,tarde,quarto1,luz,2.47,1.88
+2026-03-02,manha,sacada,luz,1.78,1.35
+2026-03-03,manha,sacada,luz,2.99,2.28
+2026-03-04,noite,banheiro,luz,1.95,1.86
+2026-03-05,manha,lavanderia,máquina de lavar,1.98,1.51
+2026-03-06,manha,lavanderia,máquina de lavar,2.43,1.85
+2026-03-07,tarde,lavanderia,máquina de lavar,4.73,3.6
+2026-03-08,madrugada,banheiro,aquecedor,0.66,0.42
+2026-03-09,manha,cozinha,micro-ondas,4.71,3.58
+2026-03-10,manha,sala,luz,2.53,1.93
+2026-03-11,manha,sacada,luz,1.21,0.92
+2026-03-12,noite,cozinha,micro-ondas,1.2,1.14
+2026-03-13,manha,banheiro,aquecedor,4.56,3.47
+2026-03-14,tarde,cozinha,geladeira,3.06,2.33
+2026-03-15,tarde,sacada,luz,4.32,3.29
+2026-03-16,noite,quarto1,luz,3.99,3.8
+2026-03-17,manha,quarto1,luz,1.21,0.92
+2026-03-18,manha,lavanderia,máquina de lavar,0.94,0.72
+2026-03-19,manha,quarto1,ar-condicionado,1.76,1.34
+2026-03-20,noite,sacada,luz,0.75,0.71
+2026-03-21,madrugada,cozinha,geladeira,3.07,1.95
+2026-03-22,tarde,quarto1,ar-condicionado,1.78,1.35
+2026-03-23,manha,quarto1,ar-condicionado,2.0,1.52
+2026-03-24,noite,cozinha,luz,2.87,2.73
+2026-03-25,manha,quarto2,luz,3.98,3.03
+2026-03-26,manha,cozinha,luz,1.92,1.46
+2026-03-27,manha,sala,TV,2.83,2.15
+2026-03-28,madrugada,sacada,luz,3.53,2.24
+2026-03-29,tarde,sala,luz,1.18,0.9
+2026-03-30,manha,quarto2,luz,4.45,3.39
+2026-03-31,manha,cozinha,micro-ondas,2.41,1.83
+2026-04-01,manha,cozinha,geladeira,4.11,3.13
+2026-04-02,manha,quarto1,luz,1.49,1.13
+2026-04-03,manha,lavanderia,máquina de lavar,3.87,2.95
+2026-04-04,tarde,lavanderia,máquina de lavar,2.33,1.77
+2026-04-05,tarde,cozinha,micro-ondas,1.94,1.48
+2026-04-06,manha,quarto2,luz,4.61,3.51
+2026-04-07,manha,sala,TV,4.98,3.79
+2026-04-08,noite,lavanderia,máquina de lavar,3.91,3.72
+2026-04-09,manha,sala,TV,2.18,1.66
+2026-04-10,manha,cozinha,geladeira,2.66,2.02
+2026-04-11,madrugada,banheiro,luz,1.15,0.73
+2026-04-12,madrugada,banheiro,aquecedor,1.49,0.94
+2026-04-13,manha,sacada,luz,4.82,3.67
+2026-04-14,manha,banheiro,aquecedor,1.75,1.33
+2026-04-15,manha,banheiro,luz,2.44,1.86
+2026-04-16,noite,sala,ar-condicionado,1.23,1.17
+2026-04-17,manha,quarto1,ar-condicionado,1.96,1.49
+2026-04-18,madrugada,lavanderia,máquina de lavar,1.32,0.84
+2026-04-19,tarde,banheiro,luz,1.44,1.1
+2026-04-20,noite,sala,TV,2.99,2.84
+2026-04-21,manha,cozinha,luz,1.35,1.03
+2026-04-22,manha,banheiro,aquecedor,4.74,3.61
+2026-04-23,manha,quarto2,computador,4.72,3.59
+2026-04-24,noite,sala,TV,4.74,4.51
+2026-04-25,tarde,lavanderia,máquina de lavar,2.02,1.54
+2026-04-26,madrugada,cozinha,micro-ondas,3.33,2.11
+2026-04-27,manha,sala,TV,1.41,1.07
+2026-04-28,noite,quarto1,luz,2.4,2.28
+2026-04-29,manha,banheiro,aquecedor,2.41,1.83
+2026-04-30,manha,sacada,luz,1.52,1.16
+2026-05-01,manha,banheiro,luz,4.56,3.47
+2026-05-02,madrugada,quarto1,luz,4.94,3.13
+2026-05-03,madrugada,banheiro,aquecedor,3.12,1.98
+2026-05-04,noite,quarto1,luz,3.27,3.11
+2026-05-05,manha,quarto2,computador,0.61,0.46
+2026-05-06,manha,sala,luz,4.78,3.64
+2026-05-07,manha,lavanderia,máquina de lavar,3.94,3.0
+2026-05-08,noite,sacada,luz,1.11,1.06
+2026-05-09,tarde,cozinha,geladeira,1.63,1.24
+2026-05-10,madrugada,sala,ar-condicionado,0.88,0.56
+2026-05-11,manha,quarto2,computador,4.24,3.23
+2026-05-12,noite,sala,TV,1.07,1.02
+2026-05-13,manha,quarto2,luz,1.13,0.86
+2026-05-14,manha,lavanderia,máquina de lavar,0.83,0.63
+2026-05-15,manha,lavanderia,máquina de lavar,2.69,2.05
+2026-05-16,tarde,banheiro,luz,4.73,3.6
+2026-05-17,madrugada,sacada,luz,4.53,2.87
+2026-05-18,manha,cozinha,luz,3.98,3.03
+2026-05-19,manha,cozinha,luz,2.41,1.83
+2026-05-20,noite,banheiro,aquecedor,4.68,4.45
+2026-05-21,manha,sala,ar-condicionado,3.24,2.47
+2026-05-22,manha,cozinha,luz,1.97,1.5
+2026-05-23,madrugada,quarto2,luz,2.29,1.45
+2026-05-24,madrugada,quarto2,luz,1.92,1.22
+2026-05-25,manha,quarto1,ar-condicionado,3.77,2.87
+2026-05-26,manha,lavanderia,máquina de lavar,4.37,3.33
+2026-05-27,manha,banheiro,aquecedor,4.71,3.58
+2026-05-28,noite,quarto1,ar-condicionado,2.52,2.4
+2026-05-29,manha,quarto1,ar-condicionado,2.37,1.8
+2026-05-30,madrugada,quarto1,luz,2.61,1.66
+2026-05-31,madrugada,banheiro,aquecedor,1.39,0.88
+2026-06-01,manha,quarto2,computador,2.42,1.84
+2026-06-02,manha,lavanderia,máquina de lavar,1.64,1.25
+2026-06-03,manha,quarto2,luz,1.03,0.78
+2026-06-04,noite,banheiro,aquecedor,4.06,3.86
+2026-06-05,manha,cozinha,geladeira,2.6,1.98
+2026-06-06,madrugada,quarto1,ar-condicionado,3.84,2.44
+2026-06-07,madrugada,banheiro,aquecedor,2.76,1.75
+2026-06-08,noite,sacada,luz,4.64,4.41
+2026-06-09,manha,lavanderia,máquina de lavar,4.99,3.8
+2026-06-10,manha,sala,luz,0.67,0.51
+2026-06-11,manha,quarto1,luz,1.06,0.81
+2026-06-12,noite,quarto1,luz,0.77,0.73
+2026-06-13,madrugada,quarto2,luz,2.77,1.76
+2026-06-14,madrugada,sala,luz,4.37,2.77
+2026-06-15,manha,sacada,luz,0.51,0.39
+2026-06-16,noite,lavanderia,máquina de lavar,4.58,4.36
+2026-06-17,manha,sacada,luz,1.72,1.31
+2026-06-18,manha,sala,TV,1.4,1.07
+2026-06-19,manha,cozinha,micro-ondas,4.37,3.33
+2026-06-20,tarde,quarto1,luz,2.13,1.62
+2026-06-21,madrugada,sala,ar-condicionado,4.93,3.13
+2026-06-22,manha,sacada,luz,3.28,2.5
+2026-06-23,manha,banheiro,aquecedor,3.54,2.69
+2026-06-24,noite,banheiro,aquecedor,4.32,4.11
+2026-06-25,manha,sacada,luz,0.57,0.43
+2026-06-26,manha,quarto1,ar-condicionado,2.92,2.22
+2026-06-27,tarde,quarto2,computador,0.84,0.64
+2026-06-28,tarde,quarto1,ar-condicionado,0.89,0.68
+2026-06-29,manha,sacada,luz,1.12,0.85
+2026-06-30,manha,sacada,luz,4.42,3.36
+2026-07-01,manha,sala,TV,0.72,0.55
+2026-07-02,manha,quarto2,luz,1.09,0.83
+2026-07-03,manha,sala,luz,3.35,2.55
+2026-07-04,madrugada,cozinha,micro-ondas,4.66,2.96
+2026-07-05,madrugada,lavanderia,máquina de lavar,3.45,2.19
+2026-07-06,manha,quarto2,luz,2.79,2.12
+2026-07-07,manha,cozinha,micro-ondas,2.69,2.05
+2026-07-08,noite,banheiro,aquecedor,2.8,2.66
+2026-07-09,manha,cozinha,micro-ondas,0.99,0.75
+2026-07-10,manha,banheiro,luz,2.66,2.02
+2026-07-11,madrugada,sacada,luz,3.87,2.45
+2026-07-12,tarde,sacada,luz,0.54,0.41
+2026-07-13,manha,sacada,luz,3.94,3.0
+2026-07-14,manha,cozinha,geladeira,0.63,0.48
+2026-07-15,manha,quarto2,luz,3.42,2.6
+2026-07-16,noite,lavanderia,máquina de lavar,4.39,4.18
+2026-07-17,manha,sala,ar-condicionado,4.98,3.79
+2026-07-18,tarde,quarto1,luz,1.77,1.35
+2026-07-19,tarde,sala,luz,0.95,0.72
+2026-07-20,noite,quarto1,luz,4.7,4.47
+2026-07-21,manha,cozinha,geladeira,3.05,2.32
+2026-07-22,manha,sala,luz,1.29,0.98
+2026-07-23,manha,sala,luz,4.81,3.66
+2026-07-24,noite,quarto1,ar-condicionado,3.64,3.46
+2026-07-25,madrugada,lavanderia,máquina de lavar,3.02,1.92
+2026-07-26,tarde,quarto1,ar-condicionado,2.9,2.21
+2026-07-27,manha,quarto2,luz,3.61,2.75
+2026-07-28,noite,sala,luz,0.96,0.91
+2026-07-29,manha,lavanderia,máquina de lavar,0.74,0.56
+2026-07-30,manha,quarto1,luz,2.28,1.74
+2026-07-31,manha,quarto2,luz,0.91,0.69
+2026-08-01,madrugada,lavanderia,máquina de lavar,2.46,1.56
+2026-08-02,madrugada,quarto2,luz,0.91,0.58
+2026-08-03,manha,lavanderia,máquina de lavar,4.69,3.57
+2026-08-04,noite,cozinha,geladeira,4.29,4.08
+2026-08-05,manha,sacada,luz,2.16,1.64
+2026-08-06,manha,cozinha,micro-ondas,4.19,3.19
+2026-08-07,manha,quarto1,ar-condicionado,4.96,3.77
+2026-08-08,madrugada,quarto1,ar-condicionado,0.85,0.54
+2026-08-09,tarde,sacada,luz,2.97,2.26
+2026-08-10,manha,banheiro,aquecedor,4.79,3.65
+2026-08-11,manha,cozinha,luz,3.62,2.75
+2026-08-12,noite,sala,luz,3.21,3.05
+2026-08-13,manha,banheiro,luz,1.94,1.48
+2026-08-14,manha,sala,TV,1.05,0.8
+2026-08-15,madrugada,banheiro,luz,3.09,1.96
+2026-08-16,tarde,banheiro,aquecedor,4.12,3.14
+2026-08-17,manha,quarto2,luz,3.49,2.66
+2026-08-18,manha,lavanderia,máquina de lavar,3.01,2.29
+2026-08-19,manha,cozinha,luz,1.85,1.41
+2026-08-20,noite,banheiro,aquecedor,1.92,1.83
+2026-08-21,manha,lavanderia,máquina de lavar,0.85,0.65
+2026-08-22,tarde,quarto2,computador,4.5,3.42
+2026-08-23,tarde,quarto1,luz,3.33,2.53
+2026-08-24,noite,sacada,luz,4.54,4.32
+2026-08-25,manha,banheiro,luz,3.74,2.85
+2026-08-26,manha,cozinha,luz,0.73,0.56
+2026-08-27,manha,cozinha,micro-ondas,2.9,2.21
+2026-08-28,noite,sala,ar-condicionado,0.93,0.88
+2026-08-29,tarde,sacada,luz,4.47,3.4
+2026-08-30,tarde,cozinha,geladeira,4.79,3.65
+2026-08-31,manha,sacada,luz,1.75,1.33
+2026-09-01,manha,sala,luz,1.9,1.45
+2026-09-02,manha,lavanderia,máquina de lavar,3.72,2.83
+2026-09-03,manha,quarto1,luz,4.79,3.65
+2026-09-04,noite,quarto2,computador,0.69,0.66
+2026-09-05,tarde,cozinha,micro-ondas,2.21,1.68
+2026-09-06,tarde,sacada,luz,4.65,3.54
+2026-09-07,manha,lavanderia,máquina de lavar,1.58,1.2
+2026-09-08,noite,sacada,luz,0.72,0.68
+2026-09-09,manha,banheiro,aquecedor,3.7,2.82
+2026-09-10,manha,banheiro,luz,4.83,3.68
+2026-09-11,manha,cozinha,luz,4.84,3.68
+2026-09-12,madrugada,cozinha,luz,2.42,1.53
+2026-09-13,tarde,sacada,luz,2.53,1.93
+2026-09-14,manha,lavanderia,máquina de lavar,0.98,0.75
+2026-09-15,manha,banheiro,luz,4.38,3.33
+2026-09-16,noite,quarto1,ar-condicionado,4.02,3.82
+2026-09-17,manha,quarto1,ar-condicionado,2.42,1.84
+2026-09-18,manha,quarto1,ar-condicionado,0.92,0.7
+2026-09-19,madrugada,banheiro,luz,3.89,2.47
+2026-09-20,tarde,sacada,luz,3.83,2.91
+2026-09-21,manha,cozinha,geladeira,3.49,2.66
+2026-09-22,manha,lavanderia,máquina de lavar,3.19,2.43
+2026-09-23,manha,quarto1,ar-condicionado,2.95,2.25
+2026-09-24,noite,cozinha,geladeira,1.15,1.09
+2026-09-25,manha,sala,ar-condicionado,3.13,2.38
+2026-09-26,madrugada,lavanderia,máquina de lavar,2.2,1.4
+2026-09-27,madrugada,sala,TV,1.64,1.04
+2026-09-28,noite,sacada,luz,2.54,2.42
+2026-09-29,manha,quarto1,ar-condicionado,3.17,2.41
+2026-09-30,manha,banheiro,luz,1.02,0.78
+2026-10-01,manha,quarto2,luz,0.72,0.55
+2026-10-02,manha,banheiro,aquecedor,3.76,2.86
+2026-10-03,tarde,sacada,luz,3.57,2.72
+2026-10-04,madrugada,banheiro,aquecedor,3.31,2.1
+2026-10-05,manha,quarto1,luz,4.99,3.8
+2026-10-06,manha,banheiro,aquecedor,3.05,2.32
+2026-10-07,manha,cozinha,geladeira,2.25,1.71
+2026-10-08,noite,banheiro,aquecedor,2.11,2.01
+2026-10-09,manha,sala,TV,0.56,0.43
+2026-10-10,madrugada,quarto2,luz,3.35,2.12
+2026-10-11,madrugada,lavanderia,máquina de lavar,1.76,1.12
+2026-10-12,noite,lavanderia,máquina de lavar,2.58,2.45
+2026-10-13,manha,sacada,luz,4.46,3.39
+2026-10-14,manha,cozinha,luz,2.58,1.96
+2026-10-15,manha,sala,luz,1.66,1.26
+2026-10-16,noite,sala,ar-condicionado,2.44,2.32
+2026-10-17,madrugada,cozinha,micro-ondas,1.16,0.74
+2026-10-18,madrugada,sacada,luz,3.2,2.03
+2026-10-19,manha,lavanderia,máquina de lavar,3.33,2.53
+2026-10-20,noite,banheiro,aquecedor,4.02,3.82
+2026-10-21,manha,sala,TV,4.04,3.07
+2026-10-22,manha,lavanderia,máquina de lavar,1.29,0.98
+2026-10-23,manha,quarto1,luz,3.54,2.69
+2026-10-24,madrugada,sala,luz,0.7,0.44
+2026-10-25,madrugada,sacada,luz,1.85,1.17
+2026-10-26,manha,quarto1,ar-condicionado,4.73,3.6
+2026-10-27,manha,sala,luz,4.82,3.67
+2026-10-28,noite,sacada,luz,2.86,2.72
+2026-10-29,manha,sala,luz,1.62,1.23
+2026-10-30,manha,sacada,luz,4.88,3.71
+2026-10-31,madrugada,lavanderia,máquina de lavar,1.26,0.8
+2026-11-01,tarde,quarto2,luz,2.11,1.61
+2026-11-02,manha,banheiro,luz,1.92,1.46
+2026-11-03,manha,sacada,luz,3.13,2.38
+2026-11-04,noite,quarto1,luz,1.26,1.2
+2026-11-05,manha,banheiro,luz,0.88,0.67
+2026-11-06,manha,sala,luz,3.4,2.59
+2026-11-07,tarde,quarto1,luz,4.59,3.49
+2026-11-08,tarde,sacada,luz,3.3,2.51
+2026-11-09,manha,sala,ar-condicionado,4.15,3.16
+2026-11-10,manha,lavanderia,máquina de lavar,0.66,0.5
+2026-11-11,manha,sacada,luz,0.87,0.66
+2026-11-12,noite,banheiro,luz,0.69,0.66
+2026-11-13,manha,sacada,luz,4.29,3.26
+2026-11-14,tarde,sala,TV,4.12,3.14
+2026-11-15,madrugada,sala,TV,4.35,2.76
+2026-11-16,noite,cozinha,micro-ondas,2.82,2.68
+2026-11-17,manha,sacada,luz,0.84,0.64
+2026-11-18,manha,sacada,luz,2.35,1.79
+2026-11-19,manha,lavanderia,máquina de lavar,1.08,0.82
+2026-11-20,noite,sala,TV,3.13,2.98
+2026-11-21,madrugada,sala,luz,2.78,1.76
+2026-11-22,madrugada,quarto1,ar-condicionado,2.37,1.5
+2026-11-23,manha,sacada,luz,2.51,1.91
+2026-11-24,noite,quarto1,ar-condicionado,3.85,3.66
+2026-11-25,manha,lavanderia,máquina de lavar,3.52,2.68
+2026-11-26,manha,sacada,luz,4.86,3.7
+2026-11-27,manha,cozinha,geladeira,3.54,2.69
+2026-11-28,tarde,banheiro,aquecedor,3.34,2.54
+2026-11-29,tarde,quarto1,luz,1.65,1.26
+2026-11-30,manha,cozinha,geladeira,4.19,3.19
+2026-12-01,manha,sacada,luz,1.86,1.42
+2026-12-02,manha,sala,luz,4.07,3.1
+2026-12-03,manha,quarto2,computador,2.6,1.98
+2026-12-04,noite,quarto1,luz,2.17,2.06
+2026-12-05,tarde,sala,TV,1.83,1.39
+2026-12-06,madrugada,quarto1,luz,1.86,1.18
+2026-12-07,manha,quarto2,luz,2.33,1.77
+2026-12-08,noite,lavanderia,máquina de lavar,1.25,1.19
+2026-12-09,manha,cozinha,luz,0.65,0.49
+2026-12-10,manha,quarto1,ar-condicionado,2.7,2.05
+2026-12-11,manha,quarto2,computador,0.87,0.66
+2026-12-12,tarde,quarto1,ar-condicionado,4.07,3.1
+2026-12-13,madrugada,quarto2,computador,4.85,3.08
+2026-12-14,manha,sala,ar-condicionado,1.58,1.2
+2026-12-15,manha,sacada,luz,4.96,3.77
+2026-12-16,noite,quarto2,luz,4.32,4.11
+2026-12-17,manha,quarto1,luz,4.93,3.75
+2026-12-18,manha,sacada,luz,4.8,3.65
+2026-12-19,madrugada,sacada,luz,0.87,0.55
+2026-12-20,madrugada,banheiro,aquecedor,4.53,2.87
+2026-12-21,manha,banheiro,aquecedor,1.93,1.47
+2026-12-22,manha,cozinha,geladeira,1.45,1.1
+2026-12-23,manha,quarto2,luz,4.81,3.66
+2026-12-24,noite,quarto1,luz,2.19,2.08
+2026-12-25,manha,sala,ar-condicionado,4.71,3.58
+2026-12-26,tarde,sacada,luz,4.69,3.57
+2026-12-27,tarde,cozinha,geladeira,2.36,1.8
+2026-12-28,noite,quarto2,luz,4.79,4.56
+2026-12-29,manha,quarto2,computador,2.48,1.89
+2026-12-30,manha,sacada,luz,3.04,2.31
+2026-12-31,manha,banheiro,aquecedor,4.91,3.74
+2027-01-01,manha,cozinha,luz,2.89,2.2
+2027-01-02,tarde,sacada,luz,2.14,1.63
+2027-01-03,madrugada,sacada,luz,1.51,0.96
+2027-01-04,noite,sacada,luz,2.33,2.22
+2027-01-05,manha,sala,ar-condicionado,2.2,1.67
+2027-01-06,manha,quarto2,luz,1.87,1.42
+2027-01-07,manha,cozinha,geladeira,2.17,1.65
+2027-01-08,noite,cozinha,luz,3.27,3.11
+2027-01-09,tarde,quarto1,ar-condicionado,2.43,1.85
+2027-01-10,tarde,lavanderia,máquina de lavar,2.79,2.12
+2027-01-11,manha,lavanderia,máquina de lavar,0.77,0.59
+2027-01-12,noite,sacada,luz,3.03,2.88
+2027-01-13,manha,cozinha,micro-ondas,3.29,2.5
+2027-01-14,manha,sacada,luz,3.84,2.92
+2027-01-15,manha,sala,luz,1.97,1.5
+2027-01-16,madrugada,lavanderia,máquina de lavar,4.07,2.58
+2027-01-17,madrugada,lavanderia,máquina de lavar,1.91,1.21
+2027-01-18,manha,quarto1,ar-condicionado,2.37,1.8
+2027-01-19,manha,lavanderia,máquina de lavar,1.64,1.25
+2027-01-20,noite,quarto2,computador,2.88,2.74
+2027-01-21,manha,quarto1,luz,2.15,1.64
+2027-01-22,manha,sala,luz,1.51,1.15
+2027-01-23,tarde,banheiro,aquecedor,2.95,2.25
+2027-01-24,madrugada,sala,ar-condicionado,3.82,2.42
+2027-01-25,manha,cozinha,luz,0.52,0.4
+2027-01-26,manha,lavanderia,máquina de lavar,2.56,1.95
+2027-01-27,manha,sacada,luz,1.53,1.16
+2027-01-28,noite,sacada,luz,1.09,1.04
+2027-01-29,manha,sala,luz,3.68,2.8
+2027-01-30,madrugada,quarto2,computador,0.82,0.52
+2027-01-31,tarde,banheiro,aquecedor,4.86,3.7
+2027-02-01,manha,quarto1,ar-condicionado,4.99,3.8
+2027-02-02,manha,cozinha,luz,1.13,0.86
+2027-02-03,manha,quarto2,luz,4.01,3.05
+2027-02-04,noite,quarto1,luz,4.34,4.13
+2027-02-05,manha,quarto2,computador,1.53,1.16
+2027-02-06,madrugada,banheiro,luz,4.67,2.96
+2027-02-07,madrugada,banheiro,luz,1.36,0.86
+2027-02-08,noite,lavanderia,máquina de lavar,2.97,2.83
+2027-02-09,manha,sacada,luz,2.82,2.15
+2027-02-10,manha,sacada,luz,4.65,3.54
+2027-02-11,manha,sala,TV,1.54,1.17
+2027-02-12,noite,quarto1,luz,4.83,4.59
+2027-02-13,madrugada,banheiro,luz,3.76,2.38
+2027-02-14,madrugada,lavanderia,máquina de lavar,2.61,1.66
+2027-02-15,manha,cozinha,geladeira,3.64,2.77
+2027-02-16,noite,lavanderia,máquina de lavar,1.89,1.8
+2027-02-17,manha,sala,luz,1.7,1.29
+2027-02-18,manha,lavanderia,máquina de lavar,3.39,2.58
+2027-02-19,manha,sacada,luz,3.09,2.35
+2027-02-20,madrugada,lavanderia,máquina de lavar,0.95,0.6
+2027-02-21,tarde,sacada,luz,4.57,3.48
+2027-02-22,manha,quarto2,computador,3.1,2.36
+2027-02-23,manha,sacada,luz,3.67,2.79
+2027-02-24,noite,sala,ar-condicionado,0.86,0.82
+2027-02-25,manha,banheiro,aquecedor,4.1,3.12
+2027-02-26,manha,cozinha,luz,2.4,1.83
+2027-02-27,tarde,banheiro,aquecedor,2.36,1.8
+2027-02-28,madrugada,cozinha,geladeira,1.29,0.82
+2027-03-01,manha,banheiro,luz,3.68,2.8
+2027-03-02,manha,banheiro,aquecedor,3.68,2.8
+2027-03-03,manha,banheiro,luz,1.6,1.22
+2027-03-04,noite,quarto1,ar-condicionado,1.92,1.83
+2027-03-05,manha,sala,ar-condicionado,2.56,1.95
+2027-03-06,tarde,lavanderia,máquina de lavar,2.1,1.6
+2027-03-07,madrugada,sacada,luz,2.14,1.36
+2027-03-08,noite,lavanderia,máquina de lavar,3.6,3.42
+2027-03-09,manha,quarto2,luz,3.3,2.51
+2027-03-10,manha,quarto2,luz,1.26,0.96
+2027-03-11,manha,sacada,luz,4.92,3.74
+2027-03-12,noite,quarto1,luz,1.61,1.53
+2027-03-13,tarde,cozinha,luz,3.17,2.41
+2027-03-14,madrugada,lavanderia,máquina de lavar,3.75,2.38
+2027-03-15,manha,quarto1,ar-condicionado,0.69,0.53
+2027-03-16,noite,sacada,luz,4.93,4.69
+2027-03-17,manha,lavanderia,máquina de lavar,4.09,3.11
+2027-03-18,manha,sacada,luz,2.98,2.27
+2027-03-19,manha,quarto1,ar-condicionado,4.22,3.21
+2027-03-20,madrugada,quarto2,luz,2.7,1.71
+2027-03-21,madrugada,lavanderia,máquina de lavar,1.46,0.93
+2027-03-22,manha,sala,TV,1.45,1.1
+2027-03-23,manha,sacada,luz,4.89,3.72
+2027-03-24,noite,lavanderia,máquina de lavar,1.15,1.09
+2027-03-25,manha,sala,luz,4.9,3.73
+2027-03-26,manha,quarto2,computador,2.85,2.17
+2027-03-27,tarde,cozinha,luz,2.42,1.84
+2027-03-28,madrugada,lavanderia,máquina de lavar,2.33,1.48
+2027-03-29,manha,sacada,luz,3.64,2.77
+2027-03-30,manha,cozinha,luz,4.02,3.06
+2027-03-31,manha,sacada,luz,2.29,1.74
+2027-04-01,manha,banheiro,aquecedor,2.35,1.79
+2027-04-02,manha,cozinha,micro-ondas,4.85,3.69
+2027-04-03,tarde,banheiro,luz,1.02,0.78
+2027-04-04,madrugada,sacada,luz,1.98,1.26
+2027-04-05,manha,quarto1,luz,3.29,2.5
+2027-04-06,manha,banheiro,luz,1.63,1.24
+2027-04-07,manha,sacada,luz,2.75,2.09
+2027-04-08,noite,sacada,luz,2.58,2.45
+2027-04-09,manha,quarto2,luz,1.7,1.29
+2027-04-10,tarde,cozinha,luz,1.31,1.0
+2027-04-11,madrugada,lavanderia,máquina de lavar,3.41,2.16
+2027-04-12,noite,sacada,luz,2.25,2.14
+2027-04-13,manha,lavanderia,máquina de lavar,3.61,2.75
+2027-04-14,manha,banheiro,luz,0.81,0.62
+2027-04-15,manha,banheiro,aquecedor,0.63,0.48
+2027-04-16,noite,cozinha,luz,3.82,3.63
+2027-04-17,madrugada,cozinha,geladeira,2.87,1.82
+2027-04-18,madrugada,lavanderia,máquina de lavar,4.94,3.13
+2027-04-19,manha,lavanderia,máquina de lavar,0.57,0.43
+2027-04-20,noite,sacada,luz,4.38,4.17
+2027-04-21,manha,cozinha,micro-ondas,0.86,0.65
+2027-04-22,manha,lavanderia,máquina de lavar,1.09,0.83
+2027-04-23,manha,cozinha,geladeira,2.91,2.21
+2027-04-24,tarde,quarto2,luz,2.61,1.99
+2027-04-25,tarde,sacada,luz,2.01,1.53
+2027-04-26,manha,sacada,luz,4.16,3.17
+2027-04-27,manha,banheiro,aquecedor,3.84,2.92
+2027-04-28,noite,sacada,luz,0.55,0.52
+2027-04-29,manha,sala,luz,2.82,2.15
+2027-04-30,manha,sacada,luz,3.27,2.49
+2027-05-01,madrugada,quarto2,computador,3.8,2.41
+2027-05-02,madrugada,quarto2,computador,1.91,1.21
+2027-05-03,manha,quarto1,ar-condicionado,4.25,3.23
+2027-05-04,noite,sala,TV,4.46,4.24
+2027-05-05,manha,sala,TV,2.94,2.24
+2027-05-06,manha,banheiro,luz,4.06,3.09
+2027-05-07,manha,sacada,luz,1.74,1.32
+2027-05-08,madrugada,sala,TV,4.1,2.6
+2027-05-09,tarde,banheiro,luz,4.08,3.11
+2027-05-10,manha,cozinha,luz,4.17,3.17
+2027-05-11,manha,lavanderia,máquina de lavar,2.0,1.52
+2027-05-12,noite,quarto2,computador,3.8,3.61
+2027-05-13,manha,banheiro,luz,1.7,1.29
+2027-05-14,manha,cozinha,geladeira,4.19,3.19
+2027-05-15,tarde,sala,TV,0.87,0.66
+2027-05-16,madrugada,lavanderia,máquina de lavar,1.43,0.91
+2027-05-17,manha,banheiro,luz,1.59,1.21
+2027-05-18,manha,quarto2,computador,1.4,1.07
+2027-05-19,manha,sacada,luz,1.62,1.23
+2027-05-20,noite,sacada,luz,1.53,1.46
+2027-05-21,manha,lavanderia,máquina de lavar,3.87,2.95
+2027-05-22,tarde,quarto1,ar-condicionado,0.55,0.42
+2027-05-23,madrugada,cozinha,geladeira,1.74,1.1
+2027-05-24,noite,sala,TV,3.15,3.0
+2027-05-25,manha,banheiro,luz,3.51,2.67
+2027-05-26,manha,banheiro,aquecedor,1.54,1.17
+2027-05-27,manha,quarto2,luz,1.05,0.8
+2027-05-28,noite,sala,TV,4.12,3.92
+2027-05-29,madrugada,quarto1,luz,1.05,0.67
+2027-05-30,tarde,quarto2,luz,3.68,2.8
+2027-05-31,manha,sala,ar-condicionado,2.44,1.86
+2027-06-01,manha,sala,luz,2.17,1.65
+2027-06-02,manha,sala,ar-condicionado,2.62,1.99
+2027-06-03,manha,quarto2,computador,4.41,3.36
+2027-06-04,noite,sala,luz,3.77,3.59
+2027-06-05,madrugada,sala,luz,2.4,1.52
+2027-06-06,madrugada,cozinha,luz,1.93,1.22
+2027-06-07,manha,sacada,luz,1.44,1.1
+2027-06-08,noite,quarto1,luz,0.63,0.6
+2027-06-09,manha,cozinha,micro-ondas,1.07,0.81
+2027-06-10,manha,sacada,luz,3.61,2.75
+2027-06-11,manha,cozinha,micro-ondas,0.63,0.48
+2027-06-12,tarde,quarto2,computador,0.67,0.51
+2027-06-13,tarde,sala,ar-condicionado,4.36,3.32
+2027-06-14,manha,lavanderia,máquina de lavar,4.93,3.75
+2027-06-15,manha,banheiro,luz,4.13,3.14
+2027-06-16,noite,sacada,luz,4.35,4.14
+2027-06-17,manha,quarto1,ar-condicionado,1.54,1.17
+2027-06-18,manha,quarto2,luz,2.14,1.63
+2027-06-19,tarde,quarto2,computador,4.68,3.56
+2027-06-20,tarde,quarto1,luz,1.54,1.17
+2027-06-21,manha,quarto1,luz,3.81,2.9
+2027-06-22,manha,sala,ar-condicionado,1.47,1.12
+2027-06-23,manha,quarto2,luz,4.67,3.55
+2027-06-24,noite,sacada,luz,4.77,4.54
+2027-06-25,manha,quarto2,luz,3.96,3.01
+2027-06-26,tarde,sacada,luz,1.62,1.23
+2027-06-27,madrugada,cozinha,micro-ondas,0.51,0.32
+2027-06-28,noite,lavanderia,máquina de lavar,1.28,1.22
+2027-06-29,manha,quarto2,computador,3.84,2.92
+2027-06-30,manha,sacada,luz,2.99,2.28
+2027-07-01,manha,lavanderia,máquina de lavar,0.92,0.7
+2027-07-02,manha,sala,ar-condicionado,4.14,3.15
+2027-07-03,tarde,banheiro,aquecedor,3.64,2.77
+2027-07-04,tarde,lavanderia,máquina de lavar,2.62,1.99
+2027-07-05,manha,sala,ar-condicionado,2.39,1.82
+2027-07-06,manha,banheiro,luz,2.65,2.02
+2027-07-07,manha,sacada,luz,4.78,3.64
+2027-07-08,noite,quarto1,ar-condicionado,3.52,3.35
+2027-07-09,manha,quarto2,luz,4.16,3.17
+2027-07-10,madrugada,sala,luz,1.02,0.65
+2027-07-11,tarde,quarto2,computador,2.17,1.65
+2027-07-12,noite,quarto1,ar-condicionado,3.69,3.51
+2027-07-13,manha,banheiro,aquecedor,3.27,2.49
+2027-07-14,manha,quarto2,computador,4.77,3.63
+2027-07-15,manha,sala,luz,4.09,3.11
+2027-07-16,noite,quarto1,ar-condicionado,3.95,3.76
+2027-07-17,tarde,lavanderia,máquina de lavar,1.86,1.42
+2027-07-18,tarde,banheiro,luz,1.59,1.21
+2027-07-19,manha,lavanderia,máquina de lavar,4.97,3.78
+2027-07-20,noite,sacada,luz,4.4,4.19
+2027-07-21,manha,quarto1,luz,3.52,2.68
+2027-07-22,manha,quarto2,luz,1.12,0.85
+2027-07-23,manha,quarto2,computador,0.65,0.49
+2027-07-24,madrugada,sacada,luz,2.52,1.6
+2027-07-25,madrugada,banheiro,aquecedor,2.49,1.58
+2027-07-26,manha,quarto2,luz,4.93,3.75
+2027-07-27,manha,sala,luz,4.26,3.24
+2027-07-28,noite,lavanderia,máquina de lavar,4.61,4.39
+2027-07-29,manha,sacada,luz,0.97,0.74
+2027-07-30,manha,lavanderia,máquina de lavar,4.91,3.74
+2027-07-31,tarde,banheiro,luz,4.65,3.54
+2027-08-01,tarde,banheiro,luz,2.94,2.24
+2027-08-02,manha,cozinha,micro-ondas,3.31,2.52
+2027-08-03,manha,cozinha,micro-ondas,1.46,1.11
+2027-08-04,noite,banheiro,aquecedor,4.32,4.11
+2027-08-05,manha,banheiro,luz,2.72,2.07
+2027-08-06,manha,cozinha,geladeira,3.31,2.52
+2027-08-07,tarde,quarto2,computador,0.59,0.45
+2027-08-08,tarde,banheiro,aquecedor,4.46,3.39
+2027-08-09,manha,cozinha,luz,1.44,1.1
+2027-08-10,manha,banheiro,luz,2.55,1.94
+2027-08-11,manha,sala,luz,3.34,2.54
+2027-08-12,noite,quarto2,luz,1.83,1.74
+2027-08-13,manha,sacada,luz,2.33,1.77
+2027-08-14,madrugada,sala,luz,1.47,0.93
+2027-08-15,tarde,sacada,luz,1.83,1.39
+2027-08-16,noite,banheiro,aquecedor,3.28,3.12
+2027-08-17,manha,cozinha,luz,1.17,0.89
+2027-08-18,manha,sacada,luz,4.67,3.55
+2027-08-19,manha,sala,TV,3.88,2.95
+2027-08-20,noite,lavanderia,máquina de lavar,1.69,1.61
+2027-08-21,madrugada,lavanderia,máquina de lavar,4.81,3.05
+2027-08-22,madrugada,cozinha,geladeira,3.22,2.04
+2027-08-23,manha,cozinha,micro-ondas,4.24,3.23
+2027-08-24,noite,banheiro,luz,2.89,2.75
+2027-08-25,manha,sacada,luz,3.39,2.58
+2027-08-26,manha,quarto2,luz,4.22,3.21
+2027-08-27,manha,lavanderia,máquina de lavar,4.49,3.42
+2027-08-28,madrugada,lavanderia,máquina de lavar,2.51,1.59
+2027-08-29,madrugada,quarto2,luz,2.52,1.6
+2027-08-30,manha,quarto2,computador,3.46,2.63
+2027-08-31,manha,quarto2,luz,2.96,2.25
+2027-09-01,manha,cozinha,luz,0.59,0.45
+2027-09-02,manha,sala,ar-condicionado,0.86,0.65
+2027-09-03,manha,sala,ar-condicionado,2.14,1.63
+2027-09-04,tarde,cozinha,micro-ondas,3.61,2.75
+2027-09-05,tarde,banheiro,luz,4.82,3.67
+2027-09-06,manha,lavanderia,máquina de lavar,2.42,1.84
+2027-09-07,manha,sacada,luz,1.14,0.87
+2027-09-08,noite,quarto2,computador,3.79,3.61
+2027-09-09,manha,banheiro,aquecedor,2.8,2.13
+2027-09-10,manha,sacada,luz,4.57,3.48
+2027-09-11,madrugada,lavanderia,máquina de lavar,4.51,2.86
+2027-09-12,madrugada,quarto2,luz,1.58,1.0
+2027-09-13,manha,lavanderia,máquina de lavar,3.13,2.38
+2027-09-14,manha,sacada,luz,2.22,1.69
+2027-09-15,manha,quarto2,luz,2.59,1.97
+2027-09-16,noite,sacada,luz,4.82,4.59
+2027-09-17,manha,quarto2,luz,2.68,2.04
+2027-09-18,madrugada,quarto1,luz,3.34,2.12
+2027-09-19,tarde,quarto1,luz,1.39,1.06
+2027-09-20,noite,banheiro,aquecedor,3.12,2.97
+2027-09-21,manha,sacada,luz,4.81,3.66
+2027-09-22,manha,banheiro,luz,2.26,1.72
+2027-09-23,manha,quarto1,ar-condicionado,2.67,2.03
+2027-09-24,noite,sala,luz,4.26,4.05
+2027-09-25,madrugada,quarto1,ar-condicionado,1.78,1.13
+2027-09-26,tarde,quarto2,luz,1.18,0.9
+2027-09-27,manha,sacada,luz,2.7,2.05
+2027-09-28,noite,sacada,luz,1.89,1.8
+2027-09-29,manha,cozinha,luz,0.83,0.63
+2027-09-30,manha,banheiro,aquecedor,2.26,1.72
+2027-10-01,manha,banheiro,aquecedor,0.87,0.66
+2027-10-02,tarde,sala,TV,3.32,2.53
+2027-10-03,tarde,quarto2,luz,2.71,2.06
+2027-10-04,noite,sacada,luz,1.17,1.11
+2027-10-05,manha,cozinha,micro-ondas,0.6,0.46
+2027-10-06,manha,sacada,luz,1.27,0.97
+2027-10-07,manha,sala,ar-condicionado,2.28,1.74
+2027-10-08,noite,cozinha,geladeira,2.5,2.38
+2027-10-09,madrugada,banheiro,luz,3.73,2.37
+2027-10-10,madrugada,lavanderia,máquina de lavar,2.93,1.86
+2027-10-11,manha,banheiro,aquecedor,1.88,1.43
+2027-10-12,noite,banheiro,luz,3.53,3.36
+2027-10-13,manha,sacada,luz,3.73,2.84
+2027-10-14,manha,cozinha,micro-ondas,0.54,0.41
+2027-10-15,manha,quarto2,computador,0.63,0.48
+2027-10-16,madrugada,quarto2,luz,2.06,1.31
+2027-10-17,madrugada,sacada,luz,2.82,1.79
+2027-10-18,manha,quarto1,luz,3.87,2.95
+2027-10-19,manha,quarto1,luz,1.7,1.29
+2027-10-20,noite,quarto1,ar-condicionado,2.14,2.04
+2027-10-21,manha,cozinha,micro-ondas,3.9,2.97
+2027-10-22,manha,banheiro,luz,1.01,0.77
+2027-10-23,tarde,sala,TV,4.2,3.2
+2027-10-24,madrugada,sala,TV,2.68,1.7
+2027-10-25,manha,banheiro,luz,4.82,3.67
+2027-10-26,manha,lavanderia,máquina de lavar,3.43,2.61
+2027-10-27,manha,quarto1,ar-condicionado,1.09,0.83
+2027-10-28,noite,quarto1,luz,1.09,1.04
+2027-10-29,manha,cozinha,geladeira,2.19,1.67
+2027-10-30,madrugada,quarto1,luz,1.72,1.09
+2027-10-31,madrugada,cozinha,micro-ondas,1.54,0.98
+2027-11-01,manha,quarto2,computador,2.17,1.65
+2027-11-02,manha,sala,luz,3.33,2.53
+2027-11-03,manha,quarto2,luz,2.84,2.16
+2027-11-04,noite,quarto1,luz,2.65,2.52
+2027-11-05,manha,banheiro,aquecedor,4.69,3.57
+2027-11-06,tarde,sacada,luz,0.89,0.68
+2027-11-07,tarde,sala,ar-condicionado,3.49,2.66
+2027-11-08,noite,banheiro,aquecedor,1.21,1.15
+2027-11-09,manha,cozinha,geladeira,3.93,2.99
+2027-11-10,manha,quarto1,ar-condicionado,4.46,3.39
+2027-11-11,manha,lavanderia,máquina de lavar,2.52,1.92
+2027-11-12,noite,quarto2,luz,3.19,3.03
+2027-11-13,tarde,sala,ar-condicionado,3.07,2.34
+2027-11-14,madrugada,banheiro,aquecedor,2.81,1.78
+2027-11-15,manha,banheiro,luz,1.7,1.29
+2027-11-16,noite,quarto1,luz,4.65,4.42
+2027-11-17,manha,cozinha,geladeira,0.97,0.74
+2027-11-18,manha,quarto1,ar-condicionado,1.58,1.2
+2027-11-19,manha,quarto1,luz,1.53,1.16
+2027-11-20,tarde,banheiro,aquecedor,2.85,2.17
+2027-11-21,tarde,lavanderia,máquina de lavar,4.72,3.59
+2027-11-22,manha,quarto1,luz,4.31,3.28
+2027-11-23,manha,banheiro,aquecedor,2.72,2.07
+2027-11-24,noite,lavanderia,máquina de lavar,4.23,4.02
+2027-11-25,manha,cozinha,micro-ondas,4.89,3.72
+2027-11-26,manha,banheiro,luz,1.82,1.39
+2027-11-27,madrugada,quarto2,computador,1.26,0.8
+2027-11-28,madrugada,cozinha,geladeira,4.08,2.59
+2027-11-29,manha,cozinha,micro-ondas,1.32,1.0
+2027-11-30,manha,lavanderia,máquina de lavar,1.3,0.99
+2027-12-01,manha,lavanderia,máquina de lavar,4.39,3.34
+2027-12-02,manha,sala,ar-condicionado,4.34,3.3
+2027-12-03,manha,sala,TV,4.5,3.42
+2027-12-04,madrugada,quarto2,computador,4.43,2.81
+2027-12-05,tarde,banheiro,luz,2.61,1.99
+2027-12-06,manha,lavanderia,máquina de lavar,3.89,2.96
+2027-12-07,manha,quarto1,ar-condicionado,2.94,2.24
+2027-12-08,noite,quarto2,computador,3.23,3.07
+2027-12-09,manha,sacada,luz,4.15,3.16
+2027-12-10,manha,banheiro,luz,4.78,3.64
+2027-12-11,madrugada,quarto1,ar-condicionado,1.41,0.89
+2027-12-12,tarde,quarto1,ar-condicionado,2.98,2.27
+2027-12-13,manha,quarto2,luz,0.93,0.71
+2027-12-14,manha,sacada,luz,4.52,3.44
+2027-12-15,manha,sala,luz,0.63,0.48
+2027-12-16,noite,sala,TV,3.54,3.37
+2027-12-17,manha,sala,ar-condicionado,1.42,1.08
+2027-12-18,tarde,sacada,luz,1.41,1.07
+2027-12-19,tarde,banheiro,aquecedor,1.78,1.35
+2027-12-20,noite,quarto2,luz,1.2,1.14
+2027-12-21,manha,lavanderia,máquina de lavar,3.08,2.34
+2027-12-22,manha,banheiro,luz,3.81,2.9
+2027-12-23,manha,quarto2,computador,1.8,1.37
+2027-12-24,noite,banheiro,luz,3.53,3.36
+2027-12-25,tarde,sala,TV,2.72,2.07
+2027-12-26,tarde,cozinha,geladeira,3.48,2.65
+2027-12-27,manha,cozinha,geladeira,1.64,1.25
+2027-12-28,noite,quarto2,luz,1.14,1.08
+2027-12-29,manha,cozinha,micro-ondas,1.0,0.76
+2027-12-30,manha,quarto1,ar-condicionado,1.45,1.1
+2027-12-31,manha,quarto1,luz,1.1,0.84
+2028-01-01,tarde,lavanderia,máquina de lavar,4.64,3.53
+2028-01-02,madrugada,quarto2,luz,1.93,1.22
+2028-01-03,manha,lavanderia,máquina de lavar,1.37,1.04
+2028-01-04,noite,quarto1,luz,1.87,1.78
+2028-01-05,manha,quarto1,luz,4.44,3.38
+2028-01-06,manha,sala,luz,2.26,1.72
+2028-01-07,manha,sacada,luz,2.02,1.54
+2028-01-08,tarde,cozinha,geladeira,2.37,1.8
+2028-01-09,tarde,sacada,luz,4.05,3.08
+2028-01-10,manha,quarto2,luz,0.59,0.45
+2028-01-11,manha,sacada,luz,3.58,2.72
+2028-01-12,noite,sacada,luz,0.62,0.59
+2028-01-13,manha,sala,luz,3.71,2.82
+2028-01-14,manha,banheiro,luz,3.85,2.93
+2028-01-15,tarde,quarto1,ar-condicionado,3.91,2.98
+2028-01-16,madrugada,banheiro,aquecedor,3.86,2.45
+2028-01-17,manha,lavanderia,máquina de lavar,1.83,1.39
+2028-01-18,manha,banheiro,aquecedor,3.54,2.69
+2028-01-19,manha,banheiro,luz,2.91,2.21
+2028-01-20,noite,quarto1,luz,0.54,0.51
+2028-01-21,manha,sala,ar-condicionado,2.38,1.81
+2028-01-22,madrugada,quarto2,computador,0.8,0.51
+2028-01-23,madrugada,cozinha,micro-ondas,3.68,2.33
+2028-01-24,noite,quarto2,computador,2.53,2.41
+2028-01-25,manha,cozinha,luz,3.21,2.44
+2028-01-26,manha,quarto2,luz,4.11,3.13
+2028-01-27,manha,sacada,luz,4.43,3.37
+2028-01-28,noite,sala,luz,3.11,2.96
+2028-01-29,madrugada,lavanderia,máquina de lavar,4.06,2.57
+2028-01-30,madrugada,sacada,luz,1.64,1.04
+2028-01-31,manha,sala,luz,3.14,2.39
+2028-02-01,manha,quarto2,luz,0.61,0.46
+2028-02-02,manha,sacada,luz,3.67,2.79
+2028-02-03,manha,sacada,luz,2.32,1.77
+2028-02-04,noite,quarto2,luz,4.25,4.04
+2028-02-05,tarde,cozinha,luz,2.86,2.18
+2028-02-06,madrugada,cozinha,geladeira,4.17,2.64
+2028-02-07,manha,quarto2,computador,2.72,2.07
+2028-02-08,noite,banheiro,luz,4.65,4.42
+2028-02-09,manha,sala,luz,1.38,1.05
+2028-02-10,manha,sacada,luz,4.51,3.43
+2028-02-11,manha,cozinha,luz,1.69,1.29
+2028-02-12,tarde,banheiro,luz,0.97,0.74
+2028-02-13,madrugada,quarto1,ar-condicionado,1.06,0.67
+2028-02-14,manha,sacada,luz,4.02,3.06
+2028-02-15,manha,quarto1,luz,2.54,1.93
+2028-02-16,noite,lavanderia,máquina de lavar,1.77,1.68
+2028-02-17,manha,sala,TV,1.71,1.3
+2028-02-18,manha,lavanderia,máquina de lavar,0.69,0.53
+2028-02-19,madrugada,sala,TV,3.59,2.28
+2028-02-20,tarde,quarto1,luz,2.21,1.68
+2028-02-21,manha,quarto1,ar-condicionado,4.44,3.38
+2028-02-22,manha,quarto2,computador,0.96,0.73
+2028-02-23,manha,banheiro,aquecedor,1.45,1.1
+2028-02-24,noite,banheiro,luz,3.52,3.35
+2028-02-25,manha,sala,luz,2.08,1.58
+2028-02-26,madrugada,sacada,luz,4.58,2.9
+2028-02-27,madrugada,lavanderia,máquina de lavar,1.37,0.87
+2028-02-28,noite,lavanderia,máquina de lavar,1.0,0.95
+2028-02-29,manha,banheiro,aquecedor,3.55,2.7
+2028-03-01,manha,sacada,luz,1.19,0.91
+2028-03-02,manha,quarto2,luz,3.44,2.62
+2028-03-03,manha,sala,luz,3.75,2.85
+2028-03-04,tarde,quarto2,computador,3.83,2.91
+2028-03-05,tarde,quarto1,ar-condicionado,2.47,1.88
+2028-03-06,manha,quarto1,luz,2.24,1.7
+2028-03-07,manha,quarto2,computador,2.36,1.8
+2028-03-08,noite,quarto2,computador,3.51,3.34
+2028-03-09,manha,lavanderia,máquina de lavar,1.03,0.78
+2028-03-10,manha,banheiro,aquecedor,3.83,2.91
+2028-03-11,madrugada,cozinha,geladeira,3.82,2.42
+2028-03-12,tarde,banheiro,aquecedor,2.9,2.21
+2028-03-13,manha,quarto1,luz,4.71,3.58
+2028-03-14,manha,quarto2,luz,1.78,1.35
+2028-03-15,manha,quarto2,luz,2.0,1.52
+2028-03-16,noite,sacada,luz,2.12,2.02
+2028-03-17,manha,cozinha,luz,0.85,0.65
+2028-03-18,tarde,lavanderia,máquina de lavar,4.24,3.23
+2028-03-19,tarde,quarto1,luz,2.22,1.69
+2028-03-20,noite,cozinha,geladeira,3.09,2.94
+2028-03-21,manha,quarto2,luz,3.78,2.88
+2028-03-22,manha,sacada,luz,0.8,0.61
+2028-03-23,manha,sacada,luz,4.47,3.4
+2028-03-24,noite,lavanderia,máquina de lavar,4.97,4.73
+2028-03-25,tarde,quarto2,luz,1.4,1.07
+2028-03-26,madrugada,cozinha,luz,3.82,2.42
+2028-03-27,manha,cozinha,geladeira,3.07,2.34
+2028-03-28,noite,quarto2,computador,1.59,1.51
+2028-03-29,manha,quarto2,computador,4.42,3.36
+2028-03-30,manha,sala,ar-condicionado,4.96,3.77
+2028-03-31,manha,sala,TV,2.82,2.15
+2028-04-01,tarde,sacada,luz,3.14,2.39
+2028-04-02,madrugada,sala,luz,1.28,0.81
+2028-04-03,manha,quarto1,luz,3.58,2.72
+2028-04-04,noite,sala,TV,3.05,2.9
+2028-04-05,manha,cozinha,luz,3.16,2.4
+2028-04-06,manha,cozinha,micro-ondas,0.54,0.41
+2028-04-07,manha,quarto2,computador,3.77,2.87
+2028-04-08,madrugada,quarto2,computador,1.4,0.89
+2028-04-09,tarde,sacada,luz,3.95,3.01
+2028-04-10,manha,sala,luz,0.51,0.39
+2028-04-11,manha,quarto2,computador,4.51,3.43
+2028-04-12,noite,quarto1,ar-condicionado,2.39,2.27
+2028-04-13,manha,sacada,luz,2.9,2.21
+2028-04-14,manha,quarto2,luz,3.48,2.65
+2028-04-15,madrugada,cozinha,luz,4.83,3.06
+2028-04-16,tarde,quarto2,computador,2.35,1.79
+2028-04-17,manha,quarto2,luz,0.78,0.59
+2028-04-18,manha,quarto1,ar-condicionado,2.85,2.17
+2028-04-19,manha,quarto2,computador,2.1,1.6
+2028-04-20,noite,banheiro,luz,0.66,0.63
+2028-04-21,manha,cozinha,micro-ondas,0.79,0.6
+2028-04-22,madrugada,sala,ar-condicionado,2.57,1.63
+2028-04-23,madrugada,cozinha,geladeira,2.48,1.57
+2028-04-24,noite,sacada,luz,3.07,2.92
+2028-04-25,manha,cozinha,geladeira,2.74,2.09
+2028-04-26,manha,quarto2,luz,3.4,2.59
+2028-04-27,manha,cozinha,micro-ondas,3.29,2.5
+2028-04-28,noite,quarto1,ar-condicionado,2.55,2.43
+2028-04-29,madrugada,sacada,luz,2.43,1.54
+2028-04-30,madrugada,quarto2,luz,0.59,0.37
+2028-05-01,manha,sacada,luz,3.51,2.67
+2028-05-02,manha,banheiro,aquecedor,2.79,2.12
+2028-05-03,manha,quarto2,luz,3.63,2.76
+2028-05-04,noite,quarto2,computador,3.39,3.22
+2028-05-05,manha,banheiro,luz,2.18,1.66
+2028-05-06,madrugada,quarto1,ar-condicionado,1.96,1.24
+2028-05-07,tarde,banheiro,luz,4.59,3.49
+2028-05-08,noite,cozinha,micro-ondas,3.77,3.59
+2028-05-09,manha,sacada,luz,4.74,3.61
+2028-05-10,manha,quarto1,ar-condicionado,2.74,2.09
+2028-05-11,manha,sala,ar-condicionado,4.48,3.41
+2028-05-12,noite,sacada,luz,4.27,4.06
+2028-05-13,tarde,quarto2,luz,1.08,0.82
+2028-05-14,tarde,sala,luz,0.6,0.46
+2028-05-15,manha,banheiro,luz,3.27,2.49
+2028-05-16,noite,quarto2,luz,1.71,1.63
+2028-05-17,manha,quarto1,ar-condicionado,3.7,2.82
+2028-05-18,manha,quarto2,computador,1.07,0.81
+2028-05-19,manha,sala,TV,2.49,1.89
+2028-05-20,tarde,quarto2,computador,1.08,0.82
+2028-05-21,madrugada,quarto2,computador,0.72,0.46
+2028-05-22,manha,sacada,luz,1.64,1.25
+2028-05-23,manha,sacada,luz,3.23,2.46
+2028-05-24,noite,quarto1,luz,4.05,3.85
+2028-05-25,manha,sala,luz,3.25,2.47
+2028-05-26,manha,cozinha,luz,2.35,1.79
+2028-05-27,madrugada,banheiro,luz,0.97,0.62
+2028-05-28,tarde,sacada,luz,4.99,3.8
+2028-05-29,manha,sacada,luz,2.33,1.77
+2028-05-30,manha,sacada,luz,2.51,1.91
+2028-05-31,manha,sala,luz,2.97,2.26
+2028-06-01,manha,banheiro,aquecedor,2.25,1.71
+2028-06-02,manha,sala,luz,1.8,1.37
+2028-06-03,tarde,cozinha,micro-ondas,0.7,0.53
+2028-06-04,tarde,quarto2,luz,4.5,3.42
+2028-06-05,manha,quarto2,computador,4.2,3.2
+2028-06-06,manha,quarto2,luz,4.06,3.09
+2028-06-07,manha,sacada,luz,1.47,1.12
+2028-06-08,noite,banheiro,luz,3.48,3.31
+2028-06-09,manha,quarto1,luz,2.66,2.02
+2028-06-10,tarde,quarto1,ar-condicionado,2.3,1.75
+2028-06-11,madrugada,banheiro,luz,1.5,0.95
+2028-06-12,noite,quarto2,computador,2.65,2.52
+2028-06-13,manha,banheiro,luz,0.98,0.75
+2028-06-14,manha,quarto2,computador,0.65,0.49
+2028-06-15,manha,sacada,luz,0.76,0.58
+2028-06-16,noite,cozinha,geladeira,2.11,2.01
+2028-06-17,madrugada,sacada,luz,2.89,1.83
+2028-06-18,madrugada,sacada,luz,1.68,1.07
+2028-06-19,manha,quarto1,ar-condicionado,4.8,3.65
+2028-06-20,noite,sala,luz,1.29,1.23
+2028-06-21,manha,banheiro,aquecedor,4.84,3.68
+2028-06-22,manha,lavanderia,máquina de lavar,3.61,2.75
