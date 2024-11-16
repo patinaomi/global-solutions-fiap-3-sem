@@ -26,6 +26,7 @@ DROP TABLE T_Evento_Manutencao CASCADE CONSTRAINTS;
 DROP TABLE T_Formulario CASCADE CONSTRAINTS;
 DROP TABLE T_Feedback CASCADE CONSTRAINTS;
 DROP TABLE T_Dados_Completos_Usuario CASCADE CONSTRAINTS;
+DROP TABLE T_Json CASCADE CONSTRAINTS;
 
 // CRIAÇÃO DAS TABELAS
 
@@ -208,7 +209,6 @@ CREATE TABLE T_Evento_Manutencao (
     CONSTRAINT fk_id_tipo_evento FOREIGN KEY (id_tipo_evento) REFERENCES T_Tipo_Evento(id_tipo_evento)
 );
 
--- Tabela de Feedback das recomendações
 -- Tabela Feedback
 CREATE TABLE T_Feedback (
     id_feedback INTEGER GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) NOT NULL PRIMARY KEY,
@@ -223,13 +223,9 @@ CREATE TABLE T_Feedback (
 
 // PROCEDURES E FUNÇÕES
 
-
 SET SERVEROUTPUT ON;
 
--- Criar procedures para realizar os inserts no banco de dados.
-
-// Cadastrar dados na Tabela Estado
-
+-- Tabela Estado
 CREATE OR REPLACE PROCEDURE inserir_estado(p_sigla VARCHAR2) IS
 BEGIN
     INSERT INTO T_Estado (sigla) 
@@ -239,9 +235,7 @@ EXCEPTION
         RAISE;
 END;
 
-
--- Inserir 10 linhas
-
+-- Inserir 10 linhas na Tabela Estado
 EXEC inserir_estado('SP');
 EXEC inserir_estado('RJ');
 EXEC inserir_estado('MG');
@@ -254,12 +248,9 @@ EXEC inserir_estado('SC');
 EXEC inserir_estado('GO');
 
 -- Consultar
-
 select * from T_Estado;
 
-
 -- função que valida se a sigla fornecida está entre as 27 siglas válidas dos estados do Brasil.
-
 CREATE OR REPLACE FUNCTION validar_sigla(p_sigla VARCHAR2) RETURN BOOLEAN IS
     v_count INTEGER;
 BEGIN
@@ -301,7 +292,6 @@ BEGIN
 END;
 
 -- Teste
-SET SERVEROUTPUT ON;
 DECLARE
     v_resultado BOOLEAN;
     v_sigla T_Estado.sigla%TYPE;
@@ -319,7 +309,6 @@ BEGIN
 END;
 
 -- validar se a sigla tem exatamente duas letras maiúsculas
-
 CREATE OR REPLACE FUNCTION validar_duas_maiusculas(p_sigla VARCHAR2) 
 RETURN BOOLEAN 
 IS
@@ -333,7 +322,6 @@ BEGIN
 END;
 
 -- Teste 
-
 DECLARE
     v_resultado BOOLEAN;
     v_sigla T_Estado.sigla%TYPE;
@@ -351,8 +339,7 @@ BEGIN
 END;
 
 
-// Procedure para Cadastrar um usuário
-
+-- Tabela Usuario
 CREATE OR REPLACE PROCEDURE cadastrar_usuario(
     p_nome          IN VARCHAR2,
     p_sobrenome     IN VARCHAR2,
@@ -393,8 +380,7 @@ EXCEPTION
         RAISE;
 END;
 
--- Inserir 10 linhas
-
+-- Inserir 10 linhas a Tabela Usuario
 BEGIN
     -- Cadastro 1
     cadastrar_usuario(
@@ -587,7 +573,6 @@ BEGIN
 END validar_telefone;
 
 -- 3. Função para validar nome
-
 CREATE OR REPLACE FUNCTION VALIDAR_NOME(p_nome VARCHAR2) RETURN VARCHAR2 IS
 BEGIN
     IF REGEXP_LIKE(p_nome, '[0-9]') THEN
@@ -597,9 +582,7 @@ BEGIN
     END IF;
 END validar_nome;
 
-
 -- Testar
-SET SERVEROUTPUT ON;
 DECLARE
     v_email VARCHAR2(100);
     v_telefone VARCHAR2(15);
@@ -630,9 +613,7 @@ BEGIN
     END LOOP;
 END;
 
-
-// Login
-SET SERVEROUTPUT ON;
+-- Tabela Login
 CREATE OR REPLACE PROCEDURE INSERIR_LOGIN(p_id_usuario INTEGER) AS
 BEGIN
     INSERT INTO T_Login (data_hora, id_usuario)
@@ -654,10 +635,9 @@ BEGIN
     COMMIT;
 END;
 
-
 select * from T_Login;
 
---  Comodo
+--  Tabela Comodo
 CREATE OR REPLACE PROCEDURE INSERIR_COMODO(
     p_id_usuario  IN INTEGER,
     p_descricao   IN VARCHAR2
@@ -670,8 +650,7 @@ BEGIN
     COMMIT;
 END;
 
--- Inserir dados
-
+-- Inserir dados em comodo
 BEGIN
     INSERIR_COMODO(1, 'Sala');
     INSERIR_COMODO(2, 'Quarto');
@@ -717,7 +696,6 @@ END;
 select * from T_Tipo_Dispositivo;
 
 -- Itens de cada Comodo
-
 CREATE OR REPLACE PROCEDURE INSERIR_ITEM_CASA(
     p_id_comodo IN INTEGER,
     p_id_tipo_dispositivo IN INTEGER,
@@ -897,7 +875,6 @@ BEGIN
 END;
 
 -- Inserir dados em Tipo de notificação
-
 BEGIN
     INSERIR_TIPO_NOTIFICACAO('Email');
     INSERIR_TIPO_NOTIFICACAO('SMS');
@@ -924,7 +901,6 @@ BEGIN
 END;
 
 -- Inserir dados na tabela Notificação
-
 BEGIN
     INSERIR_NOTIFICACAO(1, 1, 'Sua conta foi atualizada.', SYSDATE);
     INSERIR_NOTIFICACAO(2, 2, 'Seu consumo de energia está elevado.', SYSDATE);
@@ -1186,141 +1162,54 @@ LEFT JOIN T_Feedback f ON u.id_usuario = f.id_usuario
 LEFT JOIN T_Evento_Manutencao em ON u.id_usuario = em.id_usuario
 LEFT JOIN T_Tipo_Evento te ON em.id_tipo_evento = te.id_tipo_evento;
 
-
 select * from T_Dados_Completos_Usuario;
 
 -- 2. Exportar os dados para um formato JSON
 
-SELECT status FROM v$instance;
-SELECT USER FROM DUAL;
-SELECT * FROM dba_role_privs WHERE grantee = 'RM553472';
+CREATE TABLE T_Json (
+    id_json NUMBER GENERATED ALWAYS AS IDENTITY,
+    json_data CLOB
+);
 
-CREATE OR REPLACE DIRECTORY dir_dados AS '/Users/claudiobispo/Downloads';
-GRANT READ, WRITE ON DIRECTORY dir_dados TO RM553472;
-
-CREATE OR REPLACE PROCEDURE exportar_dados_para_csv AS
-  v_file UTL_FILE.FILE_TYPE;
-  v_dir  VARCHAR2(255) := 'DIR_DADOS';
-  v_filename VARCHAR2(255) := 'dados_usuario.csv';
-  v_line VARCHAR2(4000);
+CREATE OR REPLACE PROCEDURE exportar_dados AS
+  -- Variável para armazenar os dados JSON
+  v_json_data CLOB;
 BEGIN
-  v_file := UTL_FILE.FOPEN(v_dir, v_filename, 'W', 32767);
-  UTL_FILE.PUT_LINE(v_file, 'id_usuario,nome,sobrenome,telefone,email,logradouro,numero,complemento,bairro,cidade,cep,estado,id_orcamento,data_hora_visita,valor_orcamento,id_comodo,comodo_descricao,id_item_casa,item_casa_descricao,tipo_dispositivo_descricao,consumo,data_consumo,valor,id_notificacao,tipo_notificacao_desc,notificacao_mensagem,notificacao_data_envio,limite_consumo,id_alerta,alerta_descricao,alerta_data,alerta_tipo,id_feedback,feedback_avaliacao,feedback_comentario,id_evento_manutencao,manutencao_data_hora,manutencao_descricao,tipo_evento_descricao');
+  -- Converte os dados da tabela T_Dados_Completos_Usuario para JSON e armazena no CLOB
+  SELECT JSON_ARRAYAGG(
+           JSON_OBJECT(
+             'id_usuario' VALUE id_usuario,
+             'nome' VALUE nome,
+             'sobrenome' VALUE sobrenome,
+             'telefone' VALUE telefone,
+             'email' VALUE email
+           )
+         ) INTO v_json_data
+  FROM T_Dados_Completos_Usuario;
 
-  FOR rec IN (
-    SELECT 
-      u.id_usuario,
-      u.nome,
-      u.sobrenome,
-      u.telefone,
-      u.email,
-      e.logradouro,
-      e.numero,
-      e.complemento,
-      e.bairro,
-      e.cidade,
-      e.cep,
-      es.sigla AS estado,
-      o.id_orcamento,
-      o.data_hora_visita,
-      o.valor_orcamento,
-      c.id_comodo,
-      c.descricao AS comodo_descricao,
-      i.id_item_casa,
-      i.descricao AS item_casa_descricao,
-      td.descricao AS tipo_dispositivo_descricao,
-      co.consumo,
-      co.data_consumo,
-      co.valor,
-      n.id_notificacao,
-      tn.desc_tipo_notif AS tipo_notificacao_desc,
-      n.mensagem AS notificacao_mensagem,
-      n.data_envio AS notificacao_data_envio,
-      cu.limite_consumo,
-      ha.id_alerta,
-      ha.descricao AS alerta_descricao,
-      ha.data_hora AS alerta_data,
-      ha.tipo AS alerta_tipo,
-      f.id_feedback,
-      f.avaliacao AS feedback_avaliacao,
-      f.comentario AS feedback_comentario,
-      em.id_evento_manutencao,
-      em.data_hora_evento AS manutencao_data_hora,
-      em.descricao AS manutencao_descricao,
-      te.descricao AS tipo_evento_descricao
-    FROM T_Usuario u
-    JOIN T_Endereco e ON u.id_endereco = e.id_endereco
-    JOIN T_Estado es ON e.id_estado = es.id_estado
-    LEFT JOIN T_Orcamento o ON u.id_usuario = o.id_usuario
-    LEFT JOIN T_Comodo c ON u.id_usuario = c.id_usuario
-    LEFT JOIN T_Item_Casa i ON c.id_comodo = i.id_comodo
-    LEFT JOIN T_Tipo_Dispositivo td ON i.id_tipo_dispositivo = td.id_tipo_dispositivo
-    LEFT JOIN T_Consumo co ON co.id_consumo = i.id_item_casa
-    LEFT JOIN T_Notificacao n ON u.id_usuario = n.id_usuario
-    LEFT JOIN T_Tipo_Notificacao tn ON n.id_tipo_notificacao = tn.id_tipo_notificacao
-    LEFT JOIN T_Configuracao_Usuario cu ON u.id_usuario = cu.id_usuario
-    LEFT JOIN T_Historico_Alerta ha ON u.id_usuario = ha.id_usuario
-    LEFT JOIN T_Feedback f ON u.id_usuario = f.id_usuario
-    LEFT JOIN T_Evento_Manutencao em ON u.id_usuario = em.id_usuario
-    LEFT JOIN T_Tipo_Evento te ON em.id_tipo_evento = te.id_tipo_evento
-  ) LOOP
-   
-    v_line := rec.id_usuario || ',' ||
-              rec.nome || ',' ||
-              rec.sobrenome || ',' ||
-              rec.telefone || ',' ||
-              rec.email || ',' ||
-              rec.logradouro || ',' ||
-              rec.numero || ',' ||
-              rec.complemento || ',' ||
-              rec.bairro || ',' ||
-              rec.cidade || ',' ||
-              rec.cep || ',' ||
-              rec.estado || ',' ||
-              rec.id_orcamento || ',' ||
-              rec.data_hora_visita || ',' ||
-              rec.valor_orcamento || ',' ||
-              rec.id_comodo || ',' ||
-              rec.comodo_descricao || ',' ||
-              rec.id_item_casa || ',' ||
-              rec.item_casa_descricao || ',' ||
-              rec.tipo_dispositivo_descricao || ',' ||
-              rec.consumo || ',' ||
-              rec.data_consumo || ',' ||
-              rec.valor || ',' ||
-              rec.id_notificacao || ',' ||
-              rec.tipo_notificacao_desc || ',' ||
-              rec.notificacao_mensagem || ',' ||
-              rec.notificacao_data_envio || ',' ||
-              rec.limite_consumo || ',' ||
-              rec.id_alerta || ',' ||
-              rec.alerta_descricao || ',' ||
-              rec.alerta_data || ',' ||
-              rec.alerta_tipo || ',' ||
-              rec.id_feedback || ',' ||
-              rec.feedback_avaliacao || ',' ||
-              rec.feedback_comentario || ',' ||
-              rec.id_evento_manutencao || ',' ||
-              rec.manutencao_data_hora || ',' ||
-              rec.manutencao_descricao || ',' ||
-              rec.tipo_evento_descricao;
+  -- Insere o JSON gerado na tabela T_Json
+  INSERT INTO T_Json (json_data)
+  VALUES (v_json_data);
 
-    -- Escreve a linha no arquivo CSV
-    UTL_FILE.PUT_LINE(v_file, v_line);
-  END LOOP;
-
-  UTL_FILE.FCLOSE(v_file);
+  -- Commit da operação
+  COMMIT;
   
-  DBMS_OUTPUT.PUT_LINE('Arquivo CSV gerado com sucesso!');
-EXCEPTION
-  WHEN OTHERS THEN
-    -- Em caso de erro, fecha o arquivo se estiver aberto
-    IF UTL_FILE.IS_OPEN(v_file) THEN
-      UTL_FILE.FCLOSE(v_file);
-    END IF;
-    DBMS_OUTPUT.PUT_LINE('Erro ao gerar o arquivo: ' || SQLERRM);
-END exportar_dados_para_csv;
+  DBMS_OUTPUT.PUT_LINE('Dados exportados para JSON com sucesso!');
+END exportar_dados;
 
-EXEC exportar_dados_para_csv;
+EXEC exportar_dados;
 
+SELECT * FROM T_Json;
 
+-- Salvar os dados na minha máquina
+SET LINESIZE 1000
+SET PAGESIZE 0
+SET LONG 2000000
+SET TRIMSPOOL ON
+
+SPOOL /Users/claudiobispo/Downloads/arquivo.json
+
+SELECT json_data
+FROM T_Json;
+
+SPOOL OFF;
