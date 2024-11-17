@@ -360,6 +360,44 @@ SELECT * FROM T_Usuario;
 SELECT * FROM T_Endereco;
 SELECT * FROM T_Estado;
 
+-- Tabela Login
+CREATE OR REPLACE PROCEDURE INSERIR_LOGIN IS
+BEGIN
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 1);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 2);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 3);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 4);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 5);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 6);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 7);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 8);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 9);
+
+    INSERT INTO T_Login (data_hora, id_usuario)
+    VALUES (CURRENT_TIMESTAMP, 10);
+END;
+
+EXEC INSERIR_LOGIN;
+
+-- Consultar Login
+select * from T_Login;
 
 --  Tabela Comodo
 CREATE OR REPLACE PROCEDURE INSERIR_COMODOS IS
