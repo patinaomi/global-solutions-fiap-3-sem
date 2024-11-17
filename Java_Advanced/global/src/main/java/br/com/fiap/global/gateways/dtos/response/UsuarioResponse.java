@@ -15,4 +15,5 @@ public class UsuarioResponse extends RepresentationModel<UsuarioResponse> {
     String sobrenome;
     String telefone;
     String email;
+    EnderecoResponse endereco;
 }

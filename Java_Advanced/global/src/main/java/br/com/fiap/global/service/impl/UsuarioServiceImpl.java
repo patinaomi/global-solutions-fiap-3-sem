@@ -17,7 +17,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario create(Usuario usuario) {
-        return repository.save(usuario);
+        usuario.setTelefone(limparCaracteresTel(usuario.getTelefone()));
+        Usuario usuarioSalvo = repository.save(usuario);
+
+        String msgEmail = String.format(
+                "Olá, %s! Seu cadastro foi realizado com sucesso!", usuario.getNome()
+        );
+
+        // Enviar e-mail de confirmação
+        emailService.sendEmail(usuario.getEmail(), "Cadastro realizado com sucesso", msgEmail);
+        return usuarioSalvo;
     }
 
     @Override
@@ -35,6 +44,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     public Usuario update(Integer id, Usuario usuario) {
         if(repository.existsById(id)) {
             usuario.setId(id);
+            usuario.setTelefone(limparCaracteresTel(usuario.getTelefone()));
             return repository.save(usuario);
         } else {
             throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Usuario.class.getName());
@@ -48,5 +58,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         } else {
             throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Usuario.class.getName());
         }
+    }
+
+    // Método utilitário para limpar caracteres não numéricos do telefone
+    private String limparCaracteresTel(String telefone) {
+        return telefone != null ? telefone.replaceAll("\\D", "") : null;
     }
 }

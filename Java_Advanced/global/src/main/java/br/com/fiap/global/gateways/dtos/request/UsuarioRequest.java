@@ -29,4 +29,8 @@ public class UsuarioRequest extends RepresentationModel<UsuarioRequest> {
     @NotNull(message = "A senha não pode ficar nula")
     @Size(message = "A senha deve ter até 100 caracteres", min = 5, max = 100)
     String senha;
+
+    @NotNull(message = "O endereço não pode ser nulo")
+    private EnderecoRequest endereco;
+
 }
