@@ -1,4 +1,4 @@
-package br.com.fiap.global.controller;
+package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.service.UsuarioService;
 import lombok.RequiredArgsConstructor;

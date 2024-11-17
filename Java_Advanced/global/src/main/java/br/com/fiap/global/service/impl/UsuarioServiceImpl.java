@@ -1,7 +1,7 @@
 package br.com.fiap.global.service.impl;
 
 import br.com.fiap.global.domains.Usuario;
-import br.com.fiap.global.repository.UsuarioRepository;
+import br.com.fiap.global.gateways.repository.UsuarioRepository;
 import br.com.fiap.global.service.UsuarioService;
 import br.com.fiap.global.service.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;

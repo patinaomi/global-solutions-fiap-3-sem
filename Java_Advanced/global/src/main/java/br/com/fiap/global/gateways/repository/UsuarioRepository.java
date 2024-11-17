@@ -1,4 +1,4 @@
-package br.com.fiap.global.repository;
+package br.com.fiap.global.gateways.repository;
 
 import br.com.fiap.global.domains.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
