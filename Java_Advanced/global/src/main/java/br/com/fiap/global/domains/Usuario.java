@@ -1,5 +1,6 @@
 package br.com.fiap.global.domains;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,7 +46,7 @@ public class Usuario {
         @Column(length = 100, nullable = false)
         private String senha;
 
-        @OneToOne
+        @OneToOne(cascade = CascadeType.ALL)
         @JoinColumn(name = "id_endereco")
         private Endereco endereco;
 

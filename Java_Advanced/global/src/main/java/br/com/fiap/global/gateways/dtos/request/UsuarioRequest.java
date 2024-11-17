@@ -1,5 +1,7 @@
 package br.com.fiap.global.gateways.dtos.request;
 
+import br.com.fiap.global.domains.Endereco;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -31,6 +33,7 @@ public class UsuarioRequest extends RepresentationModel<UsuarioRequest> {
     String senha;
 
     @NotNull(message = "O endereço não pode ser nulo")
+    @Valid
     private EnderecoRequest endereco;
 
 }

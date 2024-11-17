@@ -14,6 +14,7 @@ import java.util.List;
 public class UsuarioServiceImpl implements UsuarioService {
 
     private final UsuarioRepository repository;
+    private final EmailServiceImpl service;
 
     @Override
     public Usuario create(Usuario usuario) {
@@ -25,7 +26,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         );
 
         // Enviar e-mail de confirmação
-        emailService.sendEmail(usuario.getEmail(), "Cadastro realizado com sucesso", msgEmail);
+        service.sendEmail(usuario.getEmail(), "Cadastro realizado com sucesso", msgEmail);
         return usuarioSalvo;
     }
 
