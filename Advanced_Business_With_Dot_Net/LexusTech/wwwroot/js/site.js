@@ -208,8 +208,9 @@ document.addEventListener('DOMContentLoaded', function () {
         "sala": {
             consumo: 120,
             itens: [
-                { nome: "Ar-condicionado", consumo: 80 },
-                { nome: "TV", consumo: 40 }
+                { nome: "Ar-condicionado", consumo: 80},
+                { nome: "TV", consumo: 40  }
+                
             ]
         },
         "cozinha": {

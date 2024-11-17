@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Oracle.EntityFrameworkCore.Metadata;
 
@@ -10,9 +11,11 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace LexusTech.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241117213233_LogsLogin")]
+    partial class LogsLogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,23 +137,19 @@ namespace LexusTech.Migrations
 
             modelBuilder.Entity("LexusTech.Models.LoginLog", b =>
                 {
-                    b.Property<int>("IdLogin")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("NUMBER(10)");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdLogin"));
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DataHora")
                         .HasColumnType("TIMESTAMP(7)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<int>("IdUsuario")
-                        .HasColumnType("NUMBER(10)");
-
-                    b.HasKey("IdLogin");
+                    b.HasKey("Id");
 
                     b.ToTable("T_Login");
                 });

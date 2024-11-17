@@ -1,0 +1,43 @@
+@model IEnumerable<LexusTech.Models.LoginLog>
+
+@{
+    ViewData["Title"] = "Histórico de Logins realizados";
+}
+
+<section class="d-flex p-3" style="height: 80vh">
+
+    <div class="d-flex flex-column w-100 d-flex justify-content-start" style="height: 80vh; align-items: center;">
+
+        <h2 class="mb-3">Histórico dos logins realizados</h2>
+
+        <div>
+            <table class="table table-bordered" style="align-items: center; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID Usuário</th>
+                        <th>Email</th>
+                        <th>Data e Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var log in Model)
+                    {
+                        <tr>
+                            <td>@log.IdLogin</td>
+                            <td>@log.IdUsuario</td>
+                            <td>@log.Email</td>
+                            <td>@log.DataHora.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Container da Imagem ocupando 80% da largura e 100% da altura -->
+    <div class="w-100" style="height: 80vh">
+        <img src="~/assets/LoginLog/imagem.jpg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+</section>

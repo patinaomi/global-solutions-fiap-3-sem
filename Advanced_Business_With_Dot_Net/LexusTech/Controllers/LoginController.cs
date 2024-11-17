@@ -43,12 +43,26 @@ namespace LexusTech.Controllers
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
+                    // Após a autenticação bem-sucedida, registra o log
+                    var log = new LoginLog
+                    {
+
+                        IdUsuario = user.Id,
+                        Email = user.Email, 
+                        DataHora = DateTime.Now 
+                    };
+
+                    _context.T_Login.Add(log);
+                    await _context.SaveChangesAsync();
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     return RedirectToAction("MensagemErro");
                 }
+
+                
             }
             return View(model);
         }

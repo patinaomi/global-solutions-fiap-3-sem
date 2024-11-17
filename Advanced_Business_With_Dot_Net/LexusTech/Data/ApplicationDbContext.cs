@@ -14,4 +14,5 @@
         public DbSet<Comodo> T_Comodo { get; set; }
         public DbSet<Item> T_Item_Casa { get; set; }
         public DbSet<Consumo> T_Consumo { get; set; }
+        public DbSet<LoginLog> T_Login { get; set; }
     }
