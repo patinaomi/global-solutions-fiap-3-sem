@@ -23,9 +23,6 @@ Armazena os endereços completos, incluindo informações sobre o estado.
 | cep          | VARCHAR2(10)    | Código de Endereçamento Postal.              |
 | id_estado    | INTEGER         | Chave estrangeira referenciando T_Estado.    |
 
-### Restrições
-- `fk_estado`: Chave estrangeira referenciando `id_estado` na tabela `T_Estado`.
-
 
 ## Tabela: Usuario
 Armazena informações dos usuários, incluindo dados pessoais e de contato.
@@ -40,9 +37,6 @@ Armazena informações dos usuários, incluindo dados pessoais e de contato.
 | senha       | VARCHAR2(100)   | Senha para login do usuário.                 |
 | id_endereco | INTEGER         | Chave estrangeira referenciando T_Endereco.  |
 
-### Restrições
-- `fk_endereco_global`: Chave estrangeira referenciando `id_endereco` na tabela `T_Endereco`.
-
 
 ## Tabela: Login
 Registra os acessos dos usuários ao sistema.
@@ -53,8 +47,6 @@ Registra os acessos dos usuários ao sistema.
 | data_hora   | TIMESTAMP   | Data e hora do login.                        |
 | id_usuario  | INTEGER     | Chave estrangeira referenciando T_Usuario.   |
 
-### Restrições
-- `fk_usuario_login`: Chave estrangeira referenciando `id_usuario` na tabela `T_Usuario`.
 
 
 ## Tabela: Comodo
@@ -66,8 +58,6 @@ Armazena informações sobre os cômodos associados aos usuários.
 | id_usuario  | INTEGER     | Chave estrangeira referenciando T_Usuario.   |
 | descricao   | VARCHAR2    | Nome ou descrição do cômodo.                 |
 
-### Restrições
-- `fk_usuario_comodo`: Chave estrangeira referenciando `id_usuario` na tabela `T_Usuario`.
 
 
 ## Tabela: Item Casa
@@ -77,7 +67,6 @@ Armazena os itens específicos em cada cômodo.
 |--------------------|-------------|------------------------------------------------|
 | id_item_casa       | INTEGER     | Chave primária, gerada automaticamente.        |
 | id_comodo          | INTEGER     | Chave estrangeira para o cômodo.               |
-| id_tipo_dispositivo| INTEGER     | Chave estrangeira para o tipo de dispositivo.  |
 | descricao          | VARCHAR2    | Descrição do item (ex.: lâmpada, ventilador).  |
 
 
@@ -108,20 +97,5 @@ Armazena as recomendações relacionadas ao consumo de itens em diferentes cômo
 | data_recomendacao | DATE            | Data da recomendação.                                       |
 
 
-## Tabela: Configuracao Usuario
-Armazena as configurações de cada usuário, incluindo notificações e limites de consumo.
-
-| Campo                  | Tipo           | Descrição                                                               |
-|------------------------|----------------|-------------------------------------------------------------------------|
-| id_config              | INTEGER        | Chave primária, gerada automaticamente.                                 |
-| id_usuario             | INTEGER        | Chave estrangeira que referencia a tabela T_Usuario.                    |
-| id_tipo_notificacao    | INTEGER        | Chave estrangeira que referencia a tabela T_Tipo_Notificacao.           |
-| limite_consumo         | DECIMAL(10, 2) | Limite de consumo para alertas de notificação.                          |
-
-
-### Relacionamentos:
-- **id_usuario**: Chave estrangeira referenciando `T_Usuario(id_usuario)`.
-- **id_item_casa**: Chave estrangeira referenciando `T_Item_Casa(id_item_casa)`.
-- **id_tipo_evento**: Chave estrangeira referenciando `T_Tipo_Evento(id_tipo_evento)`.
 
 
