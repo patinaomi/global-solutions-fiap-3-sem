@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,18 +36,8 @@ public class ItemCasa {
     @JoinColumn(name = "id_comodo")
     private Comodo comodo;
 
-    @ManyToOne // afinal muiitos itens de casa podem ter um tipo de dispositivo!
-    @JoinColumn(name = "id_tipo_dispositivo")
-    private TipoDispositivo tipoDispositivo;
-
     @OneToMany(mappedBy = "itemCasa")
     private List<Consumo> consumos;
-
-    @OneToMany(mappedBy = "itemCasa")
-    private List<HistoricoAlerta> historicoAlertas;
-
-    @OneToMany(mappedBy = "itemCasa")
-    private List<EventoManutencao> eventoManutencoes;
 
     @OneToMany(mappedBy = "itemCasa")
     private List<Recomendacao> recomendacoes;

@@ -45,9 +45,6 @@ public class Usuario {
         @Column(length = 100, nullable = false)
         private String senha;
 
-        @Column(name = "data_nasc", nullable = false)
-        private LocalDate dataNasc;
-
         @OneToOne
         @JoinColumn(name = "id_endereco")
         private Endereco endereco;
@@ -59,24 +56,9 @@ public class Usuario {
         private List<Comodo> comodos;
 
         @OneToMany(mappedBy = "usuario")
-        private List<Orcamento> orcamentos;
-
-        @OneToMany(mappedBy = "usuario")
-        private List<Notificacao> notificacoes;
-
-        @OneToMany(mappedBy = "usuario")
-        private  List<ConfiguracaoUsuario> configuracoesUsuario;
-
-        @OneToMany(mappedBy = "usuario")
-        private List<HistoricoAlerta> historicoAlertas;
-
-        @OneToMany(mappedBy = "usuario")
-        private List<EventoManutencao> eventosManutencao;
-
-        @OneToMany(mappedBy = "usuario")
-        private List<Feedback> feedbacks;
-
-        @OneToMany(mappedBy = "usuario")
         private List<Recomendacao> recomendacoes;
+
+        @OneToMany(mappedBy = "usuario")
+        private List<Consumo> consumos;
 
 }

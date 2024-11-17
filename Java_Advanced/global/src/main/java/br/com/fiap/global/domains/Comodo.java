@@ -6,22 +6,22 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "t_comodo")
 public class Comodo {
@@ -42,8 +42,8 @@ public class Comodo {
     private List<ItemCasa> itensCasa;
 
     @OneToMany(mappedBy = "comodo")
-    private List<HistoricoAlerta> historicoAlertas;
+    private List<Recomendacao> recomendacoes;
 
     @OneToMany(mappedBy = "comodo")
-    private List<Recomendacao> recomendacoes;
+    private List<Consumo> consumos;
 }
