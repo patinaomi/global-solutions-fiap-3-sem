@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
@@ -55,8 +56,8 @@ public class Usuario {
     @JoinColumn(name = "id_endereco")
     private Endereco endereco;
 
-    @OneToOne(mappedBy = "usuario")
-    private Login login;
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    private List<Login> logins = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario")
     private List<Comodo> comodos;

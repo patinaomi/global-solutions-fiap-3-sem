@@ -1,6 +1,7 @@
 package br.com.fiap.global.exception;
 
 import br.com.fiap.global.gateways.dtos.response.StandardErrorResponse;
+import br.com.fiap.global.service.exception.AuthenticationException;
 import br.com.fiap.global.service.exception.DataIntegrityException;
 import br.com.fiap.global.service.exception.EmailException;
 import jakarta.persistence.EntityNotFoundException;
@@ -41,5 +42,17 @@ public class GlobalExceptionHandler {
     public ResponseEntity<StandardErrorResponse> illegalArgumentException(IllegalArgumentException e) {
         StandardErrorResponse err = new StandardErrorResponse(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<StandardErrorResponse> authenticationException(AuthenticationException e) {
+        StandardErrorResponse err = new StandardErrorResponse(HttpStatus.UNAUTHORIZED.value(), e.getMessage(), System.currentTimeMillis());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(err);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<StandardErrorResponse> runtimeException(RuntimeException e) {
+        StandardErrorResponse err = new StandardErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage(), System.currentTimeMillis());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(err);
     }
 }
