@@ -8,6 +8,7 @@ import br.com.fiap.global.gateways.dtos.response.EnderecoResponse;
 import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
 import br.com.fiap.global.gateways.repository.EnderecoRepository;
 import br.com.fiap.global.gateways.repository.EstadoRepository;
+import br.com.fiap.global.service.EstadoService;
 import br.com.fiap.global.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -34,9 +35,8 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 @Tag(name = "usuario", description = "Operações relacionadas a usuários")
 public class UsuarioController {
 
-    private final UsuarioService service;
-    private final EstadoRepository estadoRepository;
-    private final EnderecoRepository enderecoRepository;
+    private final UsuarioService usuarioService;
+    private final EstadoService estadoService;
 
     @Operation(summary = "Cria um novo usuario", description = "Cria um novo usuario com base nos dados informados")
     @ApiResponses(value = {
@@ -47,57 +47,52 @@ public class UsuarioController {
     })
     @PostMapping("/create")
     public ResponseEntity<?> create(@Valid @RequestBody UsuarioRequest request) {
-        try {
-            Estado estado = estadoRepository.findById(request.getEndereco().getEstadoId())
-                    .orElseThrow(() -> new EntityNotFoundException("Estado não encontrado"));
 
-            Endereco endereco = Endereco.builder()
-                    .logradouro(request.getEndereco().getLogradouro())
-                    .numero(request.getEndereco().getNumero())
-                    .complemento(request.getEndereco().getComplemento())
-                    .bairro(request.getEndereco().getBairro())
-                    .cidade(request.getEndereco().getCidade())
-                    .cep(request.getEndereco().getCep())
-                    .estado(estado)
-                    .build();
+        Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
 
-            Usuario usuario = Usuario.builder()
-                    .nome(request.getNome())
-                    .sobrenome(request.getSobrenome())
-                    .telefone(request.getTelefone())
-                    .email(request.getEmail())
-                    .senha(request.getSenha())
-                    .endereco(endereco)
-                    .build();
+        Endereco endereco = Endereco.builder()
+                .logradouro(request.getEndereco().getLogradouro())
+                .numero(request.getEndereco().getNumero())
+                .complemento(request.getEndereco().getComplemento())
+                .bairro(request.getEndereco().getBairro())
+                .cidade(request.getEndereco().getCidade())
+                .cep(request.getEndereco().getCep())
+                .estado(estado)
+                .build();
 
-            Usuario usuarioSalvo = service.create(usuario);
+        Usuario usuario = Usuario.builder()
+                .nome(request.getNome())
+                .sobrenome(request.getSobrenome())
+                .telefone(request.getTelefone())
+                .email(request.getEmail())
+                .senha(request.getSenha())
+                .endereco(endereco)
+                .build();
 
-            UsuarioResponse response = UsuarioResponse.builder()
-                    .id(usuarioSalvo.getId())
-                    .nome(usuarioSalvo.getNome())
-                    .sobrenome(usuarioSalvo.getSobrenome())
-                    .telefone(usuarioSalvo.getTelefone())
-                    .email(usuarioSalvo.getEmail())
-                    .endereco(
-                            EnderecoResponse.builder()
-                                    .logradouro(usuarioSalvo.getEndereco().getLogradouro())
-                                    .numero(usuarioSalvo.getEndereco().getNumero())
-                                    .complemento(usuarioSalvo.getEndereco().getComplemento())
-                                    .bairro(usuarioSalvo.getEndereco().getBairro())
-                                    .cidade(usuarioSalvo.getEndereco().getCidade())
-                                    .cep(usuarioSalvo.getEndereco().getCep())
-                                    .estadoId(usuarioSalvo.getEndereco().getEstado().getId())
-                                    .build()
-                    )
-                    .build();
+        Usuario usuarioSalvo = usuarioService.create(usuario);
 
-            Link link = linkTo(UsuarioController.class).slash(usuarioSalvo.getId()).withSelfRel();
-            response.add(link);
+        UsuarioResponse response = UsuarioResponse.builder()
+                .id(usuarioSalvo.getId())
+                .nome(usuarioSalvo.getNome())
+                .sobrenome(usuarioSalvo.getSobrenome())
+                .telefone(usuarioSalvo.getTelefone())
+                .email(usuarioSalvo.getEmail())
+                .endereco(
+                        EnderecoResponse.builder()
+                                .logradouro(usuarioSalvo.getEndereco().getLogradouro())
+                                .numero(usuarioSalvo.getEndereco().getNumero())
+                                .complemento(usuarioSalvo.getEndereco().getComplemento())
+                                .bairro(usuarioSalvo.getEndereco().getBairro())
+                                .cidade(usuarioSalvo.getEndereco().getCidade())
+                                .cep(usuarioSalvo.getEndereco().getCep())
+                                .estadoId(usuarioSalvo.getEndereco().getEstado().getId())
+                                .build()
+                )
+                .build();
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
-        }
+        Link link = linkTo(UsuarioController.class).slash(usuarioSalvo.getId()).withSelfRel();
+        response.add(link);
 
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }

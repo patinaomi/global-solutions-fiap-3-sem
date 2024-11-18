@@ -25,20 +25,22 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<StandardErrorResponse> entityNotFoundException(EntityNotFoundException e) {
-        StandardErrorResponse err = new StandardErrorResponse(HttpStatus.NOT_FOUND.value(), e.getMessage(), System.currentTimeMillis());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(err);
-    }
-
     @ExceptionHandler(EmailException.class)
     public ResponseEntity<StandardErrorResponse> emailException(EmailException e) {
         StandardErrorResponse err = new StandardErrorResponse(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<StandardErrorResponse> illegalArgumentException(IllegalArgumentException e) {
+        StandardErrorResponse err = new StandardErrorResponse(HttpStatus.BAD_REQUEST.value(), e.getMessage(), System.currentTimeMillis());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<StandardErrorResponse> exception(Exception e) {
         StandardErrorResponse err = new StandardErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage(), System.currentTimeMillis());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(err);
     }
+
 }
