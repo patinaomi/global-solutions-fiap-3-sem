@@ -12,54 +12,55 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "t_usuario")
 public class Usuario {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "id_usuario", nullable = false)
-        private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario", nullable = false)
+    private Integer id;
 
-        @Column(length = 50, nullable = false)
-        private String nome;
+    @Column(length = 50, nullable = false)
+    private String nome;
 
-        @Column(length = 50, nullable = false)
-        private String sobrenome;
+    @Column(length = 50, nullable = false)
+    private String sobrenome;
 
-        @Column(length = 15, nullable = false)
-        private String telefone;
+    @Column(length = 15, nullable = false)
+    private String telefone;
 
-        @Column(length = 100, nullable = false)
-        private String email;
+    @Column(length = 100, nullable = false)
+    private String email;
 
-        @Column(length = 100, nullable = false)
-        private String senha;
+    @Column(length = 100, nullable = false)
+    private String senha;
 
-        @OneToOne(cascade = CascadeType.ALL)
-        @JoinColumn(name = "id_endereco")
-        private Endereco endereco;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_endereco")
+    private Endereco endereco;
 
-        @OneToOne(mappedBy = "usuario")
-        private Login login;
+    @OneToOne(mappedBy = "usuario")
+    private Login login;
 
-        @OneToMany(mappedBy = "usuario")
-        private List<Comodo> comodos;
+    @OneToMany(mappedBy = "usuario")
+    private List<Comodo> comodos;
 
-        @OneToMany(mappedBy = "usuario")
-        private List<Recomendacao> recomendacoes;
+    @OneToMany(mappedBy = "usuario")
+    private List<Recomendacao> recomendacoes;
 
-        @OneToMany(mappedBy = "usuario")
-        private List<Consumo> consumos;
+    @OneToMany(mappedBy = "usuario")
+    private List<Consumo> consumos;
 
 }

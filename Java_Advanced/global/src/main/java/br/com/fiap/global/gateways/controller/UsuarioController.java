@@ -4,6 +4,7 @@ import br.com.fiap.global.domains.Endereco;
 import br.com.fiap.global.domains.Estado;
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.dtos.request.UsuarioRequest;
+import br.com.fiap.global.gateways.dtos.request.UsuarioUpdateRequest;
 import br.com.fiap.global.gateways.dtos.response.EnderecoResponse;
 import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
 import br.com.fiap.global.service.EstadoService;
@@ -19,8 +20,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -103,32 +108,215 @@ public class UsuarioController {
     public ResponseEntity<?> findAll() {
         List<Usuario> usuarios = usuarioService.findAll();
 
-        List<UsuarioResponse> usuarioResponses = usuarios.stream().map(usuario ->  {
-            UsuarioResponse response =  UsuarioResponse.builder()
-                            .id(usuario.getId())
-                            .nome(usuario.getNome())
-                            .sobrenome(usuario.getSobrenome())
-                            .telefone(usuario.getTelefone())
-                            .email(usuario.getEmail())
-                            .endereco(
-                                    EnderecoResponse.builder()
-                                            .logradouro(usuario.getEndereco().getLogradouro())
-                                            .numero(usuario.getEndereco().getNumero())
-                                            .complemento(usuario.getEndereco().getComplemento())
-                                            .bairro(usuario.getEndereco().getBairro())
-                                            .cidade(usuario.getEndereco().getCidade())
-                                            .cep(usuario.getEndereco().getCep())
-                                            .estadoId(usuario.getEndereco().getEstado().getId())
-                                            .build()
-                            )
-                            .build();
-                    Link link = linkTo(methodOn(UsuarioController.class).findAll()).withSelfRel();
-                    response.add(link);
-                    return response;
-                }).collect(Collectors.toList());
+        List<UsuarioResponse> usuarioResponses = usuarios.stream().map(usuario -> {
+            UsuarioResponse response = UsuarioResponse.builder()
+                    .id(usuario.getId())
+                    .nome(usuario.getNome())
+                    .sobrenome(usuario.getSobrenome())
+                    .telefone(usuario.getTelefone())
+                    .email(usuario.getEmail())
+                    .endereco(
+                            EnderecoResponse.builder()
+                                    .logradouro(usuario.getEndereco().getLogradouro())
+                                    .numero(usuario.getEndereco().getNumero())
+                                    .complemento(usuario.getEndereco().getComplemento())
+                                    .bairro(usuario.getEndereco().getBairro())
+                                    .cidade(usuario.getEndereco().getCidade())
+                                    .cep(usuario.getEndereco().getCep())
+                                    .estadoId(usuario.getEndereco().getEstado().getId())
+                                    .build()
+                    )
+                    .build();
+            Link link = linkTo(methodOn(UsuarioController.class).findAll()).withSelfRel();
+            response.add(link);
+            return response;
+        }).collect(Collectors.toList());
 
         return ResponseEntity.ok(usuarioResponses);
     }
 
+    @Operation(summary = "Buscar usuário por ID", description = "Retorna um usuário com base no ID fornecido")
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable Integer id) {
+        Usuario usuario = usuarioService.findById(id);
 
+        UsuarioResponse response = UsuarioResponse.builder()
+                .id(usuario.getId())
+                .nome(usuario.getNome())
+                .sobrenome(usuario.getSobrenome())
+                .telefone(usuario.getTelefone())
+                .email(usuario.getEmail())
+                .endereco(
+                        EnderecoResponse.builder()
+                                .logradouro(usuario.getEndereco().getLogradouro())
+                                .numero(usuario.getEndereco().getNumero())
+                                .complemento(usuario.getEndereco().getComplemento())
+                                .bairro(usuario.getEndereco().getBairro())
+                                .cidade(usuario.getEndereco().getCidade())
+                                .cep(usuario.getEndereco().getCep())
+                                .estadoId(usuario.getEndereco().getEstado().getId())
+                                .build()
+                )
+                .build();
+
+        response.add(linkTo(methodOn(UsuarioController.class).findById(id)).withSelfRel());
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Atualizar usuário", description = "Atualiza um usuário com base no ID fornecido")
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody UsuarioRequest request) {
+        Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
+
+        Endereco endereco = Endereco.builder()
+                .logradouro(request.getEndereco().getLogradouro())
+                .numero(request.getEndereco().getNumero())
+                .complemento(request.getEndereco().getComplemento())
+                .bairro(request.getEndereco().getBairro())
+                .cidade(request.getEndereco().getCidade())
+                .cep(request.getEndereco().getCep())
+                .estado(estado)
+                .build();
+
+        Usuario usuario = Usuario.builder()
+                .nome(request.getNome())
+                .sobrenome(request.getSobrenome())
+                .telefone(request.getTelefone())
+                .email(request.getEmail())
+                .senha(request.getSenha())
+                .endereco(endereco)
+                .build();
+
+        Usuario usuarioSalvo = usuarioService.update(id, usuario);
+
+        UsuarioResponse response = UsuarioResponse.builder()
+                .id(usuarioSalvo.getId())
+                .nome(usuarioSalvo.getNome())
+                .sobrenome(usuarioSalvo.getSobrenome())
+                .telefone(usuarioSalvo.getTelefone())
+                .email(usuarioSalvo.getEmail())
+                .endereco(
+                        EnderecoResponse.builder()
+                                .logradouro(usuarioSalvo.getEndereco().getLogradouro())
+                                .numero(usuarioSalvo.getEndereco().getNumero())
+                                .complemento(usuarioSalvo.getEndereco().getComplemento())
+                                .bairro(usuarioSalvo.getEndereco().getBairro())
+                                .cidade(usuarioSalvo.getEndereco().getCidade())
+                                .cep(usuarioSalvo.getEndereco().getCep())
+                                .estadoId(usuarioSalvo.getEndereco().getEstado().getId())
+                                .build()
+                )
+                .build();
+
+        Link link = linkTo(UsuarioController.class).slash(usuarioSalvo.getId()).withSelfRel();
+        response.add(link);
+
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Deletar Usuário", description = "Deleta um usuário com base no ID fornecido")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        usuarioService.delete(id);
+        return ResponseEntity.ok("Usuário com ID " + id + " deletado com sucesso");
+    }
+
+    @Operation(summary = "Atualizar campos específicos do usuário", description = "Atualiza campos específicos de um usuário com base no ID fornecido")
+    @PatchMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário atualizado com sucesso"),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado"),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
+    })
+    public ResponseEntity<?> updateParcial(@PathVariable Integer id, @RequestBody UsuarioUpdateRequest request) {
+        Usuario usuario = usuarioService.findById(id);
+
+        if (request.getNome() != null) {
+            usuario.setNome(request.getNome());
+        }
+
+        if (request.getSobrenome() != null) {
+            usuario.setSobrenome(request.getSobrenome());
+        }
+
+        if (request.getTelefone() != null) {
+            usuario.setTelefone(request.getTelefone());
+        }
+
+        if (request.getEmail() != null) {
+            usuario.setEmail(request.getEmail());
+        }
+
+        if (request.getSenha() != null) {
+            usuario.setSenha(request.getSenha());
+        }
+
+        if (request.getEndereco() != null) {
+            Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
+
+            Endereco enderecoExistente = usuario.getEndereco();
+
+            if (enderecoExistente == null) {
+                Endereco novoEndereco = Endereco.builder()
+                        .logradouro(request.getEndereco().getLogradouro())
+                        .numero(request.getEndereco().getNumero())
+                        .complemento(request.getEndereco().getComplemento())
+                        .bairro(request.getEndereco().getBairro())
+                        .cidade(request.getEndereco().getCidade())
+                        .cep(request.getEndereco().getCep())
+                        .estado(estado)
+                        .build();
+
+                usuario.setEndereco(novoEndereco);
+            } else {
+                if (request.getEndereco().getLogradouro() != null) {
+                    enderecoExistente.setLogradouro(request.getEndereco().getLogradouro());
+                }
+                if (request.getEndereco().getNumero() != null) {
+                    enderecoExistente.setNumero(request.getEndereco().getNumero());
+                }
+                if (request.getEndereco().getComplemento() != null) {
+                    enderecoExistente.setComplemento(request.getEndereco().getComplemento());
+                }
+                if (request.getEndereco().getBairro() != null) {
+                    enderecoExistente.setBairro(request.getEndereco().getBairro());
+                }
+                if (request.getEndereco().getCidade() != null) {
+                    enderecoExistente.setCidade(request.getEndereco().getCidade());
+                }
+                if (request.getEndereco().getCep() != null) {
+                    enderecoExistente.setCep(request.getEndereco().getCep());
+                }
+                if (request.getEndereco().getEstadoId() != null) {
+                    enderecoExistente.setEstado(estado);
+                }
+            }
+        }
+
+        Usuario usuarioSalvo = usuarioService.update(id, usuario);
+
+        UsuarioResponse response = UsuarioResponse.builder()
+                .id(usuarioSalvo.getId())
+                .nome(usuarioSalvo.getNome())
+                .sobrenome(usuarioSalvo.getSobrenome())
+                .telefone(usuarioSalvo.getTelefone())
+                .email(usuarioSalvo.getEmail())
+                .endereco(
+                        EnderecoResponse.builder()
+                                .logradouro(usuarioSalvo.getEndereco().getLogradouro())
+                                .numero(usuarioSalvo.getEndereco().getNumero())
+                                .complemento(usuarioSalvo.getEndereco().getComplemento())
+                                .bairro(usuarioSalvo.getEndereco().getBairro())
+                                .cidade(usuarioSalvo.getEndereco().getCidade())
+                                .cep(usuarioSalvo.getEndereco().getCep())
+                                .estadoId(usuarioSalvo.getEndereco().getEstado().getId())
+                                .build()
+                )
+                .build();
+
+        Link link = linkTo(UsuarioController.class).slash(usuarioSalvo.getId()).withSelfRel();
+        response.add(link);
+
+        return ResponseEntity.ok(response);
+    }
 }

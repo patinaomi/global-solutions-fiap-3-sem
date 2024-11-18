@@ -1,6 +1,5 @@
 package br.com.fiap.global.service.impl;
 
-import br.com.fiap.global.gateways.repository.UsuarioRepository;
 import br.com.fiap.global.service.EmailService;
 import br.com.fiap.global.service.exception.EmailException;
 import lombok.RequiredArgsConstructor;

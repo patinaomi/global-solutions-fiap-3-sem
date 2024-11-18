@@ -1,15 +1,13 @@
 package br.com.fiap.global.gateways.dtos.response;
 
-import br.com.fiap.global.domains.Estado;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
 @Builder
-@Data
+@Getter
+@Setter
 public class EnderecoResponse extends RepresentationModel<EnderecoResponse> {
 
     private String logradouro;

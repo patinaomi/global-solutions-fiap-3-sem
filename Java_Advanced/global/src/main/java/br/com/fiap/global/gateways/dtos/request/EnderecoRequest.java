@@ -1,10 +1,12 @@
 package br.com.fiap.global.gateways.dtos.request;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
 
-@Data
+@Getter
+@Setter
 public class EnderecoRequest extends RepresentationModel<EnderecoRequest> {
     private String logradouro;
     private String numero;

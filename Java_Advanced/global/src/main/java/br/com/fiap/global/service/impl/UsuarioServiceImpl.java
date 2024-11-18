@@ -3,9 +3,12 @@ package br.com.fiap.global.service.impl;
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.repository.UsuarioRepository;
 import br.com.fiap.global.service.UsuarioService;
+import br.com.fiap.global.service.exception.DataIntegrityException;
 import br.com.fiap.global.service.exception.EntityNotFoundException;
 import br.com.fiap.global.service.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,21 +51,23 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario update(Integer id, Usuario usuario) {
-        if(repository.existsById(id)) {
-            usuario.setId(id);
-            usuario.setTelefone(limparCaracteresTel(usuario.getTelefone()));
-            return repository.save(usuario);
-        } else {
-            throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Usuario.class.getName());
-        }
+        Usuario usuarioExists = findById(id);
+
+        usuario.setId(usuarioExists.getId());
+        usuario.setTelefone(limparCaracteresTel(usuario.getTelefone()));
+
+        return repository.save(usuario);
     }
+
 
     @Override
     public void delete(Integer id) {
-        if(repository.existsById(id)) {
+        try {
             repository.deleteById(id);
-        } else {
-            throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Usuario.class.getName());
+        } catch (EmptyResultDataAccessException e) {
+            throw new EntityNotFoundException("Não pode ser Deletado! Id não encontrado: " + id + ", Tipo: " + Usuario.class.getName());
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Não pode ser Deletado! O registro está relacionado a outros dados.");
         }
     }
 

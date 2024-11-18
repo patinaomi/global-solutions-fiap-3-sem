@@ -1,7 +1,6 @@
 package br.com.fiap.global.service.impl;
 
 import br.com.fiap.global.domains.Estado;
-import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.repository.EstadoRepository;
 import br.com.fiap.global.service.EstadoService;
 import br.com.fiap.global.service.exception.ObjectNotFoundException;
