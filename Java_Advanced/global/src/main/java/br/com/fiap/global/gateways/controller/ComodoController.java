@@ -100,6 +100,7 @@ public class ComodoController {
             @ApiResponse(responseCode = "404", description = "Cômodo não encontrado", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
     })
+    @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
         Comodo comodo = comodoService.findById(id);
 

@@ -11,7 +11,7 @@ import org.springframework.hateoas.RepresentationModel;
 public class ComodoRequest extends RepresentationModel<ComodoRequest> {
 
     @NotNull(message = "O campo descrição é obrigatório")
-    @Size(message = "O campo descrição deve ter no máximo 50 caracteres")
+    @Size(message = "O campo descrição deve ter entre 3 e 50 caracteres", min = 3, max = 50)
     private String descricao;
 
 }

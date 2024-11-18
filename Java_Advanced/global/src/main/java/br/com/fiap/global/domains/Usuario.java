@@ -46,7 +46,7 @@ public class Usuario {
     @Column(length = 100, nullable = false)
     private String email;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 30, nullable = false)
     private String senha;
 
     @Column(name = "data_nasc", nullable = false)

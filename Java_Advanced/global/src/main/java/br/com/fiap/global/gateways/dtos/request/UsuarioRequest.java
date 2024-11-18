@@ -32,7 +32,7 @@ public class UsuarioRequest extends RepresentationModel<UsuarioRequest> {
     String email;
 
     @NotNull(message = "A senha não pode ficar nula")
-    @Size(message = "A senha deve ter até 100 caracteres", min = 5, max = 100)
+    @Size(message = "A senha deve ter entre 5 e 30 caracteres", min = 5, max = 30)
     String senha;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

@@ -27,7 +27,7 @@ public class UsuarioUpdateRequest extends RepresentationModel<UsuarioUpdateReque
     @Email(message = "O e-mail está inválido")
     String email;
 
-    @Size(message = "A senha deve ter até 100 caracteres", min = 5, max = 100)
+    @Size(message = "A senha deve ter entre 5 até 30 caracteres", min = 5, max = 30)
     String senha;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
