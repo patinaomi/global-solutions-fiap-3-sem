@@ -6,8 +6,6 @@ import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.dtos.request.UsuarioRequest;
 import br.com.fiap.global.gateways.dtos.response.EnderecoResponse;
 import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
-import br.com.fiap.global.gateways.repository.EnderecoRepository;
-import br.com.fiap.global.gateways.repository.EstadoRepository;
 import br.com.fiap.global.service.EstadoService;
 import br.com.fiap.global.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,18 +14,22 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RequiredArgsConstructor
 @RestController
@@ -95,4 +97,38 @@ public class UsuarioController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
+    @Operation(summary = "Buscar todos os Usuários", description = "Retorna uma lista de todos os usuários")
+    @GetMapping
+    public ResponseEntity<?> findAll() {
+        List<Usuario> usuarios = usuarioService.findAll();
+
+        List<UsuarioResponse> usuarioResponses = usuarios.stream().map(usuario ->  {
+            UsuarioResponse response =  UsuarioResponse.builder()
+                            .id(usuario.getId())
+                            .nome(usuario.getNome())
+                            .sobrenome(usuario.getSobrenome())
+                            .telefone(usuario.getTelefone())
+                            .email(usuario.getEmail())
+                            .endereco(
+                                    EnderecoResponse.builder()
+                                            .logradouro(usuario.getEndereco().getLogradouro())
+                                            .numero(usuario.getEndereco().getNumero())
+                                            .complemento(usuario.getEndereco().getComplemento())
+                                            .bairro(usuario.getEndereco().getBairro())
+                                            .cidade(usuario.getEndereco().getCidade())
+                                            .cep(usuario.getEndereco().getCep())
+                                            .estadoId(usuario.getEndereco().getEstado().getId())
+                                            .build()
+                            )
+                            .build();
+                    Link link = linkTo(methodOn(UsuarioController.class).findAll()).withSelfRel();
+                    response.add(link);
+                    return response;
+                }).collect(Collectors.toList());
+
+        return ResponseEntity.ok(usuarioResponses);
+    }
+
+
 }

@@ -3,6 +3,7 @@ package br.com.fiap.global.service.impl;
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.repository.UsuarioRepository;
 import br.com.fiap.global.service.UsuarioService;
+import br.com.fiap.global.service.exception.EntityNotFoundException;
 import br.com.fiap.global.service.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<Usuario> findAll() {
-        return repository.findAll();
+        List<Usuario> usuarios = repository.findAll();
+        if (usuarios.isEmpty()) {
+            throw new EntityNotFoundException("Nenhum usuário encontrado.");
+        }
+        return usuarios;
     }
 
     @Override
