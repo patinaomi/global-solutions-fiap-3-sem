@@ -8,7 +8,6 @@ import br.com.fiap.global.service.exception.EntityNotFoundException;
 import br.com.fiap.global.service.exception.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -62,14 +61,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public void delete(Integer id) {
+        if (!repository.existsById(id)) {
+            throw new EntityNotFoundException("Não pode ser Deletado! Id não encontrado: " + id + ", Tipo: " + Usuario.class.getName());
+        }
         try {
             repository.deleteById(id);
-        } catch (EmptyResultDataAccessException e) {
-            throw new EntityNotFoundException("Não pode ser Deletado! Id não encontrado: " + id + ", Tipo: " + Usuario.class.getName());
         } catch (DataIntegrityViolationException e) {
             throw new DataIntegrityException("Não pode ser Deletado! O registro está relacionado a outros dados.");
         }
     }
+
 
     // Método utilitário para limpar caracteres não numéricos do telefone
     private String limparCaracteresTel(String telefone) {

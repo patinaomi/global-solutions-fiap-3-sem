@@ -16,6 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @NoArgsConstructor
@@ -46,6 +47,9 @@ public class Usuario {
 
     @Column(length = 100, nullable = false)
     private String senha;
+
+    @Column(name = "data_nasc", nullable = false)
+    private LocalDate dataNasc;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_endereco")

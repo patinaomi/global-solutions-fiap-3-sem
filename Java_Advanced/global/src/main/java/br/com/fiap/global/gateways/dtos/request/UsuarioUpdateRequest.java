@@ -7,6 +7,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Getter
 @Setter
 public class UsuarioUpdateRequest extends RepresentationModel<UsuarioUpdateRequest> {
@@ -25,6 +29,9 @@ public class UsuarioUpdateRequest extends RepresentationModel<UsuarioUpdateReque
 
     @Size(message = "A senha deve ter até 100 caracteres", min = 5, max = 100)
     String senha;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dataNasc;
 
     @Valid
     private EnderecoRequest endereco;

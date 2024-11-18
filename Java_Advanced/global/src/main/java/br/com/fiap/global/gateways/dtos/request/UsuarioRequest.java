@@ -8,6 +8,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Getter
 @Setter
 public class UsuarioRequest extends RepresentationModel<UsuarioRequest> {
@@ -30,6 +34,9 @@ public class UsuarioRequest extends RepresentationModel<UsuarioRequest> {
     @NotNull(message = "A senha não pode ficar nula")
     @Size(message = "A senha deve ter até 100 caracteres", min = 5, max = 100)
     String senha;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dataNasc;
 
     @NotNull(message = "O endereço não pode ser nulo")
     @Valid

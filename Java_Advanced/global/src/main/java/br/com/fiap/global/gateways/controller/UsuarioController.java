@@ -73,6 +73,7 @@ public class UsuarioController {
                 .telefone(request.getTelefone())
                 .email(request.getEmail())
                 .senha(request.getSenha())
+                .dataNasc(request.getDataNasc())
                 .endereco(endereco)
                 .build();
 
@@ -84,6 +85,7 @@ public class UsuarioController {
                 .sobrenome(usuarioSalvo.getSobrenome())
                 .telefone(usuarioSalvo.getTelefone())
                 .email(usuarioSalvo.getEmail())
+                .dataNasc(request.getDataNasc())
                 .endereco(
                         EnderecoResponse.builder()
                                 .logradouro(usuarioSalvo.getEndereco().getLogradouro())
@@ -115,6 +117,7 @@ public class UsuarioController {
                     .sobrenome(usuario.getSobrenome())
                     .telefone(usuario.getTelefone())
                     .email(usuario.getEmail())
+                    .dataNasc(usuario.getDataNasc())
                     .endereco(
                             EnderecoResponse.builder()
                                     .logradouro(usuario.getEndereco().getLogradouro())
@@ -146,6 +149,7 @@ public class UsuarioController {
                 .sobrenome(usuario.getSobrenome())
                 .telefone(usuario.getTelefone())
                 .email(usuario.getEmail())
+                .dataNasc(usuario.getDataNasc())
                 .endereco(
                         EnderecoResponse.builder()
                                 .logradouro(usuario.getEndereco().getLogradouro())
@@ -184,6 +188,7 @@ public class UsuarioController {
                 .telefone(request.getTelefone())
                 .email(request.getEmail())
                 .senha(request.getSenha())
+                .dataNasc(request.getDataNasc())
                 .endereco(endereco)
                 .build();
 
@@ -195,6 +200,7 @@ public class UsuarioController {
                 .sobrenome(usuarioSalvo.getSobrenome())
                 .telefone(usuarioSalvo.getTelefone())
                 .email(usuarioSalvo.getEmail())
+                .dataNasc(usuarioSalvo.getDataNasc())
                 .endereco(
                         EnderecoResponse.builder()
                                 .logradouro(usuarioSalvo.getEndereco().getLogradouro())
@@ -251,6 +257,10 @@ public class UsuarioController {
             usuario.setSenha(request.getSenha());
         }
 
+        if(request.getDataNasc() != null) {
+            usuario.setDataNasc(request.getDataNasc());
+        }
+
         if (request.getEndereco() != null) {
             Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
 
@@ -301,6 +311,7 @@ public class UsuarioController {
                 .sobrenome(usuarioSalvo.getSobrenome())
                 .telefone(usuarioSalvo.getTelefone())
                 .email(usuarioSalvo.getEmail())
+                .dataNasc(usuarioSalvo.getDataNasc())
                 .endereco(
                         EnderecoResponse.builder()
                                 .logradouro(usuarioSalvo.getEndereco().getLogradouro())
