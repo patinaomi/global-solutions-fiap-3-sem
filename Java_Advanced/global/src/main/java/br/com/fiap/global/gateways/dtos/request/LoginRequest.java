@@ -9,13 +9,13 @@ import lombok.Setter;
 @Setter
 public class LoginRequest {
 
-        @NotNull(message = "Email não pode ser nulo")
-        @Email(message = "Email inválido")
-        private String email;
+    @NotNull(message = "Email não pode ser nulo")
+    @Email(message = "Email inválido")
+    private String email;
 
-        @NotNull(message = "Senha não pode ser nula")
-        private String senha;
+    @NotNull(message = "Senha não pode ser nula")
+    private String senha;
 
-        @NotNull(message = "Id não pode ser nulo")
-        private String id;
+    @NotNull(message = "Id não pode ser nulo")
+    private String id;
 }

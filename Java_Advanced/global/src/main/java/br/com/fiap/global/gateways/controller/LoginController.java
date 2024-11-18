@@ -11,16 +11,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("/login")
@@ -37,7 +33,7 @@ public class LoginController {
             @ApiResponse(responseCode = "401", description = "Credenciais inválidas", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
     })
-    @PostMapping
+    @PostMapping("/authenticate")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         Login login = loginService.register(request.getEmail(), request.getSenha());
 
@@ -46,12 +42,6 @@ public class LoginController {
                 .dataHora(login.getDataHora())
                 .usuarioId(login.getUsuario().getId())
                 .build();
-
-        // Adiciona link HATEOAS para detalhes do usuário
-        Link userDetailsLink = linkTo(methodOn(UsuarioController.class).findById(login.getUsuario().getId()))
-                .withRel("getUserDetails");
-
-        response.add(userDetailsLink);
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
