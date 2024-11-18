@@ -13,8 +13,8 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API Challenge Odontoprev")
+                        .title("API Global Solutions")
                         .version("1.0")
-                        .description("Documentação do Projeto do Challenge"));
+                        .description("Documentação do Projeto da Global Solutions da Lexus Tech"));
     }
 }
