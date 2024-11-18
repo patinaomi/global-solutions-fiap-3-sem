@@ -86,3 +86,26 @@ FROM "T_Consumo"
 WHERE "IdUsuario" = 1; 
 
 
+/* Procedure usar em dotnet */
+
+SELECT * FROM "RM553472"."T_Imagem";
+
+SELECT * FROM user_tab_privs WHERE table_name = 'T_Imagem';
+
+
+CREATE OR REPLACE PROCEDURE CadastrarImagemProcedure (
+    NomeImagem IN VARCHAR2,
+    LinkImagem IN VARCHAR2
+)
+AS
+BEGIN
+    INSERT INTO "RM553472"."T_Imagem" ("NomeImagem", "LinkImagem")
+    VALUES (NomeImagem, LinkImagem);
+
+    COMMIT;
+END;
+
+EXEC CadastrarImagemProcedure('Nome da Imagem', 'http://linkdaimagem.com');
+
+
+commit;
