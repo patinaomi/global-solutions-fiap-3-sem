@@ -47,7 +47,7 @@ public class UsuarioController {
 
     @Operation(summary = "Cria um novo usuario", description = "Cria um novo usuario com base nos dados informados")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Dentista criado com sucesso",
+            @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
             @ApiResponse(responseCode = "400", description = "Requisição inválida", content = @Content),
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
@@ -106,6 +106,12 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Buscar todos os Usuários", description = "Retorna uma lista de todos os usuários")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Lista de usuários retornada com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Nenhum usuário encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
     @GetMapping
     public ResponseEntity<?> findAll() {
         List<Usuario> usuarios = usuarioService.findAll();
@@ -139,7 +145,12 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Buscar usuário por ID", description = "Retorna um usuário com base no ID fornecido")
-    @GetMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário encontrado com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
     public ResponseEntity<?> findById(@PathVariable Integer id) {
         Usuario usuario = usuarioService.findById(id);
 
@@ -168,6 +179,13 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Atualizar usuário", description = "Atualiza um usuário com base no ID fornecido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário atualizado com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Requisição inválida", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody UsuarioRequest request) {
         Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
@@ -220,8 +238,14 @@ public class UsuarioController {
         return ResponseEntity.ok(response);
     }
 
-    @Operation(summary = "Deletar Usuário", description = "Deleta um usuário com base no ID fornecido")
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deletar Usuário", description = "Deleta um usuário com base no ID fornecido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário deletado com sucesso"),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado"),
+            @ApiResponse(responseCode = "409", description = "Conflito de integridade"),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
+    })
     public ResponseEntity<?> delete(@PathVariable Integer id) {
         usuarioService.delete(id);
         return ResponseEntity.ok("Usuário com ID " + id + " deletado com sucesso");
