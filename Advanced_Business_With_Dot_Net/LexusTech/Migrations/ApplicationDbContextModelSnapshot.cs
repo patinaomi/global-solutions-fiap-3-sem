@@ -112,6 +112,27 @@ namespace LexusTech.Migrations
                     b.ToTable("T_Endereco");
                 });
 
+            modelBuilder.Entity("LexusTech.Models.Imagem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("LinkImagem")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("NomeImagem")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Imagem");
+                });
+
             modelBuilder.Entity("LexusTech.Models.Item", b =>
                 {
                     b.Property<int>("Id")

@@ -213,6 +213,15 @@ Instale o pacote NuGet para Oracle:
 
 # Processo Oracle
 
+**Procedures**
+
+Instalar este pacote
+
+```bash
+    dotnet add package Oracle.ManagedDataAccess
+```
+
+
 ## Configurar o Program.cs
 
 ```bash

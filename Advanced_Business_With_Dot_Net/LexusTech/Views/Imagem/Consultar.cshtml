@@ -1,0 +1,29 @@
+@model IEnumerable<LexusTech.Models.Imagem>
+
+<section class="p-5">
+
+    <h2>Lista de imagens salvas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var imagem in Model)
+            {
+                <tr>
+                    <td>@imagem.NomeImagem</td>
+                    <td>@imagem.LinkImagem</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group pt-3">
+        <a asp-controller="Imagem" asp-action="Index" class="btn btn-primary">Cadastrar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+
+</section>

@@ -15,4 +15,5 @@
         public DbSet<Item> T_Item_Casa { get; set; }
         public DbSet<Consumo> T_Consumo { get; set; }
         public DbSet<LoginLog> T_Login { get; set; }
+        public DbSet<Imagem> T_Imagem { get; set; }
     }

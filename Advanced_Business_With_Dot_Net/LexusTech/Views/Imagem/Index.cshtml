@@ -1,0 +1,60 @@
+@model LexusTech.Models.Imagem
+
+@{
+    ViewData["Title"] = "Cadastrar Imagem";
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+<section class="d-flex p-3" style="height: 80vh">
+
+    <div class="w-30 d-flex justify-content-center" style="height: 80vh; padding-right: 10px;">
+        
+        <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
+
+            <h1>@ViewData["Title"]</h1>
+
+            <p>
+                Para que possamos analisar e mostrar o consumo de energia da sua residência de forma personalizada, é necessário que você cadastre uma imagem de cada ambiente onde os móveis e aparelhos que afetam o consumo de energia estão localizados.
+            </p>
+
+            <form method="post" asp-action="Criar" class="pt-3">
+                <div class="form-group">
+                    <label for="NomeImagem">Nome da Imagem</label>
+                    <input type="text" class="form-control" id="NomeImagem" name="NomeImagem" required />
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="LinkImagem">Link da Imagem</label>
+                    <input type="text" class="form-control" id="LinkImagem" name="LinkImagem" required />
+                </div>
+
+                <button type="submit" class="btn mt-3" style="background-color: #4CAF50; color: white;">Cadastrar</button>
+
+                <a asp-controller="Imagem" asp-action="Consultar" class="btn btn-primary mt-3">Consultar</a>
+            </form>
+
+            <!-- Exibindo mensagens de sucesso ou erro abaixo do botão -->
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success mt-3" role="alert">
+                    @successMessage
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(errorMessage))
+            {
+                <div class="alert alert-danger mt-3" role="alert">
+                    @errorMessage
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+    <div class="w-100" style="height: 80vh">
+        <img src="~/assets/Imagem/imagem3.png" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
+</section>
