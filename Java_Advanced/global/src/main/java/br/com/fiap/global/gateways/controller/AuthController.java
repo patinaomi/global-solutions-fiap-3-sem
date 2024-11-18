@@ -2,7 +2,6 @@ package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.dtos.request.LoginAuthRequest;
-import br.com.fiap.global.gateways.dtos.request.LoginRequest;
 import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateEmailRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateUserRequest;
