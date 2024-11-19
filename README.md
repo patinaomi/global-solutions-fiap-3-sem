@@ -131,7 +131,7 @@ Baseado nos dados analisados, enviar alertas para os moradores sobre áreas que 
 **Sensores de Energia** Para monitoramento em tempo real.
 **Azure** Para hospedagem e serviços de IA, como o Azure Machine Learning.
 
-# Comparativo de Custos: Sistema de monitoramento de energia vs. Equipamentos Smart (Lâmpadas Inteligentes e Gadgets)
+## ⁉️ Comparativo de Custos: Sistema de monitoramento de energia vs. Equipamentos Smart (Lâmpadas Inteligentes e Gadgets)
 
 ## 1. Sistema de Monitoramento de Energia Simples (com IA)
 
