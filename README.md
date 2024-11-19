@@ -24,7 +24,21 @@ Em construção
 
 ## ⁉️ Desafios e Problemas
 
-Criar uma solução que traga benefícios voltado ao meio ambiente, com foco em energia limpa.
+**Desafio**
+
+Criar um mapa interativo utilizando fotos enviadas pelos clientes que serão mapeadas com IA para identificar os equipamentos elétricos de um apartamento,  de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.
+
+**Problema**
+
+Em um cenário global cada vez mais afetado pelas mudanças climáticas e pela crescente necessidade de fontes de energia limpas e renováveis, a transição para um modelo energético sustentável tornou-se uma prioridade. Governos, empresas e a sociedade civil estão unindo esforços para desenvolver soluções que promovam equilíbrio ambiental e econômico. Nesse contexto, a inovação tecnológica surge como uma aliada indispensável, possibilitando avanços em geração, armazenamento e consumo de energia.
+
+Nossa solução automatiza sua residência, proporcionando eficiência, segurança e economia. Com o nosso sistema, você identifica os principais pontos de manutenção e consumo, reduz gastos com energia e contribui para a preservação do meio ambiente ao aderir as nossas sugestões de equipamentos sustentáveis e que consomem uma quantidade menor de energia. Além disso, cuidamos do seu conforto financeiro, notificando sobre reparos necessários ou alterações nos custos. Assim, você mantém o controle total da sua conta de luz e planeja futuros reparos com tranquilidade, sem surpresas desagradáveis.
+
+## ⁉️ Contexto
+
+O projeto tem como foco desenvolver uma solução inovadora e sustentável para o monitoramento e controle de consumo de energia elétrica em residências, com o objetivo de promover a conscientização sobre o uso eficiente de energia, reduzir custos e minimizar o impacto ambiental. A iniciativa combina tecnologias avançadas através de um painel que será conectado ao quadro de energia, como inteligência artificial e sistemas automatizados, para oferecer aos moradores maior controle sobre seu consumo de energia, além de incentivos para a adoção de práticas mais sustentáveis. Por meio de um sistema inteligente e interativo, o projeto visa transformar o relacionamento das pessoas com a energia que consomem em suas casas, alinhando eficiência, segurança e economia.
+
+Utilizando ferramentas modernas como .NET para desenvolvimento de software e Python para análise de dados, o sistema integra sensores para monitoramento em tempo real, um mapa interativo para visualização de consumo por ambiente e um dashboard com gráficos e estimativas financeiras. Com base na análise de padrões de consumo, o sistema fornecerá alertas sobre áreas de desperdício, sugestões de economia e recomendações de manutenção preventiva, além de indicar a aquisição de novos equipamento s que consomem uma quantidade menor de energia, além de evitar o uso excessivo com energia limpa, ajudando os moradores a reduzir sua pegada ecológica e custos operacionais. Essa abordagem tecnológica busca unir praticidade e inovação ao cuidado com o meio ambiente, oferecendo uma solução completa para residências inteligentes.
 
 ## Nossa essência
 
@@ -44,31 +58,31 @@ Desenvolver um sistema inteligente de monitoramento e controle de consumo de ene
 
 ## Mapeamento do Consumo de Energia
 
-Criar um mapa interativo de um apartamento de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.
+Criar um mapa interativo utilizando fotos enviadas pelos clientes que serão mapeadas com IA para identificar os equipamentos elétricos de um apartamento,  de dois quartos, sala, cozinha, banheiro e lavanderia, que mostre o consumo de energia em tempo real utilizando cores que variam do verde claro ao vermelho, indicando os pontos de maior consumo.
 
 ## Monitoramento em tempo real
 
-Implementar sensores de energia em diferentes pontos do apartamento para coletar dados de consumo em tempo real e enviar essas informações para o servidor.
+Implementar um sensor de energia junto ao painel de energia principal da casa , que vai mapear vários pontos do apartamento para coletar dados de consumo em tempo real e enviar essas informações para o servidor.
 
 ## Análise de dados e previsão de consumo
 
-Utilizar técnicas de machine learning para analisar os dados coletados, prever o consumo de energia e identificar padrões de uso que possam indicar desperdícios ou necessidade de manutenção.
+Utilizar técnicas de machine learning para analisar os dados coletados, prever o consumo de energia e identificar padrões de uso que possam indicar desperdícios ou necessidade de manutenção. 
 
 ## Visualização e feedback ao usuário
 
-Desenvolver um dashboard interativo que permita aos moradores visualizar o consumo de energia em tempo real, com gráficos e alertas sobre áreas de alto consumo e sugestões de economia.
+Desenvolver um dashboard e uma mapa interativo que permita aos moradores visualizar o consumo de energia em tempo real, com gráficos e alertas sobre áreas de alto consumo e sugestões de economia. Além de enviar feedbacks com frequência para avaliar nossos treinamentos, sugestões, indicações de valores e serviçocs prestados.
 
 ## Estimativa de custos
 
-Calcular e exibir a estimativa do valor da conta de luz com base no consumo atual, ajudando os moradores a entenderem o impacto financeiro do uso de energia.
+Calcular e exibir a estimativa do valor da conta de luz com base no consumo atual, ajudando os moradores a entenderem o impacto financeiro do uso de energia. Essa estimativa foi criado com o treinamento da IA, com base nos dados coletados pelo portal da ENEL, que mostra os valores em tabelas e regras de negócio.
 
 ## Recomendações de manutenção
 
-Fornecer recomendações específicas sobre onde realizar manutenção ou ajustes para reduzir o consumo de energia, baseadas na análise dos dados coletados.
+Fornecer recomendações específicas sobre onde realizar manutenção ou ajustes para reduzir o consumo de energia, baseadas na análise dos dados coletados. O cliente pode até trocar o item de acordo com as sugestões de produtos e serviços que vamos recomendar em parceiria com nossos prestadores.
 
 ## Integração de tecnologias
 
-Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Python para a coleta e análise de dados, garantindo uma comunicação eficiente entre os componentes do sistema.
+Integrar as tecnologias .NET para o desenvolvimento do frontend e backend, e Python para a coleta e análise de dados, garantindo uma comunicação eficiente entre os componentes do sistema. O banco de dados vai receber informações de várias tecnologias para que possamos consumir nas aplicações Mobile e Web Interface.
 
 # Estrutura do projeto
 
