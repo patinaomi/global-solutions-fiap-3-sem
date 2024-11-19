@@ -1,5 +1,11 @@
 # Global Solutions
-<p align="center">  <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>  </p>
+
+Examine e desenvolva uma solução tecnológica que
+contribua de maneira significativa e que colabore de forma impactante e viável para a
+melhoria dos processos de energia sustentável. A solução Web a ser desenvolvida deve focar
+nos meios sustentáveis mencionados, focando nas áreas que podem ser impactadas pela
+transição energética. A aplicação deve ser uma API RESTful, construída com os frameworks
+Spring/Spring Boot.
 
 ## Índice
 
