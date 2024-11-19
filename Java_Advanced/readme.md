@@ -26,34 +26,15 @@ Spring/Spring Boot.
 
 Este projeto consiste em uma aplicação de gerenciamento para uma clínica odontológica. Ele permite que dentistas, pacientes e clínicas gerenciem consultas, feedbacks, sinistros, formulários detalhados e muito mais. A aplicação utiliza tecnologias como Java, Spring Boot, e um banco de dados relacional para facilitar o gerenciamento eficiente das operações diárias da clínica.
 
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
+
 **Funcionalidades principais:**
 - Cadastro de pacientes, dentistas e clínicas.
 - Marcação e controle de consultas.
 - Gerenciamento de formulários detalhados de pacientes.
 - Recepção de feedbacks e controle de sinistros.
 
-## Integrantes
-
-- **Claudio Bispo** - RM553472
-Responsável pelo desenvolvimento em Advanced Business Development with .NET, DevOps Tools & Cloud Computing e Compliance, Mastering Relational and Non-Relational Database, Disruptive Architectures: IoT, IoB & Generative AI.
-
-- **Patricia Naomi** - RM552981
-Responsável pelo desenvolvimento Java Advanced, Mobile Application Development , Compliance, Quality Assurance & Tests, DevOps Tools & Cloud Computing.
-
-## Cronograma de Desenvolvimento
-
-| Etapa                   | Descrição                                  | Data de Início | Data de Término | Implementação Futura | Responsável   |
-|-------------------------|--------------------------------------------|---------------|----------------|----------------------|---------------|
-| Planejamento            | Definição de escopo e requisitos           | 15/09/2024    | 20/09/2024     | Não                  | Equipe        |
-| Design                  | Criação dos protótipos de UI/UX            | 21/09/2024    | 28/09/2024     | Não                  | Patrícia      |
-| Configuração do Ambiente| Configuração do ambiente de desenvolvimento| 28/09/2024    | 29/09/2024     | Não                  | Cláudio       |
-| Backend                 | Desenvolvimento da API                    | 30/09/2024    | 06/10/2024     | Não                  | Cláudio       |
-| Frontend                | Desenvolvimento das interfaces             | 15/10/2024    | 24/10/2024     | Sim                  | Patrícia      |
-| Integração              | Integração do frontend com o backend       | 24/10/2024    | 31/10/2024     | Sim                  | Equipe        |
-| Testes Unitários        | Desenvolvimento e execução dos testes      | 01/11/2024    | 03/11/2024     | Sim                  | Patrícia      |
-| Testes de Aceitação     | Validação do sistema com Odontoprev      | 03/11/2024    | 05/11/2024     | Sim                  | Equipe        |
-| Documentação            | Criação da documentação final              | 05/11/2024    | 06/11/2024     | Sim                  | Cláudio       |
-| Deploy                  | Implantação do sistema                     | 05/11/2024    | 08/11/2024     | Sim                  | Equipe        |
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## Atualização Sprint 2
 Nesta sprint, foram implementadas melhorias significativas para a experiência do usuário e a escalabilidade do sistema. As principais adições incluem:
@@ -111,14 +92,19 @@ Com as dependências instaladas, rode a aplicação com:
 -   Certifique-se de que o banco de dados está em execução antes de iniciar a aplicação.
 -   Para testes, você pode utilizar o **Postman** ou acessar diretamente o **Swagger UI** para testar os endpoints.
 
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## Modelo Relacional (DER)
 ![Modelo Relacional](https://github.com/patinaomi/lexus-tech/blob/main/Mastering_Relational_And_Non_Relational_Database/Relational_1.png)
+
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## Diagrama de Classes
 ![Diagrama de Classes](diagrama-de-classes.png)
 
 ![Domains](domains.png)
+
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## Documentação da API
 Foi realizada a documentação da API utilizando **Swagger**, o que facilita a visualização e teste de todos os endpoints disponíveis no sistema. Para acessar a documentação completa, basta visitar o link [Swagger](http://localhost:8080/swagger-ui/index.html#/) quando o projeto estiver em execução.
@@ -179,6 +165,17 @@ Além disso, o projeto conta com um arquivo de exportação do Postman contendo 
 - **PATCH /sinistros/{id}**: Atualiza um dado parcial de um sinistro.
 - **DELETE /sinistros/{id}**: Remove um sinistro.
 
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## Video
 Também disponibilizamos um vídeo no YouTube demonstrando nossa solução e explicando as principais funcionalidades do projeto. Você pode assisti-lo através do seguinte link: [Link do Video no Youtube](https://youtu.be/4rk6KTjp8mM)
+
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
+
+## 🧑‍🤝‍🧑 Equipe
+
+| <h3>Claudio Bispo</h3><img src="https://avatars.githubusercontent.com/u/110735259?v=4" width=180px> <h6>RM553472</h6> <a href="https://github.com/Claudio-Silva-Bispo"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a> <a href="https://www.linkedin.com/in/claudiosbispo"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://www.instagram.com/_claudiobispo/"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>|<h3>Patricia Naomi</h3> <img src="https://avatars.githubusercontent.com/u/132932532?v=4" width=180px><h6>RM552981</h6> <a href="https://github.com/patinaomi"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"></a> <a href="https://www.linkedin.com/in/patinaomi/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a> <a href="https://www.instagram.com/naomipati/"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white"></a>|
+|--|--|
+
+
+[:arrow_up: voltar para o índice :arrow_up:](#índice)
