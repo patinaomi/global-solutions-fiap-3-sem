@@ -100,17 +100,17 @@ Utilizar ASP.NET Core para gerenciar a lógica do servidor e a comunicação com
 
 ## Sensores
 
-Instalar sensores de consumo de energia em diferentes pontos do apartamento. Esses sensores podem enviar dados em tempo real para o servidor.
+Instalar um sensor de consumo de energia que vai mapear os diferentes pontos do apartamento. Esse sensor pode enviar dados em tempo real para o servidor e apartir dele, conseguiremos utilizar a IA para fazer a mágica acontecer.
 
 ## Coleta de Dados
 
-Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados.
+Use Python para coletar e processar os dados dos sensores. Bibliotecas como pandas e NumPy podem ser úteis para análise de dados. 
 
 ## Análise de Dados e IA
 
 Machine Learning: 
 
-Utilizar ML.NET para criar modelos de machine learning que possam prever o consumo de energia e identificar padrões. Será realizado o treinamento com modelos para detectar anomalias e sugerir manutenção.
+Utilizar ML e .NET para criar modelos de machine learning que possam prever o consumo de energia e identificar padrões. Será realizado o treinamento com modelos para detectar anomalias e sugerir manutenção, troca do equipamento para um mais sustentável e econônimo.
 
 ## Visualização e Conscientização
 
@@ -130,6 +130,91 @@ Baseado nos dados analisados, enviar alertas para os moradores sobre áreas que 
 **Python** Para coleta e processamento de dados, e tarefas avançadas de IA.
 **Sensores de Energia** Para monitoramento em tempo real.
 **Azure** Para hospedagem e serviços de IA, como o Azure Machine Learning.
+
+# Comparativo de Custos: Sistema de monitoramento de energia vs. Equipamentos Smart (Lâmpadas Inteligentes e Gadgets)
+
+## 1. Sistema de Monitoramento de Energia Simples (com IA)
+
+### Objetivo:
+Monitorar o consumo de energia de forma simples e eficiente, captando informações sobre os aparelhos e ajudando o cliente a economizar energia e identificar excessos. 
+
+Imagine receber no seu celular ou computador informações detalhadas sobre o consumo diário de energia da sua casa, com destaque para os ambientes e os itens que mais consomem. Incrível, não é?
+
+Nosso sistema será capaz de fornecer essas informações de forma precisa, permitindo que você saiba quais são os aparelhos que mais consomem energia. Além disso, ele calculará uma estimativa do valor da sua conta de luz, mesmo antes da leitura mensal da ENEL, e apresentará sugestões de troca para equipamentos mais econômicos e sustentáveis, considerando os selos de eficiência energética de cada produto.
+
+### Componentes principais:
+- **Painel de monitoramento digital simples** (conectado ao painel de energia residencial)
+- **Sensores de consumo de energia** para acompanhar aparelhos como geladeira, ar-condicionado, TV, e outros dispositivos.
+- **Software básico de monitoramento** (para capturar dados e gerar relatórios simples sobre o consumo diário e mensal)
+
+### Custos aproximados:
+- **Painel de monitoramento digital simples:** R$ 200  
+- **Sensor de consumo de energia:** R$ 100
+- **Software básico de monitoramento:** R$ 300  
+- **Instalação e materiais elétricos adicionais:** R$ 200 (diária de um eletricista)  
+
+**Custo total estimado:** **R$ 800,00**
+
+### Benefícios:
+- Monitoramento direto de consumo de energia.  
+- Identificação de aparelhos que consomem mais energia e sugestões de melhorias. Além de indicar a troca de equipamentos quando o ciclo de vida estiver próximo de encerrar (de acordo com as especifícações de cada aparelho).
+- Sistema simples e barato, sem necessidade de trocar aparelhos ou fazer grandes investimentos.  
+
+---
+
+## 2. Investindo em Lâmpadas Inteligentes e Equipamentos Smart
+
+### Objetivo:
+Melhorar o controle sobre o consumo de energia por meio de dispositivos "smart" (inteligentes) como lâmpadas, tomadas e equipamentos conectados que gerenciam o uso de energia de forma automatizada.
+
+### Componentes principais:
+- **Lâmpadas inteligentes** (controladas via aplicativo, ajustando brilho e horários)  
+- **Tomadas inteligentes** (para controlar aparelhos remotamente, programando liga/desliga)  
+- **Equipamentos smart** (como termostatos inteligentes, câmeras de segurança, etc.)  
+- **Automação e controle por aplicativos** (para monitoramento e controle remoto dos dispositivos)
+
+### Custos aproximados:
+- **Lâmpadas inteligentes (pacote com 10):** R$ 2.000  
+- **Tomadas inteligentes (pacote com 5):** R$ 1.000  
+- **Termostatos inteligentes:** R$ 1.000  
+- **Equipamentos smart adicionais (ar-condicionado, geladeira, etc.):** R$ 5.000  
+
+**Custo total estimado:** **R$ 9.000+**
+
+### Benefícios:
+- Controle e automação do consumo de energia de forma mais eficiente.  
+- Lâmpadas e dispositivos que podem ser desligados automaticamente ou programados para reduzir o consumo.  
+- Maior conforto e conveniência, mas com um custo significativamente mais alto.  
+
+---
+
+## Comparativo de Sustentabilidade e Custo-benefício
+
+### **Sistema Simples de Monitoramento de Energia**
+- **Custo inicial:** Baixo (R$ 2.500).  
+- **Sustentabilidade:** Menos desperdício eletrônico, pois você não precisa substituir aparelhos existentes.  
+- **Benefícios ambientais:** Ajuda a identificar e reduzir o consumo sem descartar dispositivos ainda utilizáveis.  
+- **Vantagem:** Solução econômica e sustentável, com foco em otimizar os aparelhos já existentes.  
+
+### **Equipamentos Smart**
+- **Custo inicial:** Alto (R$ 9.000+).  
+- **Sustentabilidade:** Substituir aparelhos antigos pode gerar mais resíduos eletrônicos e custos de descarte.  
+- **Benefícios ambientais:** Limitados ao uso de dispositivos novos, sem resolver o problema de consumo excessivo de aparelhos antigos.  
+- **Desvantagem:** Alto custo e impacto ambiental negativo no descarte de equipamentos antigos.  
+
+---
+
+## Conclusão
+
+### **Sistema Simples de Monitoramento de Energia:**
+- Mais econômico no início, com custo total de **R$ 800,00**.  
+- Sustentável, evitando desperdício eletrônico e aproveitando os aparelhos existentes.  
+- Ideal para quem busca uma solução acessível e eficiente em termos de energia.  
+
+### **Investir em Lâmpadas e Equipamentos Smart:**
+- Solução mais cara, com custo total estimado de **R$ 9.000+**.  
+- Pode ser interessante para quem busca automação completa, mas o custo elevado e o impacto ambiental devem ser considerados.  
+
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
