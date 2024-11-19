@@ -70,8 +70,8 @@ Para rodar a aplicação Java Spring Boot, siga as instruções abaixo:
  1. **Clonar o repositório**
   
 ```sh
-    git clone https://github.com/patinaomi/delfos-machine 
-    cd delfos-machine
+    git clone https://github.com/patinaomi/lexus-tech
+    cd lexus-tech
 ```
 2. **Configurar o banco de dados**
 No arquivo `application.properties` ou `application.yml` (localizado em `src/main/resources`), configure os detalhes do banco de dados, como a URL, nome de usuário e senha:
@@ -107,7 +107,7 @@ Com as dependências instaladas, rode a aplicação com:
 
 
 ## Modelo Relacional (DER)
-![Modelo Relacional](Relational_1.png)
+![Modelo Relacional](https://github.com/patinaomi/lexus-tech/blob/main/Mastering_Relational_And_Non_Relational_Database/Relational_1.png)
 
 ## Diagrama de Classes
 ![Diagrama de Classes](diagrama-de-classes.png)
