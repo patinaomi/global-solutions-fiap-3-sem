@@ -9,167 +9,167 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LexusTech
 build_property.RootNamespace = LexusTech
-build_property.ProjectDir = /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/
+build_property.ProjectDir = /Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech
+build_property.MSBuildProjectDirectory = /Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Comodo/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Comodo/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tb2RvL0NvbnN1bHRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Comodo/Criar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Comodo/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tb2RvL0NyaWFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Atualizar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Atualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uc3Vtby9BdHVhbGl6YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uc3Vtby9Db25zdWx0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Criar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Consumo/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29uc3Vtby9Dcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/DadosCadastrais/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/DadosCadastrais/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFkb3NDYWRhc3RyYWlzL0NvbnN1bHRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Dashboard/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Atualizar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Atualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5kZXJlY28vQXR1YWxpemFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5kZXJlY28vQ29uc3VsdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Criar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5kZXJlY28vQ3JpYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/MensagemAtualizacao.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Endereco/MensagemAtualizacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW5kZXJlY28vTWVuc2FnZW1BdHVhbGl6YWNhby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Objetivo.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Objetivo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9PYmpldGl2by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Privacy.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Projeto.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Projeto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcm9qZXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Solucao.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Solucao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Tb2x1Y2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Time.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/Time.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9UaW1lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/VideoProjeto.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Home/VideoProjeto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9WaWRlb1Byb2pldG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Imagem/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Imagem/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW1hZ2VtL0NvbnN1bHRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Imagem/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Imagem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW1hZ2VtL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Informacao/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Informacao/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5mb3JtYWNhby9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Item/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Item/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbS9Db25zdWx0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Item/Criar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Item/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXRlbS9Dcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Login/Logar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Login/Logar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vTG9nYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Login/MensagemErro.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Login/MensagemErro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW4vTWVuc2FnZW1FcnJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/LoginLog/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/LoginLog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9naW5Mb2cvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Mapa/Index.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Mapa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFwYS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/Error.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Atualizar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Atualizar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9BdHVhbGl6YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/ConfirmarExcluir.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/ConfirmarExcluir.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9Db25maXJtYXJFeGNsdWlyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Consultar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Consultar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9Db25zdWx0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Criar.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9Dcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Mensagem.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/Mensagem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9NZW5zYWdlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/MensagemAtualizacao.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/MensagemAtualizacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9NZW5zYWdlbUF0dWFsaXphY2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/MensagemExclusao.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Usuario/MensagemExclusao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXN1YXJpby9NZW5zYWdlbUV4Y2x1c2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/_ViewImports.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/_ViewStart.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/_Layout.cshtml]
+[/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mp7x2r9llk

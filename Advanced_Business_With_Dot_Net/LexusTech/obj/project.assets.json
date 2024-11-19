@@ -4122,19 +4122,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/claudiobispo/.nuget/packages/": {}
+    "/Users/patricianaomi/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
+      "projectUniqueName": "/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
       "projectName": "LexusTech",
-      "projectPath": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
-      "packagesPath": "/Users/claudiobispo/.nuget/packages/",
-      "outputPath": "/Users/claudiobispo/Documents/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/",
+      "projectPath": "/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
+      "packagesPath": "/Users/patricianaomi/.nuget/packages/",
+      "outputPath": "/Users/patricianaomi/Documents/Coding/global-solutions-fiap-3-sem/Advanced_Business_With_Dot_Net/LexusTech/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/claudiobispo/.nuget/NuGet/NuGet.Config"
+        "/Users/patricianaomi/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
