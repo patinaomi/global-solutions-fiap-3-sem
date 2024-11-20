@@ -1,0 +1,16 @@
+services:
+  java-service:
+    container_name: java-service
+    build:
+      context: Java_Advanced/sprint-2/challenge
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  dotnet-service:
+    container_name: dotnet-service
+    build:
+      context: Advanced_Business_With_DotNet/sprint-2/DelfosMachine
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
