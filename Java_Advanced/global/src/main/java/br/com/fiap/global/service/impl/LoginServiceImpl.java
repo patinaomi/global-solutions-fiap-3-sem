@@ -14,16 +14,16 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class LoginServiceImpl implements LoginService {
 
-    private final AuthenticationService authenticationService;
-    private final LoginRepository loginRepository;
+    private final AuthenticationService service;
+    private final LoginRepository repository;
 
     public Login register(String email, String senha) {
-        Usuario usuario = authenticationService.authenticate(email, senha);
+        Usuario usuario = service.authenticate(email, senha);
 
         Login login = new Login();
         login.setDataHora(LocalDateTime.now());
         login.setUsuario(usuario);
 
-        return loginRepository.save(login);
+        return repository.save(login);
     }
 }

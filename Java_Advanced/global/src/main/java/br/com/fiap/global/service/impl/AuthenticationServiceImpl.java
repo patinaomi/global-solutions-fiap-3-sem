@@ -13,10 +13,10 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationServiceImpl implements AuthenticationService {
-    private final UsuarioRepository usuarioRepository;
+    private final UsuarioRepository repository;
 
     public Usuario authenticate(String email, String senha) {
-        Usuario usuario = usuarioRepository.findByEmail(email);
+        Usuario usuario = repository.findByEmail(email);
         if (usuario == null || !usuario.getSenha().equals(senha)) {
             throw new AuthenticationException("Usuário ou senha inválidos");
         }
@@ -24,21 +24,21 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     public Usuario findByEmailAndDateOfBirth(String email, LocalDate dataNasc) {
-        return usuarioRepository.findByEmailAndDataNasc(email, dataNasc);
+        return repository.findByEmailAndDataNasc(email, dataNasc);
     }
 
     public Usuario findByEmail(String email) {
-        return usuarioRepository.findByEmail(email);
+        return repository.findByEmail(email);
     }
 
     @Override
     public boolean updatePassword(Integer usuarioId, String novaSenha) {
-        Optional<Usuario> usuarioOptional = usuarioRepository.findById(usuarioId);
+        Optional<Usuario> usuarioOptional = repository.findById(usuarioId);
 
         if(usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
             usuario.setSenha(novaSenha);
-            usuarioRepository.save(usuario);
+            repository.save(usuario);
             return true;
         } else {
             return false;

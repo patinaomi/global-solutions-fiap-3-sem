@@ -3,7 +3,6 @@ package br.com.fiap.global.gateways.controller;
 import br.com.fiap.global.domains.Comodo;
 import br.com.fiap.global.gateways.dtos.request.ComodoRequest;
 import br.com.fiap.global.gateways.dtos.response.ComodoResponse;
-import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
 import br.com.fiap.global.service.ComodoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -36,7 +35,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Tag(name = "comodo", description = "Operações relacionadas aos cômodos")
 public class ComodoController {
 
-    private final ComodoService comodoService;
+    private final ComodoService service;
 
     @Operation(summary = "Cria um novo comodo", description = "Cria um novo cômodo com base nos dados informados")
     @ApiResponses(value = {
@@ -51,7 +50,7 @@ public class ComodoController {
                 .descricao(request.getDescricao())
                 .build();
 
-        Comodo comodoSalvo = comodoService.create(comodo);
+        Comodo comodoSalvo = service.create(comodo);
 
         ComodoResponse response = ComodoResponse.builder()
                 .id(comodoSalvo.getId())
@@ -74,7 +73,7 @@ public class ComodoController {
     })
     @GetMapping
     public ResponseEntity<?> findAll() {
-        List<Comodo> comodos = comodoService.findAll();
+        List<Comodo> comodos = service.findAll();
 
         if (comodos.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Nenhum cômodo encontrado.");
@@ -102,7 +101,7 @@ public class ComodoController {
     })
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Integer id) {
-        Comodo comodo = comodoService.findById(id);
+        Comodo comodo = service.findById(id);
 
         ComodoResponse response = ComodoResponse.builder()
                 .id(comodo.getId())
@@ -128,7 +127,7 @@ public class ComodoController {
                 .descricao(request.getDescricao())
                 .build();
 
-        Comodo comodoSalvo = comodoService.update(id, comodo);
+        Comodo comodoSalvo = service.update(id, comodo);
 
         ComodoResponse response = ComodoResponse.builder()
                 .id(comodoSalvo.getId())
@@ -148,7 +147,7 @@ public class ComodoController {
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor")
     })
     public ResponseEntity<?> delete(@PathVariable Integer id) {
-        comodoService.delete(id);
+        service.delete(id);
         return ResponseEntity.ok("Cômodo com ID " + id + " deletado com sucesso.");
     }
 }

@@ -277,10 +277,6 @@ public class UsuarioController {
             usuario.setEmail(request.getEmail());
         }
 
-        if (request.getSenha() != null) {
-            usuario.setSenha(request.getSenha());
-        }
-
         if(request.getDataNasc() != null) {
             usuario.setDataNasc(request.getDataNasc());
         }

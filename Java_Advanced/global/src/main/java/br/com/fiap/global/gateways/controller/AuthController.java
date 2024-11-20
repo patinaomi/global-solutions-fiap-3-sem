@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "Autenticação", description = "Endpoints relacionados à autenticação e validação de usuários")
 public class AuthController {
 
-    private final AuthenticationService authenticationService;
+    private final AuthenticationService service;
 
     @Operation(summary = "Login de usuário", description = "Autentica o usuário com base no e-mail e senha")
     @ApiResponses(value = {
@@ -32,7 +32,7 @@ public class AuthController {
     })
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginAuthRequest request) {
-        Usuario usuario = authenticationService.authenticate(request.getEmail(), request.getSenha());
+        Usuario usuario = service.authenticate(request.getEmail(), request.getSenha());
         if (usuario != null) {
             return ResponseEntity.ok(new LoginAuthResponse("Login bem-sucedido", usuario.getId()));
         } else {
@@ -50,7 +50,7 @@ public class AuthController {
     })
     @PostMapping("/validate-user")
     public ResponseEntity<?> validateUser(@RequestBody ValidateUserRequest request) {
-        Usuario usuario = authenticationService.findByEmailAndDateOfBirth(request.getEmail(), request.getDataNasc());
+        Usuario usuario = service.findByEmailAndDateOfBirth(request.getEmail(), request.getDataNasc());
         if (usuario != null) {
             return ResponseEntity.ok(new MessageResponse("Usuário validado com sucesso"));
         } else {
@@ -68,7 +68,7 @@ public class AuthController {
     })
     @PutMapping("/update-password")
     public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest request) {
-        boolean isUpdated = authenticationService.updatePassword(request.getUsuarioId(), request.getNovaSenha());
+        boolean isUpdated = service.updatePassword(request.getUsuarioId(), request.getNovaSenha());
 
         if (isUpdated) {
             return ResponseEntity.ok(new MessageResponse("Senha atualizada com sucesso"));
@@ -87,7 +87,7 @@ public class AuthController {
     })
     @PostMapping("/validate-email")
     public ResponseEntity<?> validateEmail(@RequestBody ValidateEmailRequest request) {
-        Usuario usuario = authenticationService.findByEmail(request.getEmail());
+        Usuario usuario = service.findByEmail(request.getEmail());
 
         if (usuario != null) {
             boolean isValid = usuario.getEmail().equals(request.getEmail());
