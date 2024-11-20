@@ -35,7 +35,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     public boolean updatePassword(Integer usuarioId, String novaSenha) {
         Optional<Usuario> usuarioOptional = repository.findById(usuarioId);
 
-        if(usuarioOptional.isPresent()) {
+        if (usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
             usuario.setSenha(novaSenha);
             repository.save(usuario);

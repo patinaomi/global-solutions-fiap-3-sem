@@ -1,8 +1,15 @@
 package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Usuario;
-import br.com.fiap.global.gateways.dtos.request.*;
-import br.com.fiap.global.gateways.dtos.response.*;
+import br.com.fiap.global.gateways.dtos.request.LoginAuthRequest;
+import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
+import br.com.fiap.global.gateways.dtos.request.ValidateEmailRequest;
+import br.com.fiap.global.gateways.dtos.request.ValidateUserRequest;
+import br.com.fiap.global.gateways.dtos.response.EmailErrorResponse;
+import br.com.fiap.global.gateways.dtos.response.EmailResponse;
+import br.com.fiap.global.gateways.dtos.response.ErrorResponse;
+import br.com.fiap.global.gateways.dtos.response.LoginAuthResponse;
+import br.com.fiap.global.gateways.dtos.response.MessageResponse;
 import br.com.fiap.global.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -14,7 +21,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
