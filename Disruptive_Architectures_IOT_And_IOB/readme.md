@@ -1,3 +1,5 @@
+<p align="center"> <img src ="https://github.com/patinaomi/lexus-tech/blob/main/Assets/lexus.png" width = 190px> </p>
+
 # Projeto de previsão de consumo de energia residencial
 
 ## Objetivo
