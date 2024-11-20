@@ -189,7 +189,7 @@ Melhorar o controle sobre o consumo de energia por meio de dispositivos "smart" 
 ## Comparativo de Sustentabilidade e Custo-benefício
 
 ### **Sistema Simples de Monitoramento de Energia**
-- **Custo inicial:** Baixo (R$ 2.500).  
+- **Custo inicial:** Baixo (R$ 800,00).  
 - **Sustentabilidade:** Menos desperdício eletrônico, pois você não precisa substituir aparelhos existentes.  
 - **Benefícios ambientais:** Ajuda a identificar e reduzir o consumo sem descartar dispositivos ainda utilizáveis.  
 - **Vantagem:** Solução econômica e sustentável, com foco em otimizar os aparelhos já existentes.  
