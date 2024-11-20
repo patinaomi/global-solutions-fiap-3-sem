@@ -2,6 +2,7 @@ package br.com.fiap.global.gateways.dtos.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Getter
 @Setter
+@Builder
 public class ValidateUserRequest {
 
     @NotNull(message = "Nome não pode ser nulo")

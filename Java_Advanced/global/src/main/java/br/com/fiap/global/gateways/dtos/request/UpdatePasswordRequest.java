@@ -3,11 +3,13 @@ package br.com.fiap.global.gateways.dtos.request;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 public class UpdatePasswordRequest {
 
     @NotNull(message = "Id do usuário não pode ser nulo")
