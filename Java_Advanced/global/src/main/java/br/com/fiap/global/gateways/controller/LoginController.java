@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,15 +35,21 @@ public class LoginController {
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
     })
     @PostMapping("/authenticate")
-    public ResponseEntity<?> login(@RequestBody LoginAuthRequest request) {
-        Login login = service.register(request.getEmail(), request.getSenha());
+    public ResponseEntity<?> login(@Valid @RequestBody LoginAuthRequest request) {
+        try {
+            Login login = service.register(request.getEmail(), request.getSenha());
 
-        LoginResponse response = LoginResponse.builder()
-                .id(login.getId())
-                .dataHora(login.getDataHora())
-                .usuarioId(login.getUsuario().getId())
-                .build();
+            LoginResponse response = LoginResponse.builder()
+                    .id(login.getId())
+                    .dataHora(login.getDataHora())
+                    .usuarioId(login.getUsuario().getId())
+                    .build();
 
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 }

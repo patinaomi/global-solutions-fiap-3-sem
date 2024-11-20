@@ -86,9 +86,6 @@ public class ItemCasaController {
                     linkTo(ItemCasaController.class).slash(response.getId()).withSelfRel()
             ));
 
-//            Link selfLink = linkTo(methodOn(ItemCasaController.class).findAll()).withSelfRel();
-//            CollectionModel<List<ItemCasa>> response = CollectionModel.of(Collections.singleton(itensCasa), selfLink);
-
             return ResponseEntity.ok(responses);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());

@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +50,7 @@ public class AuthController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
     @PostMapping("/validate-user")
-    public ResponseEntity<?> validateUser(@RequestBody ValidateUserRequest request) {
+    public ResponseEntity<?> validateUser(@Valid @RequestBody ValidateUserRequest request) {
         Usuario usuario = service.findByEmailAndDateOfBirth(request.getEmail(), request.getDataNasc());
         if (usuario != null) {
             return ResponseEntity.ok(new MessageResponse("Usuário validado com sucesso"));
@@ -67,7 +68,7 @@ public class AuthController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
     @PutMapping("/update-password")
-    public ResponseEntity<?> updatePassword(@RequestBody UpdatePasswordRequest request) {
+    public ResponseEntity<?> updatePassword(@Valid @RequestBody UpdatePasswordRequest request) {
         boolean isUpdated = service.updatePassword(request.getUsuarioId(), request.getNovaSenha());
 
         if (isUpdated) {
@@ -86,7 +87,7 @@ public class AuthController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = EmailErrorResponse.class)))
     })
     @PostMapping("/validate-email")
-    public ResponseEntity<?> validateEmail(@RequestBody ValidateEmailRequest request) {
+    public ResponseEntity<?> validateEmail(@Valid @RequestBody ValidateEmailRequest request) {
         Usuario usuario = service.findByEmail(request.getEmail());
 
         if (usuario != null) {
