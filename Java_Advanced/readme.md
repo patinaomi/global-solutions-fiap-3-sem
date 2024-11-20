@@ -1,58 +1,60 @@
-# Global Solutions
 
-Examine e desenvolva uma solução tecnológica que
-contribua de maneira significativa e que colabore de forma impactante e viável para a
-melhoria dos processos de energia sustentável. A solução Web a ser desenvolvida deve focar
-nos meios sustentáveis mencionados, focando nas áreas que podem ser impactadas pela
-transição energética. A aplicação deve ser uma API RESTful, construída com os frameworks
-Spring/Spring Boot.
+# 🌐  Global Solutions
 
-## Índice
+## 🦆 Índice
 
-1. [Sobre o Projeto](#sobre-o-projeto)
-2. [Integrantes](#integrantes)
-3. [Cronograma de Desenvolvimento](#cronograma-de-desenvolvimento)
-4. [Atualização Sprint 2](#atualização-sprint-2)
-5. [Como Rodar o Projeto](#como-rodar-o-projeto)
-6. [Pré-requisitos](#pré-requisitos)
-7. [Modelo Relacional (DER)](#modelo-relacional-der)
-8. [Diagrama de Classes](#diagrama-de-classes)
-9. [Documentação da API](#documentação-da-api)
-10. [Video](#video)
+1. [Sobre o Projeto](#%EF%B8%8F-sobre-o-projeto)
+2. [Estrutura do Projeto](#estrutura-do-projeto)
+3. [Como Rodar o Projeto](#%EF%B8%8F-como-rodar-o-projeto)
+4. [Deploy na Nuvem](#%EF%B8%8F-deploy-na-nuvem)
+5. [Modelo Relacional (DER)](#-modelo-relacional-der)
+6. [Protótipo do Projeto](#-protótipo-do-projeto)
+7. [Documentação da API](#-documentação-da-api)
+8. [Videos](#-videos)
+9. [Equipe](#-equipe)
 
----
+##  🗂️ Sobre o Projeto
 
-## Sobre o Projeto
+Nosso projeto tem como objetivo desenvolver um sistema integrado que auxilie os usuários no gerenciamento de informações relacionadas aos itens de sua casa e ao consumo de energia elétrica. A solução é composta por um aplicativo mobile, um backend em Java e um dashboard para análise de dados. A ideia é unir tecnologia, inovação e sustentabilidade para oferecer uma experiência interativa e eficiente.
 
-Este projeto consiste em uma aplicação de gerenciamento para uma clínica odontológica. Ele permite que dentistas, pacientes e clínicas gerenciem consultas, feedbacks, sinistros, formulários detalhados e muito mais. A aplicação utiliza tecnologias como Java, Spring Boot, e um banco de dados relacional para facilitar o gerenciamento eficiente das operações diárias da clínica.
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+##  ䷦Estrutura do Projeto
+### Aplicativo Mobile
 
-**Funcionalidades principais:**
-- Cadastro de pacientes, dentistas e clínicas.
-- Marcação e controle de consultas.
-- Gerenciamento de formulários detalhados de pacientes.
-- Recepção de feedbacks e controle de sinistros.
+Desenvolvido em Kotlin, o aplicativo permitirá que o usuário:
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+ - Cadastre itens de sua casa e associe-os aos cômodos.
+ -  Gerencie informações pessoais, como dados cadastrais. 
+ - Visualize informações personalizadas e organize sua casa de forma prática.
 
-## Atualização Sprint 2
-Nesta sprint, foram implementadas melhorias significativas para a experiência do usuário e a escalabilidade do sistema. As principais adições incluem:
+### Backend em Java
 
--   **Implementação de HATEOAS**: Para facilitar a navegação entre recursos e melhorar a usabilidade da API, foram adicionados links HATEOAS (Hypermedia as the Engine of Application State) nos endpoints. Isso permite que os clientes da API naveguem por diferentes recursos sem precisar conhecer todos os endpoints de antemão.
-    
--   **Envio de E-mail com MailSender do Spring Boot**: Ao cadastrar um novo usuário, o sistema agora envia um e-mail de boas-vindas utilizando o MailSender do Spring Boot. Esta funcionalidade melhora a comunicação com os usuários e garante que eles estejam informados sobre o cadastro com sucesso.
-    
+O backend em Java Spring será responsável por:
 
-Essas implementações visam não apenas melhorar a usabilidade e a experiência do usuário, mas também aumentar a modularidade e a manutenibilidade do código.
-## Como Rodar o Projeto
+ - Oferecer suporte ao aplicativo mobile, gerenciando a persistência e a
+   recuperação de dados. 
+  - Processar as informações dos itens e cômodos
+   cadastrados. 
+   - Fornecer APIs robustas para garantir a integração com o aplicativo mobile. 
+
+### Dashboard para Análise de Dados
+
+Desenvolvido em .NET, o dashboard será utilizado para:
+* Exibir insights detalhados sobre os dados capturados pelo sistema.
+* Permitir uma análise mais aprofundada de padrões de uso e informações geradas.
+* Oferecer gráficos e relatórios visuais que auxiliem na tomada de decisões.
+
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
+
+## ⁉️ Como Rodar o Projeto
 
 Para rodar a aplicação Java Spring Boot, siga as instruções abaixo:
  #### Pré-requisitos 
  - **Java 17** ou superior instalado 
- - - **Maven** instalado 
- - - **Banco de Dados Oracle** configurado e em execução 
- - - **IDE** (como IntelliJ IDEA ou Eclipse) para editar e executar o projeto (opcional) 
+ - **Maven** instalado 
+ - **Banco de Dados Oracle** configurado e em execução 
+ - **IDE** (como IntelliJ IDEA ou Eclipse) para editar e executar o projeto (opcional) 
  #### Passos para rodar a aplicação 
  1. **Clonar o repositório**
   
@@ -92,85 +94,104 @@ Com as dependências instaladas, rode a aplicação com:
 -   Certifique-se de que o banco de dados está em execução antes de iniciar a aplicação.
 -   Para testes, você pode utilizar o **Postman** ou acessar diretamente o **Swagger UI** para testar os endpoints.
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
-## Modelo Relacional (DER)
+## ☁️ Deploy na Nuvem
+A imagem Docker da aplicação já está publicada no **Docker Hub** e pode ser utilizada diretamente em qualquer ambiente configurado com Docker.
+
+Link no DockerHub: https://hub.docker.com/r/patinaomi/lexus-tech-backend
+
+#### 1. Pré-requisitos
+
+-   Docker instalado no ambiente (local ou nuvem).
+-   Acesso à internet para puxar a imagem do Docker Hub.
+
+#### 2. Puxando a Imagem do Docker Hub
+
+Para utilizar a aplicação, basta executar o comando abaixo para puxar a imagem:
+
+`docker pull patinaomi/lexus-tech-backend` 
+
+#### 3. Executando o Container
+
+Execute o container utilizando o comando:
+
+
+`docker run -d -p 8080:8080 --name lexus-tech-backend patinaomi/lexus-tech-backend:latest` 
+
+-   **Porta 8080:** A aplicação será exposta nesta porta. Certifique-se de que o firewall ou regras de segurança permitem o acesso a ela.
+
+#### 4. Acessando a Aplicação
+
+Após executar o container, a aplicação estará acessível pelo endereço:
+`http://<ip-da-vm-ou-local>:8080`
+
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
+
+## 💡 Modelo Relacional (DER)
 ![Modelo Relacional](https://github.com/patinaomi/lexus-tech/blob/main/Mastering_Relational_And_Non_Relational_Database/Relational_1.png)
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+**Observação:** As tabelas **`T_Consumo`** e **`T_Recomendacao`** não serão utilizadas no backend Java, pois são exclusivas para o projeto desenvolvido em .NET, que será responsável por funcionalidades de análise de dados e geração de recomendações no dashboard.
 
-## Diagrama de Classes
-![Diagrama de Classes](diagrama-de-classes.png)
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
-![Domains](domains.png)
+## 📱 Protótipo do Projeto
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+O protótipo do aplicativo mobile foi desenvolvido no **Figma** com o objetivo de oferecer uma visão clara e interativa das funcionalidades planejadas para o projeto. Ele serve como uma referência visual para consulta e validação das principais telas e fluxos do sistema, garantindo uma experiência intuitiva e eficiente para os usuários finais.
 
-## Documentação da API
+O protótipo no Figma está disponível para consulta, permitindo um entendimento mais profundo da proposta do aplicativo mobile e seu papel no projeto como um todo. Para acessar o protótipo, basta visitar o link: [Figma](https://www.figma.com/design/YK4fNmcuOfYzl5iIFSJpU3/Lexus-Tech?node-id=0-1&t=wj0WjUptisQxLwNp-1) 
+
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
+
+## 👩🏻‍🏫 Documentação da API
 Foi realizada a documentação da API utilizando **Swagger**, o que facilita a visualização e teste de todos os endpoints disponíveis no sistema. Para acessar a documentação completa, basta visitar o link [Swagger](http://localhost:8080/swagger-ui/index.html#/) quando o projeto estiver em execução.
 
 Além disso, o projeto conta com um arquivo de exportação do Postman contendo todas as requisições para teste dos endpoints da API. Esse arquivo pode ser importado diretamente no Postman, facilitando a realização de testes e a validação das funcionalidades disponíveis. Basta acessar o arquivo [por este link](https://github.com/patinaomi/delfos-machine/blob/main/JAVA%20ADVANCED/sprint-2/Challenge%20Odontoprev.postman_collection.json) e importar no Postman para ter acesso a todas as operações configuradas.
 
-#### Cliente
+#### Usuário
 
-- **GET /clientes**: Lista todos os clientes.
-- **POST /clientes/criar**: Cria um novo cliente.
-- **GET /clientes/{id}**: Retorna os detalhes de um cliente específico pelo ID.
-- **PUT /clientes/{id}**: Atualiza as informações de um cliente.
-- **PATCH /clientes/{id}/**: Atualiza parcialmente um dado do cliente.
-- **DELETE /clientes/{id}**: Remove um cliente.
+- **GET /usuarios**: Lista todos os usuários cadastrados.
+- **POST /usuarios/create**: Cria um novo usuário com base nos dados fornecidos.
+- **GET /usuarios/{id}**: Retorna os detalhes de um usuário específico pelo ID.
+- **PUT /usuarios/{id}**: Atualiza todas as informações de um usuário existente.
+- **PATCH /usuarios/{id}**: Atualiza parcialmente as informações de um usuário.
+- **DELETE /usuarios/{id}**: Remove um usuário específico pelo ID.
 
-#### Consulta
+#### Autenticação
 
-- **GET /consultas**: Lista todas as consultas.
-- **POST /consultas/criar**: Cria uma nova consulta.
-- **GET /consultas/{id}**: Retorna os detalhes de uma consulta específica pelo ID.
-- **PUT /consultas/{id}**: Atualiza as informações de uma consulta.
-- **PATCH /consultas/{id}**: Atualiza o dado parcial da consulta.
-- **DELETE /consultas/{id}**: Remove uma consulta.
+- **POST /auth/login**: Autentica o usuário com base no e-mail e senha.
+- **POST /auth/validate-user**: Valida o usuário com base no e-mail e data de nascimento.
+- **PUT /auth/update-password**: Atualiza a senha de um usuário com base no ID e na nova senha fornecidos.
+- **PUT /auth/validate-email**: Valida a existência de um e-mail no sistema.
 
-#### Dentista
+#### Comodo
 
-- **GET /dentistas**: Lista todos os dentistas.
-- **POST /dentistas/criar**: Cria um novo dentista.
-- **GET /dentistas/{id}**: Retorna os detalhes de um dentista específico pelo ID.
-- **PUT /dentistas/{id}**: Atualiza as informações de um dentista.
-- **PATCH /dentistas/{id}**: Atualiza um dado parcial do dentista.
-- **DELETE /dentistas/{id}**: Remove um dentista.
+- **GET /comodos**: Lista todos os cômodo.
+- **POST /comodos/criar**: Cria um novo cômodo.
+- **GET /comodos/{id}**: Retorna os detalhes de um cômodo específico pelo ID.
+- **PUT /comodos/{id}**: Atualiza as informações de um cômodo.
+- **DELETE /comodos/{id}**: Remove um cômodo.
 
-## Feedback
+#### Item Casa
 
-- **GET /feedbacks**: Lista todos os feedbacks.
-- **POST /feedbacks/criar**: Cria um novo feedback.
-- **GET /feedbacks/{id}**: Retorna os detalhes de um feedback específico pelo ID.
-- **PUT /feedbacks/{id}**: Atualiza as informações de um feedback.
-- **PATCH /feedbacks/{id}**: Atualiza um dado parcial do feedback.
-- **DELETE /feedbacks/{id}**: Remove um feedback.
+- **GET /itenscasa**: Lista todos os itens.
+- **POST /itenscasa/create**: Cria um novo item da casa.
+- **GET /itenscasa/{id}**: Retorna os detalhes de item da casa específico pelo ID.
+- **PUT /itenscasa/{id}**: Atualiza um item da casa.
+- **DELETE /itenscasa/{id}**: Remove um item da casa.
 
-## Formulário Detalhado
+#### Login
 
-- **GET /formularios**: Lista todos os formulários detalhados.
-- **POST /formularios/criar**: Cria um novo formulário detalhado.
-- **GET /formularios/{id}**: Retorna os detalhes de um formulário específico pelo ID.
-- **PUT /formularios/{id}**: Atualiza as informações de um formulário detalhado.
-- **PATCH /formularios/{id}**: Atualiza um dado no formulário.
-- **DELETE /formularios/{id}**: Remove um formulário detalhado.
+- **POST /login/authenticate**: Autentica o usuário com base no e-mail e senha e registra o login no sistema.
 
-## Sinistro
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
-- **GET /sinistros**: Lista todos os sinistros.
-- **POST /sinistros/criar**: Cria um novo sinistro.
-- **GET /sinistros/{id}**: Retorna os detalhes de um sinistro específico pelo ID.
-- **PUT /sinistros/{id}**: Atualiza as informações de um sinistro.
-- **PATCH /sinistros/{id}**: Atualiza um dado parcial de um sinistro.
-- **DELETE /sinistros/{id}**: Remove um sinistro.
-
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
-
-## Video
+## 📹 Videos
 Também disponibilizamos um vídeo no YouTube demonstrando nossa solução e explicando as principais funcionalidades do projeto. Você pode assisti-lo através do seguinte link: [Link do Video no Youtube](https://youtu.be/4rk6KTjp8mM)
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+**Video Pitch:** [Link do Video no Youtube](https://youtu.be/4rk6KTjp8mM)
+
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
 ## 🧑‍🤝‍🧑 Equipe
 
@@ -178,4 +199,4 @@ Também disponibilizamos um vídeo no YouTube demonstrando nossa solução e exp
 |--|--|
 
 
-[:arrow_up: voltar para o índice :arrow_up:](#índice)
+[:arrow_up: voltar para o índice :arrow_up:](#-índice)
