@@ -27,7 +27,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
@@ -102,8 +101,11 @@ public class UsuarioController {
 
             List<UsuarioResponse> responses = usuarios.stream()
                     .map(this::mapToUsuarioResponse)
-                    .peek(response -> response.add(linkTo(UsuarioController.class).slash(response.getId()).withSelfRel()))
-                    .collect(Collectors.toList());
+                    .toList();
+
+            responses.forEach(response -> response.add(
+                    linkTo(UsuarioController.class).slash(response.getId()).withSelfRel()
+            ));
 
             return ResponseEntity.ok(responses);
         } catch (Exception e) {
