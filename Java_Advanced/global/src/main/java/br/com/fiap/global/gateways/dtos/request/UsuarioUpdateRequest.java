@@ -4,8 +4,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
@@ -16,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UsuarioUpdateRequest extends RepresentationModel<UsuarioUpdateRequest> {
 
     @Size(message = "O nome de usuário deve ter entre 3 e 50 caracteres", min = 3, max = 50)

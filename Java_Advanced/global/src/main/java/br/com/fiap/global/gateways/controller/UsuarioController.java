@@ -19,9 +19,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -129,6 +132,111 @@ public class UsuarioController {
             response.add(linkTo(UsuarioController.class).slash(id).withSelfRel());
 
             return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário com ID " + id + " não encontrado.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Atualizar um usuário", description = "Atualiza um usuário existente com base no ID fornecido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário atualizado com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody UsuarioRequest request) {
+        try {
+            Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
+            Endereco endereco = Endereco.builder()
+                    .logradouro(request.getEndereco().getLogradouro())
+                    .numero(request.getEndereco().getNumero())
+                    .complemento(request.getEndereco().getComplemento())
+                    .bairro(request.getEndereco().getBairro())
+                    .cidade(request.getEndereco().getCidade())
+                    .cep(request.getEndereco().getCep())
+                    .estado(estado)
+                    .build();
+
+            Usuario usuario = Usuario.builder()
+                    .id(id)
+                    .nome(request.getNome())
+                    .sobrenome(request.getSobrenome())
+                    .telefone(request.getTelefone())
+                    .email(request.getEmail())
+                    .senha(request.getSenha())
+                    .dataNasc(request.getDataNasc())
+                    .endereco(endereco)
+                    .build();
+
+            Usuario usuarioAtualizado = usuarioService.update(id, usuario);
+
+            UsuarioResponse response = mapToUsuarioResponse(usuarioAtualizado);
+            response.add(linkTo(UsuarioController.class).slash(id).withSelfRel());
+
+            return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário com ID " + id + " não encontrado.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Atualizar parcialmente um usuário", description = "Atualiza campos específicos de um usuário com base no ID fornecido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário atualizado parcialmente com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = UsuarioResponse.class))),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> updatePartial(@PathVariable Integer id, @RequestBody UsuarioRequest request) {
+        try {
+            Usuario usuarioExistente = usuarioService.findById(id);
+
+            if (request.getNome() != null) usuarioExistente.setNome(request.getNome());
+            if (request.getSobrenome() != null) usuarioExistente.setSobrenome(request.getSobrenome());
+            if (request.getTelefone() != null) usuarioExistente.setTelefone(request.getTelefone());
+            if (request.getEmail() != null) usuarioExistente.setEmail(request.getEmail());
+            if (request.getSenha() != null) usuarioExistente.setSenha(request.getSenha());
+            if (request.getDataNasc() != null) usuarioExistente.setDataNasc(request.getDataNasc());
+            if (request.getEndereco() != null) {
+                Estado estado = estadoService.findById(request.getEndereco().getEstadoId());
+                usuarioExistente.getEndereco().setLogradouro(request.getEndereco().getLogradouro());
+                usuarioExistente.getEndereco().setNumero(request.getEndereco().getNumero());
+                usuarioExistente.getEndereco().setComplemento(request.getEndereco().getComplemento());
+                usuarioExistente.getEndereco().setBairro(request.getEndereco().getBairro());
+                usuarioExistente.getEndereco().setCidade(request.getEndereco().getCidade());
+                usuarioExistente.getEndereco().setCep(request.getEndereco().getCep());
+                usuarioExistente.getEndereco().setEstado(estado);
+            }
+
+            Usuario usuarioAtualizado = usuarioService.update(id, usuarioExistente);
+
+            UsuarioResponse response = mapToUsuarioResponse(usuarioAtualizado);
+            response.add(linkTo(UsuarioController.class).slash(id).withSelfRel());
+
+            return ResponseEntity.ok(response);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário com ID " + id + " não encontrado.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Deletar um usuário", description = "Remove um usuário com base no ID fornecido")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Usuário deletado com sucesso", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Usuário não encontrado", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
+    })
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
+        try {
+            usuarioService.delete(id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Usuário com ID " + id + " deletado.");
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário com ID " + id + " não encontrado.");
         } catch (Exception e) {

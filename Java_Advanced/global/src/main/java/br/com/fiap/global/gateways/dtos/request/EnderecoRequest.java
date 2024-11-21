@@ -3,8 +3,10 @@ package br.com.fiap.global.gateways.dtos.request;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.hateoas.RepresentationModel;
 
@@ -12,6 +14,8 @@ import org.springframework.hateoas.RepresentationModel;
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EnderecoRequest extends RepresentationModel<EnderecoRequest> {
 
     @NotNull(message = "O campo logradouro é obrigatório")
