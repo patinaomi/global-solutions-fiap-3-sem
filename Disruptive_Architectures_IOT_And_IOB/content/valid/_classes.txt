@@ -1,0 +1,11 @@
+ac
+computador
+fogao
+geladeira
+luz
+maquina
+microondas
+som
+tablet
+tv
+ventilador

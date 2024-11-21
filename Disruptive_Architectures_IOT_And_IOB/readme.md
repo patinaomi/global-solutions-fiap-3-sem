@@ -68,7 +68,11 @@ Além disso, o modelo poderá identificar os aparelhos e ambientes que estão co
 
 ## 6. Geração de recomendações
 
-A partir da análise dos dados, o modelo também poderá fornecer recomendações personalizadas para o usuário. Por exemplo, pode sugerir reduzir o tempo de uso de certos aparelhos, como o ar-condicionado ou a lâmpada, e identificar maneiras de economizar energia sem comprometer o conforto.
+A partir da análise dos dados, o modelo também poderá fornecer recomendações personalizadas para o usuário. Por exemplo, pode sugerir reduzir o tempo de uso de certos aparelhos, como o ar-condicionado ou a lâmpada, e identificar maneiras de economizar energia sem comprometer o conforto. Todo este processo terá o envio de e-mails, sinalização na aplicação mobile e web, assim, o cliente fica por dentro de tudo que acontece em sua residência, sem que ele busque estas informações.
+
+## 7. Análise para identificar as imagens
+
+A partir do modelo treinado, ao importar uma imagem para nossa base de cadastro, o sistema utilizará esse modelo para identificar os equipamentos eletrônicos presentes na residência do cliente. Será possível avaliar, em cada ambiente, junto com as informações de consumo, onde estão concentrados os maiores gastos e quais equipamentos demandam atenção.
 
 ## Conclusão
 
