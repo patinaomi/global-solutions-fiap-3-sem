@@ -147,7 +147,7 @@ O protótipo no Figma está disponível para consulta, permitindo um entendiment
 ## 👩🏻‍🏫 Documentação da API
 Foi realizada a documentação da API utilizando **Swagger**, o que facilita a visualização e teste de todos os endpoints disponíveis no sistema. Para acessar a documentação completa, basta visitar o link [Swagger](http://localhost:8080/swagger-ui/index.html#/) quando o projeto estiver em execução.
 
-Além disso, o projeto conta com um arquivo de exportação do Postman contendo todas as requisições para teste dos endpoints da API. Esse arquivo pode ser importado diretamente no Postman, facilitando a realização de testes e a validação das funcionalidades disponíveis. Basta acessar o arquivo [por este link](https://github.com/patinaomi/delfos-machine/blob/main/JAVA%20ADVANCED/sprint-2/Challenge%20Odontoprev.postman_collection.json) e importar no Postman para ter acesso a todas as operações configuradas.
+Além disso, o projeto conta com um arquivo de exportação do Postman contendo todas as requisições para teste dos endpoints da API. Esse arquivo pode ser importado diretamente no Postman, facilitando a realização de testes e a validação das funcionalidades disponíveis. Basta acessar o arquivo [por este link](https://www.postman.com/descent-module-cosmonaut-30481309/68d2fb09-4ba6-46b3-ad92-3a78d3315db7/collection/kgpphx4/global-solutions-lexus-tech) e importar no Postman para ter acesso a todas as operações configuradas.
 
 #### Usuário
 
