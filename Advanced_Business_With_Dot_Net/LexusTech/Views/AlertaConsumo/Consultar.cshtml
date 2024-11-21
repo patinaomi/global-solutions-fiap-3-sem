@@ -1,0 +1,40 @@
+@model IEnumerable<LexusTech.DTOs.AlertaConsumoDTO>
+
+<section class="p-3">
+    <h2>Dados para alerta</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id Usuário</th>
+                <th>Ambiente</th>
+                <th>Consumo Minimo</th>
+                <th>Email Destino</th>
+                <th>Ativo</th>
+                <th>Descricao</th>
+                <th>Tipo Alerta</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alerta in Model)
+            {
+                <tr>
+                    <td>@alerta.Id</td>
+                    <td>@alerta.IdUsuario</td>
+                    <td>@alerta.Ambiente</td>
+                    <td>@alerta.ConsumoMinimo</td>
+                    <td>@alerta.EmailDestino</td>
+                    <td>@alerta.Ativo</td>
+                    <td>@alerta.Descricao</td>
+                    <td>@alerta.TipoAlerta</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group pt-3">
+        <a asp-controller="AlertaConsumo" asp-action="Criar" class="btn btn-warning">Voltar</a>
+        <a asp-controller="AlertaConsumo" asp-action="Criar" class="btn btn-primary">Criar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+</section>

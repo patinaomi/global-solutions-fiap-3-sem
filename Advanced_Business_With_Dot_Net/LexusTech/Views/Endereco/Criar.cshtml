@@ -12,22 +12,23 @@
         
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
 
-                <!-- Saudação personalizada -->
-                <h6 class="mb-4">
-                    @if (User.Identity != null && User.Identity.IsAuthenticated)
-                    {
-                        @* Exibe o nome do usuário se ele estiver logado *@
-                        <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem!</span>
+            <!-- Saudação personalizada -->
+            <h6 class="mb-4">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    @* Exibe o nome do usuário se ele estiver logado *@
+                    <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem!</span>
 
-                        /*<p>Id do banco: @userId</p>*/
+                    /*<p>Id do banco: @userId</p>*/
 
-                    }
-                    else
-                    {
-                        @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
-                        <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
-                    }
-                </h6>
+                }
+                else
+                {
+                    @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
+                    <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
+                }
+            </h6>
+            
             <p>Preenchendo o combo de informações, além de economizar mensalmente, consiga sugestões que farão seus móveis durarem mais e ajudar o meio ambiente.</p>
 
             <h2 class="fs-4">Endereço</h2>
@@ -69,11 +70,16 @@
                 </div>
                 <div class="form-group pt-3">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <!-- Botão que redireciona para a página CriarDiaSemanaPreferencia -->
-                    <a asp-controller="Comodo" asp-action="Criar" class="btn btn-secondary">Continuar</a>
 
                     <!-- Botão que redireciona para a ação Consultar do controller EnderecoPreferencia -->
                     <a asp-controller="Endereco" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
+
+                    <!-- Botão que redireciona para a página CriarDiaSemanaPreferencia -->
+                    <a asp-controller="Comodo" asp-action="Criar" class="btn " style="background-color: #4CAF50; color: white;">Continuar</a>
+
+                    
+
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Home</a>
 
                 </div>
 
@@ -90,7 +96,7 @@
     </div>
 
     <div class="w-80" style="height: 80vh">
-        <img src="~/assets/Endereco/imagem1.png" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="~/assets/Problema/imagem4.png" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
 </section>
 

@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using LexusTech.Models;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using LexusTech.Infrastructure.Interfaces;
 
 namespace LexusTech.Controllers
 {
     public class EnderecoController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IEnderecoService _contextoService;
 
-        public EnderecoController(ApplicationDbContext context)
+        public EnderecoController(IEnderecoService contextoService)
         {
-            _context = context;
+            _contextoService = contextoService;
         }
 
         [HttpGet]
@@ -27,11 +27,9 @@ namespace LexusTech.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(endereco);
-                await _context.SaveChangesAsync();
-
+                await _contextoService.Criar(endereco);
                 TempData["SuccessMessage"] = "Preferência cadastrada com sucesso, clique em continuar!";
-                // return RedirectToAction("Mensagem");
+                
             }
             return View(endereco);
         }
@@ -39,8 +37,8 @@ namespace LexusTech.Controllers
         [HttpGet("Endereco/Consultar", Name = "ConsultarEndereco")]
         public async Task<IActionResult> Consultar()
         {
-            var dados = await _context.T_Endereco.ToListAsync(); 
-            return View(dados); 
+            var dados = await _contextoService.ConsultarTodos();
+            return View(dados);
         }
 
         [HttpGet("Endereco/Atualizar")]
@@ -53,21 +51,21 @@ namespace LexusTech.Controllers
                 return RedirectToAction("Error");
             }
 
-            var usuario = await _context.T_Endereco.FindAsync(userId);
-            if (usuario == null)
+            var dados = await _contextoService.ConsultarId(userId);
+            if (dados == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(dados);
         }
 
         [HttpPost("Endereco/Atualizar", Name = "EnderecoAtualizar")]
-        public async Task<IActionResult> Atualizar(Endereco endereco)
+        public async Task<IActionResult> Atualizar(Endereco contexto)
         {
             if (!ModelState.IsValid)
             {
-                return View(endereco);
+                return View(contexto);
             }
 
             var userIdString = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -77,30 +75,70 @@ namespace LexusTech.Controllers
                 return RedirectToAction("Error");
             }
 
-            var enderecoExistente = await _context.T_Endereco.FindAsync(userId);
-            if (enderecoExistente == null)
+            var dadosExistente = await _contextoService.ConsultarId(userId);
+            if (dadosExistente == null)
             {
                 return NotFound();
             }
 
-            enderecoExistente.CEP = endereco.CEP;
-            enderecoExistente.Estado = endereco.Estado;
-            enderecoExistente.Cidade = endereco.Cidade;
-            enderecoExistente.Bairro = endereco.Bairro;
-            enderecoExistente.Rua = endereco.Rua;
-            enderecoExistente.Complemento = endereco.Complemento;
+            dadosExistente.CEP = contexto.CEP;
+            dadosExistente.Estado = contexto.Estado;
+            dadosExistente.Cidade = contexto.Cidade;
+            dadosExistente.Bairro = contexto.Bairro;
+            dadosExistente.Rua = contexto.Rua;
+            dadosExistente.Complemento = contexto.Complemento;
+            
+            await _contextoService.Atualizar(dadosExistente);
 
-            await _context.SaveChangesAsync();
-
-            TempData["SuccessMessage"] = "Usuário atualizado com sucesso!";
+            TempData["SuccessMessage"] = "Item atualizado com sucesso!";
             return RedirectToAction("MensagemAtualizacao");
         }
 
-        [HttpGet("MensagemAtualizacao")]
+        [HttpGet("Endereco/MensagemAtualizacao")]
         public IActionResult MensagemAtualizacao()
         {
             return View();
         }
+
+        [HttpGet("ConfirmarExcluir/{id}")]
+        public async Task<IActionResult> ConfirmarExcluir(int id)
+        {
+            var contexto = await _contextoService.ConsultarId(id);
+            
+            if (contexto == null)
+            {
+                return NotFound();
+            }
+
+            return View(contexto);
+        }
+
+
+        [HttpPost("Excluir")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Excluir(int id)
+        {
+            var contexto = await _contextoService.ConsultarId(id);
+            
+            if (contexto != null)
+            {
+                await _contextoService.Excluir(id);
+                
+                // Redireciona para a página de login ou para onde você preferir
+                TempData["SuccessMessage"] = "Dado excluído com sucesso.";
+                return RedirectToAction("MensagemExclusao", "Endereco"); 
+            }
+
+            TempData["ErrorMessage"] = "Dado não encontrado.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet("MensagemExclusao")]
+        public IActionResult MensagemExclusao()
+        {
+            return View();
+        }
+
 
 
     }

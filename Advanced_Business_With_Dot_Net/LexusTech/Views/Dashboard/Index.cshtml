@@ -55,12 +55,17 @@
                         <span>Imagem</span>
                     </a>
                 </li>
+                <li style="padding: 10px; border-bottom: 1px solid #ddd;">
+                    <a asp-controller="AlertasGerados" asp-action="Consultar"  style="text-decoration: none; color: #333; display: flex; align-items: center;">
+                        <span class="icon" style="margin-right: 10px;">⚙️</span>
+                        <span>Alertas</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <button id="toggleSidebar" onclick="toggleMenu()" style="margin: 10px; padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">Ocultar</button>
     </aside>
 
-    <!-- Conteúdo Principal -->
     <!-- Conteúdo Principal -->
     <main class="text-center" style="margin-left: 260px; padding: 20px; justify-content: center; align-items: center; text-align: center; justify-items: center;">
         <h1>Bem-vindo ao Dashboard</h1> 
@@ -101,8 +106,8 @@
                     {
                         <tr>
                             <td>@consumo.IdUsuario</td>
-                            <td>@consumo.IdComodo</td>
-                            <td>@consumo.IdItemCasa</td>
+                            <td>@consumo.Comodo</td>
+                            <td>@consumo.Item</td>
                             <td>@consumo.ConsumoDiario</td>
                             <td>@consumo.DataConsumo</td>
                             <td>@consumo.Valor</td>

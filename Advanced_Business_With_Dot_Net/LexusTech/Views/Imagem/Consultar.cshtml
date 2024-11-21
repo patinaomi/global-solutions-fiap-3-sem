@@ -6,6 +6,8 @@
     <table class="table">
         <thead>
             <tr>
+                <th>Id</th>
+                <th>Id Usuário</th>
                 <th>Nome</th>
                 <th>Link</th>
             </tr>
@@ -14,6 +16,8 @@
             @foreach (var imagem in Model)
             {
                 <tr>
+                    <td>@imagem.Id</td>
+                    <td>@imagem.IdUsuario</td>
                     <td>@imagem.NomeImagem</td>
                     <td>@imagem.LinkImagem</td>
                 </tr>

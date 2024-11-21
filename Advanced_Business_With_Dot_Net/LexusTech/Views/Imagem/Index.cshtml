@@ -1,9 +1,11 @@
+@using System.Security.Claims
 @model LexusTech.Models.Imagem
 
 @{
     ViewData["Title"] = "Cadastrar Imagem";
     var successMessage = TempData["SuccessMessage"] as string;
     var errorMessage = TempData["ErrorMessage"] as string;
+    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 }
 
 <section class="d-flex p-3" style="height: 80vh">
@@ -11,6 +13,22 @@
     <div class="w-30 d-flex justify-content-center" style="height: 80vh; padding-right: 10px;">
         
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
+            <!-- Saudação personalizada -->
+            <h6 class="mb-4">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    @* Exibe o nome do usuário se ele estiver logado *@
+                    <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem! @userId</span>
+
+                    /*<p>Id do banco: @userId</p>*/
+
+                }
+                else
+                {
+                    @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
+                    <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
+                }
+            </h6>
 
             <h1>@ViewData["Title"]</h1>
 
@@ -19,6 +37,10 @@
             </p>
 
             <form method="post" asp-action="Criar" class="pt-3">
+
+                <!-- Campo oculto para armazenar o ID do Cliente -->
+                <input type="hidden" asp-for="IdUsuario" value="@userId" />
+
                 <div class="form-group">
                     <label for="NomeImagem">Nome da Imagem</label>
                     <input type="text" class="form-control" id="NomeImagem" name="NomeImagem" required />
@@ -29,10 +51,21 @@
                     <input type="text" class="form-control" id="LinkImagem" name="LinkImagem" required />
                 </div>
 
-                <button type="submit" class="btn mt-3" style="background-color: #4CAF50; color: white;">Cadastrar</button>
+                <div>
+                    <button type="submit" class="btn btn-primary mt-3" >Cadastrar</button>
 
-                <a asp-controller="Imagem" asp-action="Consultar" class="btn btn-primary mt-3">Consultar</a>
+                     <a asp-controller="Imagem" asp-action="Consultar" class="btn btn-secondary mt-3">Consultar</a>
+
+                    <a asp-controller="Consumo" asp-action="Criar" class="btn  mt-3" style="background-color: #4CAF50; color: white;">Continuar</a>
+
+                    <a asp-controller="Item" asp-action="Criar" class="btn btn-warning mt-3">Voltar</a>
+                </div>
+                
             </form>
+
+            <div>
+                <p class="pt-3" style="font-size: small;">Processo meramente ilustrativo, pois o Oracle não aceita imagens e não temos ferramenta neste momento para hospedar elas.</p>
+            </div>
 
             <!-- Exibindo mensagens de sucesso ou erro abaixo do botão -->
             @if (!string.IsNullOrEmpty(successMessage))

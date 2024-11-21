@@ -3,6 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using LexusTech.Infrastructure.Interfaces;
+using LexusTech.Application.Services;
+using LexusTech.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,49 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseOracle(builder.Configuration.GetConnectionString("Oracle")));
+
+// Registrar os serviços necessários
+
+//Usuario -- Cadastro
+builder.Services.AddTransient<IUsuarioService, UsuarioService>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+
+// Login
+builder.Services.AddTransient<ILoginService, LoginService>();
+builder.Services.AddTransient<ILoginRepository, LoginRepository>();
+
+// LoginLog
+builder.Services.AddTransient<ILoginLogService, LoginLogService>();
+builder.Services.AddTransient<ILoginLogRepository, LoginLogRepository>();
+
+// Endereco
+builder.Services.AddTransient<IEnderecoService, EnderecoService>();
+builder.Services.AddTransient<IEnderecoRepository, EnderecoRepository>();
+
+// Comodo
+builder.Services.AddTransient<IComodoService, ComodoService>();
+builder.Services.AddTransient<IComodoRepository, ComodoRepository>();
+
+// Imagem
+builder.Services.AddTransient<IImagemService, ImagemService>();
+builder.Services.AddTransient<IImagemRepository, ImagemRepository>();
+
+// Consumo
+builder.Services.AddTransient<IConsumoRepository, ConsumoRepository>();
+builder.Services.AddTransient<IConsumoService, ConsumoService>();
+
+// Alerta de consumo
+builder.Services.AddTransient<IAlertaConsumoRepository, AlertaConsumoRepository>();
+builder.Services.AddTransient<IAlertaConsumoService, AlertaConsumoService>();
+
+// Alerta gerados por python
+builder.Services.AddTransient<IAlertasGeradosRepository, AlertasGeradosRepository>();
+builder.Services.AddTransient<IAlertasGeradosService, AlertasGeradosService>();
+
+// Item
+builder.Services.AddTransient<IItemRepository, ItemRepository>();
+builder.Services.AddTransient<IItemService, ItemService>();
+
 
 // Configurar autenticação com cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -57,6 +57,7 @@
             <div class="form-group pt-3">
                 <a asp-controller="Endereco" asp-action="Atualizar" class="btn btn-primary">Atualizar</a>
                 <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+                <a asp-controller="Endereco" asp-action="ConfirmarExcluir" asp-route-id="@Model.Usuario.Id" class="btn" style="background-color: #fe0c03; color: white;">Deletar endereço</a>
             
             </div>
 
@@ -67,23 +68,80 @@
             <h3>Ambientes</h3>
             <p>Comodo: @Model.Comodo.Descricao</p>
 
+            <!--
             <div class="form-group pt-3">
                 <a asp-controller="Usuario" asp-action="Atualizar" class="btn btn-primary">Atualizar</a>
                 <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
             </div>
+            -->
 
         </section>
 
         <!-- Seção com itens da casa -->
         <section  class="card p-3 mb-2 shadow-lg bg-body-tertiary rounded">
             <h3>Itens</h3>
-            <p>@Model.Item.DescricaoItem</p>
+            <p>Descrição: @Model.Item.DescricaoItem</p>
 
+            <div class="form-group pt-3">
+                <a asp-controller="Item" asp-action="AtualizarDados" class="btn btn-primary">Atualizar</a>
+            </div>
+       
+        </section>
+
+        <!-- Seção com os links das imagens - Modelo não funcional -->
+        <section  class="card p-3 mb-2 shadow-lg bg-body-tertiary rounded">
+            <h3>Imagens</h3>
+            <p>Nome: @Model.Imagem.NomeImagem</p>
+            <p>Link: @Model.Imagem.LinkImagem</p>
+
+            <!--
             <div class="form-group pt-3">
                 <a asp-controller="Usuario" asp-action="Atualizar" class="btn btn-primary">Atualizar</a>
                 <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
             </div>
+            -->
         </section>
+
+        <!-- Seção consumo cadastrado -->
+        
+        <section  class="card p-3 mb-2 shadow-lg bg-body-tertiary rounded">
+            <h3>Consumo</h3>
+            <p>Ambiente: @Model.Consumo.Comodo</p>
+            <p>Equipamento: @Model.Consumo.Item</p>
+            <p>Consumo: @Model.Consumo.ConsumoDiario</p>
+            <p>Data: @Model.Consumo.DataConsumo</p>
+            <p>Valor: @Model.Consumo.Valor</p>
+
+            <!--
+            <div class="form-group pt-3">
+                
+                <a asp-controller="Usuario" asp-action="Atualizar" class="btn btn-primary">Atualizar</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+            </div>
+            -->
+        </section>
+        
+
+        <!-- Seção alerta cadastrado -->
+        <section  class="card p-3 mb-2 shadow-lg bg-body-tertiary rounded">
+            <h3>Alerta</h3>
+            <p>Ambiente: @Model.AlertaConsumo.Ambiente</p>
+            <p>Consumo Minimo: @Model.AlertaConsumo.ConsumoMinimo</p>
+            <p>Email Destino: @Model.AlertaConsumo.EmailDestino</p>
+            <p>Status: @Model.AlertaConsumo.Ativo</p>
+            <p>Descricao: @Model.AlertaConsumo.Descricao</p>
+            <p>Frequência: @Model.AlertaConsumo.TipoAlerta</p>
+
+            <!--
+            <div class="form-group pt-3">
+                <a asp-controller="AlertaConsumo" asp-action="Atualizar" class="btn btn-primary">Atualizar</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+                <a asp-controller="AlertaConsumo" asp-action="ConfirmarExcluir" asp-route-id="@Model.Usuario.Id" class="btn" style="background-color: #fe0c03; color: white;">Deletar alerta</a>
+            </div>
+            -->
+
+        </section>
+        
 
     </div>
 

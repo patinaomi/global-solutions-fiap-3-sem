@@ -1,19 +1,19 @@
+using LexusTech.Infrastructure.Interfaces;
 using LexusTech.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using System.Threading.Tasks;
 
 [Route("Usuario")] 
 public class UsuarioController : Controller
 {
-    private readonly ApplicationDbContext _context;
+    //private readonly ApplicationDbContext _context;
+    private readonly IUsuarioService _usuarioService;
 
-    public UsuarioController(ApplicationDbContext context)
+    public UsuarioController(IUsuarioService usuarioService)
     {
-        _context = context;
+        _usuarioService = usuarioService;
     }
 
     // usar essaa tag para permitir que todos possam fazer cadastrado, mas quem não estiver logado, não vai conseguir acessar nada.
@@ -31,9 +31,7 @@ public class UsuarioController : Controller
     {
         if (ModelState.IsValid)
         {
-            _context.Add(usuario);
-            await _context.SaveChangesAsync();
-
+            await _usuarioService.Criar(usuario);
             TempData["SuccessMessage"] = "Usuário cadastrado com sucesso!";
             return RedirectToAction("Mensagem");
         }
@@ -49,7 +47,7 @@ public class UsuarioController : Controller
     [HttpGet("Consultar")]
     public async Task<IActionResult> Consultar()
     {
-        var usuarios = await _context.T_Usuario.ToListAsync(); 
+        var usuarios = await _usuarioService.ConsultarTodos(); 
         return View(usuarios); 
     }
 
@@ -63,7 +61,7 @@ public class UsuarioController : Controller
             return RedirectToAction("Error");
         }
 
-        var usuario = await _context.T_Usuario.FindAsync(userId);
+        var usuario = await _usuarioService.ConsultarId(userId);
         if (usuario == null)
         {
             return NotFound();
@@ -87,7 +85,8 @@ public class UsuarioController : Controller
             return RedirectToAction("Error");
         }
 
-        var usuarioExistente = await _context.T_Usuario.FindAsync(userId);
+        var usuarioExistente = await _usuarioService.ConsultarId(userId);
+
         if (usuarioExistente == null)
         {
             return NotFound();
@@ -99,7 +98,7 @@ public class UsuarioController : Controller
         usuarioExistente.Email = usuario.Email;
         usuarioExistente.Senha = usuario.Senha;
 
-        await _context.SaveChangesAsync();
+        await _usuarioService.Atualizar(usuarioExistente);
 
         TempData["SuccessMessage"] = "Usuário atualizado com sucesso!";
         return RedirectToAction("MensagemAtualizacao");
@@ -114,7 +113,8 @@ public class UsuarioController : Controller
     [HttpGet("ConfirmarExcluir/{id}")]
     public async Task<IActionResult> ConfirmarExcluir(int id)
     {
-        var usuario = await _context.T_Usuario.FindAsync(id);
+        var usuario = await _usuarioService.ConsultarId(id);
+        
         if (usuario == null)
         {
             return NotFound();
@@ -128,15 +128,15 @@ public class UsuarioController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Excluir(int id)
     {
-        var usuario = await _context.T_Usuario.FindAsync(id);
+        var usuario = await _usuarioService.ConsultarId(id);
+        
         if (usuario != null)
         {
             // Exclui o usuário do banco de dados
-            _context.T_Usuario.Remove(usuario);
-            await _context.SaveChangesAsync();
+            await _usuarioService.Excluir(id);
 
             // Desloga o usuário
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
             await HttpContext.SignOutAsync();
             
             // Redireciona para a página de login ou para onde você preferir
@@ -145,7 +145,7 @@ public class UsuarioController : Controller
         }
 
         TempData["ErrorMessage"] = "Usuário não encontrado.";
-        return RedirectToAction(nameof(Index)); // Ou para outra página desejada
+        return RedirectToAction(nameof(Index));
     }
 
     [HttpGet("MensagemExclusao")]

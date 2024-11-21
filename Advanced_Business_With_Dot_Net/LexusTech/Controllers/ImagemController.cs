@@ -23,9 +23,9 @@ public class ImagemController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Criar(string nomeImagem, string linkImagem)
+    public IActionResult Criar(string nomeImagem, string linkImagem, string IdUsuario)
     {
-        if (!string.IsNullOrEmpty(nomeImagem) && !string.IsNullOrEmpty(linkImagem))
+        if (!string.IsNullOrEmpty(nomeImagem) && !string.IsNullOrEmpty(linkImagem) && !string.IsNullOrEmpty(IdUsuario))
         {
             // Chama a procedure do banco de dados
             using (var connection = new OracleConnection(_oracleConnectionString))
@@ -36,6 +36,7 @@ public class ImagemController : Controller
                     using (var command = new OracleCommand("RM553472.CadastrarImagemProcedure", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.Add(new OracleParameter("IdUsuario", IdUsuario));
                         command.Parameters.Add(new OracleParameter("NomeImagem", nomeImagem));
                         command.Parameters.Add(new OracleParameter("LinkImagem", linkImagem));
 

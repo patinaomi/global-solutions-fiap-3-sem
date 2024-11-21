@@ -1,24 +1,30 @@
 @model IEnumerable<LexusTech.Models.Comodo>
 
-<h2>Ambientes cadastrados</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var comodo in Model)
-        {
+<section class="p-5">
+    <h2>Ambientes cadastrados</h2>
+    <table class="table">
+        <thead>
             <tr>
-                <td>@comodo.Descricao</td>
+                <th>Id</th>
+                <th>Id Usuário</th>
+                <th>Descrição</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var comodo in Model)
+            {
+                <tr>
+                    <td>@comodo.Id</td>
+                    <td>@comodo.IdUsuario</td>
+                    <td>@comodo.Descricao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<div class="form-group pt-3">
-    <a asp-controller="Comodo" asp-action="Criar" class="btn btn-warning">Voltar</a>
-    <a asp-controller="Endereco" asp-action="Criar" class="btn btn-primary">Criar</a>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
-</div>
+    <div class="form-group pt-3">
+        <a asp-controller="Comodo" asp-action="Criar" class="btn btn-warning">Voltar</a>
+        <a asp-controller="Endereco" asp-action="Criar" class="btn btn-primary">Criar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+</section>

@@ -19,12 +19,26 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Problema()
+    {
+        return View();
+    }
+
     public IActionResult Solucao()
     {
         return View();
     }
 
     public IActionResult Projeto()
+    {
+        return View();
+    }
+
+    public IActionResult Prototipo()
+    {
+        return View();
+    }
+    public IActionResult Diferencial()
     {
         return View();
     }

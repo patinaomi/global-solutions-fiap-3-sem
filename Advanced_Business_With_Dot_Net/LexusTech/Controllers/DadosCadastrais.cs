@@ -30,6 +30,9 @@ public class DadosCadastraisController : Controller
             var endereco = await _context.T_Endereco.FirstOrDefaultAsync(e => e.IdUsuario == userId) ?? new Endereco();
             var comodo = await _context.T_Comodo.FirstOrDefaultAsync(d => d.IdUsuario == userId) ?? new Comodo();
             var item = await _context.T_Item_Casa.FirstOrDefaultAsync(t => t.IdUsuario == userId) ?? new Item();
+            var imagem = await _context.T_Imagem.FirstOrDefaultAsync(t => t.IdUsuario == userId) ?? new Imagem();
+            var consumo = await _context.T_Consumo.FirstOrDefaultAsync(t => t.IdUsuario == userId) ?? new Consumo();
+            var alertaConsumo = await _context.T_Alerta_Consumo.FirstOrDefaultAsync(t => t.IdUsuario == userId) ?? new AlertaConsumo();
 
             // Cria a instância de DadosCadastrais
             var dadosCadastrais = new DadosCadastrais
@@ -37,7 +40,10 @@ public class DadosCadastraisController : Controller
                 Usuario = usuario,
                 Endereco = endereco,
                 Comodo = comodo,
-                Item = item
+                Item = item,
+                Imagem = imagem,
+                Consumo = consumo,
+                AlertaConsumo = alertaConsumo
             };
 
             return View(dadosCadastrais);

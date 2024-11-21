@@ -1,23 +1,29 @@
-@model IEnumerable<LexusTech.Models.Item>
+@model IEnumerable<LexusTech.Models.ItemDTO>
 
-<h2>Itens cadastrados</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<section class="p-5">
+    <h2>Itens cadastrados</h2>
+    <table class="table">
+        <thead>
             <tr>
-                <td>@item.DescricaoItem</td>
+                <th>Id</th>
+                <th>Id Usuário</th>
+                <th>Descrição</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.IdUsuario</td>
+                    <td>@item.DescricaoItem</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
-<div class="form-group pt-3">
-    <a asp-controller="Item" asp-action="Criar" class="btn btn-warning">Voltar</a>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
-</div>
+    <div class="form-group pt-3">
+        <a asp-controller="Item" asp-action="Criar" class="btn btn-warning">Voltar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+</section>

@@ -74,6 +74,23 @@ body, html {
   color: white; /* Cor do texto quando a barra estiver enchendo */
 }
 
+/*Problema*/
+
+.energy-section-problem {
+  background-image: url(/assets/Problema/imagem2.png);
+  background-size: fill;
+  background-repeat: no-repeat;
+  min-width: 100vh;
+  min-height: 100vh;
+  background-position: right center; 
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;   
+  padding-left: 40px;        
+  padding-right: 100px;     
+  color: black;              
+}
+
 
 /* Nossa solução */
 

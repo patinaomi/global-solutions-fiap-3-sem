@@ -34,12 +34,14 @@
             <p>Clique no botão abaixo e seja direcionado para o Mapa de consumo da sua residência, depois disso, veja o Dashboard com as informações em detalhes e com projeção do valor da sua conta de energia.</p>
 
             <div class="form-group pt-3">
+
+                <a asp-controller="Consumo" asp-action="Criar" class="btn btn-warning">Voltar</a>
                     
-                <a asp-controller="Informacao" asp-action="Index" class="btn" style="background-color: #73977F; color: white;">Mapa</a>
+                <a asp-controller="Mapa" asp-action="Index" class="btn" style="background-color: #73977F; color: white;">Mapa</a>
 
                 <a asp-controller="Dashboard" asp-action="Index" class="btn btn-secondary">Dashboard</a>
 
-                <a asp-controller="Item" asp-action="Criar" class="btn btn-warning">Voltar</a>
+                <a asp-controller="DadosCadastrais" asp-action="Consultar" class="btn btn-primary">Dados cadastrais</a>
 
             </div>
 

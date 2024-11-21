@@ -21,6 +21,77 @@ namespace LexusTech.Migrations
 
             OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LexusTech.Models.AlertaConsumo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Ambiente")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Ativo")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("ConsumoMinimo")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("EmailDestino")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("TipoAlerta")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Alerta_Consumo");
+                });
+
+            modelBuilder.Entity("LexusTech.Models.AlertasGerados", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comodo")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("ConsumoDiario")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("ConsumoDiarioAnterior")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTime>("DataConsumo")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<int>("IdConsumo")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Item")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Recomendacao")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("VariacaoConsumo")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Alerta_Gerado");
+                });
+
             modelBuilder.Entity("LexusTech.Models.Comodo", b =>
                 {
                     b.Property<int>("Id")
@@ -30,7 +101,6 @@ namespace LexusTech.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descricao")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("IdUsuario")
@@ -49,20 +119,20 @@ namespace LexusTech.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdConsumo"));
 
-                    b.Property<decimal>("ConsumoDiario")
-                        .HasColumnType("DECIMAL(18, 2)");
+                    b.Property<string>("Comodo")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int>("ConsumoDiario")
+                        .HasColumnType("NUMBER(10)");
 
                     b.Property<DateTime>("DataConsumo")
                         .HasColumnType("TIMESTAMP(7)");
 
-                    b.Property<int>("IdComodo")
-                        .HasColumnType("NUMBER(10)");
-
-                    b.Property<int>("IdItemCasa")
-                        .HasColumnType("NUMBER(10)");
-
                     b.Property<int>("IdUsuario")
                         .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Item")
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("Valor")
                         .HasColumnType("NUMBER(10)");
@@ -81,30 +151,24 @@ namespace LexusTech.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Bairro")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("NVARCHAR2(8)");
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Cidade")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Complemento")
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Estado")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("IdUsuario")
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Rua")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");
@@ -120,12 +184,13 @@ namespace LexusTech.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("NUMBER(10)");
+
                     b.Property<string>("LinkImagem")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("NomeImagem")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");
@@ -142,7 +207,6 @@ namespace LexusTech.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("DescricaoItem")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("IdUsuario")
@@ -151,6 +215,25 @@ namespace LexusTech.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("T_Item_Casa");
+                });
+
+            modelBuilder.Entity("LexusTech.Models.Login", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_Login");
                 });
 
             modelBuilder.Entity("LexusTech.Models.LoginLog", b =>
@@ -165,7 +248,6 @@ namespace LexusTech.Migrations
                         .HasColumnType("TIMESTAMP(7)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("IdUsuario")
@@ -173,7 +255,7 @@ namespace LexusTech.Migrations
 
                     b.HasKey("IdLogin");
 
-                    b.ToTable("T_Login");
+                    b.ToTable("T_LoginLog");
                 });
 
             modelBuilder.Entity("LexusTech.Models.Usuario", b =>
@@ -185,25 +267,18 @@ namespace LexusTech.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Senha")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Sobrenome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("NVARCHAR2(100)");
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<string>("Telefone")
-                        .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");

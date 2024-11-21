@@ -1,32 +1,36 @@
 @model IEnumerable<LexusTech.Models.Usuario>
 
-<h2>Lista de Usuários</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Sobrenome</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>Senha</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in Model)
-        {
-            <tr>
-                <td>@usuario.Nome</td>
-                <td>@usuario.Sobrenome</td>
-                <td>@usuario.Telefone</td>
-                <td>@usuario.Email</td>
-                <td>@usuario.Senha</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<section class="p-5">
 
-<div class="form-group pt-3">
-    <a asp-controller="Usuario" asp-action="Criar" class="btn btn-warning">Voltar</a>
-    <a asp-controller="Usuario" asp-action="Consultar" class="btn btn-primary">Criar</a>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
-</div>
+    <h2>Lista de Usuários</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.Nome</td>
+                    <td>@usuario.Sobrenome</td>
+                    <td>@usuario.Telefone</td>
+                    <td>@usuario.Email</td>
+                    <td>@usuario.Senha</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group pt-3">
+        <a asp-controller="Usuario" asp-action="Criar" class="btn btn-warning">Voltar</a>
+        <a asp-controller="Usuario" asp-action="Criar" class="btn btn-primary">Criar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+
+</section>

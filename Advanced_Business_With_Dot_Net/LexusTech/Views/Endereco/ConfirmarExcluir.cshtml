@@ -1,0 +1,21 @@
+@model LexusTech.Models.Endereco
+
+<section class="energy-section">
+    <h2>Tem certeza que deseja excluir os dados do endereço?</h2>
+
+    <div>
+        <h4>Usuário: @Model.CEP</h4>
+        <p>Email: @Model.Estado</p>
+        <p>Telefone: @Model.Cidade</p>
+        <p>Telefone: @Model.Bairro</p>
+        <p>Telefone: @Model.Rua</p>
+        <p>Telefone: @Model.Complemento</p>
+
+        <form asp-action="Excluir" method="post">
+            <input type="hidden" asp-for="Id" value="@Model.Id" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-controller="DadosCadastrais" asp-action="Consultar" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+
+</section>

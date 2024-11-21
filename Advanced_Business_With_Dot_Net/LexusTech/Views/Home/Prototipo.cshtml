@@ -1,0 +1,32 @@
+
+@{
+    ViewData["Title"] = "Sobre o protótipo";
+}
+
+<section class="d-flex p-3" style="height: 80vh">
+    <div class="w-20 d-flex justify-content-center" style="height: 80vh; padding-right: 10px;">
+        <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
+            <h1>Protótipo</h1>
+            
+            <h2>Componentes principais</h2>
+            
+            <p><span style="font: bold; color: red;">Painel de monitoramento digital simples</span> <p>(conectado ao painel de energia residencial)</p>
+            <p><span style="font: bold; color: red;">Sensores de consumo de energia</span> para acompanhar aparelhos como geladeira, ar-condicionado, TV, e outros dispositivos.</p>
+            <p><span style="font: bold; color: red;">Software básico de monitoramento</span> (para capturar dados e gerar relatórios simples sobre o consumo diário e mensal)</p>
+
+            <h2 class="pt-3">Objetivo</h2>
+            <p>Monitorar o consumo de energia de forma simples e eficiente, captando informações sobre os aparelhos e ajudando o cliente a economizar energia e identificar excessos.</p>
+            <p>Imagine receber no seu celular ou computador informações detalhadas sobre o consumo diário de energia da sua casa, com destaque para os ambientes e os itens que mais consomem. Incrível, não é?</p>
+        </div>
+    </div>
+
+    <!-- Container da Imagem ocupando 80% da largura e 100% da altura -->
+    <div class="w-100" style="height: 80vh">
+        <img src="~/assets/Prototipo/imagem1.jpeg" alt="Imagem de fundo para área de cadastro cliente" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

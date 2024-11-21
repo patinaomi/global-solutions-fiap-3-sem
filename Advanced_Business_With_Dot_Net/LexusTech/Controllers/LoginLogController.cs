@@ -1,25 +1,24 @@
-using LexusTech.Models;
+
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using LexusTech.Infrastructure.Interfaces;
 
 namespace LexusTech.Controllers
 {
     public class LoginLogController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ILoginLogRepository _loginLogRepository;
 
-        public LoginLogController(ApplicationDbContext context)
+        public LoginLogController(ILoginLogRepository loginLogRepository)
         {
-            _context = context;
+            _loginLogRepository = loginLogRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var logs = await _context.T_Login
-                .ToListAsync(); 
+            var logs = await _loginLogRepository.ConsultarTodos();
 
-            return View(logs); 
+            return View(logs);
         }
     }
 }

@@ -1,19 +1,21 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using LexusTech.Models;
 using System.Security.Claims;
+using LexusTech.Infrastructure.Interfaces;
+using System.Security.Authentication;
 
 namespace LexusTech.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ILoginService _loginService;
 
-        public LoginController(ApplicationDbContext context)
+        public LoginController(ILoginService loginService)
         {
-            _context = context;
+            _loginService = loginService ?? throw new ArgumentNullException(nameof(loginService));
+           
         }
 
         public IActionResult Logar()
@@ -23,50 +25,45 @@ namespace LexusTech.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logar(Login model)
+        public async Task<IActionResult> Logar(Login login)
         {
             if (ModelState.IsValid)
             {
-                var user = await _context.T_Usuario
-                    .FirstOrDefaultAsync(c => c.Email == model.Email && c.Senha == model.Senha);
-
-                if (user != null && user.Nome != null && user.Email != null)
+                try
                 {
+                    var user = await _loginService.Autenticar(login.Email, login.Senha);
+
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, user.Nome),
-                        new Claim(ClaimTypes.Email, user.Email),
-                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) 
+                        new Claim(ClaimTypes.Name, user.Email),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                        new Claim("FullName", user.Nome)
                     };
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                    // Após a autenticação bem-sucedida, registra o log
-                    var log = new LoginLog
+                    var logins = new Login
                     {
-
-                        IdUsuario = user.Id,
-                        Email = user.Email, 
-                        DataHora = DateTime.Now 
+                        Id = user.Id,
+                        Email = user.Email
                     };
 
-                    _context.T_Login.Add(log);
-                    await _context.SaveChangesAsync();
+                    await _loginService.Criar(logins);
 
                     return RedirectToAction("Index", "Home");
                 }
-                else
+                catch (AuthenticationException)
                 {
-                    return RedirectToAction("MensagemErro");
+                    return RedirectToAction("MensagemErro", "Login");
                 }
-
-                
             }
-            return View(model);
+            return View(login);
         }
 
+
+        [HttpGet("MensagemErro")]
         public IActionResult MensagemErro()
         {
             return View();

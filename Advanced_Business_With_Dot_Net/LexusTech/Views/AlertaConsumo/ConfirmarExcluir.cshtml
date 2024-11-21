@@ -1,0 +1,21 @@
+@model LexusTech.DTOs.AlertaConsumoDTO
+
+<section class="energy-section">
+    <h2>Tem certeza que deseja excluir os dados do alerta?</h2>
+
+    <div>
+        <h4>Ambiente: @Model.Ambiente</h4>
+        <p>Consumo Minimo: @Model.ConsumoMinimo</p>
+        <p>Email Destino: @Model.EmailDestino</p>
+        <p>Ativo: @Model.Ativo</p>
+        <p>Descricao: @Model.Descricao</p>
+        <p>Tipo Alerta: @Model.TipoAlerta</p>
+
+        <form asp-action="Excluir" method="post">
+            <input type="hidden" asp-for="Id" value="@Model.Id" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-controller="DadosCadastrais" asp-action="Consultar" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+
+</section>

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/patricianaomi/Documents/Coding/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj": {}
+    "/Users/claudiobispo/Documents/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj": {}
   },
   "projects": {
-    "/Users/patricianaomi/Documents/Coding/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj": {
+    "/Users/claudiobispo/Documents/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/patricianaomi/Documents/Coding/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
+        "projectUniqueName": "/Users/claudiobispo/Documents/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
         "projectName": "LexusTech",
-        "projectPath": "/Users/patricianaomi/Documents/Coding/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
-        "packagesPath": "/Users/patricianaomi/.nuget/packages/",
-        "outputPath": "/Users/patricianaomi/Documents/Coding/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/obj/",
+        "projectPath": "/Users/claudiobispo/Documents/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/LexusTech.csproj",
+        "packagesPath": "/Users/claudiobispo/.nuget/packages/",
+        "outputPath": "/Users/claudiobispo/Documents/lexus-tech/Advanced_Business_With_Dot_Net/LexusTech/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/patricianaomi/.nuget/NuGet/NuGet.Config"
+          "/Users/claudiobispo/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

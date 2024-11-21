@@ -1,0 +1,42 @@
+@model IEnumerable<LexusTech.DTOs.AlertasGeradosDTO>
+
+<section class="p-3">
+    <h2>Recomendação</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IdConsumo</th>
+                <th>Consumo</th>
+                <th>Item</th>
+                <th>Consumo</th>
+                <th>Data</th>
+                <th>anterior</th>
+                <th>Variacao</th>
+                <th>Recomendação</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alertasGerados in Model)
+            {
+                <tr>
+                    <td>@alertasGerados.Id</td>
+                    <td>@alertasGerados.IdConsumo</td>
+                    <td>@alertasGerados.Comodo</td>
+                    <td>@alertasGerados.Item</td>
+                    <td>@alertasGerados.ConsumoDiario</td>
+                    <td>@alertasGerados.DataConsumo</td>
+                    <td>@alertasGerados.ConsumoDiarioAnterior</td>
+                    <td>@alertasGerados.VariacaoConsumo</td>
+                    <td>@alertasGerados.Recomendacao</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group pt-3">
+        <a asp-controller="Dashboard" asp-action="Index" class="btn btn-warning">Voltar</a>
+        <a asp-controller="AlertaConsumo" asp-action="Criar" class="btn btn-primary">Criar</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary bg-green">Home</a>
+    </div>
+</section>

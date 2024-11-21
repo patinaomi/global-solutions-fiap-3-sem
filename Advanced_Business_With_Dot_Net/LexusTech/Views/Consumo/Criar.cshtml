@@ -12,23 +12,24 @@
         
         <div class="container-fluid border p-4" style="min-height: 80vh; width: 60vh;">
 
-                <!-- Saudação personalizada -->
-                <h6 class="mb-4">
-                    @if (User.Identity != null && User.Identity.IsAuthenticated)
-                    {
-                        @* Exibe o nome do usuário se ele estiver logado *@
-                        <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem!</span>
+            <!-- Saudação personalizada -->
+            <h6 class="mb-4">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    @* Exibe o nome do usuário se ele estiver logado *@
+                    <span style="color: #73977F;">Olá @User.Identity.Name, esperamos que esteja bem! @userId</span>
 
-                        /*<p>Id do banco: @userId</p>*/
+                    /*<p>Id do banco: @userId</p>*/
 
-                    }
-                    else
-                    {
-                        @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
-                        <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
-                    }
-                </h6>
-            <p>Preenchendo o combo de informações, além de economizar mensalmente, consiga sugestões que farão seus móveis durarem mais e ajudar o meio ambiente.</p>
+                }
+                else
+                {
+                    @* Exibe "Visitante" se o usuário não estiver logado. Não tem que acontecer aqui, mas vou deixar por precaução. *@
+                    <span>Bem-vindo, Visitante! Faça login para acessar suas informações.</span>
+                }
+            </h6>
+            
+            <p>Defina metas de consumo para cada ambiente ou equipamento e receba alertas personalizados que ajudam a economizar, promovendo um ambiente mais saudável e sustentável.</p>
 
             <h2 class="fs-4">Consumo</h2>
 
@@ -38,27 +39,48 @@
                 <input type="hidden" asp-for="IdUsuario" value="@userId" />
 
                 <div class="form-group">
-                    <label asp-for="IdComodo" class="control-label fs-6"></label>
-                    <input asp-for="IdComodo" class="form-control" />
-                    <span asp-validation-for="IdComodo" class="text-danger"></span>
+                    <label asp-for="Comodo" class="control-label fs-6">Ambiente</label>
+                    <select asp-for="Comodo" class="form-control">
+                        <option value="">Selecione um cômodo</option>
+                        <option value="sala">Sala</option>
+                        <option value="quarto1">Quarto 1</option>
+                        <option value="quarto2">Quarto 2</option>
+                        <option value="cozinha">Cozinha</option>
+                        <option value="banheiro">Banheiro</option>
+                        <option value="lavanderia">Lavanderia</option>
+                    </select>
+                    <span asp-validation-for="Comodo" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="IdItemCasa" class="control-label fs-6"></label>
-                    <input asp-for="IdItemCasa" class="form-control" />
-                    <span asp-validation-for="IdItemCasa" class="text-danger"></span>
+
+
+                <div class="form-group pt-2">
+                    <label asp-for="Item" class="control-label fs-6">Item</label>
+                    <select asp-for="Item" class="form-control">
+                        <option value="">Selecione um item</option>
+                        <option value="geladeira">Geladeira</option>
+                        <option value="arcondicionado">Ar Condicionado</option>
+                        <option value="televisao">TV</option>
+                        <option value="som">Som</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <span asp-validation-for="Item" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="ConsumoDiario" class="control-label fs-6"></label>
+
+
+                <div class="form-group pt-2">
+                    <label asp-for="ConsumoDiario" class="control-label fs-6">Consumo do dia</label>
                     <input asp-for="ConsumoDiario" class="form-control" />
                     <span asp-validation-for="ConsumoDiario" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="DataConsumo" class="control-label fs-6"></label>
+                
+                <div class="form-group pt-2">
+                    <label asp-for="DataConsumo" class="control-label fs-6">Data de referência</label>
                     <input asp-for="DataConsumo" class="form-control" type="date" />
                     <span asp-validation-for="DataConsumo" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Valor" class="control-label fs-6"></label>
+
+                <div class="form-group pt-2">
+                    <label asp-for="Valor" class="control-label fs-6">Valor</label>
                     <input asp-for="Valor" class="form-control" />
                     <span asp-validation-for="Valor" class="text-danger"></span>
                 </div>
@@ -66,10 +88,12 @@
                 <div class="form-group pt-3">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
                     
-                    <a asp-controller="Consumo" asp-action="Consultar" class="btn btn-secondary">Consultar lista</a>
+                    <a asp-controller="Consumo" asp-action="Consultar" class="btn btn-secondary">Consultar</a>
 
                     <!-- Botão que redireciona para a ação Consultar do controller EnderecoPreferencia -->
-                    <a asp-controller="Dashboard" asp-action="Index" class="btn btn-secondary">Dashboard</a>
+                    <a asp-controller="AlertaConsumo" asp-action="Criar" class="btn " style="background-color: #4CAF50; color: white;">Continuar</a>
+
+                    <a asp-controller="Imagem" asp-action="Index" class="btn btn-warning">Voltar</a>
 
                 </div>
 
@@ -81,6 +105,10 @@
                     </div>
                 }
             </form>
+
+            <div>
+                <p class="pt-3" style="font-size: small;">Processo para simular o cadastro do consumo, a ideia aqui é usar a API de IOT para buscar as informações de consumo do cliente e já informar o valor para ele. Agora, caso ele queira cadastrar manualmente o consumo diário para que nossa solução entregue o valor de projeção da conta de energia, poderia ser aplicado ao cliente.</p>
+            </div>
 
         </div>
     </div>
