@@ -2,6 +2,33 @@
 
 # Projeto de previsão de consumo de energia residencial
 
+## Dados dos alunos
+
+1. Claudio Silva Bispo
+```bash
+    RM 553472
+```
+
+2. Patricia Naomi Yamagishi
+```bash
+    RM 552981
+```
+
+## Link do vídeo geral explicando o projeto
+```bash
+    https://youtu.be/JoY1wFdp5v4
+```
+
+## Vídeo navegando na plataforma web
+```bash
+    https://youtu.be/C01bLjsOcRY
+```
+
+## Vídeo com beta no uso da IA
+```bash
+    https://youtu.be/jtjY-xqsUqQ
+```
+
 ## Objetivo
 
 Este projeto tem como objetivo desenvolver um modelo de Inteligência Artificial (IA) capaz de analisar e prever o consumo de energia em uma residência, utilizando dados históricos sobre o uso de diferentes ambientes e aparelhos. A partir dessa análise, o modelo identificará os ambientes e os itens que mais consomem energia, e será capaz de estimar o valor da próxima conta de luz com base nesses consumos.
