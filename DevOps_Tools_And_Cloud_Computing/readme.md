@@ -20,7 +20,7 @@ Este projeto consiste em uma aplicação configurada para deployment em uma máq
 
 ## 🎬 Link para o Vídeo
 
-Disponibilizamos um vídeo no YouTube demonstrando todo o processo. [Veja o vídeo no YouTube](https://youtu.be/k2LqXJzLTiw?si=4yDFMs8c8uGTyWdq)
+Disponibilizamos um vídeo no YouTube demonstrando todo o processo. [Veja o vídeo no YouTube](https://youtu.be/dfWFMGRLgt0)
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
@@ -64,8 +64,8 @@ Para realizar o deploy dos contêineres:
 
 **Clone este repositório na VM:**
 
-    git clone https://github.com/patinaomi/delfos-machine
-    cd delfos-machine
+    git clone https://github.com/patinaomi/lexus-tech
+    cd lexus-tech
 
 Execute o Docker Compose para construir e iniciar os serviços:
 
@@ -85,84 +85,98 @@ Para testar a aplicação, use as portas definidas no docker-compose.yml para ac
 Verifique que cada serviço responde corretamente e que a comunicação entre eles funciona como esperado.
 
 ### 5. Links dos Dockerfiles
-[Dockerfile Java](https://github.com/patinaomi/delfos-machine/blob/main/JAVA%20ADVANCED/sprint-2/challenge/Dockerfile)
+[Dockerfile Java](https://github.com/patinaomi/lexus-tech/blob/main/Java_Advanced/global/Dockerfile)
 
-    # Etapa de build
-    FROM maven:3.9.4-eclipse-temurin-21 AS build
-    WORKDIR /app
-    
-    # Copia o arquivo de configuração Maven e instala as dependências
-    COPY pom.xml .
-    RUN mvn dependency:go-offline
-    
-    # Copia o código e executa o build
-    COPY . .
-    RUN mvn clean install -DskipTests
-    
-    # Etapa final - Imagem otimizada com JRE 21
-    FROM eclipse-temurin:21-jre
-    WORKDIR /app
-    EXPOSE 8080
-    
-    # Copia o JAR gerado na etapa de build
-    COPY --from=build /app/target/challenge-0.0.1-SNAPSHOT.jar app.jar
-    
-    # Comando de execução
-    ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+# Etapa base: Ambiente de build
+FROM ubuntu:latest AS base
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia o código-fonte para o container
+COPY . .
+
+# Instala dependências necessárias
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    maven && \
+    apt-get clean
+
+# Compila o projeto sem rodar os testes
+RUN mvn clean install -DskipTests
+
+# Etapa final: Imagem otimizada com JRE
+FROM openjdk:17-slim AS runtime
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Expõe a porta 8080
+EXPOSE 8080
+
+# Copia o arquivo JAR gerado na etapa anterior
+COPY --from=base /app/target/global-0.0.1-SNAPSHOT.jar app.jar
+
+# Define o comando de entrada para executar a aplicação
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
     
 
-[Dockerfile .NET](https://github.com/patinaomi/delfos-machine/blob/main/Advanced%20Business%20With%20.NET/sprint-2/DelfosMachine/Dockerfile)
+[Dockerfile .NET](https://github.com/patinaomi/lexus-tech/blob/main/Advanced_Business_With_Dot_Net/LexusTech/Dockerfile)
 
-    FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
-    WORKDIR /App
-    
-    # Copy everything
-    COPY . ./
-    # Restore as distinct layers
-    RUN dotnet restore
-    # Build and publish a release
-    RUN dotnet publish -c Release -o out
-    
-    # Build runtime image
-    FROM mcr.microsoft.com/dotnet/aspnet:8.0
-    WORKDIR /App
-    COPY --from=build-env /App/out .
-    ENTRYPOINT ["dotnet", "DotNet.Docker.dll"]
+```
 
-[Docker Compose](https://github.com/patinaomi/delfos-machine/blob/main/docker-compose.yml)
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 5121
 
-    services:
-      java-service:
-        container_name: java-service
-        build:
-          context: Java_Advanced/sprint-2/challenge
-          dockerfile: Dockerfile
-        ports:
-          - "8080:8080"
-    
-      dotnet-service:
-        container_name: dotnet-service
-        build:
-          context: Advanced_Business_With_DotNet/sprint-2/DelfosMachine
-          dockerfile: Dockerfile
-        ports:
-          - "5000:80"
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["LexusTech.csproj", "./"]
+RUN dotnet restore "./LexusTech.csproj"
+
+COPY . .
+WORKDIR "/src/"
+RUN dotnet build "LexusTech.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "LexusTech.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "LexusTech.dll"]
+```
+
+[Docker Compose](https://github.com/patinaomi/lexus-tech/blob/main/docker-compose.yml)
+
+```
+services:
+  java-service:
+    container_name: java-service
+    build:
+      context: Java_Advanced/lexus-tech/challenge
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  dotnet-service:
+    container_name: dotnet-service
+    build:
+      context: Advanced_Business_With_DotNet/lexus-tech/LexusTech
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+      
+   ```
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
 ## 📄 Documentação da API
-### Cliente
-**GET /clientes:** Lista todos os clientes.
-**POST /clientes/criar:** Cria um novo cliente.
-**GET /clientes/{id}:** Detalhes de um cliente específico.
-**PUT /clientes/{id}:** Atualiza as informações de um cliente.
-**PATCH /clientes/{id}/:** Atualiza parcialmente um dado do cliente.
-**DELETE /clientes/{id}:** Remove um cliente.
 
 ### Documentação via Swagger
 Foi realizada a documentação da API utilizando **Swagger**, o que facilita a visualização e teste de todos os endpoints disponíveis no sistema. Para acessar a documentação completa, basta visitar o link [Swagger](http://localhost:8080/swagger-ui/index.html#/) quando o projeto estiver em execução.
-
-Além disso, o projeto conta com um arquivo de exportação do Postman contendo todas as requisições para teste dos endpoints da API. Esse arquivo pode ser importado diretamente no Postman, facilitando a realização de testes e a validação das funcionalidades disponíveis. Basta acessar o arquivo [por este link](https://github.com/patinaomi/delfos-machine/blob/main/JAVA%20ADVANCED/sprint-2/Challenge%20Odontoprev.postman_collection.json) e importar no Postman para ter acesso a todas as operações configuradas.
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
