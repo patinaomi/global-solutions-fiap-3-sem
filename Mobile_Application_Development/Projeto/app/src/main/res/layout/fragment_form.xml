@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Botão Voltar -->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_to"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="start" />
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo_preto" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/formulario"
+            android:textColor="#1C1C1C"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:id="@+id/tvDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/descricao_formulario"
+            android:textColor="#505050"
+            android:textSize="16sp" />
+
+        <!-- Nome -->
+        <EditText
+            android:id="@+id/etNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_outline_rounded"
+            android:backgroundTint="#CACACA"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/nome"
+            android:inputType="textPersonName"
+            android:padding="12dp" />
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_outline_rounded"
+            android:backgroundTint="#CACACA"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+        <!-- Telefone -->
+        <EditText
+            android:id="@+id/etTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_outline_rounded"
+            android:backgroundTint="#CACACA"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/telefone"
+            android:inputType="phone"
+            android:padding="12dp" />
+
+        <!-- Mensagem -->
+        <EditText
+            android:id="@+id/etMensagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_outline_rounded"
+            android:backgroundTint="#CACACA"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/mensagem"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:padding="12dp" />
+
+        <!-- Botão Enviar -->
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#90BE42"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/enviar"
+            android:textColor="@color/white"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

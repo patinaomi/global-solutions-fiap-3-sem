@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "97126794028",
+    "project_id": "lexus-tech",
+    "storage_bucket": "lexus-tech.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97126794028:android:6df48967de96ed61e32289",
+        "android_client_info": {
+          "package_name": "br.com.fiap.challenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDGcErc59_EhdUpkMPuh6iauGS_AhwIT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
