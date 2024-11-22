@@ -256,8 +256,7 @@ public class UsuarioController {
     })
     @PutMapping("/update-password")
     public ResponseEntity<?> updatePassword(@Valid @RequestBody UpdatePasswordRequest request) {
-        boolean isUpdated = usuarioService.updatePassword(request.getUsuarioId(), request.getNovaSenha());
-
+        boolean isUpdated = usuarioService.updatePassword(request.getId(), request.getNovaSenha());
         if (isUpdated) {
             return ResponseEntity.ok(new MessageResponse("Senha atualizada com sucesso"));
         } else {

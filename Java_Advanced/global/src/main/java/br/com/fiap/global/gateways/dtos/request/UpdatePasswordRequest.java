@@ -18,7 +18,7 @@ public class UpdatePasswordRequest {
 
     @NotNull(message = "Id do usuário não pode ser nulo")
     @Schema(description = "Id do Usuário", example = "1")
-    private Integer usuarioId;
+    private Integer id;
 
     @NotNull(message = "Senha atual não pode ser nula")
     @Size(message = "Senha atual deve ter entre 5 e 30 caracteres", min = 5, max = 30)

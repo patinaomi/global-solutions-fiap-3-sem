@@ -86,7 +86,6 @@ public class UsuarioServiceImpl implements UsuarioService {
         }
     }
 
-
     // Método utilitário para limpar caracteres não numéricos do telefone
     private String limparCaracteresTel(String telefone) {
         return telefone != null ? telefone.replaceAll("\\D", "") : null;

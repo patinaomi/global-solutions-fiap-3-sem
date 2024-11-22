@@ -17,5 +17,4 @@ public interface UsuarioService {
     void delete(Integer id);
 
     boolean updatePassword(Integer usuarioId, String novaSenha);
-
 }

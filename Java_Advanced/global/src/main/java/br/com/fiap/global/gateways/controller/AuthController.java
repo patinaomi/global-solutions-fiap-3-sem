@@ -9,6 +9,7 @@ import br.com.fiap.global.gateways.dtos.response.EmailResponse;
 import br.com.fiap.global.gateways.dtos.response.ErrorResponse;
 import br.com.fiap.global.gateways.dtos.response.LoginAuthResponse;
 import br.com.fiap.global.gateways.dtos.response.MessageResponse;
+import br.com.fiap.global.gateways.dtos.response.ValidateUserResponse;
 import br.com.fiap.global.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -62,7 +63,7 @@ public class AuthController {
     public ResponseEntity<?> validateUser(@Valid @RequestBody ValidateUserRequest request) {
         Usuario usuario = service.findByEmailAndDateOfBirth(request.getEmail(), request.getDataNasc());
         if (usuario != null) {
-            return ResponseEntity.ok(new MessageResponse("Usuário validado com sucesso"));
+            return ResponseEntity.ok(new ValidateUserResponse("Usuário validado com sucesso", usuario.getId()));
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(new ErrorResponse("Usuário não encontrado ou dados incorretos"));
