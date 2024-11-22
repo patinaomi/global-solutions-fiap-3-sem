@@ -1,7 +1,7 @@
 package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Login;
-import br.com.fiap.global.gateways.dtos.request.LoginAuthRequest;
+import br.com.fiap.global.gateways.dtos.request.LoginRequest;
 import br.com.fiap.global.gateways.dtos.response.LoginResponse;
 import br.com.fiap.global.service.LoginService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -35,7 +35,7 @@ public class LoginController {
             @ApiResponse(responseCode = "500", description = "Erro interno no servidor", content = @Content)
     })
     @PostMapping("/authenticate")
-    public ResponseEntity<?> login(@Valid @RequestBody LoginAuthRequest request) {
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
         try {
             Login login = service.register(request.getEmail(), request.getSenha());
 

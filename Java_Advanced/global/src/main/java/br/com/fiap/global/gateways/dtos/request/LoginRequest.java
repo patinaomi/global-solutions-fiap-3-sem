@@ -14,7 +14,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginAuthRequest {
+public class LoginRequest {
 
     @NotNull(message = "Email não pode ser nulo")
     @Email(message = "Email inválido")

@@ -1,7 +1,7 @@
 package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Usuario;
-import br.com.fiap.global.gateways.dtos.request.LoginAuthRequest;
+import br.com.fiap.global.gateways.dtos.request.LoginRequest;
 import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateEmailRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateUserRequest;
@@ -43,7 +43,7 @@ public class AuthController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
     })
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginAuthRequest request) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         Usuario usuario = service.authenticate(request.getEmail(), request.getSenha());
         if (usuario != null) {
             return ResponseEntity.ok(new LoginAuthResponse("Login bem-sucedido", usuario.getId()));
