@@ -14,6 +14,21 @@
     RM 552981
 ```
 
+## Link do vídeo geral explicando o projeto
+```bash
+    https://youtu.be/JoY1wFdp5v4
+```
+
+## Vídeo navegando na plataforma web
+```bash
+    https://youtu.be/C01bLjsOcRY
+```
+
+## Vídeo com beta no uso da IA
+```bash
+    https://youtu.be/jtjY-xqsUqQ
+```
+
 ## Objetivo
 
 Este projeto tem como objetivo desenvolver um modelo de Inteligência Artificial (IA) capaz de analisar e prever o consumo de energia em uma residência, utilizando dados históricos sobre o uso de diferentes ambientes e aparelhos. A partir dessa análise, o modelo identificará os ambientes e os itens que mais consomem energia, e será capaz de estimar o valor da próxima conta de luz com base nesses consumos.
@@ -26,7 +41,13 @@ Essa abordagem inovadora visa não apenas fornecer uma previsão precisa do cons
 
 Nosso objetivo é levar as informações diretamente ao cliente, sem que ele precise investigar por conta própria as razões para o consumo de energia elevado em determinados horários ou dias. Queremos evitar surpresas desagradáveis, como contas altas ou falhas inesperadas de equipamentos. Estamos desenvolvendo uma solução integrada e abrangente, que atende o cliente de diversas maneiras: seja por meio de análises enviadas por e-mail, notificações com sugestões personalizadas, ou por nossos dados, que apontarão claramente o foco do problema. Todas essas informações serão coletadas por um painel instalado no quadro de energia geral, conectado a cada ambiente e dispositivo da residência.
 
-# Objetivos especificos
+# Informações adicionais
+
+No readme geral do repositório, contém as informações gerais explicando nosso projeto em detalhes.
+
+```bash
+    https://github.com/patinaomi/lexus-tech
+```
 
 # Explicação simples do projeto com .NET
 
