@@ -16,7 +16,7 @@ Repositório criado para a organização e hospedagem dos projetos da Global Sol
 
 ## 📹 Video Pitch
 
-Em construção
+Link para o Video Pitch no Youtube com a explicação do nosso projeto: [Link](https://youtu.be/JoY1wFdp5v4)
 
 [:arrow_up: voltar para o índice :arrow_up:](#índice)
 
