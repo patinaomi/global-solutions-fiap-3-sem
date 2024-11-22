@@ -1,3 +1,5 @@
+## Video Banco de Dados: https://youtu.be/wzuy2sbGyEM
+
 # Estrutura do Banco de Dados
 
 ## Tabela: Estado
