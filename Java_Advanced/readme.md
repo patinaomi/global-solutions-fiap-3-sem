@@ -190,7 +190,7 @@ Além disso, o projeto conta com um arquivo de exportação do Postman contendo 
 ## 📹 Videos
 Também disponibilizamos um vídeo no YouTube demonstrando nossa solução e explicando as principais funcionalidades do projeto. Você pode assisti-lo através do seguinte link: [Link do Video no Youtube](https://youtu.be/4rk6KTjp8mM)
 
-**Video Pitch:** [Link do Video no Youtube](https://youtu.be/4rk6KTjp8mM)
+**Video Pitch:** [Link do Video no Youtube](https://youtu.be/JoY1wFdp5v4)
 
 [:arrow_up: voltar para o índice :arrow_up:](#-índice)
 
