@@ -31,17 +31,4 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         return repository.findByEmail(email);
     }
 
-    @Override
-    public boolean updatePassword(Integer usuarioId, String novaSenha) {
-        Optional<Usuario> usuarioOptional = repository.findById(usuarioId);
-
-        if (usuarioOptional.isPresent()) {
-            Usuario usuario = usuarioOptional.get();
-            usuario.setSenha(novaSenha);
-            repository.save(usuario);
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

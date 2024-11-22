@@ -2,7 +2,6 @@ package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.dtos.request.LoginRequest;
-import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateEmailRequest;
 import br.com.fiap.global.gateways.dtos.request.ValidateUserRequest;
 import br.com.fiap.global.gateways.dtos.response.EmailErrorResponse;
@@ -22,7 +21,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -71,24 +69,6 @@ public class AuthController {
         }
     }
 
-    @Operation(summary = "Atualizar senha", description = "Atualiza a senha de um usuário")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Senha atualizada com sucesso",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MessageResponse.class))),
-            @ApiResponse(responseCode = "400", description = "Erro ao atualizar senha",
-                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
-    })
-    @PutMapping("/update-password")
-    public ResponseEntity<?> updatePassword(@Valid @RequestBody UpdatePasswordRequest request) {
-        boolean isUpdated = service.updatePassword(request.getUsuarioId(), request.getNovaSenha());
-
-        if (isUpdated) {
-            return ResponseEntity.ok(new MessageResponse("Senha atualizada com sucesso"));
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(new ErrorResponse("Erro ao atualizar senha"));
-        }
-    }
 
     @Operation(summary = "Validar e-mail", description = "Valida a existência de um e-mail")
     @ApiResponses(value = {

@@ -11,6 +11,4 @@ public interface AuthenticationService {
     Usuario findByEmailAndDateOfBirth(String email, LocalDate dataNasc);
 
     Usuario findByEmail(String email);
-
-    boolean updatePassword(Integer usuarioId, String novaSenha);
 }

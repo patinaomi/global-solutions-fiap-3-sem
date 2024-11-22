@@ -11,6 +11,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -68,6 +69,20 @@ public class UsuarioServiceImpl implements UsuarioService {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
             throw new DataIntegrityException("Não pode ser Deletado! O registro está relacionado a outros dados.");
+        }
+    }
+
+    @Override
+    public boolean updatePassword(Integer usuarioId, String novaSenha) {
+        Optional<Usuario> usuarioOptional = repository.findById(usuarioId);
+
+        if (usuarioOptional.isPresent()) {
+            Usuario usuario = usuarioOptional.get();
+            usuario.setSenha(novaSenha);
+            repository.save(usuario);
+            return true;
+        } else {
+            return false;
         }
     }
 

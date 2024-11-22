@@ -3,8 +3,11 @@ package br.com.fiap.global.gateways.controller;
 import br.com.fiap.global.domains.Endereco;
 import br.com.fiap.global.domains.Estado;
 import br.com.fiap.global.domains.Usuario;
+import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
 import br.com.fiap.global.gateways.dtos.request.UsuarioRequest;
 import br.com.fiap.global.gateways.dtos.response.EnderecoResponse;
+import br.com.fiap.global.gateways.dtos.response.ErrorResponse;
+import br.com.fiap.global.gateways.dtos.response.MessageResponse;
 import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
 import br.com.fiap.global.service.EstadoService;
 import br.com.fiap.global.service.UsuarioService;
@@ -241,6 +244,25 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário com ID " + id + " não encontrado.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @Operation(summary = "Atualizar senha", description = "Atualiza a senha de um usuário")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Senha atualizada com sucesso",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = MessageResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Erro ao atualizar senha",
+                    content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
+    })
+    @PutMapping("/update-password")
+    public ResponseEntity<?> updatePassword(@Valid @RequestBody UpdatePasswordRequest request) {
+        boolean isUpdated = usuarioService.updatePassword(request.getUsuarioId(), request.getNovaSenha());
+
+        if (isUpdated) {
+            return ResponseEntity.ok(new MessageResponse("Senha atualizada com sucesso"));
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(new ErrorResponse("Erro ao atualizar senha"));
         }
     }
 
