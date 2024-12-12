@@ -15,4 +15,6 @@ public interface ItemCasaService {
     ItemCasa update(Integer id, ItemCasa itemCasa);
 
     void delete(Integer id);
+
+    List<ItemCasa> findByUsuarioId(Integer usuarioId);
 }

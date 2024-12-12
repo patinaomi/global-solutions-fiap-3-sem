@@ -2,6 +2,7 @@ package br.com.fiap.global.gateways.controller;
 
 import br.com.fiap.global.domains.Endereco;
 import br.com.fiap.global.domains.Estado;
+import br.com.fiap.global.domains.ItemCasa;
 import br.com.fiap.global.domains.Usuario;
 import br.com.fiap.global.gateways.dtos.request.UpdatePasswordRequest;
 import br.com.fiap.global.gateways.dtos.request.UsuarioRequest;
@@ -10,6 +11,7 @@ import br.com.fiap.global.gateways.dtos.response.ErrorResponse;
 import br.com.fiap.global.gateways.dtos.response.MessageResponse;
 import br.com.fiap.global.gateways.dtos.response.UsuarioResponse;
 import br.com.fiap.global.service.EstadoService;
+import br.com.fiap.global.service.ItemCasaService;
 import br.com.fiap.global.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -44,6 +46,7 @@ public class UsuarioController {
 
     private final UsuarioService usuarioService;
     private final EstadoService estadoService;
+    private final ItemCasaService itemCasaService;
 
     @Operation(summary = "Cria um novo usuário", description = "Cria um novo usuário com base nos dados informados")
     @ApiResponses(value = {
@@ -264,6 +267,15 @@ public class UsuarioController {
                     .body(new ErrorResponse("Erro ao atualizar senha"));
         }
     }
+
+    @GetMapping("/{id}/dispositivos")
+    public ResponseEntity<List<ItemCasa>> getDispositivosByUsuarioId(@PathVariable Integer id) {
+        List<ItemCasa> itens = itemCasaService.findByUsuarioId(id); // Método corrigido
+        return ResponseEntity.ok(itens);
+    }
+
+
+
 
     private UsuarioResponse mapToUsuarioResponse(Usuario usuario) {
         return UsuarioResponse.builder()

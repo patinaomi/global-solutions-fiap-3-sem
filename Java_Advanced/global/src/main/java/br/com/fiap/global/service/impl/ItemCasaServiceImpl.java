@@ -58,4 +58,9 @@ public class ItemCasaServiceImpl implements ItemCasaService {
             throw new DataIntegrityException("Não pode ser Deletado! O registro está relacionado a outros dados.");
         }
     }
+
+    public List<ItemCasa> findByUsuarioId(Integer usuarioId) {
+        return repository.findByUsuarioId(usuarioId); // Implementação no repositório
+    }
+
 }
